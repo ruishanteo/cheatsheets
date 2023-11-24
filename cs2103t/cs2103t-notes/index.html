@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>CS2103T - CS2103T Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">CS2103T Notes</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#java" class="nav-link">Java</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#programming-paradigm" class="nav-link">Programming Paradigm</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#object-oriented-programming-oop" class="nav-link">Object-Oriented Programming (OOP)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#requirements" class="nav-link">Requirements</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#in-brainstorming-session-there-are" class="nav-link">In brainstorming session there are</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#design" class="nav-link">Design</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#design-fundamentals" class="nav-link">Design Fundamentals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#modeling" class="nav-link">Modeling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#design-patterns" class="nav-link">Design Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#design-approaches" class="nav-link">Design Approaches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#principles" class="nav-link">Principles</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#single-responsibility-principle" class="nav-link">Single Responsibility Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#open-closed-principle" class="nav-link">Open-Closed Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#liskov-substitution-principle" class="nav-link">Liskov Substitution Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interface-segregation-principle" class="nav-link">Interface Segregation Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dependency-inversion-principle" class="nav-link">Dependency Inversion Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#separation-of-concerns-principle" class="nav-link">Separation of Concerns Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#law-of-demeter" class="nav-link">Law of Demeter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#yagni-principle" class="nav-link">YAGNI Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dry-principle" class="nav-link">DRY Principle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#brooks-law" class="nav-link">Brooks' Law</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#uml" class="nav-link">UML</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#class-diagrams" class="nav-link">Class Diagrams</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#objects-diagrams" class="nav-link">Objects Diagrams</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sequence-diagrams" class="nav-link">Sequence Diagrams</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#oodm" class="nav-link">OODM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#activity-diagrams" class="nav-link">Activity Diagrams</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#project-management" class="nav-link">Project Management</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#revision-control" class="nav-link">Revision Control</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-planning" class="nav-link">Project Planning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sdlc-process-models" class="nav-link">SDLC Process Models</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#coding-standards" class="nav-link">Coding Standards</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#naming" class="nav-link">Naming</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#layout" class="nav-link">Layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#statements" class="nav-link">Statements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#classes-and-interfaces" class="nav-link">Classes and interfaces</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#types" class="nav-link">Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#variables" class="nav-link">Variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#loops" class="nav-link">Loops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#conditionals" class="nav-link">Conditionals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#comments" class="nav-link">Comments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#coding-quality" class="nav-link">Coding Quality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#documentation" class="nav-link">Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#error-handling" class="nav-link">Error Handling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#reuse" class="nav-link">Reuse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#quality-assurance" class="nav-link">Quality Assurance</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#code-reviews" class="nav-link">Code Reviews</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#static-analysis" class="nav-link">Static Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#formal-verification" class="nav-link">Formal Verification</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#test-case-design" class="nav-link">Test Case Design</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#testing" class="nav-link">Testing</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#regression-testing" class="nav-link">Regression Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#developer-testing" class="nav-link">Developer Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#unit-testing" class="nav-link">Unit Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#integration-testing" class="nav-link">Integration Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#system-testing" class="nav-link">System Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#alpha-and-beta-testing" class="nav-link">Alpha and Beta Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dogfooding" class="nav-link">Dogfooding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exploratory-and-scripted-testing" class="nav-link">Exploratory and Scripted Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#user-acceptance-testing" class="nav-link">User Acceptance Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#test-automation-testing" class="nav-link">Test Automation Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li><a href="#java">Java</a></li>
+<li><a href="#varargs">Varargs</a></li>
+<li><a href="#programming-paradigm">Programming Paradigm</a></li>
+<li><a href="#object-oriented-programming-oop">Object-Oriented Programming (OOP)</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+<li><a href="#quality-of-requirements">Quality of requirements</a></li>
+<li><a href="#gathering-requirements">Gathering requirements</a></li>
+<li><a href="#specifying-requirements">Specifying Requirements</a></li>
+<li><a href="#design">Design</a></li>
+<li><a href="#design-fundamentals">Design Fundamentals</a></li>
+<li><a href="#modeling">Modeling</a></li>
+<li><a href="#design-patterns">Design Patterns</a><ul>
+<li><a href="#singleton-pattern">Singleton Pattern</a></li>
+<li><a href="#abstraction-occurrence-pattern">Abstraction Occurrence Pattern</a></li>
+<li><a href="#facade-pattern">Facade Pattern</a></li>
+<li><a href="#command-pattern">Command Pattern</a></li>
+<li><a href="#model-view-controller-mvc-pattern">Model View Controller (MVC) Pattern</a></li>
+<li><a href="#observer-pattern">Observer Pattern</a></li>
+</ul>
+</li>
+<li><a href="#design-approaches">Design Approaches</a></li>
+<li><a href="#principles">Principles</a></li>
+<li><a href="#single-responsibility-principle"><code>S</code>ingle Responsibility Principle</a></li>
+<li><a href="#open-closed-principle"><code>O</code>pen-Closed Principle</a></li>
+<li><a href="#liskov-substitution-principle"><code>L</code>iskov Substitution Principle</a></li>
+<li><a href="#interface-segregation-principle"><code>I</code>nterface Segregation Principle</a></li>
+<li><a href="#dependency-inversion-principle"><code>D</code>ependency Inversion Principle</a></li>
+<li><a href="#separation-of-concerns-principle">Separation of Concerns Principle</a></li>
+<li><a href="#law-of-demeter">Law of Demeter</a></li>
+<li><a href="#yagni-principle">YAGNI Principle</a></li>
+<li><a href="#dry-principle">DRY Principle</a></li>
+<li><a href="#brooks-law">Brooks' Law</a></li>
+<li><a href="#uml">UML</a></li>
+<li><a href="#class-diagrams">Class Diagrams</a><ul>
+<li><a href="#notation--class-diagrams">Notation — Class Diagrams</a></li>
+<li><a href="#associations--class-diagrams">Associations — Class Diagrams</a></li>
+<li><a href="#navigability">Navigability</a></li>
+<li><a href="#multiplicity">Multiplicity</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#composition-has-a">Composition (Has-A)</a></li>
+<li><a href="#aggregation">Aggregation</a></li>
+<li><a href="#inheritance-is-a">Inheritance (Is-A)</a></li>
+</ul>
+</li>
+<li><a href="#objects-diagrams">Objects Diagrams</a><ul>
+<li><a href="#notation--objects-diagrams">Notation — Objects Diagrams</a></li>
+</ul>
+</li>
+<li><a href="#sequence-diagrams">Sequence Diagrams</a><ul>
+<li><a href="#notation--sequence-diagrams">Notation — Sequence Diagrams</a></li>
+</ul>
+</li>
+<li><a href="#oodm">OODM</a></li>
+<li><a href="#activity-diagrams">Activity Diagrams</a><ul>
+<li><a href="#notation--activity-diagrams">Notation — Activity Diagrams</a></li>
+</ul>
+</li>
+<li><a href="#project-management">Project Management</a></li>
+<li><a href="#revision-control">Revision Control</a></li>
+<li><a href="#project-planning">Project Planning</a><ul>
+<li><a href="#work-breakdown-structure">Work Breakdown Structure</a></li>
+<li><a href="#milestones">Milestones</a></li>
+<li><a href="#buffers">Buffers</a></li>
+<li><a href="#issue-trackers">Issue Trackers</a></li>
+<li><a href="#gantt-charts">GANTT Charts</a></li>
+<li><a href="#pert-charts">PERT Charts</a></li>
+</ul>
+</li>
+<li><a href="#sdlc-process-models">SDLC Process Models</a><ul>
+<li><a href="#sequential-models">Sequential Models</a></li>
+<li><a href="#iterative-models">Iterative Models</a></li>
+<li><a href="#agile-models">Agile Models</a></li>
+<li><a href="#xp">XP</a></li>
+<li><a href="#scrum">Scrum</a></li>
+<li><a href="#unified-process">Unified Process</a></li>
+<li><a href="#cmmi">CMMI</a></li>
+</ul>
+</li>
+<li><a href="#coding-standards">Coding Standards</a></li>
+<li><a href="#naming">Naming</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#statements">Statements</a></li>
+<li><a href="#classes-and-interfaces">Classes and interfaces</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#types">Types</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#conditionals">Conditionals</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#implementation">Implementation</a></li>
+<li><a href="#coding-quality">Coding Quality</a></li>
+<li><a href="#documentation">Documentation</a><ul>
+<li><a href="#types-1">Types</a></li>
+<li><a href="#guidelines">Guidelines</a></li>
+</ul>
+</li>
+<li><a href="#error-handling">Error Handling</a></li>
+<li><a href="#reuse">Reuse</a></li>
+<li><a href="#quality-assurance">Quality Assurance</a></li>
+<li><a href="#code-reviews">Code Reviews</a></li>
+<li><a href="#static-analysis">Static Analysis</a></li>
+<li><a href="#formal-verification">Formal Verification</a></li>
+<li><a href="#test-case-design">Test Case Design</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#regression-testing">Regression Testing</a></li>
+<li><a href="#developer-testing">Developer Testing</a></li>
+<li><a href="#unit-testing">Unit Testing</a></li>
+<li><a href="#integration-testing">Integration Testing</a></li>
+<li><a href="#system-testing">System Testing</a></li>
+<li><a href="#alpha-and-beta-testing">Alpha and Beta Testing</a></li>
+<li><a href="#dogfooding">Dogfooding</a></li>
+<li><a href="#exploratory-and-scripted-testing">Exploratory and Scripted Testing</a></li>
+<li><a href="#user-acceptance-testing">User Acceptance Testing</a></li>
+<li><a href="#test-automation-testing">Test Automation Testing</a></li>
+</ul>
+<h1 id="java">Java</h1>
+<h3 id="varargs">Varargs</h3>
+<p>Syntactic sugar type feature that allows writing a method that can take a variable number of arguments.</p>
+<pre><code class="language-java">public static void search(String ... keywords){
+   // method body
+}
+</code></pre>
+<h1 id="programming-paradigm">Programming Paradigm</h1>
+<p>Guides programmers to analyse programmig problems ad structure programmig solutions in a specific way</p>
+<h2 id="object-oriented-programming-oop">Object-Oriented Programming (OOP)</h2>
+<ul>
+<li>Views the world as a network of interacting objects</li>
+<li>Tries to create a similar object network inside the computer's memory so that a similar result can be achieved programmtically</li>
+</ul>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>A software requirement specifies a need to be fulfilled by the software product.</li>
+<li>A software project may be</li>
+<li>Brownfield project i.e., develop a product to replace/update an existing software product</li>
+<li>Greenfield project i.e., develop a totally new system from scratch</li>
+<li>Requirements come from stakeholders</li>
+<li>Requirements can be divided into:</li>
+<li>Functional requirements specify what the system should do</li>
+<li>Non-functional requirements specify the constraints under which the system is developed and operated</li>
+<li>
+<h2 id="in-brainstorming-session-there-are">In brainstorming session there are</h2>
+</li>
+</ul>
+<h3 id="non-functional-requirements">Non-functional requirements</h3>
+<p>Specify the constraints under which the system is developed and operated</p>
+<ul>
+<li>NFRs are easier to miss</li>
+<li>Sometimes NFRs are critical to the success of the software</li>
+</ul>
+<h3 id="quality-of-requirements">Quality of requirements</h3>
+<ul>
+<li>
+<p>Characteristics of well-defined requirements:</p>
+</li>
+<li>
+<p>Unambiguous</p>
+</li>
+<li>Testable (verifiable)</li>
+<li>Clear (concise, terse, simple, precise)</li>
+<li>Correct</li>
+<li>Understandable</li>
+<li>Feasible (realistic, possible)</li>
+<li>Independent</li>
+<li>Atomic</li>
+<li>Necessary</li>
+<li>
+<p>Implementation-free (i.e. abstract)</p>
+</li>
+<li>
+<p>Set of requirements as a whole should be:</p>
+</li>
+<li>Consistent</li>
+<li>Non-redundant</li>
+<li>Complete</li>
+</ul>
+<h3 id="gathering-requirements">Gathering requirements</h3>
+<ul>
+<li>Brainstorming session</li>
+<li>No "bad" ideas (aim is to generate ideas; not to validate them)</li>
+<li>Product surveys</li>
+<li>Studying existing products can unearth shortcomings of existing solutions that can be addressed by a new product</li>
+<li>Observation</li>
+<li>Observing users in their natural work environment can uncover product requirements</li>
+<li>User surveys</li>
+<li>Surveys can be used to solicit responses and opinions from a large number of stakeholders regarding a current product or a new product</li>
+<li>Interviews</li>
+<li>Interviewing stakeholders and domain experts can produce useful information about project requirements</li>
+<li>Focus groups</li>
+<li>Focus groups are a kind of informal interview within an interactive group setting</li>
+<li>Prototyping</li>
+<li>A prototype is a mock up, a scaled down version, or a partial system constructed<ul>
+<li>to get users feedback</li>
+<li>to validate a technical concept (a "proof-of-concept" prototype)</li>
+<li>to give a preview of what is to come, or to compare multiple alternatives on a small scale before committing fully to one alternative</li>
+<li>for early field-testing under controlled conditions</li>
+</ul>
+</li>
+</ul>
+<h3 id="specifying-requirements">Specifying Requirements</h3>
+<ul>
+<li>
+<p>Feature list</p>
+</li>
+<li>
+<p>A list of features of a product grouped according to some criteria such as aspect, priority, order of delivery, etc</p>
+</li>
+<li>
+<p>User stories</p>
+</li>
+<li>
+<p>Short, simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system</p>
+</li>
+<li>Format: As a <code>{user type/role} I can {function} so that {benefit}</code></li>
+<li><code>{benefit}</code> can be omitted if it is obvious</li>
+<li>Can:<ul>
+<li>Add more characteristics to the <code>{user role}</code>, e.g. As a <strong>forgetful</strong> user, ...</li>
+<li>Write user stories at various levels (epic/theme)</li>
+<li>Add conditions of satisfaction to a user story</li>
+<li>Include:</li>
+<li>Priority: how important the user story is</li>
+<li>Size: the estimated effort to implement the user story</li>
+<li>Urgency: how soon the feature is needed</li>
+</ul>
+</li>
+<li>Convenient for scoping, estimation, and scheduling</li>
+<li>Less details compared to traditional requirements specifications</li>
+<li>Captures non-functional requirements too because even NFRs must benefit some stakeholder</li>
+<li>
+<p>Handy for recording requirements during early stages of requirements gathering</p>
+</li>
+<li>
+<p>Use cases</p>
+</li>
+<li>
+<p>Set of sequences of actions, including variants, that a system performs to yield an observable result of value to an actor</p>
+</li>
+<li>Describes an interaction between the user and the system for a specific functionality of the system</li>
+<li>Only externally visible behavior (omit UI details)</li>
+<li>
+<p><strong>Actor</strong>: An actor (in a use case) is a role played by a user.</p>
+<ul>
+<li>can be a human or another system.</li>
+<li>not part of the system; they reside outside the system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Main Success Scenario (MSS)</strong> describes the most straightforward interaction for a given use case, which assumes that nothing goes wrong</p>
+</li>
+<li>
+<p><strong>Extensions</strong> are "add-on"s to the MSS that describe exceptional/alternative flow of events</p>
+</li>
+<li>
+<p>Glossary</p>
+</li>
+<li>
+<p>Serves to ensure that all stakeholders have a common understanding of the noteworthy terms, abbreviations, acronyms etc</p>
+</li>
+<li>
+<p>Supplementary requirements</p>
+</li>
+<li>This section can be used to capture requirements that do not fit elsewhere</li>
+<li>Typically, this is where most Non-Functional Requirements will be listed</li>
+</ul>
+<h1 id="design">Design</h1>
+<h2 id="design-fundamentals">Design Fundamentals</h2>
+<ul>
+<li>
+<p><strong>Abstraction</strong></p>
+</li>
+<li>
+<p>Data abstraction: abstracting away the lower level data items and thinking in terms of bigger entities</p>
+</li>
+<li>
+<p>Control abstraction: abstracting away details of the actual control flow to focus on tasks at a higher level</p>
+</li>
+<li>
+<p><strong>Coupling</strong></p>
+</li>
+<li>Coupling is a measure of the degree of dependence between components, classes, methods, etc. Low coupling indicates that a component is less dependent on other components</li>
+<li>High coupling is discouraged: maintenance, integration, testing and reuse of module is harder.</li>
+<li>Types: content, common/ global, data, external, subclass, temporal</li>
+</ul>
+<h2 id="modeling">Modeling</h2>
+<ul>
+<li>A model provides a simpler view of a complex entity because a model captures only a selected aspect. This omission of some aspects implies models are abstractions.</li>
+<li>Multiple models of the same entity may be needed to capture it fully.</li>
+<li>Models can be used as a blueprint for creating software.</li>
+</ul>
+<h2 id="design-patterns">Design Patterns</h2>
+<ul>
+<li>An elegant reusable solution to a commonly recurring problem within a given context in software design</li>
+<li>
+<p>Common format to describe a pattern:</p>
+</li>
+<li>
+<p>Context: The situation or scenario where the design problem is encountered</p>
+</li>
+<li>Problem: The main difficulty to be resolved</li>
+<li>Solution: The core of the solution. It is important to note that the solution presented only includes the most general details, which may need further refinement for a specific context</li>
+<li>Anti-patterns (optional): Commonly used solutions, which are usually incorrect and/or inferior to the Design Pattern.</li>
+<li>Consequences (optional): Identifying the pros and cons of applying the pattern</li>
+<li>
+<p>Other useful information (optional): Code examples, known uses, other related patterns, etc</p>
+</li>
+<li>
+<p>23 Design Patterns divided into 3 categories:</p>
+</li>
+<li>Creational: About object creation. They separate the operation of an application from how its objects are created.<ul>
+<li>Abstract Factory, Builder, Factory Method, Prototype, <strong>Singleton</strong></li>
+</ul>
+</li>
+<li>Structural: About the composition of objects into larger structures while catering for future extension in structure.<ul>
+<li>Adapter, Bridge, Composite, Decorator, <strong>Facade</strong>, Flyweight, Proxy</li>
+</ul>
+</li>
+<li>Behavioral: Defining how objects interact and how responsibility is distributed among them.<ul>
+<li>Chain of Responsibility, <strong>Command</strong>, Interpreter, Template Method, Iterator, Mediator, Memento, <strong>Observer</strong>, State, Strategy, Visitor</li>
+</ul>
+</li>
+</ul>
+<h3 id="singleton-pattern">Singleton Pattern</h3>
+<ul>
+<li>
+<p>When to use:</p>
+</li>
+<li>
+<p>Requires only one instance of a class</p>
+</li>
+<li>There is a risk of creating multiple objects by mistake</li>
+<li>
+<p>Creating such multiple objects has real negative consequences</p>
+</li>
+<li>
+<p>How to use:</p>
+</li>
+<li>
+<p>Private constructor with a public class-level method to access the single instance</p>
+</li>
+<li>Optional &lt;\&lt;<code>Singleton</code>&gt;&gt; UML stereotype to indicate role</li>
+</ul>
+<p><img alt="Singleton Pattern UML" src="https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/singleton/what/images/singleton.png" /></p>
+<ul>
+<li>Pros:</li>
+<li>Easy to apply</li>
+<li>Effective in achieving its goal with minimal extra work</li>
+<li>Provides an easy way to access the singleton object from anywhere in the code base</li>
+<li>Cons:</li>
+<li>Acts like a global variable that increases coupling across the code base</li>
+<li>In testing, its difficult to replace Singleton objects with stubs (static methods cannot be overridden).</li>
+<li>In testing, singleton objects carry data from one test to another</li>
+</ul>
+<h3 id="abstraction-occurrence-pattern">Abstraction Occurrence Pattern</h3>
+<ul>
+<li>
+<p>When to use:</p>
+</li>
+<li>
+<p>Group of similar entities with common information</p>
+</li>
+<li>
+<p>Also differing in significant ways</p>
+</li>
+<li>
+<p>How to use:</p>
+</li>
+<li>Split entity into 2 classes</li>
+<li>1 object for common information (<code>Abstraction</code>) and many for unique information (<code>Occurrence</code>)</li>
+</ul>
+<p><img alt="Abstraction Occurrence Pattern UML" src="https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/abstractionOccurrence/what/images/abstractionOccurrence.png" /></p>
+<h3 id="facade-pattern">Facade Pattern</h3>
+<ul>
+<li>
+<p>When to use:</p>
+</li>
+<li>
+<p>Components need to access functionality deep inside other components.</p>
+</li>
+<li>
+<p>How to use:</p>
+</li>
+<li>Create a Facade class that sits between users of component and component internals</li>
+<li>All access to the component happens through the <code>Facade</code> class</li>
+</ul>
+<p><img alt="Facade Pattern UML" src="https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/facade/what/images/textLibraryBook.png" /></p>
+<h3 id="command-pattern">Command Pattern</h3>
+<ul>
+<li>
+<p>When to use:</p>
+</li>
+<li>
+<p>Have a system is required to execute a number of commands</p>
+</li>
+<li>
+<p>Each doing a different task</p>
+</li>
+<li>
+<p>How to use:</p>
+</li>
+<li>Create a general <code>Command</code> object such that it can be used without knowing the exact type of command (using polymorphism)</li>
+<li>Example: Command interface in AB3 where all Commands implement this interface and have an <code>execute</code> method</li>
+</ul>
+<p><img alt="Command Pattern UML" src="https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/command/what/images/clientInvoker.png" /></p>
+<h3 id="model-view-controller-mvc-pattern">Model View Controller (MVC) Pattern</h3>
+<ul>
+<li>
+<p>When to use:</p>
+</li>
+<li>
+<p>Support storage/retrieval of information</p>
+</li>
+<li>Displaying of information to the user (often via multiple UIs having different formats)</li>
+<li>
+<p>Changing stored information based on external inputs</p>
+</li>
+<li>
+<p>How to use:</p>
+</li>
+<li>Split the data, presentation and control logic into 3 parts:<ul>
+<li>View: Displays data, interacts with the user, and pulls data from the model if necessary.</li>
+<li>Controller: Detects UI events such as mouse clicks and button pushes, and takes follow up action. Updates/changes the model/view when necessary.</li>
+<li>Model: Stores and maintains data. Updates the view if necessary.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="MVC Pattern" src="https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/modelViewController/what/images/sequenceDiagram.png" /></p>
+<ul>
+<li>In a simple UI where there is only one view, Controller and View can be combined as one class.</li>
+</ul>
+<h3 id="observer-pattern">Observer Pattern</h3>
+<ul>
+<li>
+<p>When to use:</p>
+</li>
+<li>
+<p>An object (possibly more than one) is needs to be notified when a change happens to another object</p>
+</li>
+<li>
+<p>How to use:</p>
+</li>
+<li>Force the communication through an interface known to both parties</li>
+<li>Have all observers implement an Observer interface</li>
+<li>Add all observers to the observee's observer list</li>
+<li>When there is an update, notify all added observers</li>
+</ul>
+<p><img alt="Observer pattern UML" src="https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/observer/what/images/observableInterfaceDiagram.png" /></p>
+<h2 id="design-approaches">Design Approaches</h2>
+<ul>
+<li>Top-down: Design the high-level design first and flesh out the lower levels later</li>
+<li>Useful when designing big and novel systems where the high-level design needs to be stable before lower levels can be designed</li>
+<li>Bottom-up: Design lower level components first and put them together to create the higher-level systems later.</li>
+<li>Not usually scalable for bigger systems.</li>
+<li>One instance where this approach might work is when designing a variation of an existing system or re-purposing existing components to build a new system</li>
+<li>Mix: Design the top levels using the top-down approach but switch to a bottom-up approach when designing the bottom levels</li>
+<li>Agile: Emergent and not defined up front</li>
+<li>Overall system design will emerge over time, evolving to fulfill new requirements and take advantage of new technologies as appropriate</li>
+<li>Just enough initial architectural modeling at the very beginning of a project to get your team going</li>
+<li>Does not produce a fully documented set of models in place before you may begin coding</li>
+</ul>
+<h1 id="principles">Principles</h1>
+<h2 id="single-responsibility-principle"><code>S</code>ingle Responsibility Principle</h2>
+<ul>
+<li>
+<p>Definition: A class should have one, and only one, reason to change</p>
+</li>
+<li>
+<p>If a class has only one responsibility, it needs to change only when there is a change to that responsibility</p>
+</li>
+<li>Good way of identifying classes during the design phase</li>
+</ul>
+<h2 id="open-closed-principle"><code>O</code>pen-Closed Principle</h2>
+<ul>
+<li>
+<p>Definition: A module should be open for extension but closed for modification. That is, modules should be written so that they can be extended, without requiring them to be modified</p>
+</li>
+<li>
+<p>Aims to make a code entity easy to adapt and reuse without needing to modify the code entity itself</p>
+</li>
+<li>Separating the specification (i.e. interface) of a module from its implementation</li>
+</ul>
+<h2 id="liskov-substitution-principle"><code>L</code>iskov Substitution Principle</h2>
+<ul>
+<li>
+<p>Definition: Derived classes must be substitutable for their base classes</p>
+</li>
+<li>
+<p>Subclass should not be more restrictive than the behavior specified by the superclass</p>
+</li>
+<li>LSP is not followed when substituting a subclass object for a superclass object breaks the functionality of the code</li>
+</ul>
+<h2 id="interface-segregation-principle"><code>I</code>nterface Segregation Principle</h2>
+<ul>
+<li>
+<p>Definition: No client should be forced to depend on methods it does not use</p>
+</li>
+<li>
+<p>Can depend on an interface with just the methods it need, instead of the entire class</p>
+</li>
+</ul>
+<h2 id="dependency-inversion-principle"><code>D</code>ependency Inversion Principle</h2>
+<ul>
+<li>Definition:</li>
+<li>High-level modules should not depend on low-level modules. Both should depend on abstractions</li>
+<li>Abstractions should not depend on details. Details should depend on abstractions</li>
+</ul>
+<h2 id="separation-of-concerns-principle">Separation of Concerns Principle</h2>
+<ul>
+<li>
+<p>Definition:</p>
+</li>
+<li>
+<p>To achieve better modularity, separate the code into distinct sections, such that each section addresses a separate concern</p>
+</li>
+<li>
+<p>A concern is a set of information that affects the code of a computer program</p>
+</li>
+<li>
+<p>Reduces functional overlaps</p>
+</li>
+<li>Limits ripple effect when changes are introduced to a specific part of system</li>
+<li>Can be applied at the class level as well as higher levels</li>
+<li>Lead to higher cohesion and lower coupling</li>
+</ul>
+<h2 id="law-of-demeter">Law of Demeter</h2>
+<ul>
+<li>
+<p>Definition:</p>
+</li>
+<li>
+<p>An object should have limited knowledge of another object</p>
+</li>
+<li>
+<p>An object should only interact with objects that are closely related to it</p>
+</li>
+<li>
+<p>Aims to prevent objects from navigating the internal structures of other objects</p>
+</li>
+<li>Method <code>foo</code> of an object <code>obj</code> should invoke only the methods of the following kinds of objects:</li>
+<li>Object <code>obj</code> itself</li>
+<li>Objects passed as parameters of <code>foo</code></li>
+<li>Objects created/instantiated in <code>foo</code> (directly or indirectly)</li>
+<li>Objects from the direct association of <code>obj</code></li>
+</ul>
+<h2 id="yagni-principle">YAGNI Principle</h2>
+<ul>
+<li>Definition:</li>
+<li>You Aren't Gonna Need It!</li>
+<li>Do not add code simply because 'you might need it in the future'</li>
+<li>Some capability you presume your software needs in the future should not be built now</li>
+<li>Do not have perfect information about the future</li>
+<li>The extra work might go to waste when some of your predictions fail to materialize</li>
+</ul>
+<h2 id="dry-principle">DRY Principle</h2>
+<ul>
+<li>
+<p>Definition:</p>
+</li>
+<li>
+<p>Don't Repeat Yourself</p>
+</li>
+<li>
+<p>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system</p>
+</li>
+<li>
+<p>Guards against the duplication of information</p>
+</li>
+<li>Examples of violations:</li>
+<li>Functionality being implemented twice even if the two implementations are different</li>
+<li>Value of a system-wide timeout being defined in multiple places</li>
+</ul>
+<h2 id="brooks-law">Brooks' Law</h2>
+<ul>
+<li>
+<p>Definition: Adding people to a late project will make it later</p>
+</li>
+<li>
+<p>The additional communication overhead will outweigh the benefit of adding extra manpower, especially if done near a deadline</p>
+</li>
+</ul>
+<h1 id="uml">UML</h1>
+<h2 id="class-diagrams">Class Diagrams</h2>
+<ul>
+<li>Used to model class structures of an OO solution</li>
+<li>Describe the structure (but not behaviour) of OOP solution</li>
+</ul>
+<h3 id="notation-class-diagrams">Notation — Class Diagrams</h3>
+<ul>
+<li>Visibility: <code>+</code> for public | <code>-</code> for private | <code>#</code> for protected | <code>~</code> for package (static)</li>
+<li>Class-level methods/ attributes are underlined</li>
+<li><code>&lt;&lt;interface&gt;&gt;</code></li>
+<li><code>&lt;&lt;enumeration&gt;&gt;</code></li>
+<li><code>{abstract}</code> or <em>abstract</em></li>
+<li>OK to omit:</li>
+<li>Methods</li>
+</ul>
+<h3 id="associations-class-diagrams">Associations — Class Diagrams</h3>
+<ul>
+<li>Association roles appears on end that plays that role</li>
+</ul>
+<h4 id="navigability">Navigability</h4>
+<ul>
+<li><code>Solid arrow</code></li>
+<li>The concept of which object in the association knows about the other object.</li>
+<li>E.g. Navigability is from <code>Box</code> to <code>Rope</code>, <code>b</code> will have reference to <code>r</code> but not vice versa. One can navigate from <code>b</code> to <code>r</code> using <code>b</code>'s object reference of <code>r</code>.</li>
+</ul>
+<h4 id="multiplicity">Multiplicity</h4>
+<ul>
+<li><code>0..X</code></li>
+<li>Number of X is on end nearer X.</li>
+<li>The aspect of an OOP solution that dictates how many objects take part in each association.</li>
+</ul>
+<h4 id="dependencies">Dependencies</h4>
+<ul>
+<li><code>Dotted line</code></li>
+<li>A need for one class to depend on another without having a direct association in the same direction.</li>
+</ul>
+<h4 id="composition-has-a">Composition (Has-A)</h4>
+<ul>
+<li><code>Shaded diamond</code></li>
+<li>Diamond is on the end of the whole.</li>
+<li>A composition is an association that represents a strong whole-part relationship.</li>
+<li>When the whole is destroyed, parts are destroyed too (parts cannot exist without whole).</li>
+<li>Cannot be cyclical links.</li>
+</ul>
+<h4 id="aggregation">Aggregation</h4>
+<ul>
+<li><code>Non-shaded/hollow diamond</code></li>
+<li>Diamond is on the end of the container.</li>
+<li>An aggregation is an association that represents a container-contained relationship.</li>
+<li>Similar to that of composition except the containee object can exist even after the container object is deleted.</li>
+<li>Weaker relationship than composition. Aggregation represents a container-contained relationship. It is a weaker relationship than composition.</li>
+</ul>
+<h4 id="inheritance-is-a">Inheritance (Is-A)</h4>
+<ul>
+<li><code>Triangle arrow</code> (inheriting class - class or interface - interface)</li>
+<li><code>Triangle arrow</code> with dotted line: implementing an interface</li>
+<li>Does not matter whether the triangle is filled or empty</li>
+<li>Points to parent class</li>
+<li>Inheritance implies the derived class can be considered as a sub-type of the base class (and the base class is a super-type of the derived class), resulting in an is a relationship.</li>
+</ul>
+<h2 id="objects-diagrams">Objects Diagrams</h2>
+<ul>
+<li>Used to model object structure of an OO solution</li>
+<li>Multiple object diagrams can correspond to a single class diagram</li>
+</ul>
+<h3 id="notation-objects-diagrams">Notation — Objects Diagrams</h3>
+<ul>
+<li>Object names are underlined</li>
+<li>If there is inheritance, show either parent class or child class (not both)</li>
+<li>MUST omit:</li>
+<li>Methods</li>
+<li>Multiplicities</li>
+<li>Should omit:</li>
+<li>Methods</li>
+<li>Multiplicities</li>
+<li>OK to omit:</li>
+<li>Object name</li>
+<li>Variable name/ value</li>
+<li>Attributes compartment (if not relevant)</li>
+</ul>
+<h2 id="sequence-diagrams">Sequence Diagrams</h2>
+<h3 id="notation-sequence-diagrams">Notation — Sequence Diagrams</h3>
+<ul>
+<li>Arrows representing method calls: solid lined arrows</li>
+<li>Arrows representing method returns: dashed lined arrows</li>
+<li>Class/object name is not underlined</li>
+<li>Use an X at the end of the lifeline of an object to show its deletion</li>
+<li>Self-invocation calls is denoated by an arrow from the bar to itself</li>
+<li>
+<p>Method calls to static methods are received by the class itself</p>
+</li>
+<li>
+<p>You can use &lt;\<class>&gt; to show that a participant is the class itself</p>
+</li>
+<li>
+<p>All frames should use a rectangle with a clip on the bottom-right corner</p>
+</li>
+<li><strong>loop</strong> frame: indicate a loop</li>
+<li>loop [condition]</li>
+<li><strong>alt</strong> frame: indicate alternative paths</li>
+<li>alt [condition]</li>
+<li>No more than one alternative partitions be executed in an alt frame- <strong>opt</strong> frame: indicate optional paths</li>
+<li>opt [condition]</li>
+<li><strong>ref</strong> frame: allow a segment of the interaction to be omitted and shown as a separate sequence diagram</li>
+<li>ref diagram title</li>
+<li>sd diagram title</li>
+<li><strong>par</strong> frame: indicate parallel paths</li>
+<li>The corresponding Java implementation is likely to be multi-threaded- Keywords are <code>loop</code> (while), <code>opt</code> (if) and <code>alt</code> (if elseif)</li>
+<li>OK to omit:</li>
+<li>Activation bar</li>
+<li>Return arrows</li>
+<li>Activation bar of self-invocation</li>
+</ul>
+<h2 id="oodm">OODM</h2>
+<ul>
+<li>Similar to class diagram notation but must omit:</li>
+<li>methods</li>
+<li>navigability</li>
+<li>Do not contain solution-specific classes (classes that do not exist in the problem domain e.g. DatabaseConnection)</li>
+</ul>
+<h2 id="activity-diagrams">Activity Diagrams</h2>
+<ul>
+<li>Models workflows</li>
+</ul>
+<h3 id="notation-activity-diagrams">Notation — Activity Diagrams</h3>
+<ul>
+<li><strong>Action</strong>: rounded corners rectangle</li>
+<li>Denotes a single step in an activity.</li>
+<li><strong>Control flow</strong>: arrow-head line</li>
+<li>Denotes the flow of control from one action to the next.</li>
+<li><strong>Start node</strong>: shaded circle</li>
+<li>Denotes the start of the activity</li>
+<li><strong>End node</strong>: inner shaded circle with with a surrounding circle</li>
+<li>Denotes the end of the activity</li>
+<li><strong>Branch node</strong>: diamond square with two [conditions]</li>
+<li>Denotes the start of alternate path.</li>
+<li>Exactly one of the guard conditions should be true.</li>
+<li><strong>Merge node</strong>: diamond square</li>
+<li>Denotes the end of alternative paths</li>
+<li><strong>Fork node</strong>: bar</li>
+<li>Denotes the start of concurrent flows of cotntrol.</li>
+<li><strong>Join node</strong>: bar</li>
+<li>Denotes the end of parallel paths</li>
+<li><strong>Rake</strong> : rake symbol</li>
+<li>Denotes that the action is described in another subsidiary activity diagram</li>
+<li><strong>Swim lanes</strong>: partition</li>
+<li>Denotes who is doing which action (also called swimlane diagrams)</li>
+<li>OK to do:</li>
+<li>Multiple arrows can start from the same corner of a branch node</li>
+<li>Omit merge node if it there's no ambiguity</li>
+<li>Omit [Else] condition.</li>
+</ul>
+<h1 id="project-management">Project Management</h1>
+<h2 id="revision-control">Revision Control</h2>
+<ul>
+<li>Process of managing multiple versions of a piece of information</li>
+<li>Will track the history and evolution of your project</li>
+<li>Makes it easier for to collaborate</li>
+<li><strong>Repository</strong> is the database that stores the revision history.</li>
+<li><strong>Using History</strong></li>
+<li>Tag a specific commit to identify</li>
+<li>To see what changed: <code>diff</code></li>
+<li>To restore the state of the working directory at point in the past: <code>checkout</code> the commit</li>
+<li><strong>Remote Repositories</strong></li>
+<li><code>git clone</code> a repo to create a copy</li>
+<li>Original repo is referred to as <code>upstream</code> repo</li>
+<li><code>git pull</code> from one repo to another</li>
+<li><code>git push</code> new commits in one repo to another</li>
+<li>Fork is a remote copy of a remote repo</li>
+<li>Pull request is a mechanism for contributing code to a remote repo</li>
+<li><strong>Branching</strong> is the process of evolving multiple versions of the software in parallel.</li>
+<li>Merge conflicts happen when you try to merge two branches that had changed the same part of the code and the revision control software (RCS) cannot decide which changes to keep.</li>
+<li><strong>Centralized RCS</strong> uses a central remote repo that is shared by the team.</li>
+<li><strong>Distributed RCS</strong> allows multiple remote repos and pulling and pushing can be done among them in arbitrary ways.</li>
+<li><strong>Forking flow</strong>: the 'official' version of the software is kept in a remote repo designated as the 'main repo'. All team members fork the main repo and create pull requests from their fork to the main repo.</li>
+<li><strong>Feature branch workflow</strong> is similar to forking workflow except there are no forks.</li>
+<li><strong>Centralized flow</strong> is similar to the feature branch workflow except all changes are done in the master branch.</li>
+</ul>
+<h2 id="project-planning">Project Planning</h2>
+<h3 id="work-breakdown-structure">Work Breakdown Structure</h3>
+<ul>
+<li>Depicts information about tasks and their details in terms of subtasks</li>
+<li>Can also include prerequisite tasks and effort estimates for each task</li>
+<li>Effort is traditionally measured in man hour/day/month</li>
+<li>All tasks should be well-defined</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Task</th>
+<th>Estimated Effort</th>
+<th>Prerequisite Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Analysis</td>
+<td>1 man hour</td>
+<td>-</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Design</td>
+<td>2 man day</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="milestones">Milestones</h3>
+<ul>
+<li>End of a stage which indicates significant progress</li>
+<li>Should account for dependencies and priorities when deciding on the features to be delivered at a certain milestone</li>
+<li>Each intermediate product release is a milestone</li>
+</ul>
+<h3 id="buffers">Buffers</h3>
+<ul>
+<li>Time set aside to absorb unforeseen delays</li>
+<li>Very important to include because effort/time estimations are notoriously hard</li>
+<li>Do not inflate task estimates to create hidden buffers (have explicit buffers instead)</li>
+<li>Reason: With explicit buffers, it is easier to detect incorrect effort estimates which can serve as feedback to improve future estimates</li>
+</ul>
+<h3 id="issue-trackers">Issue Trackers</h3>
+<ul>
+<li>Issue trackers (sometimes called bug trackers) are commonly used to track task assignment and progress</li>
+</ul>
+<h3 id="gantt-charts">GANTT Charts</h3>
+<ul>
+<li>2-D bar-chart</li>
+<li>Drawn as time vs tasks</li>
+<li>Solid bar represents the main task (composed of a number of subtasks)</li>
+<li>Grey bars represent subtasks</li>
+<li>Diamond shape indicates an important deadline/deliverable/milestone</li>
+</ul>
+<h3 id="pert-charts">PERT Charts</h3>
+<ul>
+<li>Program Evaluation Review Technique</li>
+<li>Shows the order/sequence of tasks</li>
+<li>Directed graph:</li>
+<li>Nodes or vertices capture the effort estimations of tasks</li>
+<li>Arrows depict the precedence between tasks</li>
+<li>Helps determine the following:</li>
+<li>Order of tasks</li>
+<li>Which tasks can be done concurrently</li>
+<li>Shortest possible completion time</li>
+<li>Critical path (path where any delay can directly affect the project duration, hence it is important to ensure tasks on the critical path are completed on time)</li>
+</ul>
+<h2 id="sdlc-process-models">SDLC Process Models</h2>
+<ul>
+<li>Software development goes through different stages such as requirements, analysis, design, implementation and testing</li>
+<li>Collectively known as the software development life cycle (SDLC)</li>
+</ul>
+<h3 id="sequential-models">Sequential Models</h3>
+<ul>
+<li>Views software development as a linear process</li>
+<li>Also called waterfall model</li>
+<li>When one stage of the process is completed, it produces some artifacts to be used in the next stage</li>
+<li>A strict sequential model project moves only in the forward direction</li>
+</ul>
+<p><img alt="Sequential Model" src="https://nus-cs2103-ay2324s1.github.io/website/book/processModels/introduction/sequentialModels/images/diagram.png" /></p>
+<ul>
+<li>Pros:</li>
+<li>Work well for a project that produces software to solve a well-understood problem</li>
+<li>Cons:</li>
+<li>Real-world projects often tackle problems that are not well-understood at the beginning</li>
+</ul>
+<h3 id="iterative-models">Iterative Models</h3>
+<ul>
+<li>Advocates producing the software by going through several iterations</li>
+<li>Each iteration produces a new version of the product that builds on the version produced in previous iteration</li>
+</ul>
+<p><img alt="Iterative Model" src="https://nus-cs2103-ay2324s1.github.io/website/book/processModels/introduction/iterativeModels/images/diagram.png" /></p>
+<ul>
+<li>Breadth-first</li>
+<li>An iteration evolves all major components and all functionality areas in parallel</li>
+<li>Depth-first</li>
+<li>An iteration focuses on fleshing out only some components or some functionality area.</li>
+<li>Early depth-first iterations might not produce a working product.</li>
+<li>A project can be done as a mixture of breadth-first and depth-first iterations</li>
+</ul>
+<h3 id="agile-models">Agile Models</h3>
+<h4 id="xp">XP</h4>
+<ul>
+<li>Extreme programming</li>
+<li>Stresses custoemr satisfaction</li>
+<li>Aims to make develoeprs confidently respond to changing requirements (even late in life cycle)</li>
+<li>Emphasizes teamwork</li>
+<li>Improve in: communication, simplicity, feedback, respect and courage</li>
+<li>Has a set of simple rules</li>
+</ul>
+<h4 id="scrum">Scrum</h4>
+<ul>
+<li>Scrum is a process skeleton that contains sets of practices and predefined roles. The main roles in Scrum are:</li>
+<li>The <strong>Scrum Master</strong>, who maintains the processes (typically in lieu of a project manager).</li>
+<li>The <strong>Product Owner</strong>, who represents the stakeholders and the business.</li>
+<li>The Team, a cross-functional group who do the actual analysis, design, implementation, testing, etc.</li>
+<li>A Scrum project is divided into iterations called <strong>Sprints</strong>.</li>
+<li>A key principle of Scrum is its recognition that during a project the customers can change their minds about what they want and need.</li>
+<li>The daily scrum meeting is not used as a problem-solving or issue resolution meeting.</li>
+<li>Issues that are raised are taken offline and usually dealt with by the relevant subgroup immediately after the meeting.</li>
+<li>Members answer these questions</li>
+<li>What did you do yesterday?</li>
+<li>What will you do today?</li>
+<li>Are there any impediments in your way?</li>
+</ul>
+<h4 id="unified-process">Unified Process</h4>
+<ul>
+<li>Flexible and customizable process model framework</li>
+<li>Consists of four phases: inception, elaboration, construction and transition</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Activities</th>
+<th>Typical Artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inception</td>
+<td>Understand the problem and requirements<br>Communicate with customer<br>Plan the development effort</td>
+<td>Basic use case model<br>Rough project plan<br>Project vision and scope</td>
+</tr>
+<tr>
+<td>Elaboration</td>
+<td>Refine and expand requirements<br>Determine a high-level design</td>
+<td>System architecture<br>Various design models<br>Prototype</td>
+</tr>
+<tr>
+<td>Construction</td>
+<td>Major implementation effort to support the use cases identified<br>Design models are refined and fleshed out<br>Testing of all levels are carried out<br>Multiple releases of the system</td>
+<td>Test cases of all levels<br>System release</td>
+</tr>
+<tr>
+<td>Transition</td>
+<td>Ready the system for actual production use<br>Familiarize end users with the system</td>
+<td>Final system release<br>Instruction manual</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cmmi">CMMI</h3>
+<ul>
+<li>Capability Maturity Model Integration</li>
+<li>Defines 5 maturity levels for a process (specifies criteria):</li>
+<li>Level 1: Initial<ul>
+<li>Processes unpredictable, poorly controlled and reactive</li>
+</ul>
+</li>
+<li>Level 2: Managed<ul>
+<li>Processes characterised for projects and is often reactive</li>
+</ul>
+</li>
+<li>Level 3: Defined<ul>
+<li>Processes characterised for organisations and is proactive</li>
+</ul>
+</li>
+<li>Level 4: Quantitatively Managed<ul>
+<li>Processes measured and controlled</li>
+</ul>
+</li>
+<li>Level 5: Optimizing<ul>
+<li>Focus on process improvement</li>
+</ul>
+</li>
+</ul>
+<h1 id="coding-standards">Coding Standards</h1>
+<h2 id="naming">Naming</h2>
+<ul>
+<li>Names representing packages should be in all lower case.</li>
+<li>Class/ enum names must be nouns and written in PascalCase.</li>
+<li>Variable names must be in camelCase.</li>
+<li>Constant names must be in SCREAMING_SNAKE_CASE.</li>
+<li>Names representing methods must be verbs and written in camelCase.</li>
+<li>Abbreviation and acronyms should not be uppsercase when used as part of a name.</li>
+<li>All names should be written in English.</li>
+<li>Variables with a large scope should have long names, variables with a small scope can have short names.</li>
+<li>Boolean variables/ methods should be named to sound like booleans.</li>
+<li>Plural form should be used on names representing a collection of objects.</li>
+<li>Iterator variables can be called i, j, k.</li>
+<li>Associated constants should have a common prefix.</li>
+</ul>
+<h2 id="layout">Layout</h2>
+<ul>
+<li>Basic indentation should be 4 spaces.</li>
+<li>Line length should be no longer than 120 characters.</li>
+<li>Place line break to improve readability.</li>
+<li>Use egyptian style brackets.</li>
+<li>Method definitions should have the following form:
+  <code>public void someMethod() throws SomeException {
+      ...
+  }</code></li>
+<li>if-else class of statemets should have the following form:
+  <code>if (condition) {
+      statements;
+  }</code></li>
+<li>for statement should have the following form:
+  <code>for (initialization; condition; update) {
+      statements;
+  }</code></li>
+<li>while statement should have the following form:
+  <code>while (condition) {
+      statements;
+  }</code></li>
+<li>switch statement should have the following form:</li>
+</ul>
+<p>```
+  switch (condition) {</p>
+<p>case ABC:
+      statements;
+      //Fallthrough</p>
+<p>case DEF:
+      statements;
+      break;
+  }
+  ```</p>
+<ul>
+<li>try-catch statement should have the following form:
+  <code>try {
+      statements;
+  } catch (Exception exception) {
+      statements;
+  }</code></li>
+<li>White space within a statement</li>
+<li>Operators should be surrounded by a space character</li>
+<li>Java reserved words should be followed by a white space</li>
+<li>Commas should be followed by a white space</li>
+<li>Colons should be surrounded by white space when used as binary/ ternary operator</li>
+<li>Logical units within a block should be separated by one blank line</li>
+</ul>
+<h2 id="statements">Statements</h2>
+<ul>
+<li>Put every class in a package</li>
+<li>Put related classes in a single package</li>
+<li>The ordering of import statements must be consistent</li>
+<li>Imported classes should always be listed explicity (not *)</li>
+</ul>
+<h2 id="classes-and-interfaces">Classes and interfaces</h2>
+<ul>
+<li>Class/Interface documentation (Comments)</li>
+<li>class or interface statement</li>
+<li>Class (static) variables in the order public, protected, package (no access modifier), private</li>
+<li>Instance variables in the order public, protected, package (no access modifier), private</li>
+<li>Constructors</li>
+<li>Methods (no specific order)</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<ul>
+<li>Method modifiers should be given in the following order:</li>
+</ul>
+<p><code>&lt;access&gt; static abstract synchronized &lt;unusual&gt; final native</code></p>
+<h2 id="types">Types</h2>
+<ul>
+<li>Array specifiers must be attached to the type not the variable</li>
+</ul>
+<p><code>int[] a = new int[20];</code></p>
+<h2 id="variables">Variables</h2>
+<ul>
+<li>Variables should be initialized where they are declared and they should be declared in the smallest scope possible.</li>
+<li>Class variables should never be declared public.</li>
+<li>Avoid unnecessary use of <code>this</code> with fields.</li>
+</ul>
+<h2 id="loops">Loops</h2>
+<ul>
+<li>Loop body should be wrapped by curly brackets irrespective of how many lines there are in the body.</li>
+</ul>
+<h2 id="conditionals">Conditionals</h2>
+<ul>
+<li>Conditional should be put on a separate line.</li>
+<li>Single statement conditionals should still be wrapped by curly brackets.</li>
+</ul>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>All comments should be written in English.</li>
+<li>Write descriptive header commends for all public classes/ methods.</li>
+<li>All non-trivial private methods should carry header comments.</li>
+<li>Javadoc comments should have the following form:
+  ```
+  /**</li>
+<li>Returns lateral location of the specified position.</li>
+<li>If the position is unset, NaN is returned.
+   *</li>
+<li>@param x X coordinate of position.</li>
+<li>@param y Y coordinate of position.<ul>
+<li>@param zone Zone of position.</li>
+</ul>
+</li>
+<li>@return Lateral location.</li>
+<li>@throws IllegalArgumentException  If zone is &lt;= 0.
+   */
+   public double computeLocation(double x, double y, int zone)
+           throws IllegalArgumentException {
+       //...
+   }
+  ```</li>
+<li>Comments should be indented relative to their position in the code.
+  <code>while (true) {
+      // Do something
+      something();
+  }</code></li>
+</ul>
+<h1 id="implementation">Implementation</h1>
+<h2 id="coding-quality">Coding Quality</h2>
+<ul>
+<li>Avoid long methods</li>
+<li>Avoid deep nesting</li>
+<li>Avoid complicated expressions</li>
+<li>Avoid magic numbers</li>
+<li>Make the code obvious</li>
+<li>Structure code logically</li>
+<li>Do not 'trip up' reader</li>
+<li>Avoid unused paramters in method signature</li>
+<li>Similar things that look different</li>
+<li>Different things that look similar</li>
+<li>Multiple statements in the same line</li>
+<li>Practice KISSing</li>
+<li>Keep it simple, stupid</li>
+<li>Do not try to write 'clever' code</li>
+<li>Avoid premature optimizations</li>
+<li>SLAP hard</li>
+<li>Single Level of Abstraction Principle</li>
+<li>Avoid having multiple levels of abstraction within a code fragment</li>
+<li>Make the happy path prominent</li>
+<li>Naming:</li>
+<li>Use nouns for things and verbs for actions</li>
+<li>Use standard words</li>
+<li>Use name to explain</li>
+<li>Not too long, not too short</li>
+<li>Avoid misleading names</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>Developer-as-user: API documentaion or tutorial-style instructional documentation</li>
+<li>Developer-as-maintainer: how a system or component is designed implemented and tested</li>
+</ul>
+<h3 id="types_1">Types</h3>
+<ul>
+<li>Tutorials (learning-oriented)</li>
+<li>How-to guides (goal-oriented)</li>
+<li>Explanation (understanding-oriented)</li>
+<li>Reference (information-oriented)</li>
+</ul>
+<h3 id="guidelines">Guidelines</h3>
+<ul>
+<li>Top-down, not bottom-up</li>
+<li>The reader can travel down a path she is interested in until she reaches the component she is interested to learn in-depth</li>
+<li>Comprehensibility</li>
+<li>Use plenty of diagrams, examples, simple and direct explanations</li>
+<li>Document minimally but sufficiently</li>
+<li>'just enough' developer documentation</li>
+</ul>
+<h2 id="error-handling">Error Handling</h2>
+<ul>
+<li><strong>Exceptions</strong> are used to deal with 'unusual' but not entirely unexpected situations that the program might encounter at runtime.</li>
+<li>After a method throws an exception, the runtime system attempts to find something to handle it in the call stack.</li>
+<li><strong>Assertions</strong> are used to define assumptions about the program state so that the runtime can verify them.</li>
+<li>Assertions can be disabled without modifying the code.<ul>
+<li>Java disables assertions by default.</li>
+</ul>
+</li>
+<li>Assertions are used to define assumptions about the program state so that the runtime can verify them.</li>
+<li>Recommended that assertions be used liberally in the code.</li>
+<li><strong>Logging</strong> is the deliberate recording of certain information during a program execution for future reference.</li>
+<li><strong>Defensive programming</strong> is proactively eliminating any room for things to go wrong.</li>
+<li>Enforcing compulsory associations</li>
+<li>Enforcing 1-to-1 association</li>
+<li>Enforcing referential integrity (prevents case where A says B is X but B says B is Y)</li>
+<li><strong>Design-by-contract approach</strong> is an approach for designing software that requires defining formal, precise and verifiable interface specifications for software components.</li>
+<li>Code first checks if the preconditions have been met.</li>
+</ul>
+<h2 id="reuse">Reuse</h2>
+<ul>
+<li><strong>API</strong>: An Application Programming Interface (API) specifies the interface through which other programs can interact with a software component. It is a contract between the component and its clients.</li>
+<li><strong>Library</strong>: A library is a collection of modular code that is general and can be used by other programs.</li>
+<li><strong>Frameworks</strong>: A software framework is a reusable implementation of a software (or part thereof) providing generic functionality that can be selectively customized to produce a specific application.</li>
+<li>Some frameworks provide a complete implementation of a default behavior which makes them immediately usable. (e.g. Eclipse)</li>
+<li><strong>Platforms</strong>: A platform provides a runtime environment for applications.</li>
+<li><strong>Cloud computing</strong>: Cloud computing is the delivery of computing as a service over the network, rather than a product running on a local machine.</li>
+<li><strong>Infrastructure as a service (IaaS)</strong> delivers computer infrastructure as a service.</li>
+<li><strong>Platform as a service (PaaS)</strong> provides a platform on which developers can build applications.</li>
+<li><strong>Software as a service (SaaS)</strong> allows applications to be accessed over the network instead of installing them on a local machine.</li>
+</ul>
+<h1 id="quality-assurance">Quality Assurance</h1>
+<ul>
+<li>Quality Assurance = Validation + Verification</li>
+</ul>
+<h2 id="code-reviews">Code Reviews</h2>
+<ul>
+<li>
+<p>Systematic examination of code with the intention of finding where the code can be improved</p>
+</li>
+<li>
+<p>Three types covered:</p>
+</li>
+<li>
+<p>PR reviews</p>
+</li>
+<li>In pair programming</li>
+<li>
+<p>Formal inspections</p>
+</li>
+<li>
+<p>Advantages over testing:</p>
+</li>
+<li>
+<p>It can detect functionality defects as well as other problems such as coding standard violations.</p>
+</li>
+<li>It can verify non-code artifacts and incomplete code.</li>
+<li>
+<p>It does not require test drivers or stubs.</p>
+</li>
+<li>
+<p>Disadvantages:</p>
+</li>
+<li>It is a manual process and therefore, error prone.</li>
+</ul>
+<h2 id="static-analysis">Static Analysis</h2>
+<ul>
+<li>Analysis of code without actually executing the code</li>
+<li>Find useful info like:</li>
+<li>unused variables</li>
+<li>unhandled exceptions</li>
+<li>style errors</li>
+<li>statistics</li>
+<li>Linters are a subset of static analyzers</li>
+</ul>
+<h2 id="formal-verification">Formal Verification</h2>
+<ul>
+<li>Uses mathematical techniques to prove the correctness of a program</li>
+<li>Advantages over testing:</li>
+<li>Prove the absence of errors (testing can only prove the presence of errors, not their absence)</li>
+<li>Disadvantages:</li>
+<li>Only proves the compliance with the specification, but not the actual utility of the software</li>
+<li>Requires highly specialized notations and knowledge which makes it an expensive technique to administer (more commonly used in safety-critical software such as flight control systems)</li>
+</ul>
+<h1 id="test-case-design">Test Case Design</h1>
+<ul>
+<li><strong>Postive test case</strong>: is designed to produce valid behaviour.</li>
+<li><strong>Negative test case</strong>: is designed to produce an invalid behaviour.</li>
+<li><strong>Black-box</strong>: test cases are designed exclusively based on the SUT's specified external behaviour.</li>
+<li><strong>White-box</strong>: test cases are designed based on what is known about the SUT's implementation.</li>
+<li>
+<p><strong>Gray-box</strong>: mix of both</p>
+</li>
+<li>
+<p><strong>Equivalence partitions</strong> (aka equivalence class): A group of test inputs that are likely to be processed by the SUT in the same way.</p>
+</li>
+<li>Avoid testing too many inputs from one partition</li>
+<li>Ensure all partitions are tested</li>
+<li><strong>Boundary value analysis</strong> (BVA) is a test case design heuristic that is based on the observation that bugs often result from incorrect handling of boundaries of equivalence partitions.</li>
+<li>Choose 3 values to test: below, in and above boundary</li>
+<li><strong>Combining test inputs</strong></li>
+<li>Testing all possible combinations is effective but not efficient</li>
+<li>Combination strategies:<ul>
+<li>The all combinations strategy generates test cases for each unique combination of test inputs.</li>
+<li>The at least once strategy includes each test input at least once.</li>
+<li>The all pairs strategy creates test cases so that for any given pair of inputs, all combinations between them are tested.</li>
+</ul>
+</li>
+<li>Heuristic: Each valid input at least once in a positive test case</li>
+<li>Heuristic: No more than one invalid input in a test case</li>
+</ul>
+<h1 id="testing">Testing</h1>
+<h2 id="regression-testing">Regression Testing</h2>
+<ul>
+<li>Regression testing is the re-testing of the software to detect regressions.</li>
+<li>When you modify a system, the modification may result in some unintended and undesirable effects on the system. Such an effect is called a regression.</li>
+</ul>
+<h2 id="developer-testing">Developer Testing</h2>
+<ul>
+<li>Developer testing is the testing done by the developers themselves as opposed to dedicated testers or end-users.</li>
+<li>Early testing is better: earlier a bug is found, easier and cheaper to have it fixed.</li>
+</ul>
+<h2 id="unit-testing">Unit Testing</h2>
+<ul>
+<li>Unit testing is testing individual units (methods, classes, subsystems) to ensure each piece works correctly.</li>
+<li>Stubs: a stub has the same interface as the component it replaces, but its implementation is so simple that it is unlikely to have any bugs.</li>
+<li>Can isolate the SUT from its dependencies</li>
+<li>Typically these mimicked responses are hard-coded</li>
+</ul>
+<h2 id="integration-testing">Integration Testing</h2>
+<ul>
+<li>Integration testing is testing whether different parts of the software work together as expected.</li>
+<li>
+<p>Not simply a case of repeating the unit test cases using the actual dependencies, but are additional test cases that focus on interactions between the parts.</p>
+</li>
+<li>
+<p>Pure unit/ integration testing has one extra step than hybrid</p>
+</li>
+<li>Hybrid skips the steps that requires stubs</li>
+</ul>
+<h2 id="system-testing">System Testing</h2>
+<ul>
+<li>System testing is testing that takes the whole system and tests it against the system specification.</li>
+<li>Based on specified external behaviour of the system</li>
+<li>Includes testing against non-functional requirements:</li>
+<li>Usability, portability, performance, security, load, compatibility testing</li>
+</ul>
+<h2 id="alpha-and-beta-testing">Alpha and Beta Testing</h2>
+<ul>
+<li>Alpha testing is performed by the users, under controlled conditions set by the software development team.</li>
+<li>Beta testing is performed by a selected subset of target users of the system in their natural work setting.</li>
+</ul>
+<h2 id="dogfooding">Dogfooding</h2>
+<ul>
+<li>Creators use their own product to test it.</li>
+</ul>
+<h2 id="exploratory-and-scripted-testing">Exploratory and Scripted Testing</h2>
+<ul>
+<li>Scripted testing: first write a set of test cases based on the expected behavior of the SUT, and then perform testing based on that set of test cases.</li>
+<li>Exploratory: Devise test cases on-the-fly, creating new test cases based on the results of the past test cases.</li>
+<li>Known as reactive testing, error guessing technique, attack-based testing and bug hunting</li>
+</ul>
+<h2 id="user-acceptance-testing">User Acceptance Testing</h2>
+<ul>
+<li>User acceptance testing is testing the system to ensure it meets the user requirements.</li>
+</ul>
+<hr />
+<table>
+<thead>
+<tr>
+<th>System Testing</th>
+<th>Acceptance Testing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done against the system specifications</td>
+<td>Done against the requirements specification</td>
+</tr>
+<tr>
+<td>Done by testers of the project team</td>
+<td>Done by a team that represents the customer</td>
+</tr>
+<tr>
+<td>Done on the development environment or a test bed</td>
+<td>Done on the deploymet site or on a close simulation of the deployment site</td>
+</tr>
+<tr>
+<td>Both negative and positive test cases</td>
+<td>More focus on positive test cases</td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-automation-testing">Test Automation Testing</h2>
+<ul>
+<li>An automated test case can be run programmatically and the result of the test case (pass or fail) is determined programmatically.</li>
+<li><strong>Automated testing of CLI apps</strong>: A simple way to semi-automate testing of a CLI (Command Line Interface) app is by using input/output re-direction.</li>
+<li><strong>Test automation using test drivers</strong>: JUnit is a tool for automated testing of Java programs.</li>
+<li><strong>Automated testing of GUIs</strong>: testing tools like TestFX, Visual Studio, Selenium</li>
+<li><strong>Test coverage</strong>: Test coverage is a metric used to measure the extent to which testing exercises the code.</li>
+<li>Function/ method coverage: based on functions executed e.g., testing executed 90 out of 100 functions.</li>
+<li>Statement coverage: based on the number of lines of code executed e.g., testing executed 23k out of 25k LOC.</li>
+<li>Decision/branch coverage: based on the decision points exercised e.g., an if statement evaluated to both true and false with separate test cases during testing is considered 'covered'.</li>
+<li>Condition coverage: based on the boolean sub-expressions, each evaluated to both true and false with different test cases. Condition coverage is not the same as the decision coverage.</li>
+<li><strong>Dependency injection</strong>: Dependency injection is the process of 'injecting' objects to replace current dependencies with a different object.</li>
+<li>Often used to inject stubs to isolate the SUT from its dependencies so that it can be tested in isolation.</li>
+<li>Polymorphism can be used to implement dependency injection.</li>
+<li><strong>Test-driven development (TDD)</strong>: Advocates writing the tests before writing the SUT, while evolving functionality and tests in small increments.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
