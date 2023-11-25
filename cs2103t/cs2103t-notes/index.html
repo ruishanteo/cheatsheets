@@ -1463,59 +1463,59 @@
 <li>Line length should be no longer than 120 characters.</li>
 <li>Place line break to improve readability.</li>
 <li>Use egyptian style brackets.</li>
-<li>
-<p>Method definitions should have the following form:</p>
-<p><code>java
-public void someMethod() throws SomeException {
-          ...
-}</code></p>
-</li>
-<li>
-<p>if-else class of statemets should have the following form:</p>
-<p><code>java
-if (condition) {
-          statements;
-}</code></p>
-</li>
-<li>
-<p>for statement should have the following form:</p>
-<p><code>java
-for (initialization; condition; update) {
-          statements;
-}</code></p>
-</li>
-<li>
-<p>while statement should have the following form:</p>
-<p><code>java
-while (condition) {
-          statements;
-}</code></p>
-</li>
-<li>
-<p>switch statement should have the following form:</p>
-<p>```java
-switch (condition) {</p>
-<p>case ABC:
-          statements;
-          //Fallthrough</p>
-<p>case DEF:
-          statements;
-          break;
+<li>Method definitions should have the following form:</li>
+</ul>
+<pre><code class="language-java">public void someMethod() throws SomeException {
+            ...
 }
-```</p>
-</li>
-<li>
-<p>try-catch statement should have the following form:</p>
-<p><code>java
-try {
-          statements;
-} catch (Exception exception) {
-          statements;
-}</code></p>
-</li>
-<li>
-<p>White space within a statement</p>
+</code></pre>
 <ul>
+<li>if-else class of statemets should have the following form:</li>
+</ul>
+<pre><code class="language-java">if (condition) {
+            statements;
+}
+</code></pre>
+<ul>
+<li>for statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">for (initialization; condition; update) {
+            statements;
+}
+</code></pre>
+<ul>
+<li>while statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">while (condition) {
+            statements;
+}
+</code></pre>
+<ul>
+<li>switch statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">switch (condition) {
+
+case ABC:
+            statements;
+            //Fallthrough
+
+case DEF:
+            statements;
+            break;
+}
+    ```
+
+-   try-catch statement should have the following form:
+
+```java
+try {
+            statements;
+} catch (Exception exception) {
+            statements;
+}
+</code></pre>
+<ul>
+<li>White space within a statement<ul>
 <li>Operators should be surrounded by a space character</li>
 <li>Java reserved words should be followed by a white space</li>
 <li>Commas should be followed by a white space</li>
@@ -1572,35 +1572,33 @@ try {
 <h2 id="comments">Comments</h2>
 <ul>
 <li>All comments should be written in English.</li>
-<li>Write descriptive header commends for all public classes/ methods.</li>
+<li>Write descriptive header comments for all public classes/ methods.</li>
 <li>All non-trivial private methods should carry header comments.</li>
-<li>
-<p>Javadoc comments should have the following form:</p>
-<p><code>java
-/**
+<li>Javadoc comments should have the following form:</li>
+</ul>
+<pre><code class="language-java">/**
     * Returns lateral location of the specified position.
     * If the position is unset, NaN is returned.
     *
     * @param x X coordinate of position.
     * @param y Y coordinate of position.
-     * @param zone Zone of position.
+        * @param zone Zone of position.
     * @return Lateral location.
     * @throws IllegalArgumentException  If zone is &lt;= 0.
     */
     public double computeLocation(double x, double y, int zone)
-                  throws IllegalArgumentException {
-           //...
-    }</code></p>
-</li>
-<li>
-<p>Comments should be indented relative to their position in the code.</p>
-<p><code>java
-while (true) {
-          // Do something
-          something();
-}</code></p>
-</li>
+                    throws IllegalArgumentException {
+            //...
+    }
+</code></pre>
+<ul>
+<li>Comments should be indented relative to their position in the code.</li>
 </ul>
+<pre><code class="language-java">while (true) {
+            // Do something
+            something();
+}
+</code></pre>
 <h1 id="implementation">Implementation</h1>
 <h2 id="coding-quality">Coding Quality</h2>
 <ul>
