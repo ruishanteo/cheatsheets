@@ -277,7 +277,7 @@ Specify the constraints under which the system is developed and operated
 -   How to use:
 
     -   Private constructor with a public class-level method to access the single instance
-    -   Optional <\<`Singleton`>> UML stereotype to indicate role
+    -   Optional `<<Singleton>>` UML stereotype to indicate role
 
 ![Singleton Pattern UML](https://nus-cs2103-ay2324s1.github.io/website/book/designPatterns/singleton/what/images/singleton.png)
 
@@ -554,7 +554,7 @@ Specify the constraints under which the system is developed and operated
 -   Self-invocation calls is denoated by an arrow from the bar to itself
 -   Method calls to static methods are received by the class itself
 
-    -   You can use <\<class>> to show that a participant is the class itself
+    -   You can use `<<class>>` to show that a participant is the class itself
 
 -   All frames should use a rectangle with a clip on the bottom-right corner
 -   **loop** frame: indicate a loop
