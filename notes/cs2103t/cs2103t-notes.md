@@ -918,7 +918,7 @@ try {
     *
     * @param x X coordinate of position.
     * @param y Y coordinate of position.
-        * @param zone Zone of position.
+    * @param zone Zone of position.
     * @return Lateral location.
     * @throws IllegalArgumentException  If zone is <= 0.
     */
