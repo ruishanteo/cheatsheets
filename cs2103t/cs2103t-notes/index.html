@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>CS2103T - CS2103T Notes</title>
+        <title>Cs2103t notes - CS2103T Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -69,10 +69,6 @@
             
             <li class="nav-item" data-level="1"><a href="#requirements" class="nav-link">Requirements</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#in-brainstorming-session-there-are" class="nav-link">In brainstorming session there are</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#non-functional-requirements" class="nav-link">Non-functional requirements</a>
               <ul class="nav flex-column">
               </ul>
@@ -337,106 +333,149 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<pre><code>-   [Java](#java)
-    -   [Varargs](#varargs)
--   [Programming Paradigm](#programming-paradigm)
-    -   [Object-Oriented Programming (OOP)](#object-oriented-programming-oop)
--   [Requirements](#requirements)
-    -   [Non-functional requirements](#non-functional-requirements)
-    -   [Quality of requirements](#quality-of-requirements)
-    -   [Gathering requirements](#gathering-requirements)
-    -   [Specifying Requirements](#specifying-requirements)
--   [Design](#design)
-    -   [Design Fundamentals](#design-fundamentals)
-    -   [Modeling](#modeling)
-    -   [Design Patterns](#design-patterns)
-        -   [Singleton Pattern](#singleton-pattern)
-        -   [Abstraction Occurrence Pattern](#abstraction-occurrence-pattern)
-        -   [Facade Pattern](#facade-pattern)
-        -   [Command Pattern](#command-pattern)
-        -   [Model View Controller (MVC) Pattern](#model-view-controller-mvc-pattern)
-        -   [Observer Pattern](#observer-pattern)
-    -   [Design Approaches](#design-approaches)
--   [Principles](#principles)
-    -   [`S`ingle Responsibility Principle](#single-responsibility-principle)
-    -   [`O`pen-Closed Principle](#open-closed-principle)
-    -   [`L`iskov Substitution Principle](#liskov-substitution-principle)
-    -   [`I`nterface Segregation Principle](#interface-segregation-principle)
-    -   [`D`ependency Inversion Principle](#dependency-inversion-principle)
-    -   [Separation of Concerns Principle](#separation-of-concerns-principle)
-    -   [Law of Demeter](#law-of-demeter)
-    -   [YAGNI Principle](#yagni-principle)
-    -   [DRY Principle](#dry-principle)
-    -   [Brooks' Law](#brooks-law)
--   [UML](#uml)
-    -   [Class Diagrams](#class-diagrams)
-        -   [Notation — Class Diagrams](#notation--class-diagrams)
-        -   [Associations — Class Diagrams](#associations--class-diagrams)
-            -   [Navigability](#navigability)
-            -   [Multiplicity](#multiplicity)
-            -   [Dependencies](#dependencies)
-            -   [Composition (Has-A)](#composition-has-a)
-            -   [Aggregation](#aggregation)
-            -   [Inheritance (Is-A)](#inheritance-is-a)
-    -   [Objects Diagrams](#objects-diagrams)
-        -   [Notation — Objects Diagrams](#notation--objects-diagrams)
-    -   [Sequence Diagrams](#sequence-diagrams)
-        -   [Notation — Sequence Diagrams](#notation--sequence-diagrams)
-    -   [OODM](#oodm)
-    -   [Activity Diagrams](#activity-diagrams)
-        -   [Notation — Activity Diagrams](#notation--activity-diagrams)
--   [Project Management](#project-management)
-    -   [Revision Control](#revision-control)
-    -   [Project Planning](#project-planning)
-        -   [Work Breakdown Structure](#work-breakdown-structure)
-        -   [Milestones](#milestones)
-        -   [Buffers](#buffers)
-        -   [Issue Trackers](#issue-trackers)
-        -   [GANTT Charts](#gantt-charts)
-        -   [PERT Charts](#pert-charts)
-    -   [SDLC Process Models](#sdlc-process-models)
-        -   [Sequential Models](#sequential-models)
-        -   [Iterative Models](#iterative-models)
-        -   [Agile Models](#agile-models)
-            -   [XP](#xp)
-            -   [Scrum](#scrum)
-            -   [Unified Process](#unified-process)
-        -   [CMMI](#cmmi)
--   [Coding Standards](#coding-standards)
-    -   [Naming](#naming)
-    -   [Layout](#layout)
-    -   [Statements](#statements)
-    -   [Classes and interfaces](#classes-and-interfaces)
-    -   [Methods](#methods)
-    -   [Types](#types)
-    -   [Variables](#variables)
-    -   [Loops](#loops)
-    -   [Conditionals](#conditionals)
-    -   [Comments](#comments)
--   [Implementation](#implementation)
-    -   [Coding Quality](#coding-quality)
-    -   [Documentation](#documentation)
-        -   [Types](#types-1)
-        -   [Guidelines](#guidelines)
-    -   [Error Handling](#error-handling)
-    -   [Reuse](#reuse)
--   [Quality Assurance](#quality-assurance)
-    -   [Code Reviews](#code-reviews)
-    -   [Static Analysis](#static-analysis)
-    -   [Formal Verification](#formal-verification)
--   [Test Case Design](#test-case-design)
--   [Testing](#testing)
-    -   [Regression Testing](#regression-testing)
-    -   [Developer Testing](#developer-testing)
-    -   [Unit Testing](#unit-testing)
-    -   [Integration Testing](#integration-testing)
-    -   [System Testing](#system-testing)
-    -   [Alpha and Beta Testing](#alpha-and-beta-testing)
-    -   [Dogfooding](#dogfooding)
-    -   [Exploratory and Scripted Testing](#exploratory-and-scripted-testing)
-    -   [User Acceptance Testing](#user-acceptance-testing)
-    -   [Test Automation Testing](#test-automation-testing)
-</code></pre>
+<ul>
+<li><a href="#java">Java</a><ul>
+<li><a href="#varargs">Varargs</a></li>
+</ul>
+</li>
+<li><a href="#programming-paradigm">Programming Paradigm</a><ul>
+<li><a href="#object-oriented-programming-oop">Object-Oriented Programming (OOP)</a></li>
+</ul>
+</li>
+<li><a href="#requirements">Requirements</a><ul>
+<li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+<li><a href="#quality-of-requirements">Quality of requirements</a></li>
+<li><a href="#gathering-requirements">Gathering requirements</a></li>
+<li><a href="#specifying-requirements">Specifying Requirements</a></li>
+</ul>
+</li>
+<li><a href="#design">Design</a><ul>
+<li><a href="#design-fundamentals">Design Fundamentals</a></li>
+<li><a href="#modeling">Modeling</a></li>
+<li><a href="#design-patterns">Design Patterns</a><ul>
+<li><a href="#singleton-pattern">Singleton Pattern</a></li>
+<li><a href="#abstraction-occurrence-pattern">Abstraction Occurrence Pattern</a></li>
+<li><a href="#facade-pattern">Facade Pattern</a></li>
+<li><a href="#command-pattern">Command Pattern</a></li>
+<li><a href="#model-view-controller-mvc-pattern">Model View Controller (MVC) Pattern</a></li>
+<li><a href="#observer-pattern">Observer Pattern</a></li>
+</ul>
+</li>
+<li><a href="#design-approaches">Design Approaches</a></li>
+</ul>
+</li>
+<li><a href="#principles">Principles</a><ul>
+<li><a href="#single-responsibility-principle"><code>S</code>ingle Responsibility Principle</a></li>
+<li><a href="#open-closed-principle"><code>O</code>pen-Closed Principle</a></li>
+<li><a href="#liskov-substitution-principle"><code>L</code>iskov Substitution Principle</a></li>
+<li><a href="#interface-segregation-principle"><code>I</code>nterface Segregation Principle</a></li>
+<li><a href="#dependency-inversion-principle"><code>D</code>ependency Inversion Principle</a></li>
+<li><a href="#separation-of-concerns-principle">Separation of Concerns Principle</a></li>
+<li><a href="#law-of-demeter">Law of Demeter</a></li>
+<li><a href="#yagni-principle">YAGNI Principle</a></li>
+<li><a href="#dry-principle">DRY Principle</a></li>
+<li><a href="#brooks-law">Brooks' Law</a></li>
+</ul>
+</li>
+<li><a href="#uml">UML</a><ul>
+<li><a href="#class-diagrams">Class Diagrams</a><ul>
+<li><a href="#notation--class-diagrams">Notation — Class Diagrams</a></li>
+<li><a href="#associations--class-diagrams">Associations — Class Diagrams</a><ul>
+<li><a href="#navigability">Navigability</a></li>
+<li><a href="#multiplicity">Multiplicity</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#composition-has-a">Composition (Has-A)</a></li>
+<li><a href="#aggregation">Aggregation</a></li>
+<li><a href="#inheritance-is-a">Inheritance (Is-A)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#objects-diagrams">Objects Diagrams</a><ul>
+<li><a href="#notation--objects-diagrams">Notation — Objects Diagrams</a></li>
+</ul>
+</li>
+<li><a href="#sequence-diagrams">Sequence Diagrams</a><ul>
+<li><a href="#notation--sequence-diagrams">Notation — Sequence Diagrams</a></li>
+</ul>
+</li>
+<li><a href="#oodm">OODM</a></li>
+<li><a href="#activity-diagrams">Activity Diagrams</a><ul>
+<li><a href="#notation--activity-diagrams">Notation — Activity Diagrams</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#project-management">Project Management</a><ul>
+<li><a href="#revision-control">Revision Control</a></li>
+<li><a href="#project-planning">Project Planning</a><ul>
+<li><a href="#work-breakdown-structure">Work Breakdown Structure</a></li>
+<li><a href="#milestones">Milestones</a></li>
+<li><a href="#buffers">Buffers</a></li>
+<li><a href="#issue-trackers">Issue Trackers</a></li>
+<li><a href="#gantt-charts">GANTT Charts</a></li>
+<li><a href="#pert-charts">PERT Charts</a></li>
+</ul>
+</li>
+<li><a href="#sdlc-process-models">SDLC Process Models</a><ul>
+<li><a href="#sequential-models">Sequential Models</a></li>
+<li><a href="#iterative-models">Iterative Models</a></li>
+<li><a href="#agile-models">Agile Models</a><ul>
+<li><a href="#xp">XP</a></li>
+<li><a href="#scrum">Scrum</a></li>
+<li><a href="#unified-process">Unified Process</a></li>
+</ul>
+</li>
+<li><a href="#cmmi">CMMI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#coding-standards">Coding Standards</a><ul>
+<li><a href="#naming">Naming</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#statements">Statements</a></li>
+<li><a href="#classes-and-interfaces">Classes and interfaces</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#types">Types</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#conditionals">Conditionals</a></li>
+<li><a href="#comments">Comments</a></li>
+</ul>
+</li>
+<li><a href="#implementation">Implementation</a><ul>
+<li><a href="#coding-quality">Coding Quality</a></li>
+<li><a href="#documentation">Documentation</a><ul>
+<li><a href="#types-1">Types</a></li>
+<li><a href="#guidelines">Guidelines</a></li>
+</ul>
+</li>
+<li><a href="#error-handling">Error Handling</a></li>
+<li><a href="#reuse">Reuse</a></li>
+</ul>
+</li>
+<li><a href="#quality-assurance">Quality Assurance</a><ul>
+<li><a href="#code-reviews">Code Reviews</a></li>
+<li><a href="#static-analysis">Static Analysis</a></li>
+<li><a href="#formal-verification">Formal Verification</a></li>
+</ul>
+</li>
+<li><a href="#test-case-design">Test Case Design</a></li>
+<li><a href="#testing">Testing</a><ul>
+<li><a href="#regression-testing">Regression Testing</a></li>
+<li><a href="#developer-testing">Developer Testing</a></li>
+<li><a href="#unit-testing">Unit Testing</a></li>
+<li><a href="#integration-testing">Integration Testing</a></li>
+<li><a href="#system-testing">System Testing</a></li>
+<li><a href="#alpha-and-beta-testing">Alpha and Beta Testing</a></li>
+<li><a href="#dogfooding">Dogfooding</a></li>
+<li><a href="#exploratory-and-scripted-testing">Exploratory and Scripted Testing</a></li>
+<li><a href="#user-acceptance-testing">User Acceptance Testing</a></li>
+<li><a href="#test-automation-testing">Test Automation Testing</a></li>
+</ul>
+</li>
+</ul>
 <h1 id="java">Java</h1>
 <h2 id="varargs">Varargs</h2>
 <p>Syntactic sugar type feature that allows writing a method that can take a variable number of arguments.</p>
@@ -464,9 +503,6 @@
 <li>Functional requirements specify what the system should do</li>
 <li>Non-functional requirements specify the constraints under which the system is developed and operated</li>
 </ul>
-</li>
-<li>
-<h2 id="in-brainstorming-session-there-are">In brainstorming session there are</h2>
 </li>
 </ul>
 <h2 id="non-functional-requirements">Non-functional requirements</h2>
