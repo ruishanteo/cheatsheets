@@ -801,7 +801,7 @@ Specify the constraints under which the system is developed and operated
 
 ```java
 public void someMethod() throws SomeException {
-            ...
+    ...
 }
 ```
 
@@ -809,7 +809,7 @@ public void someMethod() throws SomeException {
 
 ```java
 if (condition) {
-            statements;
+    statements;
 }
 ```
 
@@ -817,7 +817,7 @@ if (condition) {
 
 ```java
 for (initialization; condition; update) {
-            statements;
+    statements;
 }
 ```
 
@@ -825,34 +825,34 @@ for (initialization; condition; update) {
 
 ```java
 while (condition) {
-            statements;
+    statements;
 }
 ```
 
 -   switch statement should have the following form:
 
-````java
+```java
 switch (condition) {
 
 case ABC:
-            statements;
-            //Fallthrough
+    statements;
+    //Fallthrough
 
 case DEF:
-            statements;
-            break;
+    statements;
+    break;
 }
-    ```
+```
 
 -   try-catch statement should have the following form:
 
 ```java
 try {
-            statements;
+    statements;
 } catch (Exception exception) {
-            statements;
+    statements;
 }
-````
+```
 
 -   White space within a statement
     -   Operators should be surrounded by a space character
@@ -912,7 +912,7 @@ try {
 -   Javadoc comments should have the following form:
 
 ```java
-/**
+   /**
     * Returns lateral location of the specified position.
     * If the position is unset, NaN is returned.
     *
