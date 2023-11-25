@@ -726,8 +726,8 @@ Specify the constraints under which the system is developed and operated
 #### XP
 
 -   Extreme programming
--   Stresses custoemr satisfaction
--   Aims to make develoeprs confidently respond to changing requirements (even late in life cycle)
+-   Stresses customer satisfaction
+-   Aims to make developers confidently respond to changing requirements (even late in life cycle)
 -   Emphasizes teamwork
 -   Improve in: communication, simplicity, feedback, respect and courage
 -   Has a set of simple rules
@@ -805,7 +805,7 @@ public void someMethod() throws SomeException {
 }
 ```
 
--   if-else class of statemets should have the following form:
+-   if-else class of statements should have the following form:
 
 ```java
 if (condition) {
