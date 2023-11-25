@@ -535,9 +535,6 @@ Specify the constraints under which the system is developed and operated
 -   MUST omit:
     -   Methods
     -   Multiplicities
--   Should omit:
-    -   Methods
-    -   Multiplicities
 -   OK to omit:
     -   Object name
     -   Variable name/ value
