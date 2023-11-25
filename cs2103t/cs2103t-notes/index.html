@@ -1466,28 +1466,28 @@
 <li>Method definitions should have the following form:</li>
 </ul>
 <pre><code class="language-java">public void someMethod() throws SomeException {
-            ...
+    ...
 }
 </code></pre>
 <ul>
 <li>if-else class of statemets should have the following form:</li>
 </ul>
 <pre><code class="language-java">if (condition) {
-            statements;
+    statements;
 }
 </code></pre>
 <ul>
 <li>for statement should have the following form:</li>
 </ul>
 <pre><code class="language-java">for (initialization; condition; update) {
-            statements;
+    statements;
 }
 </code></pre>
 <ul>
 <li>while statement should have the following form:</li>
 </ul>
 <pre><code class="language-java">while (condition) {
-            statements;
+    statements;
 }
 </code></pre>
 <ul>
@@ -1496,22 +1496,21 @@
 <pre><code class="language-java">switch (condition) {
 
 case ABC:
-            statements;
-            //Fallthrough
+    statements;
+    //Fallthrough
 
 case DEF:
-            statements;
-            break;
+    statements;
+    break;
 }
-    ```
-
--   try-catch statement should have the following form:
-
-```java
-try {
-            statements;
+</code></pre>
+<ul>
+<li>try-catch statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">try {
+    statements;
 } catch (Exception exception) {
-            statements;
+    statements;
 }
 </code></pre>
 <ul>
@@ -1576,7 +1575,7 @@ try {
 <li>All non-trivial private methods should carry header comments.</li>
 <li>Javadoc comments should have the following form:</li>
 </ul>
-<pre><code class="language-java">/**
+<pre><code class="language-java">   /**
     * Returns lateral location of the specified position.
     * If the position is unset, NaN is returned.
     *
