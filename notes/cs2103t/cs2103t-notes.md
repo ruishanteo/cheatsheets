@@ -798,32 +798,40 @@ Specify the constraints under which the system is developed and operated
 -   Place line break to improve readability.
 -   Use egyptian style brackets.
 -   Method definitions should have the following form:
-    ```
+
+    ```java
     public void someMethod() throws SomeException {
               ...
     }
     ```
+
 -   if-else class of statemets should have the following form:
-    ```
+
+    ```java
     if (condition) {
               statements;
     }
     ```
+
 -   for statement should have the following form:
-    ```
+
+    ```java
     for (initialization; condition; update) {
               statements;
     }
     ```
+
 -   while statement should have the following form:
-    ```
+
+    ```java
     while (condition) {
               statements;
     }
     ```
+
 -   switch statement should have the following form:
 
-    ```
+    ```java
     switch (condition) {
 
     case ABC:
@@ -837,13 +845,15 @@ Specify the constraints under which the system is developed and operated
     ```
 
 -   try-catch statement should have the following form:
-    ```
+
+    ```java
     try {
               statements;
     } catch (Exception exception) {
               statements;
     }
     ```
+
 -   White space within a statement
     -   Operators should be surrounded by a space character
     -   Java reserved words should be followed by a white space
@@ -900,7 +910,8 @@ Specify the constraints under which the system is developed and operated
 -   Write descriptive header commends for all public classes/ methods.
 -   All non-trivial private methods should carry header comments.
 -   Javadoc comments should have the following form:
-    ```
+
+    ```java
     /**
         * Returns lateral location of the specified position.
         * If the position is unset, NaN is returned.
@@ -916,8 +927,10 @@ Specify the constraints under which the system is developed and operated
                //...
         }
     ```
+
 -   Comments should be indented relative to their position in the code.
-    ```
+
+    ```java
     while (true) {
               // Do something
               something();
