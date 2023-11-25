@@ -1463,25 +1463,37 @@
 <li>Line length should be no longer than 120 characters.</li>
 <li>Place line break to improve readability.</li>
 <li>Use egyptian style brackets.</li>
-<li>Method definitions should have the following form:
-    <code>public void someMethod() throws SomeException {
-              ...
-    }</code></li>
-<li>if-else class of statemets should have the following form:
-    <code>if (condition) {
-              statements;
-    }</code></li>
-<li>for statement should have the following form:
-    <code>for (initialization; condition; update) {
-              statements;
-    }</code></li>
-<li>while statement should have the following form:
-    <code>while (condition) {
-              statements;
-    }</code></li>
+<li>
+<p>Method definitions should have the following form:</p>
+<p><code>java
+public void someMethod() throws SomeException {
+          ...
+}</code></p>
+</li>
+<li>
+<p>if-else class of statemets should have the following form:</p>
+<p><code>java
+if (condition) {
+          statements;
+}</code></p>
+</li>
+<li>
+<p>for statement should have the following form:</p>
+<p><code>java
+for (initialization; condition; update) {
+          statements;
+}</code></p>
+</li>
+<li>
+<p>while statement should have the following form:</p>
+<p><code>java
+while (condition) {
+          statements;
+}</code></p>
+</li>
 <li>
 <p>switch statement should have the following form:</p>
-<p>```
+<p>```java
 switch (condition) {</p>
 <p>case ABC:
           statements;
@@ -1493,14 +1505,17 @@ switch (condition) {</p>
 ```</p>
 </li>
 <li>
-<p>try-catch statement should have the following form:
-    <code>try {
-              statements;
-    } catch (Exception exception) {
-              statements;
-    }</code></p>
+<p>try-catch statement should have the following form:</p>
+<p><code>java
+try {
+          statements;
+} catch (Exception exception) {
+          statements;
+}</code></p>
 </li>
-<li>White space within a statement<ul>
+<li>
+<p>White space within a statement</p>
+<ul>
 <li>Operators should be surrounded by a space character</li>
 <li>Java reserved words should be followed by a white space</li>
 <li>Commas should be followed by a white space</li>
@@ -1559,26 +1574,32 @@ switch (condition) {</p>
 <li>All comments should be written in English.</li>
 <li>Write descriptive header commends for all public classes/ methods.</li>
 <li>All non-trivial private methods should carry header comments.</li>
-<li>Javadoc comments should have the following form:
-    <code>/**
-        * Returns lateral location of the specified position.
-        * If the position is unset, NaN is returned.
-        *
-        * @param x X coordinate of position.
-        * @param y Y coordinate of position.
-         * @param zone Zone of position.
-        * @return Lateral location.
-        * @throws IllegalArgumentException  If zone is &lt;= 0.
-        */
-        public double computeLocation(double x, double y, int zone)
-                      throws IllegalArgumentException {
-               //...
-        }</code></li>
-<li>Comments should be indented relative to their position in the code.
-    <code>while (true) {
-              // Do something
-              something();
-    }</code></li>
+<li>
+<p>Javadoc comments should have the following form:</p>
+<p><code>java
+/**
+    * Returns lateral location of the specified position.
+    * If the position is unset, NaN is returned.
+    *
+    * @param x X coordinate of position.
+    * @param y Y coordinate of position.
+     * @param zone Zone of position.
+    * @return Lateral location.
+    * @throws IllegalArgumentException  If zone is &lt;= 0.
+    */
+    public double computeLocation(double x, double y, int zone)
+                  throws IllegalArgumentException {
+           //...
+    }</code></p>
+</li>
+<li>
+<p>Comments should be indented relative to their position in the code.</p>
+<p><code>java
+while (true) {
+          // Do something
+          something();
+}</code></p>
+</li>
 </ul>
 <h1 id="implementation">Implementation</h1>
 <h2 id="coding-quality">Coding Quality</h2>
