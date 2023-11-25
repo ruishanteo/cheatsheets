@@ -799,60 +799,60 @@ Specify the constraints under which the system is developed and operated
 -   Use egyptian style brackets.
 -   Method definitions should have the following form:
 
-    ```java
-    public void someMethod() throws SomeException {
-              ...
-    }
-    ```
+```java
+public void someMethod() throws SomeException {
+            ...
+}
+```
 
 -   if-else class of statemets should have the following form:
 
-    ```java
-    if (condition) {
-              statements;
-    }
-    ```
+```java
+if (condition) {
+            statements;
+}
+```
 
 -   for statement should have the following form:
 
-    ```java
-    for (initialization; condition; update) {
-              statements;
-    }
-    ```
+```java
+for (initialization; condition; update) {
+            statements;
+}
+```
 
 -   while statement should have the following form:
 
-    ```java
-    while (condition) {
-              statements;
-    }
-    ```
+```java
+while (condition) {
+            statements;
+}
+```
 
 -   switch statement should have the following form:
 
-    ```java
-    switch (condition) {
+````java
+switch (condition) {
 
-    case ABC:
-              statements;
-              //Fallthrough
+case ABC:
+            statements;
+            //Fallthrough
 
-    case DEF:
-              statements;
-              break;
-    }
+case DEF:
+            statements;
+            break;
+}
     ```
 
 -   try-catch statement should have the following form:
 
-    ```java
-    try {
-              statements;
-    } catch (Exception exception) {
-              statements;
-    }
-    ```
+```java
+try {
+            statements;
+} catch (Exception exception) {
+            statements;
+}
+````
 
 -   White space within a statement
     -   Operators should be surrounded by a space character
@@ -907,35 +907,35 @@ Specify the constraints under which the system is developed and operated
 ## Comments
 
 -   All comments should be written in English.
--   Write descriptive header commends for all public classes/ methods.
+-   Write descriptive header comments for all public classes/ methods.
 -   All non-trivial private methods should carry header comments.
 -   Javadoc comments should have the following form:
 
-    ```java
-    /**
-        * Returns lateral location of the specified position.
-        * If the position is unset, NaN is returned.
-        *
-        * @param x X coordinate of position.
-        * @param y Y coordinate of position.
-         * @param zone Zone of position.
-        * @return Lateral location.
-        * @throws IllegalArgumentException  If zone is <= 0.
-        */
-        public double computeLocation(double x, double y, int zone)
-                      throws IllegalArgumentException {
-               //...
-        }
-    ```
+```java
+/**
+    * Returns lateral location of the specified position.
+    * If the position is unset, NaN is returned.
+    *
+    * @param x X coordinate of position.
+    * @param y Y coordinate of position.
+        * @param zone Zone of position.
+    * @return Lateral location.
+    * @throws IllegalArgumentException  If zone is <= 0.
+    */
+    public double computeLocation(double x, double y, int zone)
+                    throws IllegalArgumentException {
+            //...
+    }
+```
 
 -   Comments should be indented relative to their position in the code.
 
-    ```java
-    while (true) {
-              // Do something
-              something();
-    }
-    ```
+```java
+while (true) {
+            // Do something
+            something();
+}
+```
 
 # Implementation
 
