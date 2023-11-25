@@ -1,3 +1,6 @@
+# CS2103T Notes
+
+-   [CS2103T Notes](#cs2103t-notes)
 -   [Java](#java)
     -   [Varargs](#varargs)
 -   [Programming Paradigm](#programming-paradigm)
