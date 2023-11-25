@@ -1,9 +1,13 @@
-# Cheatsheets and Notes
+# Home
 
 ---
 
-This is a list of cheatsheets and notes compiled.
+This is a list of cheatsheets and notes.
 
 Links:
 
+-   [GEA1000 midterms cheatsheet](https://github.com/ruishanteo/cheatsheets/blob/main/notes/gea1000/gea1000%20midterms.pdf)
+-   [GEA1000 finals cheetsheet](https://github.com/ruishanteo/cheatsheets/blob/main/notes/gea1000/gea1000%20finals.pdf)
+-   [CS2040S midterms cheatsheet](https://github.com/ruishanteo/cheatsheets/blob/main/notes/cs2040s/cs2040s%20midterms.pdf)
+-   [CS2040S finals cheatsheet](https://github.com/ruishanteo/cheatsheets/blob/main/notes/cs2040s/cs2040s%20finals.pdf)
 -   [CS2103T notes](https://ruishanteo.github.io/cheatsheets/cs2103t/cs2103t-notes/)
