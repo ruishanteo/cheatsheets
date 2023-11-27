@@ -1,6 +1,6 @@
-# CS2103T Notes
+# CS2103/T Notes
 
--   [CS2103T Notes](#cs2103t-notes)
+-   [CS2103/T Notes](#cs2103t-notes)
 -   [Java](#java)
     -   [Varargs](#varargs)
 -   [Programming Paradigm](#programming-paradigm)
@@ -79,10 +79,12 @@
     -   [Comments](#comments)
 -   [Implementation](#implementation)
     -   [Coding Quality](#coding-quality)
+    -   [Refactoring](#refactoring)
     -   [Documentation](#documentation)
         -   [Types](#types-1)
         -   [Guidelines](#guidelines)
     -   [Error Handling](#error-handling)
+    -   [Integration](#integration)
     -   [Reuse](#reuse)
 -   [Quality Assurance](#quality-assurance)
     -   [Code Reviews](#code-reviews)
@@ -238,6 +240,7 @@ Specify the constraints under which the system is developed and operated
 -   **Coupling**
     -   Coupling is a measure of the degree of dependence between components, classes, methods, etc. Low coupling indicates that a component is less dependent on other components
     -   High coupling is discouraged: maintenance, integration, testing and reuse of module is harder.
+    -   Zero coupling is not possible for non-trivial software.
     -   Types: content, common/ global, data, external, subclass, temporal
 
 ## Modeling
@@ -470,7 +473,7 @@ Specify the constraints under which the system is developed and operated
 
 ### Notation — Class Diagrams
 
--   Visibility: `+` for public | `-` for private | `#` for protected | `~` for package (static)
+-   Visibility: `+` for public | `-` for private | `#` for protected | `~` package private
 -   Class-level methods/ attributes are underlined
 -   `<<interface>>`
 -   `<<enumeration>>`
@@ -481,6 +484,7 @@ Specify the constraints under which the system is developed and operated
 ### Associations — Class Diagrams
 
 -   Association roles appears on end that plays that role
+-   An association can be shown as a line between the two classes or as an attribute in one of the classes (but not both).
 
 #### Navigability
 
@@ -622,7 +626,7 @@ Specify the constraints under which the system is developed and operated
     -   To see what changed: `diff`
     -   To restore the state of the working directory at point in the past: `checkout` the commit
 -   **Remote Repositories**
-    -   `git clone` a repo to create a copy
+    -   `git clone` a repo to create a (local) copy
     -   Original repo is referred to as `upstream` repo
     -   `git pull` from one repo to another
     -   `git push` new commits in one repo to another
@@ -799,60 +803,60 @@ Specify the constraints under which the system is developed and operated
 -   Use egyptian style brackets.
 -   Method definitions should have the following form:
 
-```java
-public void someMethod() throws SomeException {
-    ...
-}
-```
+    ```java
+    public void someMethod() throws SomeException {
+        ...
+    }
+    ```
 
 -   if-else class of statements should have the following form:
 
-```java
-if (condition) {
-    statements;
-}
-```
+    ```java
+    if (condition) {
+        statements;
+    }
+    ```
 
 -   for statement should have the following form:
 
-```java
-for (initialization; condition; update) {
-    statements;
-}
-```
+    ```java
+    for (initialization; condition; update) {
+        statements;
+    }
+    ```
 
 -   while statement should have the following form:
 
-```java
-while (condition) {
-    statements;
-}
-```
+    ```java
+    while (condition) {
+        statements;
+    }
+    ```
 
 -   switch statement should have the following form:
 
-```java
-switch (condition) {
+    ```java
+    switch (condition) {
 
-case ABC:
-    statements;
-    //Fallthrough
+    case ABC:
+        statements;
+        //Fallthrough
 
-case DEF:
-    statements;
-    break;
-}
-```
+    case DEF:
+        statements;
+        break;
+    }
+    ```
 
 -   try-catch statement should have the following form:
 
-```java
-try {
-    statements;
-} catch (Exception exception) {
-    statements;
-}
-```
+    ```java
+    try {
+        statements;
+    } catch (Exception exception) {
+        statements;
+    }
+    ```
 
 -   White space within a statement
     -   Operators should be surrounded by a space character
@@ -911,31 +915,31 @@ try {
 -   All non-trivial private methods should carry header comments.
 -   Javadoc comments should have the following form:
 
-```java
-   /**
-    * Returns lateral location of the specified position.
-    * If the position is unset, NaN is returned.
-    *
-    * @param x X coordinate of position.
-    * @param y Y coordinate of position.
-    * @param zone Zone of position.
-    * @return Lateral location.
-    * @throws IllegalArgumentException  If zone is <= 0.
-    */
-    public double computeLocation(double x, double y, int zone)
-                    throws IllegalArgumentException {
-            //...
-    }
-```
+    ```java
+    /**
+     * Returns lateral location of the specified position.
+     * If the position is unset, NaN is returned.
+     *
+     * @param x X coordinate of position.
+     * @param y Y coordinate of position.
+     * @param zone Zone of position.
+     *  @return Lateral location.
+     * @throws IllegalArgumentException  If zone is <= 0.
+     */
+     public double computeLocation(double x, double y, int zone)
+             throws IllegalArgumentException {
+         //...
+     }
+    ```
 
 -   Comments should be indented relative to their position in the code.
 
-```java
-while (true) {
-            // Do something
-            something();
-}
-```
+    ```java
+    while (true) {
+                // Do something
+                something();
+    }
+    ```
 
 # Implementation
 
@@ -967,6 +971,60 @@ while (true) {
     -   Not too long, not too short
     -   Avoid misleading names
 
+## Refactoring
+
+-   The process of improving a program's internal structure in small steps without modifying its external behavior is called refactoring
+-   Refactoring is not rewriting and not bug fixing (alters external behaviour).
+-   Benefits:
+    -   hidden bugs become easier to spot
+    -   improve performance
+-   Refactoring can result in regression
+-   Consolidate Duplicate Conditional Fragments
+
+    ```java
+    // BEFORE
+    if (isSpecialDeal()) {
+        total = price * 0.95;
+        send();
+    } else {
+        total = price * 0.98;
+        send();
+    }
+
+    // AFTER
+    if (isSpecialDeal()) {
+        total = price * 0.95;
+    } else {
+        total = price * 0.98;
+    }
+    send();
+    ```
+
+-   Extract Method (opposite of this is inline method)
+    from:
+
+    ```java
+    //BEFORE
+    void printOwing() {
+        printBanner();
+
+        // print details
+        System.out.println("name:	" + name);
+        System.out.println("amount	" + getOutstanding());
+    }
+
+    //AFTER
+    void printOwing() {
+        printBanner();
+        printDetails(getOutstanding());
+    }
+
+    void printDetails(double outstanding) {
+        System.out.println("name:	" + name);
+        System.out.println("amount	" + outstanding);
+    }
+    ```
+
 ## Documentation
 
 -   Developer-as-user: API documentaion or tutorial-style instructional documentation
@@ -997,6 +1055,7 @@ while (true) {
         -   Java disables assertions by default.
     -   Assertions are used to define assumptions about the program state so that the runtime can verify them.
     -   Recommended that assertions be used liberally in the code.
+    -   `assertEquals` is a JUnit method and only used in test classes.
 -   **Logging** is the deliberate recording of certain information during a program execution for future reference.
 -   **Defensive programming** is proactively eliminating any room for things to go wrong.
     -   Enforcing compulsory associations
@@ -1004,6 +1063,24 @@ while (true) {
     -   Enforcing referential integrity (prevents case where A says B is X but B says B is Y)
 -   **Design-by-contract approach** is an approach for designing software that requires defining formal, precise and verifiable interface specifications for software components.
     -   Code first checks if the preconditions have been met.
+
+## Integration
+
+-   Timing and frequency:
+    -   **Late and One Time**: wait till all components are completed and integrate all finished components near the end of the project
+        -   Not reccommended because integration often causes many component incompatibilities which can lead to delivery delays
+    -   **Early and Frequent**: integrate early and evolve each part in parallel, in small steps, re-integrating frequently
+-   Extent:
+    -   **Big-bang integration**: integrate all components at the same time
+        -   Not reccommended because it will uncover too many problems at the same time
+    -   **Incremental integration**: integrate a few components at a time (integration problems surface in a more manageable way)
+-   Direction:
+    -   **Top-down integration**: higher-level components are integrated before bringing in the lower-level components
+        -   +: Higher-level problems can be discovered early
+        -   -: Requires the use of stubs in place of lower level components
+    -   **Bottom-up integration**: the reverse of top-down integration
+        -   When integrating lower level components, drivers may be needed to test the integrated components, because UI may not be integrated yet
+    -   **Sandwich integration**: a mix of top-down and bottom-up approaches, do both and meet in the middle
 
 ## Reuse
 
@@ -1063,8 +1140,8 @@ while (true) {
 
 -   **Postive test case**: is designed to produce valid behaviour.
 -   **Negative test case**: is designed to produce an invalid behaviour.
--   **Black-box**: test cases are designed exclusively based on the SUT's specified external behaviour.
--   **White-box**: test cases are designed based on what is known about the SUT's implementation.
+-   **Black-box** (aka specification-based or responsibility-based): test cases are designed exclusively based on the SUT's specified external behaviour.
+-   **White-box** (aka glass-box or structured or implementation-based): test cases are designed based on what is known about the SUT's implementation.
 -   **Gray-box**: mix of both
 
 -   **Equivalence partitions** (aka equivalence class): A group of test inputs that are likely to be processed by the SUT in the same way.
