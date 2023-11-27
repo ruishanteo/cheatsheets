@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>CS2103T Notes - Cheatsheets and Notes</title>
+        <title>CS2103/T Notes - Cheatsheets and Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">CS2103T Notes</a>
+    <a href="./" class="dropdown-item active">CS2103/T Notes</a>
 </li>
                                 </ul>
                             </li>
@@ -78,7 +78,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#cs2103t-notes" class="nav-link">CS2103T Notes</a>
+            <li class="nav-item" data-level="1"><a href="#cs2103t-notes" class="nav-link">CS2103/T Notes</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -281,11 +281,19 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#refactoring" class="nav-link">Refactoring</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#documentation" class="nav-link">Documentation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#error-handling" class="nav-link">Error Handling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#integration" class="nav-link">Integration</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -367,9 +375,9 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="cs2103t-notes">CS2103T Notes</h1>
+<h1 id="cs2103t-notes">CS2103/T Notes</h1>
 <ul>
-<li><a href="#cs2103t-notes">CS2103T Notes</a></li>
+<li><a href="#cs2103t-notes">CS2103/T Notes</a></li>
 <li><a href="#java">Java</a><ul>
 <li><a href="#varargs">Varargs</a></li>
 </ul>
@@ -482,12 +490,14 @@
 </li>
 <li><a href="#implementation">Implementation</a><ul>
 <li><a href="#coding-quality">Coding Quality</a></li>
+<li><a href="#refactoring">Refactoring</a></li>
 <li><a href="#documentation">Documentation</a><ul>
 <li><a href="#types-1">Types</a></li>
 <li><a href="#guidelines">Guidelines</a></li>
 </ul>
 </li>
 <li><a href="#error-handling">Error Handling</a></li>
+<li><a href="#integration">Integration</a></li>
 <li><a href="#reuse">Reuse</a></li>
 </ul>
 </li>
@@ -690,6 +700,7 @@
 <ul>
 <li>Coupling is a measure of the degree of dependence between components, classes, methods, etc. Low coupling indicates that a component is less dependent on other components</li>
 <li>High coupling is discouraged: maintenance, integration, testing and reuse of module is harder.</li>
+<li>Zero coupling is not possible for non-trivial software.</li>
 <li>Types: content, common/ global, data, external, subclass, temporal</li>
 </ul>
 </li>
@@ -1012,7 +1023,7 @@
 </ul>
 <h3 id="notation-class-diagrams">Notation — Class Diagrams</h3>
 <ul>
-<li>Visibility: <code>+</code> for public | <code>-</code> for private | <code>#</code> for protected | <code>~</code> for package (static)</li>
+<li>Visibility: <code>+</code> for public | <code>-</code> for private | <code>#</code> for protected | <code>~</code> package private (default)</li>
 <li>Class-level methods/ attributes are underlined</li>
 <li><code>&lt;&lt;interface&gt;&gt;</code></li>
 <li><code>&lt;&lt;enumeration&gt;&gt;</code></li>
@@ -1025,6 +1036,7 @@
 <h3 id="associations-class-diagrams">Associations — Class Diagrams</h3>
 <ul>
 <li>Association roles appears on end that plays that role</li>
+<li>An association can be shown as a line between the two classes or as an attribute in one of the classes (but not both).</li>
 </ul>
 <h4 id="navigability">Navigability</h4>
 <ul>
@@ -1111,7 +1123,7 @@
 <li>
 <p>All frames should use a rectangle with a clip on the bottom-right corner</p>
 </li>
-<li><strong>loop</strong> frame: indicate a loop<ul>
+<li><strong>loop</strong> frame: indicate a loop (can execute 0 times)<ul>
 <li>loop [condition]</li>
 </ul>
 </li>
@@ -1126,7 +1138,7 @@
 <li>sd diagram title</li>
 </ul>
 </li>
-<li><strong>par</strong> frame: indicate parallel paths<ul>
+<li><strong>par</strong> frame: indicate parallel paths (can happen in any order)<ul>
 <li>The corresponding Java implementation is likely to be multi-threaded- Keywords are <code>loop</code> (while), <code>opt</code> (if) and <code>alt</code> (if elseif)</li>
 </ul>
 </li>
@@ -1214,7 +1226,7 @@
 </ul>
 </li>
 <li><strong>Remote Repositories</strong><ul>
-<li><code>git clone</code> a repo to create a copy</li>
+<li><code>git clone</code> a repo to create a (local) copy</li>
 <li>Original repo is referred to as <code>upstream</code> repo</li>
 <li><code>git pull</code> from one repo to another</li>
 <li><code>git push</code> new commits in one repo to another</li>
@@ -1463,58 +1475,59 @@
 <li>Line length should be no longer than 120 characters.</li>
 <li>Place line break to improve readability.</li>
 <li>Use egyptian style brackets.</li>
-<li>Method definitions should have the following form:</li>
-</ul>
-<pre><code class="language-java">public void someMethod() throws SomeException {
+<li>
+<p>Method definitions should have the following form:</p>
+<p><code>java
+public void someMethod() throws SomeException {
     ...
-}
-</code></pre>
-<ul>
-<li>if-else class of statements should have the following form:</li>
-</ul>
-<pre><code class="language-java">if (condition) {
+}</code></p>
+</li>
+<li>
+<p>if-else class of statements should have the following form:</p>
+<p><code>java
+if (condition) {
     statements;
-}
-</code></pre>
-<ul>
-<li>for statement should have the following form:</li>
-</ul>
-<pre><code class="language-java">for (initialization; condition; update) {
+}</code></p>
+</li>
+<li>
+<p>for statement should have the following form:</p>
+<p><code>java
+for (initialization; condition; update) {
     statements;
-}
-</code></pre>
-<ul>
-<li>while statement should have the following form:</li>
-</ul>
-<pre><code class="language-java">while (condition) {
+}</code></p>
+</li>
+<li>
+<p>while statement should have the following form:</p>
+<p><code>java
+while (condition) {
     statements;
-}
-</code></pre>
-<ul>
-<li>switch statement should have the following form:</li>
-</ul>
-<pre><code class="language-java">switch (condition) {
-
-case ABC:
+}</code></p>
+</li>
+<li>
+<p>switch statement should have the following form:</p>
+<p>```java
+switch (condition) {</p>
+<p>case ABC:
     statements;
-    //Fallthrough
-
-case DEF:
+    //Fallthrough</p>
+<p>case DEF:
     statements;
     break;
 }
-</code></pre>
-<ul>
-<li>try-catch statement should have the following form:</li>
-</ul>
-<pre><code class="language-java">try {
+```</p>
+</li>
+<li>
+<p>try-catch statement should have the following form:</p>
+<p><code>java
+try {
     statements;
 } catch (Exception exception) {
     statements;
-}
-</code></pre>
+}</code></p>
+</li>
+<li>
+<p>White space within a statement</p>
 <ul>
-<li>White space within a statement<ul>
 <li>Operators should be surrounded by a space character</li>
 <li>Java reserved words should be followed by a white space</li>
 <li>Commas should be followed by a white space</li>
@@ -1573,31 +1586,33 @@ case DEF:
 <li>All comments should be written in English.</li>
 <li>Write descriptive header comments for all public classes/ methods.</li>
 <li>All non-trivial private methods should carry header comments.</li>
-<li>Javadoc comments should have the following form:</li>
-</ul>
-<pre><code class="language-java">   /**
-    * Returns lateral location of the specified position.
-    * If the position is unset, NaN is returned.
-    *
-    * @param x X coordinate of position.
-    * @param y Y coordinate of position.
-    * @param zone Zone of position.
-    * @return Lateral location.
-    * @throws IllegalArgumentException  If zone is &lt;= 0.
-    */
-    public double computeLocation(double x, double y, int zone)
-                    throws IllegalArgumentException {
-            //...
-    }
-</code></pre>
-<ul>
-<li>Comments should be indented relative to their position in the code.</li>
-</ul>
-<pre><code class="language-java">while (true) {
+<li>
+<p>Javadoc comments should have the following form:</p>
+<p><code>java
+/**
+ * Returns lateral location of the specified position.
+ * If the position is unset, NaN is returned.
+ *
+ * @param x X coordinate of position.
+ * @param y Y coordinate of position.
+ * @param zone Zone of position.
+ *  @return Lateral location.
+ * @throws IllegalArgumentException  If zone is &lt;= 0.
+ */
+ public double computeLocation(double x, double y, int zone)
+         throws IllegalArgumentException {
+     //...
+ }</code></p>
+</li>
+<li>
+<p>Comments should be indented relative to their position in the code.</p>
+<p><code>java
+while (true) {
             // Do something
             something();
-}
-</code></pre>
+}</code></p>
+</li>
+</ul>
 <h1 id="implementation">Implementation</h1>
 <h2 id="coding-quality">Coding Quality</h2>
 <ul>
@@ -1633,6 +1648,60 @@ case DEF:
 <li>Not too long, not too short</li>
 <li>Avoid misleading names</li>
 </ul>
+</li>
+</ul>
+<h2 id="refactoring">Refactoring</h2>
+<ul>
+<li>The process of improving a program's internal structure in small steps without modifying its external behavior is called refactoring</li>
+<li>Refactoring is not rewriting and not bug fixing (alters external behaviour).</li>
+<li>Benefits:<ul>
+<li>hidden bugs become easier to spot</li>
+<li>improve performance</li>
+</ul>
+</li>
+<li>Refactoring can result in regression</li>
+<li>
+<p>Consolidate Duplicate Conditional Fragments</p>
+<p>```java
+// BEFORE
+if (isSpecialDeal()) {
+    total = price * 0.95;
+    send();
+} else {
+    total = price * 0.98;
+    send();
+}</p>
+<p>// AFTER
+if (isSpecialDeal()) {
+    total = price * 0.95;
+} else {
+    total = price * 0.98;
+}
+send();
+```</p>
+</li>
+<li>
+<p>Extract Method (opposite of this is inline method)
+    from:</p>
+<p>```java
+//BEFORE
+void printOwing() {
+    printBanner();</p>
+<pre><code>// print details
+System.out.println("name:   " + name);
+System.out.println("amount  " + getOutstanding());
+</code></pre>
+<p>}</p>
+<p>//AFTER
+void printOwing() {
+    printBanner();
+    printDetails(getOutstanding());
+}</p>
+<p>void printDetails(double outstanding) {
+    System.out.println("name:   " + name);
+    System.out.println("amount  " + outstanding);
+}
+```</p>
 </li>
 </ul>
 <h2 id="documentation">Documentation</h2>
@@ -1675,6 +1744,7 @@ case DEF:
 </li>
 <li>Assertions are used to define assumptions about the program state so that the runtime can verify them.</li>
 <li>Recommended that assertions be used liberally in the code.</li>
+<li><code>assertEquals</code> is a JUnit method and only used in test classes.</li>
 </ul>
 </li>
 <li><strong>Logging</strong> is the deliberate recording of certain information during a program execution for future reference.</li>
@@ -1686,6 +1756,38 @@ case DEF:
 </li>
 <li><strong>Design-by-contract approach</strong> is an approach for designing software that requires defining formal, precise and verifiable interface specifications for software components.<ul>
 <li>Code first checks if the preconditions have been met.</li>
+</ul>
+</li>
+</ul>
+<h2 id="integration">Integration</h2>
+<ul>
+<li>Timing and frequency:<ul>
+<li><strong>Late and One Time</strong>: wait till all components are completed and integrate all finished components near the end of the project<ul>
+<li>Not reccommended because integration often causes many component incompatibilities which can lead to delivery delays</li>
+</ul>
+</li>
+<li><strong>Early and Frequent</strong>: integrate early and evolve each part in parallel, in small steps, re-integrating frequently</li>
+</ul>
+</li>
+<li>Extent:<ul>
+<li><strong>Big-bang integration</strong>: integrate all components at the same time<ul>
+<li>Not reccommended because it will uncover too many problems at the same time</li>
+</ul>
+</li>
+<li><strong>Incremental integration</strong>: integrate a few components at a time (integration problems surface in a more manageable way)</li>
+</ul>
+</li>
+<li>Direction:<ul>
+<li><strong>Top-down integration</strong>: higher-level components are integrated before bringing in the lower-level components<ul>
+<li>+: Higher-level problems can be discovered early</li>
+<li>-: Requires the use of stubs in place of lower level components</li>
+</ul>
+</li>
+<li><strong>Bottom-up integration</strong>: the reverse of top-down integration<ul>
+<li>When integrating lower level components, drivers may be needed to test the integrated components, because UI may not be integrated yet</li>
+</ul>
+</li>
+<li><strong>Sandwich integration</strong>: a mix of top-down and bottom-up approaches, do both and meet in the middle</li>
 </ul>
 </li>
 </ul>
@@ -1764,8 +1866,8 @@ case DEF:
 <ul>
 <li><strong>Postive test case</strong>: is designed to produce valid behaviour.</li>
 <li><strong>Negative test case</strong>: is designed to produce an invalid behaviour.</li>
-<li><strong>Black-box</strong>: test cases are designed exclusively based on the SUT's specified external behaviour.</li>
-<li><strong>White-box</strong>: test cases are designed based on what is known about the SUT's implementation.</li>
+<li><strong>Black-box</strong> (aka specification-based or responsibility-based): test cases are designed exclusively based on the SUT's specified external behaviour.</li>
+<li><strong>White-box</strong> (aka glass-box or structured or implementation-based): test cases are designed based on what is known about the SUT's implementation.</li>
 <li>
 <p><strong>Gray-box</strong>: mix of both</p>
 </li>
@@ -1892,6 +1994,12 @@ case DEF:
 <li>Statement coverage: based on the number of lines of code executed e.g., testing executed 23k out of 25k LOC.</li>
 <li>Decision/branch coverage: based on the decision points exercised e.g., an if statement evaluated to both true and false with separate test cases during testing is considered 'covered'.</li>
 <li>Condition coverage: based on the boolean sub-expressions, each evaluated to both true and false with different test cases. Condition coverage is not the same as the decision coverage.</li>
+<li>Path coverage: measures coverage in terms of possible paths through a given part of the code executed. 100% path coverage means all possible paths have been executed. A commonly used notation for path analysis is called the Control Flow Graph (CFG).</li>
+<li>Entry/exit coverage: measures coverage in terms of possible calls to and exits from the operations in the SUT.<ul>
+<li>Entry points refer to all places from which the method is called from the rest of the code i.e., all places where the control is handed over to the method in concern.</li>
+<li>Exit points refer to points at which the control is returned to the caller e.g., return statements, throwing of exceptions.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>Dependency injection</strong>: Dependency injection is the process of 'injecting' objects to replace current dependencies with a different object.<ul>
