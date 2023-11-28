@@ -473,7 +473,7 @@ Specify the constraints under which the system is developed and operated
 
 ### Notation — Class Diagrams
 
--   Visibility: `+` for public | `-` for private | `#` for protected | `~` package private
+-   Visibility: `+` for public | `-` for private | `#` for protected | `~` package private (default)
 -   Class-level methods/ attributes are underlined
 -   `<<interface>>`
 -   `<<enumeration>>`
@@ -558,7 +558,7 @@ Specify the constraints under which the system is developed and operated
     -   You can use `<<class>>` to show that a participant is the class itself
 
 -   All frames should use a rectangle with a clip on the bottom-right corner
--   **loop** frame: indicate a loop
+-   **loop** frame: indicate a loop (can execute 0 times)
     -   loop [condition]
 -   **alt** frame: indicate alternative paths
     -   alt [condition]
@@ -567,7 +567,7 @@ Specify the constraints under which the system is developed and operated
 -   **ref** frame: allow a segment of the interaction to be omitted and shown as a separate sequence diagram
     -   ref diagram title
     -   sd diagram title
--   **par** frame: indicate parallel paths
+-   **par** frame: indicate parallel paths (can happen in any order)
     -   The corresponding Java implementation is likely to be multi-threaded- Keywords are `loop` (while), `opt` (if) and `alt` (if elseif)
 -   OK to omit:
     -   Activation bar
@@ -803,60 +803,60 @@ Specify the constraints under which the system is developed and operated
 -   Use egyptian style brackets.
 -   Method definitions should have the following form:
 
-    ```java
-    public void someMethod() throws SomeException {
-        ...
-    }
-    ```
+```java
+public void someMethod() throws SomeException {
+    ...
+}
+```
 
 -   if-else class of statements should have the following form:
 
-    ```java
-    if (condition) {
-        statements;
-    }
-    ```
+```java
+if (condition) {
+    statements;
+}
+```
 
 -   for statement should have the following form:
 
-    ```java
-    for (initialization; condition; update) {
-        statements;
-    }
-    ```
+```java
+for (initialization; condition; update) {
+    statements;
+}
+```
 
 -   while statement should have the following form:
 
-    ```java
-    while (condition) {
-        statements;
-    }
-    ```
+```java
+while (condition) {
+    statements;
+}
+```
 
 -   switch statement should have the following form:
 
-    ```java
-    switch (condition) {
+```java
+switch (condition) {
 
-    case ABC:
-        statements;
-        //Fallthrough
+case ABC:
+    statements;
+    //Fallthrough
 
-    case DEF:
-        statements;
-        break;
-    }
-    ```
+case DEF:
+    statements;
+    break;
+}
+```
 
 -   try-catch statement should have the following form:
 
-    ```java
-    try {
-        statements;
-    } catch (Exception exception) {
-        statements;
-    }
-    ```
+```java
+try {
+    statements;
+} catch (Exception exception) {
+    statements;
+}
+```
 
 -   White space within a statement
     -   Operators should be surrounded by a space character
@@ -915,31 +915,31 @@ Specify the constraints under which the system is developed and operated
 -   All non-trivial private methods should carry header comments.
 -   Javadoc comments should have the following form:
 
-    ```java
-    /**
-     * Returns lateral location of the specified position.
-     * If the position is unset, NaN is returned.
-     *
-     * @param x X coordinate of position.
-     * @param y Y coordinate of position.
-     * @param zone Zone of position.
-     *  @return Lateral location.
-     * @throws IllegalArgumentException  If zone is <= 0.
-     */
-     public double computeLocation(double x, double y, int zone)
-             throws IllegalArgumentException {
-         //...
-     }
-    ```
+```java
+/**
+ * Returns lateral location of the specified position.
+ * If the position is unset, NaN is returned.
+ *
+ * @param x X coordinate of position.
+ * @param y Y coordinate of position.
+ * @param zone Zone of position.
+ *  @return Lateral location.
+ * @throws IllegalArgumentException  If zone is <= 0.
+ */
+ public double computeLocation(double x, double y, int zone)
+         throws IllegalArgumentException {
+     //...
+ }
+```
 
 -   Comments should be indented relative to their position in the code.
 
-    ```java
-    while (true) {
-                // Do something
-                something();
-    }
-    ```
+```java
+while (true) {
+            // Do something
+            something();
+}
+```
 
 # Implementation
 
@@ -981,49 +981,49 @@ Specify the constraints under which the system is developed and operated
 -   Refactoring can result in regression
 -   Consolidate Duplicate Conditional Fragments
 
-    ```java
-    // BEFORE
-    if (isSpecialDeal()) {
-        total = price * 0.95;
-        send();
-    } else {
-        total = price * 0.98;
-        send();
-    }
-
-    // AFTER
-    if (isSpecialDeal()) {
-        total = price * 0.95;
-    } else {
-        total = price * 0.98;
-    }
+```java
+// BEFORE
+if (isSpecialDeal()) {
+    total = price * 0.95;
     send();
-    ```
+} else {
+    total = price * 0.98;
+    send();
+}
+
+// AFTER
+if (isSpecialDeal()) {
+    total = price * 0.95;
+} else {
+    total = price * 0.98;
+}
+send();
+```
 
 -   Extract Method (opposite of this is inline method)
     from:
 
-    ```java
-    //BEFORE
-    void printOwing() {
-        printBanner();
+```java
+//BEFORE
+void printOwing() {
+    printBanner();
 
-        // print details
-        System.out.println("name:	" + name);
-        System.out.println("amount	" + getOutstanding());
-    }
+    // print details
+    System.out.println("name:	" + name);
+    System.out.println("amount	" + getOutstanding());
+}
 
-    //AFTER
-    void printOwing() {
-        printBanner();
-        printDetails(getOutstanding());
-    }
+//AFTER
+void printOwing() {
+    printBanner();
+    printDetails(getOutstanding());
+}
 
-    void printDetails(double outstanding) {
-        System.out.println("name:	" + name);
-        System.out.println("amount	" + outstanding);
-    }
-    ```
+void printDetails(double outstanding) {
+    System.out.println("name:	" + name);
+    System.out.println("amount	" + outstanding);
+}
+```
 
 ## Documentation
 
@@ -1231,6 +1231,10 @@ Specify the constraints under which the system is developed and operated
     -   Statement coverage: based on the number of lines of code executed e.g., testing executed 23k out of 25k LOC.
     -   Decision/branch coverage: based on the decision points exercised e.g., an if statement evaluated to both true and false with separate test cases during testing is considered 'covered'.
     -   Condition coverage: based on the boolean sub-expressions, each evaluated to both true and false with different test cases. Condition coverage is not the same as the decision coverage.
+    -   Path coverage: measures coverage in terms of possible paths through a given part of the code executed. 100% path coverage means all possible paths have been executed. A commonly used notation for path analysis is called the Control Flow Graph (CFG).
+    -   Entry/exit coverage: measures coverage in terms of possible calls to and exits from the operations in the SUT.
+        -   Entry points refer to all places from which the method is called from the rest of the code i.e., all places where the control is handed over to the method in concern.
+        -   Exit points refer to points at which the control is returned to the caller e.g., return statements, throwing of exceptions.
 -   **Dependency injection**: Dependency injection is the process of 'injecting' objects to replace current dependencies with a different object.
     -   Often used to inject stubs to isolate the SUT from its dependencies so that it can be tested in isolation.
     -   Polymorphism can be used to implement dependency injection.
