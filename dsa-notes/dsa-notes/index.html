@@ -109,10 +109,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#connect-x-to-leftv-rightv-parentv" class="nav-link">Connect x to left(v), right(v), parent(v)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#balanced-trees" class="nav-link">Balanced Trees</a>
               <ul class="nav flex-column">
               </ul>
@@ -125,7 +121,53 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="data-structures-and-algorithm">Data Structures and Algorithm</h1>
+<ul>
+<li><a href="#data-structures-and-algorithm">Data Structures and Algorithm</a><ul>
+<li><a href="#recurrence-relations">Recurrence Relations</a></li>
+<li><a href="#binary-search">Binary Search</a></li>
+<li><a href="#peak-finding">Peak Finding</a></li>
+<li><a href="#sorting">Sorting</a><ul>
+<li><a href="#bubblesort">BubbleSort</a></li>
+<li><a href="#selectionsort">SelectionSort</a></li>
+<li><a href="#insertionsort">InsertionSort</a></li>
+<li><a href="#mergesort">MergeSort</a></li>
+<li><a href="#quicksort">QuickSort</a></li>
+<li><a href="#partition">Partition</a></li>
+<li><a href="#quickselect">QuickSelect</a></li>
+<li><a href="#heapsort">HeapSort?</a></li>
+</ul>
+</li>
+<li><a href="#trees">Trees</a><ul>
+<li><a href="#binary-search-trees">Binary Search Trees</a><ul>
+<li><a href="#height">Height</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#insert">Insert</a></li>
+</ul>
+</li>
+<li><a href="#traversals">Traversals</a><ul>
+<li><a href="#inorder-traversal">Inorder Traversal</a></li>
+<li><a href="#preorder-traversal">Preorder Traversal</a></li>
+<li><a href="#postorder-traversal">Postorder Traversal</a></li>
+</ul>
+</li>
+<li><a href="#delete">Delete</a></li>
+</ul>
+</li>
+<li><a href="#balanced-trees">Balanced Trees</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="recurrence-relations">Recurrence Relations</h2>
+<ol>
+<li>T(n) = T(n-1) + O(1) = O(n)</li>
+<li>T(n) = T(n/2) + O(1) = O(logn)</li>
+<li>T(n) = T(n-1) + O(n) = O(n^2)</li>
+<li>T(n) = T(n-1) + O(nk) = O(nk+1)</li>
+<li>T(n) = 2T(n/2) + O(n) = O(nlogn)</li>
+<li>T(n) = T(n/2) + O(n) = O(n)</li>
+<li>T(n) = 2T(n/2) + O(1) = O(n)</li>
+<li>T(n) = 2T(n-1) + O(1) = O(2n)</li>
+</ol>
 <h2 id="binary-search">Binary Search</h2>
 <ul>
 <li>Time complexity: O(logn)</li>
@@ -670,9 +712,7 @@ int kthSmallest(int[] arr, int low,
 <li>x = successor(v)</li>
 <li>Delete(x)</li>
 <li>Remove v</li>
-<li>
-<h2 id="connect-x-to-leftv-rightv-parentv">Connect x to left(v), right(v), parent(v)</h2>
-</li>
+<li>Connect x to left(v), right(v), parent(v)</li>
 </ul>
 </li>
 </ul>
