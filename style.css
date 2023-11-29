@@ -1,0 +1,99 @@
+/* Set body font and background */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set container width and add padding */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #007acc;
+}
+
+/* Style links */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style code blocks */
+code {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* Style tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style code blocks */
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* Style blockquotes */
+blockquote {
+    border-left: 4px solid #007acc;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Style navigation */
+nav.navigation {
+    background-color: #007acc;
+    color: #fff;
+}
+
+nav.navigation a {
+    color: #fff;
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
