@@ -163,11 +163,11 @@
 <li>T(n) = T(n-1) + O(1) = O(n)</li>
 <li>T(n) = T(n/2) + O(1) = O(logn)</li>
 <li>T(n) = T(n-1) + O(n) = O(n^2)</li>
-<li>T(n) = T(n-1) + O(nk) = O(nk+1)</li>
+<li>T(n) = T(n-1) + O(nk) = O(n^(k+1))</li>
 <li>T(n) = 2T(n/2) + O(n) = O(nlogn)</li>
 <li>T(n) = T(n/2) + O(n) = O(n)</li>
 <li>T(n) = 2T(n/2) + O(1) = O(n)</li>
-<li>T(n) = 2T(n-1) + O(1) = O(2n)</li>
+<li>T(n) = 2T(n-1) + O(1) = O(2^n)</li>
 </ol>
 <h2 id="binary-search">Binary Search</h2>
 <ul>
@@ -777,7 +777,23 @@ void leftRotate(TreeNode v) {
 <li>Case 1: v.right is balanced -&gt; leftRotate(v)</li>
 <li>Case 2: v.right is left-heavy -&gt; leftRotate(v)</li>
 <li>Case 3: v.right is right-heavy -&gt; rightRotate(v.right), leftRotate(v)</li>
-</ul></div>
+</ul>
+<pre><code class="language-java">public void rebalance() {
+    int leftSize = this.leftHalf.size();
+    int rightSize = this.rightHalf.size();
+
+    int diff = Math.abs(leftSize - rightSize);
+    if (diff &gt; 1) {
+        if (leftSize &gt; rightSize) {
+            // Left is bigger, move the biggest item to right
+            this.rightHalf.add(this.leftHalf.pollLast());
+        } else {
+            // Right is bigger, move the smallest item to left
+            this.leftHalf.add(this.rightHalf.pollFirst());
+        }
+    }
+}
+</code></pre></div>
             </div>
         </div>
 
