@@ -132,9 +132,11 @@
 <li><a href="#selectionsort">SelectionSort</a></li>
 <li><a href="#insertionsort">InsertionSort</a></li>
 <li><a href="#mergesort">MergeSort</a></li>
-<li><a href="#quicksort">QuickSort</a></li>
+<li><a href="#quicksort">QuickSort</a><ul>
 <li><a href="#partition">Partition</a></li>
 <li><a href="#quickselect">QuickSelect</a></li>
+</ul>
+</li>
 <li><a href="#heapsort">HeapSort?</a></li>
 </ul>
 </li>
@@ -447,7 +449,7 @@ void mergeSort(int arr[], int l, int r) {
     }
 }
 </code></pre>
-<h3 id="partition">Partition</h3>
+<h4 id="partition">Partition</h4>
 <ul>
 <li>Invariant:<ul>
 <li>A[high] &gt; pivot at the end of each loop</li>
@@ -482,7 +484,7 @@ void mergeSort(int arr[], int l, int r) {
     return (i + 1);
 }
 </code></pre>
-<h3 id="quickselect">QuickSelect</h3>
+<h4 id="quickselect">QuickSelect</h4>
 <ul>
 <li>Invariant:<ul>
 <li>After partioning, arr[partition] is now at right place</li>
@@ -778,7 +780,12 @@ void leftRotate(TreeNode v) {
 <li>Case 2: v.right is left-heavy -&gt; leftRotate(v)</li>
 <li>Case 3: v.right is right-heavy -&gt; rightRotate(v.right), leftRotate(v)</li>
 </ul>
-<pre><code class="language-java">public void rebalance() {
+<pre><code class="language-java">import java.util.TreeSet;
+
+TreeSet&lt;IntegerNode&gt; leftHalf;
+TreeSet&lt;IntegerNode&gt; rightHalf;
+
+public void rebalance() {
     int leftSize = this.leftHalf.size();
     int rightSize = this.rightHalf.size();
 
@@ -793,6 +800,8 @@ void leftRotate(TreeNode v) {
         }
     }
 }
+
+
 </code></pre></div>
             </div>
         </div>
