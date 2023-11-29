@@ -109,14 +109,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#case-1-node-has-a-right-child" class="nav-link">Case 1: node has a right child</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#case-2-node-has-a-right-child" class="nav-link">Case 2: node has a right child</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#connect-x-to-leftv-rightv-parentv" class="nav-link">Connect x to left(v), right(v), parent(v)</a>
               <ul class="nav flex-column">
               </ul>
@@ -644,12 +636,8 @@ int kthSmallest(int[] arr, int low,
 <li>If (result &lt;= key), then search for successor of result.</li>
 </ol>
 </li>
-<li>
-<h2 id="case-1-node-has-a-right-child">Case 1: node has a right child</h2>
-</li>
-<li>
-<h2 id="case-2-node-has-a-right-child">Case 2: node has a right child</h2>
-</li>
+<li>Case 1: node has a right child</li>
+<li>Case 2: node has no right child</li>
 </ul>
 </li>
 </ul>
@@ -736,9 +724,9 @@ void leftRotate(TreeNode v) {
 <p>If v is out of balanced and left-heavy:</p>
 <ul>
 <li>Case 1: v.left is balanced -&gt; rightRotate(v)
-    <img alt="equivBST" src="../equivBST.jpg" /></li>
+    <img alt="equivBST" src="../equivBST.png" /></li>
 <li>Case 2: v.left is left-heavy -&gt; rightRotate(v)
-    <img alt="leftHeavyBST" src="../leftHeavyBST.jpg" /></li>
+    <img alt="leftHeavyBST" src="../leftHeavyBST.png" /></li>
 <li>Case 3: v.left is right-heavy -&gt; leftRotate(v.left), rightRotate(v)
     <img alt="rightHeavyBST1" src="../rightHeavyBST1.png" />
     <img alt="rightHeavyBST2" src="../rightHeavyBST2.png" /></li>
