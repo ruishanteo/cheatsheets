@@ -42,6 +42,15 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dsa notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dsa-notes/dsa-notes/" class="dropdown-item">Data Structures and Algorithm</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -56,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../../dsa-notes/dsa-notes/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -1475,59 +1484,58 @@
 <li>Line length should be no longer than 120 characters.</li>
 <li>Place line break to improve readability.</li>
 <li>Use egyptian style brackets.</li>
-<li>
-<p>Method definitions should have the following form:</p>
-<p><code>java
-public void someMethod() throws SomeException {
+<li>Method definitions should have the following form:</li>
+</ul>
+<pre><code class="language-java">public void someMethod() throws SomeException {
     ...
-}</code></p>
-</li>
-<li>
-<p>if-else class of statements should have the following form:</p>
-<p><code>java
-if (condition) {
+}
+</code></pre>
+<ul>
+<li>if-else class of statements should have the following form:</li>
+</ul>
+<pre><code class="language-java">if (condition) {
     statements;
-}</code></p>
-</li>
-<li>
-<p>for statement should have the following form:</p>
-<p><code>java
-for (initialization; condition; update) {
+}
+</code></pre>
+<ul>
+<li>for statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">for (initialization; condition; update) {
     statements;
-}</code></p>
-</li>
-<li>
-<p>while statement should have the following form:</p>
-<p><code>java
-while (condition) {
+}
+</code></pre>
+<ul>
+<li>while statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">while (condition) {
     statements;
-}</code></p>
-</li>
-<li>
-<p>switch statement should have the following form:</p>
-<p>```java
-switch (condition) {</p>
-<p>case ABC:
+}
+</code></pre>
+<ul>
+<li>switch statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">switch (condition) {
+
+case ABC:
     statements;
-    //Fallthrough</p>
-<p>case DEF:
+    //Fallthrough
+
+case DEF:
     statements;
     break;
 }
-```</p>
-</li>
-<li>
-<p>try-catch statement should have the following form:</p>
-<p><code>java
-try {
+</code></pre>
+<ul>
+<li>try-catch statement should have the following form:</li>
+</ul>
+<pre><code class="language-java">try {
     statements;
 } catch (Exception exception) {
     statements;
-}</code></p>
-</li>
-<li>
-<p>White space within a statement</p>
+}
+</code></pre>
 <ul>
+<li>White space within a statement<ul>
 <li>Operators should be surrounded by a space character</li>
 <li>Java reserved words should be followed by a white space</li>
 <li>Commas should be followed by a white space</li>
@@ -1586,10 +1594,9 @@ try {
 <li>All comments should be written in English.</li>
 <li>Write descriptive header comments for all public classes/ methods.</li>
 <li>All non-trivial private methods should carry header comments.</li>
-<li>
-<p>Javadoc comments should have the following form:</p>
-<p><code>java
-/**
+<li>Javadoc comments should have the following form:</li>
+</ul>
+<pre><code class="language-java">/**
  * Returns lateral location of the specified position.
  * If the position is unset, NaN is returned.
  *
@@ -1602,17 +1609,16 @@ try {
  public double computeLocation(double x, double y, int zone)
          throws IllegalArgumentException {
      //...
- }</code></p>
-</li>
-<li>
-<p>Comments should be indented relative to their position in the code.</p>
-<p><code>java
-while (true) {
+ }
+</code></pre>
+<ul>
+<li>Comments should be indented relative to their position in the code.</li>
+</ul>
+<pre><code class="language-java">while (true) {
             // Do something
             something();
-}</code></p>
-</li>
-</ul>
+}
+</code></pre>
 <h1 id="implementation">Implementation</h1>
 <h2 id="coding-quality">Coding Quality</h2>
 <ul>
@@ -1660,50 +1666,49 @@ while (true) {
 </ul>
 </li>
 <li>Refactoring can result in regression</li>
-<li>
-<p>Consolidate Duplicate Conditional Fragments</p>
-<p>```java
-// BEFORE
+<li>Consolidate Duplicate Conditional Fragments</li>
+</ul>
+<pre><code class="language-java">// BEFORE
 if (isSpecialDeal()) {
     total = price * 0.95;
     send();
 } else {
     total = price * 0.98;
     send();
-}</p>
-<p>// AFTER
+}
+
+// AFTER
 if (isSpecialDeal()) {
     total = price * 0.95;
 } else {
     total = price * 0.98;
 }
 send();
-```</p>
-</li>
-<li>
-<p>Extract Method (opposite of this is inline method)
-    from:</p>
-<p>```java
-//BEFORE
-void printOwing() {
-    printBanner();</p>
-<pre><code>// print details
-System.out.println("name:   " + name);
-System.out.println("amount  " + getOutstanding());
 </code></pre>
-<p>}</p>
-<p>//AFTER
+<ul>
+<li>Extract Method (opposite of this is inline method)
+    from:</li>
+</ul>
+<pre><code class="language-java">//BEFORE
+void printOwing() {
+    printBanner();
+
+    // print details
+    System.out.println(&quot;name:   &quot; + name);
+    System.out.println(&quot;amount  &quot; + getOutstanding());
+}
+
+//AFTER
 void printOwing() {
     printBanner();
     printDetails(getOutstanding());
-}</p>
-<p>void printDetails(double outstanding) {
-    System.out.println("name:   " + name);
-    System.out.println("amount  " + outstanding);
 }
-```</p>
-</li>
-</ul>
+
+void printDetails(double outstanding) {
+    System.out.println(&quot;name:   &quot; + name);
+    System.out.println(&quot;amount  &quot; + outstanding);
+}
+</code></pre>
 <h2 id="documentation">Documentation</h2>
 <ul>
 <li>Developer-as-user: API documentaion or tutorial-style instructional documentation</li>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Data Structures and Algorithm - Cheatsheets and Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Cheatsheets and Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cs2103t <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cs2103t/cs2103t-notes/" class="dropdown-item">CS2103/T Notes</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dsa notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Data Structures and Algorithm</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../cs2103t/cs2103t-notes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#data-structures-and-algorithm" class="nav-link">Data Structures and Algorithm</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#recurrence-relations" class="nav-link">Recurrence Relations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#binary-search" class="nav-link">Binary Search</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#peak-finding" class="nav-link">Peak Finding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sorting" class="nav-link">Sorting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#trees" class="nav-link">Trees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#case-1-node-has-a-right-child" class="nav-link">Case 1: node has a right child</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#case-2-node-has-a-right-child" class="nav-link">Case 2: node has a right child</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#connect-x-to-leftv-rightv-parentv" class="nav-link">Connect x to left(v), right(v), parent(v)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#balanced-trees" class="nav-link">Balanced Trees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="data-structures-and-algorithm">Data Structures and Algorithm</h1>
+<h2 id="recurrence-relations">Recurrence Relations</h2>
+<h2 id="binary-search">Binary Search</h2>
+<ul>
+<li>Time complexity: O(logn)</li>
+<li>Preconditions:<ul>
+<li>Array is of size n</li>
+<li>Array is sorted</li>
+</ul>
+</li>
+<li>Postconditions:<ul>
+<li>If element is in array: <code>A[left] = key</code></li>
+</ul>
+</li>
+<li>Loop invariant:<ul>
+<li><code>A[left] &lt;= key &lt;= A[right]</code></li>
+<li>(right - left) &lt;= n/2^k in iteration k</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">public int search(int A[], int key, int n) {
+    int left = 0;
+    int right = n - 1;
+
+    while (left &lt; right) {
+        // int mid = (left + right) / 2 can lead to integer overflow
+        int mid = left + (right - left) / 2;
+        if (key &lt;= A[mid]) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return (A[left] == key ? left : -1);
+}
+</code></pre>
+<h2 id="peak-finding">Peak Finding</h2>
+<ul>
+<li>Output a local maximum in A, where A[i - 1] &lt;= A[i] and A[i + 1] &lt;= A[i]</li>
+<li>Time complexity: O(logn)</li>
+<li>
+<p>Invariant:</p>
+<ul>
+<li>If we recuse in the right half, then there exists a peak in the right half</li>
+<li>There exists a peak in the range [begin, end]</li>
+<li>Every peak in [begin, end] is a peak in [1, n]</li>
+</ul>
+</li>
+<li>
+<p>T(n) = T(n/2) + θ(1) = O(logn)</p>
+</li>
+</ul>
+<pre><code class="language-java">public int findPeak(int A[], int n) {
+    // if right of mid is larger, recurse on right
+    if (A[n / 2 + 1] &gt; A[n / 2]) {
+        return findPeak(Arrays.copyOfRange(A, n / 2 + 1, n + 1), n / 2)
+    // if left of mid is larger, recurse on left
+    } else if (A[n / 2 - 1] &gt;  A[n / 2]) {
+        return findPeak(Arrays.copyOfRange(A, 0, n / 2), n / 2)
+    } else {
+        return n / 2;
+    }
+}
+</code></pre>
+<h2 id="sorting">Sorting</h2>
+<h3 id="bubblesort">BubbleSort</h3>
+<ul>
+<li>Invariant:<ul>
+<li>At the end of iteration i, the biggest j items are correctly sorted in the final j positions of the array.</li>
+</ul>
+</li>
+<li>Best: O(n), when array is already sorted</li>
+<li>Worst: <strong>O(n^2)</strong>, when array is reverse sorted</li>
+<li>Stable</li>
+<li>Description:<ul>
+<li>For n loops, if A[j] &gt; A[j + 1], swap(A[j], A[j + 1])</li>
+<li><img alt="bubbleSort" src="../bubbleSort.png" /></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">void bubbleSort(int arr[], int n) {
+    int i, j, temp;
+    boolean swapped;
+    for (i = 0; i &lt; n - 1; i++) {
+        swapped = false;
+        for (j = 0; j &lt; n - i - 1; j++) {
+            if (arr[j] &gt; arr[j + 1]) {
+
+                // Swap arr[j] and arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+
+        // If no two elements were
+        // swapped by inner loop, then break
+        if (swapped == false)
+            break;
+    }
+}
+</code></pre>
+<h3 id="selectionsort">SelectionSort</h3>
+<ul>
+<li>Invariant:<ul>
+<li>At the end of iteration j: the smallest j items are correctly sorted in the first j positions of the array.</li>
+</ul>
+</li>
+<li>Best: O(n^2)</li>
+<li>Worst: <strong>O(n^2)</strong></li>
+<li>Not stable</li>
+<li>Description:<ul>
+<li>For n loops, find minimum element A[j] in A[j..n], swap(A[j], A[k])</li>
+<li><img alt="selectionSort" src="../selectionSort.png" /></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">void selectionSort(int arr[], int n) {
+    int min_idx = 0;
+
+    // One by one move boundary of unsorted subarray
+    for (int i = 0; i &lt; n - 1; i++) {
+
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (int j = i + 1; j &lt; n; j++) {
+            if (arr[j] &lt; arr[min_idx])
+                min_idx = j;
+        }
+
+        // Swap the found minimum element with the first element
+        if (min_idx != i)
+            swap(arr[min_idx], arr[i]);
+    }
+}
+</code></pre>
+<h3 id="insertionsort">InsertionSort</h3>
+<ul>
+<li>Invariant:<ul>
+<li>At the end of iteration j: the first j items in the array are in sorted order.</li>
+</ul>
+</li>
+<li>Best: O(n), when array is already sorted</li>
+<li>Worst: <strong>O(n^2)</strong>, when array is reverse sorted</li>
+<li>Stable</li>
+<li>Description:<ul>
+<li>For n loops, insert key into the sorted array A[1 .. j - 1]</li>
+<li><img alt="insertionSort" src="../insertionSort.png" /></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">void insertionSort(int arr[]) {
+    int n = arr.length;
+    for (int i = 1; i &lt; n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+
+        /* Move elements of arr[0..i-1], that are
+            greater than key, to one position ahead
+            of their current position */
+        while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+</code></pre>
+<h3 id="mergesort">MergeSort</h3>
+<ul>
+<li>Best: <code>O(n logn)</code></li>
+<li>Worst: <code>O(n logn)</code></li>
+<li>Stable</li>
+<li>Memory: <code>O(n logn)</code></li>
+<li>Description:<ul>
+<li>Divide: split array into two halves</li>
+<li>Recurse: sort the two halves</li>
+<li>Combine: merge the two sorted halves</li>
+<li><img alt="mergeSort" src="https://cdn.educba.com/academy/wp-content/uploads/2021/06/7.png" /></li>
+</ul>
+</li>
+<li>Use InsertionSort instead for n &lt; 1024</li>
+</ul>
+<pre><code class="language-java">void merge(int arr[], int l, int m, int r) {
+    // Find sizes of two subarrays to be merged
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    // Create temp arrays
+    int L[] = new int[n1];
+    int R[] = new int[n2];
+
+    // Copy data to temp arrays
+    for (int i = 0; i &lt; n1; ++i)
+        L[i] = arr[l + i];
+    for (int j = 0; j &lt; n2; ++j)
+        R[j] = arr[m + 1 + j];
+
+    // Merge the temp arrays
+
+    // Initial indices of first and second subarrays
+    int i = 0, j = 0;
+
+    // Initial index of merged subarray array
+    int k = l;
+    while (i &lt; n1 &amp;&amp; j &lt; n2) {
+        if (L[i] &lt;= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy remaining elements of L[] if any
+    while (i &lt; n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Copy remaining elements of R[] if any
+    while (j &lt; n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int l, int r) {
+    if (l &lt; r) {
+        // Find the middle point
+        int m = l + (r - l) / 2;
+
+        // Sort first and second halves
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+
+        // Merge the sorted halves
+        merge(arr, l, m, r);
+    }
+}
+</code></pre>
+<h3 id="quicksort">QuickSort</h3>
+<ul>
+<li>Invariant:<ul>
+<li>At the end of every loop iteration,</li>
+<li>For every i &lt; low: B[i] &lt; pivot</li>
+<li>For every j &gt; high: B[j] &gt; pivot</li>
+</ul>
+</li>
+<li>Best: <code>O(n logn)</code>, when median element is chosen as pivot</li>
+<li>Worst: <code>O(n^2)</code>, when first element is chosen as pivot/ all elements are the same</li>
+<li>Not stable</li>
+<li>Description:<ul>
+<li><img alt="quickSort" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*bIJvejLlEshkf-ehYJJlWQ.png" /></li>
+<li>Divide: Partition the array into two sub-arrays around a pivot x such that elements in lower subarray ≤ x ≤ elements in upper sub-array.</li>
+<li>Conquer: Recursively sort the two sub-arrays.</li>
+<li>Combine: Trivial, do nothing.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">void quickSort(int[] arr, int low, int high) {
+    if (low &lt; high) {
+
+        // pi is partitioning index, arr[pi]
+        // is now at right place
+        int pi = partition(arr, low, high);
+
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+</code></pre>
+<h3 id="partition">Partition</h3>
+<ul>
+<li>Invariant:<ul>
+<li>A[high] &gt; pivot at the end of each loop</li>
+<li>At the end of every loop iteration<ul>
+<li>For all i &gt;= high, A[i] &gt; pivot</li>
+<li>For all 1 &lt; j &lt; low, A[j] &lt; pivot</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Time complexity: <code>O(n)</code></li>
+</ul>
+<pre><code class="language-java">int partition(int[] arr, int low, int high) {
+    // Choosing the pivot
+    int pivot = arr[high];
+
+    // Index of smaller element and indicates
+    // the right position of pivot found so far
+    int i = (low - 1);
+
+    for (int j = low; j &lt;= high - 1; j++) {
+
+        // If current element is smaller than the pivot
+        if (arr[j] &lt; pivot) {
+
+            // Increment index of smaller element
+            i++;
+            swap(arr, i, j);
+        }
+    }
+    swap(arr, i + 1, high);
+    return (i + 1);
+}
+</code></pre>
+<h3 id="quickselect">QuickSelect</h3>
+<ul>
+<li>Invariant:<ul>
+<li>After partioning, arr[partition] is now at right place</li>
+</ul>
+</li>
+<li>Time complexity: <code>O(n)</code></li>
+<li>Description: Find the k-th smallest element in an unordered list<ul>
+<li>partition the array</li>
+<li>if partition is at position k, the partition is the k-th smallest element</li>
+<li>else continue searching in the correct half</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">// ASSUMPTION: all elements in arr[] are distinct
+int kthSmallest(int[] arr, int low,
+                            int high, int k) {
+    // find the partition
+    int partition = partition(arr, low, high);
+
+    // if partition value is equal to the kth position, return value at k
+    if (partition == k - 1) {
+        return arr[partition];
+    }
+    // if partition value is less than kth position, search right side of the array
+    else if (partition &lt; k - 1) {
+        return kthSmallest(arr, partition + 1, high, k);
+    }
+    // if partition value is more than kth position, search left side of the array
+    else {
+        return kthSmallest(arr, low, partition - 1, k);
+    }
+}
+</code></pre>
+<h3 id="heapsort">HeapSort?</h3>
+<h2 id="trees">Trees</h2>
+<h3 id="binary-search-trees">Binary Search Trees</h3>
+<ul>
+<li>All in left sub-tree &lt; key &lt; all in right sub-tree</li>
+</ul>
+<h4 id="height">Height</h4>
+<ul>
+<li>Number of edges on longest path from root to leaf</li>
+<li><code>h(v) = 0</code> (if v is a leaf)</li>
+<li><code>h(v) = max(h(v.left), h(v.right)) + 1</code></li>
+<li>Time complexity: <code>O(logn)</code></li>
+</ul>
+<pre><code class="language-java">int height() {
+    int leftHeight = -1;
+    int rightHeight = -1;
+
+    if (leftTree != null) {
+        leftHeight = leftTree.height();
+    }
+    if (rightTree != null) {
+        rightHeight = rightTree.height();
+    }
+    return max(leftHeight, rightHeight) + 1;
+}
+</code></pre>
+<h4 id="search">Search</h4>
+<ul>
+<li>Worst case: <code>O(n)</code>, (when n = h)</li>
+<li>
+<p>Time complexity: <code>O(h)</code></p>
+</li>
+<li>
+<p>searchMax()</p>
+</li>
+</ul>
+<pre><code class="language-java">TreeNode searchMax() {
+    if (rightTree != null) {
+        return rightTree.searchMax();
+    } else {
+        return this;
+    }
+}
+</code></pre>
+<ul>
+<li>searchMin()</li>
+</ul>
+<pre><code class="language-java">TreeNode searchMin() {
+    if (leftTree != null) {
+        return leftTree.searchMin();
+    } else {
+        return this;
+    }
+}
+</code></pre>
+<ul>
+<li>search(int queryKey)</li>
+</ul>
+<pre><code class="language-java">public TreeNode search(int queryKey){
+    if (queryKey &lt; key) {
+        if (leftTree != null) {
+            return leftTree.search(key);
+        } else {
+            return null;
+        }
+    } else if (queryKey &gt; key) {
+        if (rightTree != null) {
+            return rightTree.search(key);
+        } else {
+            return null;
+        }
+    } else {
+        return this; // Key is here!
+    }
+}
+</code></pre>
+<h4 id="insert">Insert</h4>
+<pre><code class="language-java">void insert(int insKey, int intValue) {
+    if (insKey &lt; key) {
+        if (leftTree != null) {
+            leftTree.insert(insKey);
+        } else {
+            leftTree = new TreeNode(insKey,insValue)
+        }
+    } else if (insKey &gt; key) {
+        if (rightTree != null) {
+            rightTree.insert(insKey);
+        } else {
+            rightTree = new TreeNode(insKey, insValue);
+        }
+    } else {
+        return; // Key is already in the tree!
+    }
+}
+</code></pre>
+<h3 id="traversals">Traversals</h3>
+<h4 id="inorder-traversal">Inorder Traversal</h4>
+<ul>
+<li>Left, self, right</li>
+<li>Running time: <code>O(n)</code></li>
+</ul>
+<pre><code class="language-java">void inOrder(Node node) {
+    if (node == null)
+        return;
+
+    // First recur on left child
+    inOrder(node.left);
+
+    // Then print the data of node
+    System.out.print(node.key + &quot; &quot;);
+
+    // Now recur on right child
+    inOrder(node.right);
+}
+</code></pre>
+<h4 id="preorder-traversal">Preorder Traversal</h4>
+<ul>
+<li>Self, left, right</li>
+<li>Running time: <code>O(n)</code></li>
+</ul>
+<pre><code class="language-java">void preOrder(Node node) {
+    if (node == null)
+        return;
+
+    // Print the data of node
+    System.out.print(node.key + &quot; &quot;);
+
+    // Then recur on left child
+    preOrder(node.left);
+
+    // Now recur on right child
+    preOrder(node.right);
+}
+</code></pre>
+<h4 id="postorder-traversal">Postorder Traversal</h4>
+<ul>
+<li>Left, right, self</li>
+<li>Running time: <code>O(n)</code></li>
+</ul>
+<pre><code class="language-java">void postOrder(Node node) {
+    if (node == null)
+        return;
+
+    // First recur on left child
+    postOrder(node.left);
+
+    // Then recur on right child
+    postOrder(node.right);
+
+    // Now print the data of node
+    System.out.print(node.key + &quot; &quot;);
+}
+</code></pre>
+<h3 id="delete">Delete</h3>
+<ul>
+<li>Successor<ul>
+<li>Running time: <code>O(h)</code></li>
+<li>Idea:<ol>
+<li>Search for key in the tree.</li>
+<li>If (result &gt; key), then return result.</li>
+<li>If (result &lt;= key), then search for successor of result.</li>
+</ol>
+</li>
+<li>
+<h2 id="case-1-node-has-a-right-child">Case 1: node has a right child</h2>
+</li>
+<li>
+<h2 id="case-2-node-has-a-right-child">Case 2: node has a right child</h2>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">public TreeNode successor() {
+    if (rightTree != null) {
+        return rightTree.searchMin();
+    }
+    TreeNode parent = parentTree;
+    TreeNode child = this;
+    while ((parent != null) &amp;&amp; (child == parent.rightTree)) {
+        child = parent;
+        parent = child.parentTree;
+    }
+    return parent;
+}
+</code></pre>
+<ul>
+<li>Delete<ul>
+<li>Running time: <code>O(h)</code></li>
+<li>Case 1: no children<ul>
+<li>Remove v</li>
+</ul>
+</li>
+<li>Case 2: 1 child<ul>
+<li>Remove v</li>
+<li>Connect child(v) to parent(v)</li>
+</ul>
+</li>
+<li>Case 3: 2 children<ul>
+<li>x = successor(v)</li>
+<li>Delete(x)</li>
+<li>Remove v</li>
+<li>
+<h2 id="connect-x-to-leftv-rightv-parentv">Connect x to left(v), right(v), parent(v)</h2>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="balanced-trees">Balanced Trees</h2>
+<ul>
+<li>BST is balanced if <code>h = O(logn)</code></li>
+<li>All operations run in <code>O(logn)</code> time</li>
+<li>Maxmimum height: <code>h &lt; 2logn</code></li>
+<li>
+<p>Mininimum nodes: <code>n &gt; 2^(h/2)</code></p>
+</li>
+<li>
+<p>In every node v, store height (augment)</p>
+<ol>
+<li>On insert and delete, update height: <code>height = max(left.height, right.height) + 1</code></li>
+</ol>
+</li>
+<li>
+<p>Define Invariant</p>
+<ul>
+<li>A node v is <strong>height-balanced</strong> if <code>|v.left.height - v.right.height| &lt;= 1</code></li>
+<li>A BST is height-balanced if every node is height-balanced</li>
+</ul>
+</li>
+<li>
+<p>Maintain balance</p>
+</li>
+</ul>
+<pre><code class="language-java">// assume v has left != null
+void rightRotate(TreeNode v) {
+    TreeNode w = v.left;
+    w.parent = v.parent;
+    v.parent = w;
+    v.left = w.right;
+    w.right = v;
+}
+</code></pre>
+<pre><code class="language-java">// assume v has right != null
+void leftRotate(TreeNode v) {
+    TreeNode w = v.right;
+    w.parent = v.parent;
+    v.parent = w;
+    v.right = w.left;
+    w.left = v;
+}
+</code></pre>
+<p>If v is out of balanced and left-heavy:</p>
+<ul>
+<li>Case 1: v.left is balanced -&gt; rightRotate(v)
+    <img alt="equivBST" src="../equivBST.jpg" /></li>
+<li>Case 2: v.left is left-heavy -&gt; rightRotate(v)
+    <img alt="leftHeavyBST" src="../leftHeavyBST.jpg" /></li>
+<li>Case 3: v.left is right-heavy -&gt; leftRotate(v.left), rightRotate(v)
+    <img alt="rightHeavyBST1" src="../rightHeavyBST1.png" />
+    <img alt="rightHeavyBST2" src="rightHeavyBST12.png" /></li>
+</ul>
+<p>If v is out of balanced and right-heavy:</p>
+<ul>
+<li>Case 1: v.right is balanced -&gt; leftRotate(v)</li>
+<li>Case 2: v.right is left-heavy -&gt; leftRotate(v)</li>
+<li>Case 3: v.right is right-heavy -&gt; rightRotate(v.right), leftRotate(v)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
