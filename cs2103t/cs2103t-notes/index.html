@@ -113,15 +113,15 @@
             
             <li class="nav-item" data-level="1"><a href="#requirements" class="nav-link">Requirements</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#non-functional-requirements" class="nav-link">Non-functional requirements</a>
+            <li class="nav-item" data-level="2"><a href="#non-functional-requirements" class="nav-link">Non-functional Requirements</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#quality-of-requirements" class="nav-link">Quality of requirements</a>
+            <li class="nav-item" data-level="2"><a href="#quality-of-requirements" class="nav-link">Quality of Requirements</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#gathering-requirements" class="nav-link">Gathering requirements</a>
+            <li class="nav-item" data-level="2"><a href="#gathering-requirements" class="nav-link">Gathering Requirements</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -397,9 +397,9 @@
 </ul>
 </li>
 <li><a href="#requirements">Requirements</a><ul>
-<li><a href="#non-functional-requirements">Non-functional requirements</a></li>
-<li><a href="#quality-of-requirements">Quality of requirements</a></li>
-<li><a href="#gathering-requirements">Gathering requirements</a></li>
+<li><a href="#non-functional-requirements">Non-functional Requirements</a></li>
+<li><a href="#quality-of-requirements">Quality of Requirements</a></li>
+<li><a href="#gathering-requirements">Gathering Requirements</a></li>
 <li><a href="#specifying-requirements">Specifying Requirements</a></li>
 </ul>
 </li>
@@ -561,13 +561,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="non-functional-requirements">Non-functional requirements</h2>
+<h2 id="non-functional-requirements">Non-functional Requirements</h2>
 <p>Specify the constraints under which the system is developed and operated</p>
 <ul>
 <li>NFRs are easier to miss</li>
 <li>Sometimes NFRs are critical to the success of the software</li>
 </ul>
-<h2 id="quality-of-requirements">Quality of requirements</h2>
+<h2 id="quality-of-requirements">Quality of Requirements</h2>
 <ul>
 <li>
 <p>Characteristics of well-defined requirements:</p>
@@ -593,7 +593,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="gathering-requirements">Gathering requirements</h2>
+<h2 id="gathering-requirements">Gathering Requirements</h2>
 <ul>
 <li>Brainstorming session<ul>
 <li>No "bad" ideas (aim is to generate ideas; not to validate them)</li>
@@ -870,7 +870,7 @@
 <li>
 <p>When to use:</p>
 <ul>
-<li>An object (possibly more than one) is needs to be notified when a change happens to another object</li>
+<li>An object (possibly more than one) needs to be notified when a change happens to another object</li>
 </ul>
 </li>
 <li>
@@ -1113,6 +1113,7 @@
 <li>Object name</li>
 <li>Variable name/ value</li>
 <li>Attributes compartment (if not relevant)</li>
+<li>Association labels/ roles (if not relevant)</li>
 </ul>
 </li>
 </ul>
@@ -1139,13 +1140,18 @@
 </li>
 <li><strong>alt</strong> frame: indicate alternative paths<ul>
 <li>alt [condition]</li>
-<li>No more than one alternative partitions be executed in an alt frame- <strong>opt</strong> frame: indicate optional paths</li>
+<li>No more than one alternative partitions be executed in an alt frame</li>
+</ul>
+</li>
+<li><strong>opt</strong> frame: indicate optional paths<ul>
 <li>opt [condition]</li>
 </ul>
 </li>
 <li><strong>ref</strong> frame: allow a segment of the interaction to be omitted and shown as a separate sequence diagram<ul>
-<li>ref diagram title</li>
-<li>sd diagram title</li>
+<li>ref diagram title (in the original diagram)</li>
+<li>sd diagram title (sub-sequence diagram shown in this frame)</li>
+<li><img alt="refFrame" src="https://nus-cs2103-ay2324s1.github.io/website/book/uml/sequenceDiagrams/referenceFrames/images/playerTextLogic.png" /></li>
+<li><img alt="sdFrame" src="https://nus-cs2103-ay2324s1.github.io/website/book/uml/sequenceDiagrams/referenceFrames/images/textLogic.png" /></li>
 </ul>
 </li>
 <li><strong>par</strong> frame: indicate parallel paths (can happen in any order)<ul>
