@@ -114,6 +114,44 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#tries" class="nav-link">Tries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dynamic-order-statistics" class="nav-link">Dynamic Order Statistics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interval-trees" class="nav-link">Interval Trees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1d-range-trees" class="nav-link">1D Range Trees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2d-range-trees" class="nav-link">2D Range Trees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#priority-queue" class="nav-link">Priority Queue</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#binary-max-heaps" class="nav-link">Binary (Max) Heaps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#heapsort" class="nav-link">HeapSort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#disjoint-set" class="nav-link">Disjoint Set</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -137,7 +175,6 @@
 <li><a href="#quickselect">QuickSelect</a></li>
 </ul>
 </li>
-<li><a href="#heapsort">HeapSort?</a></li>
 </ul>
 </li>
 <li><a href="#trees">Trees</a><ul>
@@ -156,9 +193,34 @@
 <li><a href="#delete">Delete</a></li>
 </ul>
 </li>
-<li><a href="#balanced-trees">Balanced Trees</a></li>
+<li><a href="#balanced-trees">Balanced Trees</a><ul>
+<li><a href="#avl">AVL</a><ul>
+<li><a href="#insert-1">Insert</a></li>
+<li><a href="#delete-1">Delete</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#tries">Tries</a></li>
+<li><a href="#dynamic-order-statistics">Dynamic Order Statistics</a></li>
+<li><a href="#interval-trees">Interval Trees</a><ul>
+<li><a href="#insert-2">Insert</a></li>
+<li><a href="#interval-search">Interval Search</a></li>
+</ul>
+</li>
+<li><a href="#1d-range-trees">1D Range Trees</a><ul>
+<li><a href="#query">Query</a></li>
+</ul>
+</li>
+<li><a href="#2d-range-trees">2D Range Trees</a></li>
+</ul>
+</li>
+<li><a href="#priority-queue">Priority Queue</a><ul>
+<li><a href="#binary-max-heaps">Binary (Max) Heaps</a></li>
+<li><a href="#heapsort">HeapSort</a></li>
+</ul>
+</li>
+<li><a href="#disjoint-set">Disjoint Set</a></li>
 </ul>
 <h2 id="recurrence-relations">Recurrence Relations</h2>
 <ol>
@@ -518,7 +580,6 @@ int kthSmallest(int[] arr, int low,
     }
 }
 </code></pre>
-<h3 id="heapsort">HeapSort?</h3>
 <h2 id="trees">Trees</h2>
 <h3 id="binary-search-trees">Binary Search Trees</h3>
 <ul>
@@ -731,9 +792,9 @@ int kthSmallest(int[] arr, int low,
 </li>
 <li>
 <p>In every node v, store height (augment)</p>
-<ol>
+<ul>
 <li>On insert and delete, update height: <code>height = max(left.height, right.height) + 1</code></li>
-</ol>
+</ul>
 </li>
 <li>
 <p>Define Invariant</p>
@@ -785,7 +846,7 @@ void leftRotate(TreeNode v) {
 TreeSet&lt;IntegerNode&gt; leftHalf;
 TreeSet&lt;IntegerNode&gt; rightHalf;
 
-public void rebalance() {
+void rebalance() {
     int leftSize = this.leftHalf.size();
     int rightSize = this.rightHalf.size();
 
@@ -800,7 +861,557 @@ public void rebalance() {
         }
     }
 }
-</code></pre></div>
+</code></pre>
+<h3 id="avl">AVL</h3>
+<h4 id="insert_1">Insert</h4>
+<ul>
+<li>
+<p>Summary:</p>
+<ul>
+<li>Insert key in BST</li>
+<li>Walk up tree:<ul>
+<li>At every step, check for balance</li>
+<li>If out-of-balance, use rotations to rebalance and return</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Key observation:</p>
+<ul>
+<li>Only need to fix lowest out-of-balance node</li>
+<li>Only need at most two rotations to fix</li>
+</ul>
+</li>
+</ul>
+<h4 id="delete_1">Delete</h4>
+<ul>
+<li>If v has two children, swap it with its successor</li>
+<li>Delete node v from binary tree (and reconnect children)</li>
+<li>For every ancestor of the deleted node:<ul>
+<li>Check if it is height-balanced</li>
+<li>If not, perform a rotation</li>
+<li>Continue to the root</li>
+</ul>
+</li>
+<li>Summary:<ul>
+<li>Delete key from BST</li>
+<li>Walk up tree:<ul>
+<li>At every step, check for balance</li>
+<li>If out-of-balance, use rotations to rebalance</li>
+<li>continue to root</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Key observation:<ul>
+<li>Needs at most O(logn) rotations</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">import java.util.*;
+import java.io.*;
+
+class Node {
+   int key, height;
+   Node left, right;
+   Node (int d) {
+      key = d;
+      height = 1;
+   }
+}
+
+class AVLTree {
+   Node root;
+   int height (Node N) {
+      if (N == null)
+         return 0;
+      return N.height;
+   }
+
+   int max (int a, int b) {
+      return (a &gt; b) ? a : b;
+   }
+
+   Node rightRotate (Node y) {
+      Node x = y.left;
+      Node T2 = x.right;
+      x.right = y;
+      y.left = T2;
+      y.height = max (height (y.left), height (y.right)) + 1;
+      x.height = max (height (x.left), height (x.right)) + 1;
+      return x;
+   }
+
+   Node leftRotate (Node x) {
+      Node y = x.right;
+      Node T2 = y.left;
+      y.left = x;
+      x.right = T2;
+      x.height = max (height (x.left), height (x.right)) + 1;
+      y.height = max (height (y.left), height (y.right)) + 1;
+      return y;
+   }
+
+   int getBalance (Node N) {
+      if (N == null)
+         return 0;
+      return height (N.left) - height (N.right);
+   }
+
+   Node insert (Node node, int key) {
+      if (node == null)
+         return (new Node (key));
+      if (key &lt; node.key)
+         node.left = insert (node.left, key);
+      else if (key &gt; node.key)
+         node.right = insert (node.right, key);
+      else
+         return node;
+      node.height = 1 + max (height (node.left), height (node.right));
+      int balance = getBalance (node);
+      if (balance &gt; 1 &amp;&amp; key &lt; node.left.key)
+         return rightRotate (node);
+      if (balance &lt; -1 &amp;&amp; key &gt; node.right.key)
+         return leftRotate (node);
+      if (balance &gt; 1 &amp;&amp; key &gt; node.left.key) {
+         node.left = leftRotate (node.left);
+         return rightRotate (node);
+      }
+      if (balance &lt; -1 &amp;&amp; key &lt; node.right.key) {
+         node.right = rightRotate (node.right);
+         return leftRotate (node);
+      }
+      return node;
+   }
+}
+</code></pre>
+<h2 id="tries">Tries</h2>
+<ul>
+<li>Cost of comparing two strings in a tree: O(hL)</li>
+<li>Cost in trie: O(L)</li>
+<li>Space for storing a try: O(size of text * overhead)</li>
+</ul>
+<h2 id="dynamic-order-statistics">Dynamic Order Statistics</h2>
+<ul>
+<li>Select(k) : finds the node with rank k</li>
+</ul>
+<pre><code class="language-java">// augmented tree with weight
+// O(logn)
+Node select(k) {
+    rank = m_left.weight + 1;
+    if (k == rank) {
+        return v;
+    } else if (k &lt; rank) {
+        return m_left.select(k);
+    } else if (k &gt; rank) {
+        return m_right.select(k–rank);
+    }
+}
+
+
+// in-order traversal method
+// O(n)
+Node kthSmallest(int k) {
+    Result result = new Result(0, null);
+    inOrderTraversal(root, k, result);
+    return result.result;
+}
+
+void inOrderTraversal(Node node, int k, Result result) {
+    if (node == null || result.count &gt;= k) {
+        return;
+    }
+
+    inOrderTraversal(node.left, k, result);
+
+    result.count++;
+    if (result.count == k) {
+        result.result = node;
+        return;
+    }
+
+    inOrderTraversal(node.right, k, result);
+}
+
+class Result {
+    int count;
+    Node result;
+
+    Result(int count, Node result) {
+        this.count = count;
+        this.result = result;
+    }
+}
+</code></pre>
+<ul>
+<li>Rank(v) : computes the rank of a node v</li>
+</ul>
+<pre><code class="language-java">// augmented tree with weight
+// O(logn)
+int rank(TreeNode node) {
+    rank = node.left.weight + 1;
+    while (node != null) {
+        if (node.parent.left == node) {
+            continue;
+        } else {
+            rank += node.parent.left.weight + 1;
+        }
+        node = node.parent;
+    }
+    return rank;
+}
+
+// recursion method
+// worst case: O(n)
+int rank(TreeNode node, int x) {
+    if (node == null) {
+        return 0;
+    }
+    if (node.value &lt;= x) {
+        return 1 + rank(node.left, x) + rank(node.right,x);
+    } else {
+        return rank(node.left, x)
+    }
+}
+</code></pre>
+<h2 id="interval-trees">Interval Trees</h2>
+<ul>
+<li>Augment tree with maximum endpoint in subtree
+    <img alt="intervalTree" src="../intervalTree.png" /></li>
+</ul>
+<pre><code class="language-java">class Node {
+    int[] interval;
+    int maxEnd;
+    Node left, right;
+    int height;
+
+    Node(int[] interval) {
+        this.interval = interval;
+        this.maxEnd = interval[1];
+        this.left = this.right = null;
+        this.height = 1;
+    }
+}
+</code></pre>
+<h3 id="insert_2">Insert</h3>
+<pre><code class="language-java">class IntervalTree {
+    private int height(Node node) {
+        return (node == null) ? 0 : node.height;
+    }
+
+    private int maxEnd(Node node) {
+        return (node == null) ? Integer.MIN_VALUE : node.maxEnd;
+    }
+
+    private int getBalance(Node node) {
+        return (node == null) ? 0 : height(node.left) - height(node.right);
+    }
+
+    private Node insert(Node root, int[] interval) {
+        if (root == null) {
+            return new Node(interval);
+        }
+
+        if (interval[0] &lt; root.interval[0]) {
+            root.left = insert(root.left, interval);
+        } else {
+            root.right = insert(root.right, interval);
+        }
+
+        root.height = Math.max(height(root.left), height(root.right)) + 1;
+        root.maxEnd = Math.max(root.interval[1], Math.max(maxEnd(root.left), maxEnd(root.right)));
+
+        int balance = getBalance(root);
+
+        // Left Heavy
+        if (balance &gt; 1) {
+            if (interval[0] &lt; root.left.interval[0]) {
+                return rotateRight(root);
+            } else {
+                root.left = rotateLeft(root.left);
+                return rotateRight(root);
+            }
+        }
+
+        // Right Heavy
+        if (balance &lt; -1) {
+            if (interval[0] &gt; root.right.interval[0]) {
+                return rotateLeft(root);
+            } else {
+                root.right = rotateRight(root.right);
+                return rotateLeft(root);
+            }
+        }
+
+        return root;
+    }
+}
+</code></pre>
+<h3 id="interval-search">Interval Search</h3>
+<ul>
+<li>Find interval containing x</li>
+<li>Running time: O(logn)</li>
+</ul>
+<pre><code class="language-java">boolean isInInterval(Node c, int x) {
+    return x &gt;= c.interval[0] &amp;&amp; x &lt;= c.interval[1];
+}
+
+int[] intervalSearch(int x) {
+    Node c = root;
+    while (c != null &amp;&amp; !isInInterval(c, x)) {
+        if (c.left == null) {
+            c = c.right;
+        } else if (x &gt; c.left.maxEnd) {
+            c = c.right;
+        } else {
+            c = c.left;
+        }
+    }
+    return c.interval;
+}
+</code></pre>
+<ul>
+<li>All-Overlaps:</li>
+<li>List all intervals that overlap with point</li>
+<li>Running time if there are k overlapping intervals: O(k logn)</li>
+<li>Repeat until no more intervals:<ul>
+<li>Search for interval.</li>
+<li>Add to list.</li>
+<li>Delete interval.</li>
+</ul>
+</li>
+<li>Repeat for all intervals on list:<ul>
+<li>Add interval back to tree.</li>
+</ul>
+</li>
+</ul>
+<h2 id="1d-range-trees">1D Range Trees</h2>
+<ul>
+<li>Strategy:<ol>
+<li>Use a binary search tree.</li>
+<li>Store all points in the leaves of the tree. (Internal nodes store only copies.)</li>
+<li>Each internal node v stores the MAX of any leaf in the left sub-tree.</li>
+</ol>
+</li>
+</ul>
+<h3 id="query">Query</h3>
+<ul>
+<li>Invariant:<ul>
+<li>The search interval for a left-traversal at node v includes the maximum item in the subtree rooted at v.</li>
+</ul>
+</li>
+<li>Algorithm:<ul>
+<li>Find split node, takes O(logn)</li>
+<li>Do left traversal</li>
+<li>Do right traversal</li>
+</ul>
+</li>
+<li>Query time complexity: O(k + logn), where k is number of points found</li>
+<li>Preprocessing (buildtree) time complexity: O(n logn)</li>
+<li>Total space complexity: O(n)</li>
+</ul>
+<p><img alt="rangeQuery1D" src="../rangeQuery1D.png" /></p>
+<pre><code class="language-java">Node FindSplit(int low, int high) {
+    Node v = root;
+    done = false;
+    while (!done) {
+        if (high &lt;= v.key) {
+            v = v.left;
+        } else if (low &gt; v.key) {
+            v = v.right;
+        } else {
+            done = true
+        }
+    }
+    return v;
+}
+
+// LeftTraversal either:
+// 1. Output all right sub-tree and recurse left.
+// 2. Recurse right.
+
+void LeftTraversal(Node v, int low, int high) {
+    boolean isInRange = low &lt;= v.key;
+    boolean isLeafNode = v.left == null &amp;&amp; v.right == null;
+
+    if (isLeafNode &amp;&amp; isInRange) {
+        System.out.println(v.key);
+    }
+    if (isInRange) {
+        // if in range, take the all of right subtree's leafs
+        AllLeafTraversal(v.right);
+        LeftTraversal(v.left, low, high);
+    } else {
+        LeftTraversal(v.right, low, high);
+    }
+}
+
+void RightTraversal(Node v, int low, int high) {
+    boolean isInRange = v.key &lt;= high;
+    boolean isLeafNode = v.left == null &amp;&amp; v.right == null;
+
+    if (isLeafNode &amp;&amp; isInRange) {
+        System.out.println(v.key);
+    }
+
+    if (isInRange) {
+        // if in range, take the all of left subtree's leafs
+        AllLeafTraversal(v.left);
+        RightTraversal(v.right, low, high);
+    } else {
+        RightTraversal(v.left, low, high);
+    }
+}
+
+void AllLeafTraversal(Node v) {
+    if (v == null) {
+        return;
+    }
+
+    // only leaf nodes are printed
+    if (v.left == null &amp;&amp; v.right == null) {
+        System.out.println(v.key);
+    }
+    AllLeafTraversal(v.left);
+    AllLeafTraversal(v.right);
+}
+
+void Query(low, high) {
+    Node v = FindSplit(low, high);
+    LeftTraversal(v.left, low, high);
+    RightTraversal(v.right, low, high);
+}
+</code></pre>
+<h2 id="2d-range-trees">2D Range Trees</h2>
+<ul>
+<li>Build an x-tree using only x-coordinates.</li>
+<li>For every node in the x-tree, build a y-tree out of nodes in subtree using only y-coordinates.</li>
+<li>Query time: O((logn)^2 + k)<ul>
+<li>O(logn) to find split node</li>
+<li>O(logn) recursing steps</li>
+<li>O(logn) y-tree-searches of cost O(logn)</li>
+<li>O(k) enumerating output</li>
+</ul>
+</li>
+<li>Space complexity: O(n logn)<ul>
+<li>Each point appears in at most one y-tree per level</li>
+<li>There are O(log n) levels</li>
+</ul>
+</li>
+<li>Query cost: O((logn)^d + k)</li>
+<li>buildTree cost: O(n (logn)^d-1)</li>
+<li>Space: O(n (logn)^d-1)</li>
+</ul>
+<h1 id="priority-queue">Priority Queue</h1>
+<table>
+<thead>
+<tr>
+<th>Return Type</th>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>insert(Key k, Priority p)</td>
+<td>insert k with priority p</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>extractMin()</td>
+<td>remove key with min. priority</td>
+</tr>
+<tr>
+<td>void</td>
+<td>decreaseKey(Key k, Priority p)</td>
+<td>reduce the priority of key k to priority p</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>contains(Key k)</td>
+<td>whether queue contains key k</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>isEmpty()</td>
+<td>whether queue is empty</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Sorted array<ul>
+<li>Insert: O(n)</li>
+<li>extractMax: O(1)</li>
+</ul>
+</li>
+<li>Unsorted array<ul>
+<li>insert: O(1)</li>
+<li>extractMax: O(n)</li>
+</ul>
+</li>
+<li>AVL tree (indexed by priority)<ul>
+<li>insert: O(logn)</li>
+<li>extractMax: O(logn)</li>
+</ul>
+</li>
+<li>AVL tree and dictionary<ul>
+<li>contains: O(1)</li>
+<li>decreaseKey: O(logn)</li>
+</ul>
+</li>
+</ul>
+<h2 id="binary-max-heaps">Binary (Max) Heaps</h2>
+<p><img alt="binaryHeap" src="../binaryHeap.png" /></p>
+<ul>
+<li>Heap ordering: <code>priority[parent] &gt;= priority[child]</code></li>
+<li>Complete binary tree<ul>
+<li>Every level is full, except possibly the last</li>
+<li>All nodes are as far left as possible</li>
+</ul>
+</li>
+<li>Height: O(logn) (maximum height is floor(logn))</li>
+<li>Implements a max priority queue</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Return Type</th>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>insert(Key k, Priority p)</td>
+<td>insert k with priority p</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>extractMax()</td>
+<td>remove key with max priority</td>
+</tr>
+<tr>
+<td>void</td>
+<td>increaseKey(Key k, Priority p)</td>
+<td>increase the priority of key k to priority p</td>
+</tr>
+<tr>
+<td>void</td>
+<td>decreaseKey(Key k, Priority p)</td>
+<td>reduce the priority of key k to priority p</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>delete(Key k)</td>
+<td>delete k from heap</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heapsort">HeapSort</h2>
+<h1 id="disjoint-set">Disjoint Set</h1></div>
             </div>
         </div>
 
