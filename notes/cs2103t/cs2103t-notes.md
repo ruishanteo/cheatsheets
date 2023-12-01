@@ -6,9 +6,9 @@
 -   [Programming Paradigm](#programming-paradigm)
     -   [Object-Oriented Programming (OOP)](#object-oriented-programming-oop)
 -   [Requirements](#requirements)
-    -   [Non-functional requirements](#non-functional-requirements)
-    -   [Quality of requirements](#quality-of-requirements)
-    -   [Gathering requirements](#gathering-requirements)
+    -   [Non-functional Requirements](#non-functional-requirements)
+    -   [Quality of Requirements](#quality-of-requirements)
+    -   [Gathering Requirements](#gathering-requirements)
     -   [Specifying Requirements](#specifying-requirements)
 -   [Design](#design)
     -   [Design Fundamentals](#design-fundamentals)
@@ -135,14 +135,14 @@ Guides programmers to analyse programmig problems ad structure programmig soluti
     -   Functional requirements specify what the system should do
     -   Non-functional requirements specify the constraints under which the system is developed and operated
 
-## Non-functional requirements
+## Non-functional Requirements
 
 Specify the constraints under which the system is developed and operated
 
 -   NFRs are easier to miss
 -   Sometimes NFRs are critical to the success of the software
 
-## Quality of requirements
+## Quality of Requirements
 
 -   Characteristics of well-defined requirements:
 
@@ -162,7 +162,7 @@ Specify the constraints under which the system is developed and operated
     -   Non-redundant
     -   Complete
 
-## Gathering requirements
+## Gathering Requirements
 
 -   Brainstorming session
     -   No "bad" ideas (aim is to generate ideas; not to validate them)
@@ -353,7 +353,7 @@ Specify the constraints under which the system is developed and operated
 
 -   When to use:
 
-    -   An object (possibly more than one) is needs to be notified when a change happens to another object
+    -   An object (possibly more than one) needs to be notified when a change happens to another object
 
 -   How to use:
     -   Force the communication through an interface known to both parties
@@ -543,6 +543,7 @@ Specify the constraints under which the system is developed and operated
     -   Object name
     -   Variable name/ value
     -   Attributes compartment (if not relevant)
+    -   Association labels/ roles (if not relevant)
 
 ## Sequence Diagrams
 
@@ -562,11 +563,14 @@ Specify the constraints under which the system is developed and operated
     -   loop [condition]
 -   **alt** frame: indicate alternative paths
     -   alt [condition]
-    -   No more than one alternative partitions be executed in an alt frame- **opt** frame: indicate optional paths
+    -   No more than one alternative partitions be executed in an alt frame
+-   **opt** frame: indicate optional paths
     -   opt [condition]
 -   **ref** frame: allow a segment of the interaction to be omitted and shown as a separate sequence diagram
-    -   ref diagram title
-    -   sd diagram title
+    -   ref diagram title (in the original diagram)
+    -   sd diagram title (sub-sequence diagram shown in this frame)
+    -   ![refFrame](https://nus-cs2103-ay2324s1.github.io/website/book/uml/sequenceDiagrams/referenceFrames/images/playerTextLogic.png)
+    -   ![sdFrame](https://nus-cs2103-ay2324s1.github.io/website/book/uml/sequenceDiagrams/referenceFrames/images/textLogic.png)
 -   **par** frame: indicate parallel paths (can happen in any order)
     -   The corresponding Java implementation is likely to be multi-threaded- Keywords are `loop` (while), `opt` (if) and `alt` (if elseif)
 -   OK to omit:
