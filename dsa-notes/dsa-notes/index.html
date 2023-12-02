@@ -152,6 +152,10 @@
             
             <li class="nav-item" data-level="1"><a href="#disjoint-set" class="nav-link">Disjoint Set</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#quick-find-using-an-int-componentid" class="nav-link">Quick Find: using an int[] componentId</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -216,11 +220,25 @@
 </ul>
 </li>
 <li><a href="#priority-queue">Priority Queue</a><ul>
-<li><a href="#binary-max-heaps">Binary (Max) Heaps</a></li>
+<li><a href="#binary-max-heaps">Binary (Max) Heaps</a><ul>
+<li><a href="#insert-3">Insert</a></li>
+<li><a href="#decreasekey">DecreaseKey</a></li>
+<li><a href="#delete-2">Delete</a></li>
+<li><a href="#heap-vs-avl-tree">Heap vs AVL Tree</a></li>
+</ul>
+</li>
 <li><a href="#heapsort">HeapSort</a></li>
 </ul>
 </li>
-<li><a href="#disjoint-set">Disjoint Set</a></li>
+<li><a href="#disjoint-set">Disjoint Set</a><ul>
+<li><a href="#quick-find-using-an-int-componentid">Quick Find: using an int[] componentId</a><ul>
+<li><a href="#quick-union-using-an-int-parent">Quick Union: using an int[] parent</a></li>
+<li><a href="#weighted-union">Weighted Union</a></li>
+<li><a href="#weighted-union-with-path-compression">Weighted Union with Path Compression</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="recurrence-relations">Recurrence Relations</h2>
 <ol>
@@ -1372,6 +1390,7 @@ void Query(low, high) {
 </ul>
 </li>
 <li>Height: O(logn) (maximum height is floor(logn))</li>
+<li>Operations: O(logn)</li>
 <li>Implements a max priority queue</li>
 </ul>
 <table>
@@ -1410,8 +1429,256 @@ void Query(low, high) {
 </tr>
 </tbody>
 </table>
+<ul>
+<li>left(x) = 2 * x + 1</li>
+<li>right(x) = 2 * x + 2</li>
+<li>parent(x) = floor((x - 1) / 2)</li>
+<li>Where x is the position of the node in the array</li>
+</ul>
+<h3 id="insert_3">Insert</h3>
+<ol>
+<li>Add leaf of new node at leftmost position</li>
+<li>Bubble up (swap with parent) until condition <code>priority[parent] &gt;= priority[child]</code> fulfilled</li>
+</ol>
+<pre><code class="language-java">bubbleUp(Node v) {
+    while (v != null) {
+        if (priority(v) &gt; priority(parent(v))) {
+            swap(v, parent(v));
+        } else {
+            return;
+        }
+        v = parent(v);
+    }
+}
+
+
+insert(Priority p, Key k) {
+    Node v = tree.insert(p, k);
+    bubbleUp(v);
+}
+</code></pre>
+<h3 id="decreasekey">DecreaseKey</h3>
+<ol>
+<li>Update priority</li>
+<li>Bubble down (swap with child that has higher priority)</li>
+</ol>
+<pre><code class="language-java">bubbleDown(Node v) {
+    while (!isLeaf(v)) {
+        leftP = priority(left(v));
+        rightP = priority(right(v));
+        maxP = max(leftP, rightP, priority(v));
+        if (leftP == max) {
+            swap(v, left(v));
+            v = left(v);
+        } else if (rightP == max) {
+            swap(v, right(v));
+            v = right(v);
+        } else {
+            return;
+        }
+    }
+}
+</code></pre>
+<h3 id="delete_2">Delete</h3>
+<ol>
+<li>Swap deleted node with last node (which is last element in array)</li>
+<li>Remove last node</li>
+<li>
+<p>Bubble down swapped node
+   <img alt="deleteHeap" src="../deleteHeap.png" /></p>
+</li>
+<li>
+<p>ExtractMax:</p>
+<ul>
+<li>delete(root);</li>
+</ul>
+</li>
+</ol>
+<h3 id="heap-vs-avl-tree">Heap vs AVL Tree</h3>
+<ul>
+<li>Same asymptotic cost for operations</li>
+<li>Faster real cost (no constant factors)</li>
+<li>Simpler: no rotations</li>
+<li>Slightly better concurrency</li>
+</ul>
 <h2 id="heapsort">HeapSort</h2>
-<h1 id="disjoint-set">Disjoint Set</h1></div>
+<ul>
+<li>Running time: O(n logn)</li>
+<li>In-place</li>
+<li>Deterministic, and will always take O(n logn)</li>
+<li>Faster than MergeSort, a little slower than QuickSort</li>
+<li>
+<p>Not stable</p>
+</li>
+<li>
+<p>Unsorted list --&gt; heap (running time: O(n)), specifically 2 * O(n)</p>
+<ul>
+<li>Base case: each leaf is a heap</li>
+<li>Recursion: siblings + parent nodes = heap (bubbleDown)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">// int[] A = array of unsorted integers
+for (int i = n - 1; i &gt;= 0; i--) {
+    bubbleDown(i, A); // O(height), but more than n/2 of nodes are leaves with height = 0
+}
+
+</code></pre>
+<ol>
+<li>Heap --&gt; sorted list () (running time: O(n logn))<ul>
+<li>Fill array from last position to first position, by recursively calling extractMax()</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-java">//int[] A = array stored as a heap
+for (int i = n - 1; i &gt;= 0; i--) {
+    int value = extractMax(A); //O(logn)
+    A[i] = value;
+}
+</code></pre>
+<h1 id="disjoint-set">Disjoint Set</h1>
+<ul>
+<li>Determine if objects are connected</li>
+</ul>
+<h2 id="quick-find-using-an-int-componentid">Quick Find: using an int[] componentId</h2>
+<ul>
+<li>Store component identifier of each object</li>
+<li>Find: O(1)<ul>
+<li>Finds whether p and q are connected</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">boolean find(int p, int q) {
+    return(componentId[p] == componentId[q]);
+}
+</code></pre>
+<ul>
+<li>Union: O(n)<ul>
+<li>Make p and q have the same componentId</li>
+<li>Traverse the component identifier array: if id = q's id, update to be p's id</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">void union(int p, int q) {
+    updateComponent = componentId[q];
+    for (int i=0; i&lt;componentId.length; i++) {
+        if (componentId[i] == updateComponent) {
+            componentId[i] = componentId[p];
+        }
+    }
+}
+</code></pre>
+<h3 id="quick-union-using-an-int-parent">Quick Union: using an int[] parent</h3>
+<ul>
+<li>
+<p>Two objects are connected if they are part of the same tree</p>
+</li>
+<li>
+<p>Find: O(n)</p>
+<ul>
+<li>Traverse up the tree from given node, to find parent</li>
+<li>If final parents are the same, they are connected</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">boolean find(int p, int q) {
+    while (parent[p] != p) {
+        p = parent[p];
+    }
+    while (parent[q] != q) {
+        q = parent[q];
+    }
+    return (p == q);
+}
+</code></pre>
+<ul>
+<li>Union: O(n), height of tree can be n<ul>
+<li>Traverse up the tree from given node, to find parent</li>
+<li>Set parent of p to be q</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">void union(int p, int q) {
+    while (parent[p] != p) {
+        p = parent[p];
+    }
+    while (parent[q] != q) {
+        q = parent[q];
+    }
+    parent[p] = q;
+
+}
+</code></pre>
+<h3 id="weighted-union">Weighted Union</h3>
+<ul>
+<li>Choose the larger element to be the parent during union</li>
+<li>Maximum depth of tree: O(logn)</li>
+<li>Running time of <strong>find</strong>: O(logn)</li>
+<li>Running time of <strong>union</strong>: O(logn)</li>
+</ul>
+<pre><code class="language-java">union(int p, int q) {
+    while (parent[p] !=p) {
+        p = parent[p];
+    }
+    while (parent[q] !=q) {
+        q = parent[q];
+    }
+    if (size[p] &gt; size[q]) {
+        parent[q] = p;   // Link q to p
+        size[p] = size[p] + size[q];
+    } else {
+        parent[p] = q; // Link p to q
+        size[q] = size[p] + size[q];
+    }
+}
+</code></pre>
+<h3 id="weighted-union-with-path-compression">Weighted Union with Path Compression</h3>
+<ul>
+<li>After finding root, set the parent of each traversed node to the root</li>
+<li><img alt="pathCompression" src="../pathCompression.png" /><ul>
+<li>Tree height is compressed</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">// Takes O(logn) time
+findRoot(int p) {
+    root = p;
+    while (parent[root] != root) {
+        root = parent[root];
+    }
+
+    while (parent[p] != p) {
+        temp = parent[p];
+        parent[p] = root;
+        p = temp;
+    }
+    return root;
+}
+
+union(int p, int q) {
+    p = findRoot(p);
+    q = findRoot(q);
+
+    if (size[p] &gt; size[q]) {
+        parent[q] = p;   // Link q to p
+        size[p] = size[p] + size[q];
+    } else {
+        parent[p] = q; // Link p to q
+        size[q] = size[p] + size[q];
+    }
+}
+</code></pre>
+<ul>
+<li>Starting from empty, any sequence of m union/find operations on n objects takes: O(n + mα(m, n))time.<ul>
+<li>Path compression is helpful with more union/ find operations</li>
+<li>First operation will still take the same amount of time (+ path compression for future operations)</li>
+</ul>
+</li>
+<li>α = ackermann function (between O(1) and O(logn))</li>
+<li>Running time of <strong>find</strong>: α(m, n)</li>
+<li>Running time of <strong>union</strong>: α(m, n)</li>
+<li><img alt="unionFindSummary" src="../unionFindSummary.png" /></li>
+</ul></div>
             </div>
         </div>
 
