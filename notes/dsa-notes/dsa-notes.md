@@ -34,18 +34,33 @@
     -   [1D Range Trees](#1d-range-trees)
         -   [Query](#query)
     -   [2D Range Trees](#2d-range-trees)
--   [Priority Queue](#priority-queue)
-    -   [Binary (Max) Heaps](#binary-max-heaps)
-        -   [Insert](#insert-3)
-        -   [DecreaseKey](#decreasekey)
-        -   [Delete](#delete-2)
-        -   [Heap vs AVL Tree](#heap-vs-avl-tree)
-    -   [HeapSort](#heapsort)
--   [Disjoint Set](#disjoint-set)
-    -   [Quick Find: using an int\[\] componentId](#quick-find-using-an-int-componentid)
+    -   [Priority Queue](#priority-queue)
+        -   [Binary (Max) Heaps](#binary-max-heaps)
+            -   [Insert](#insert-3)
+            -   [DecreaseKey](#decreasekey)
+            -   [Delete](#delete-2)
+            -   [Heap vs AVL Tree](#heap-vs-avl-tree)
+        -   [HeapSort](#heapsort)
+    -   [Disjoint Set](#disjoint-set)
+        -   [Quick Find: using an int\[\] componentId](#quick-find-using-an-int-componentid)
         -   [Quick Union: using an int\[\] parent](#quick-union-using-an-int-parent)
         -   [Weighted Union](#weighted-union)
         -   [Weighted Union with Path Compression](#weighted-union-with-path-compression)
+    -   [Hashing](#hashing)
+        -   [Direct Access Table](#direct-access-table)
+        -   [Chaining](#chaining)
+        -   [Open Addressing](#open-addressing)
+        -   [Resizing Table](#resizing-table)
+    -   [Graph](#graph)
+        -   [Breadth-First Search](#breadth-first-search)
+        -   [Depth-First Search](#depth-first-search)
+    -   [Shortest Path](#shortest-path)
+        -   [Bellman-Ford](#bellman-ford)
+        -   [Dijkstra's Algorithm](#dijkstras-algorithm)
+    -   [Minimum Spanning Trees](#minimum-spanning-trees)
+        -   [Prim's Algorithm](#prims-algorithm)
+        -   [Kruskal's Algorithm](#kruskals-algorithm)
+    -   [Dynamic Programming](#dynamic-programming)
 
 ## Recurrence Relations
 
@@ -1098,7 +1113,7 @@ void Query(low, high) {
 -   buildTree cost: O(n (logn)^d-1)
 -   Space: O(n (logn)^d-1)
 
-# Priority Queue
+## Priority Queue
 
 | Return Type | Operation                      | Description                                |
 | ----------- | ------------------------------ | ------------------------------------------ |
@@ -1121,7 +1136,7 @@ void Query(low, high) {
     -   contains: O(1)
     -   decreaseKey: O(logn)
 
-## Binary (Max) Heaps
+### Binary (Max) Heaps
 
 ![binaryHeap](binaryHeap.png)
 
@@ -1146,7 +1161,7 @@ void Query(low, high) {
 -   parent(x) = floor((x - 1) / 2)
 -   Where x is the position of the node in the array
 
-### Insert
+#### Insert
 
 1. Add leaf of new node at leftmost position
 2. Bubble up (swap with parent) until condition `priority[parent] >= priority[child]` fulfilled
@@ -1170,7 +1185,7 @@ insert(Priority p, Key k) {
 }
 ```
 
-### DecreaseKey
+#### DecreaseKey
 
 1. Update priority
 2. Bubble down (swap with child that has higher priority)
@@ -1194,7 +1209,7 @@ bubbleDown(Node v) {
 }
 ```
 
-### Delete
+#### Delete
 
 1. Swap deleted node with last node (which is last element in array)
 2. Remove last node
@@ -1204,14 +1219,14 @@ bubbleDown(Node v) {
 -   ExtractMax:
     -   delete(root);
 
-### Heap vs AVL Tree
+#### Heap vs AVL Tree
 
 -   Same asymptotic cost for operations
 -   Faster real cost (no constant factors)
 -   Simpler: no rotations
 -   Slightly better concurrency
 
-## HeapSort
+### HeapSort
 
 -   Running time: O(n logn)
 -   In-place
@@ -1242,11 +1257,11 @@ for (int i = n - 1; i >= 0; i--) {
 }
 ```
 
-# Disjoint Set
+## Disjoint Set
 
 -   Determine if objects are connected
 
-## Quick Find: using an int[] componentId
+### Quick Find: using an int[] componentId
 
 -   Store component identifier of each object
 -   Find: O(1)
@@ -1378,3 +1393,495 @@ union(int p, int q) {
 -   Running time of **find**: α(m, n)
 -   Running time of **union**: α(m, n)
 -   ![unionFindSummary](unionFindSummary.png)
+
+## Hashing
+
+-   Implement symbol table with an AVL tree: C(insert) = O(logn); C(search) = O(logn)
+
+### Direct Access Table
+
+-   Using a table, indexed by keys
+-   Insert: O(1), Search: O(1)
+-   Space: m buckets
+-   Hash function defined to derive key
+-   Impossible to choose a hash function with no collisions (pigeonhole principle)
+
+### Chaining
+
+-   Insert a linked list in the table, indexed by keys
+-   Space: O(m + n); table size is m, linked list size is n
+-   Insert: O(1 + cost(h))
+-   Worst case search: O(n + cost(h)) (when all keys hash to the same bucket, cost is n)
+    -   With SUHA, E(search time) = 1 + n/m = O(1)
+-   Maximum chain length with SUHA = O(logn) = Θ(logn / loglogn)
+-   Simple uniform hashing assumption (made of the hashing function)
+    -   Every key is equally likely to map to every bucket
+    -   Keys are mapped independently
+-   P(i'th key is put in bucket j) = 1/m
+
+### Open Addressing
+
+-   All data directly stored in the table, with one item per slot
+-   On collision, probe a sequence of buckets until an empty one is found
+-   Delete
+    -   Set bucket to `DELETED`, instead of leaving it empty
+    -   So that search can find an element
+-   Properties of good hash function
+    -   h(key, i) enumerates all possible buckets
+    -   Simple Uniform Hashing Assumption
+-   Linear probing can lead to clusters: O(n)
+-   Assuming uniform hashing, E(cost of operations) = 1 / (1 - a)
+    -   a = n / m
+    -   Performance degrades badly as a -> 1
+-   Double Hashing
+    -   Using two hash functions, define a new hash function: h(k, i) = f(k) + i \* g(k) mod m
+
+### Resizing Table
+
+-   Cost of resize from m to m + 1
+-   Cost of double size: O(n) (done when the table is full)
+    -   Cost of inserting n items + resizing: O(n)
+    -   Most insertions: O(1)
+    -   Average cost: O(1)
+-   Half the table size when table is 3/4 empty
+-   Cost of squared table size: O(n^2)
+    -   Cost of inserts: O(n)
+-   Deleting elements: O(1 + n/m)
+
+## Graph
+
+-   Diameter: maximum distance between two notes, following the shortest path
+-   Special graphs
+    -   Star: one central node, all edges connect centre to edges; diameter = 2
+    -   Clique: complete graph, degree = n - 1; diameter = 1
+    -   Line or path: degree = 2; diameter = n - 1
+    -   Cycle: degree = 2; diameter = n/2 or n/2 - 1
+    -   Bipartite graph: nodes divided into two sets with no edges between nodes in the same set; diameter = n - 1
+-   Memory usage of graph G
+    | | Adjacency List | Adjacency Matrix |
+    | ------------ | -------------- | ---------------- |
+    | Graph (V, E) | O(V + E) | O(V^2) |
+    | Cycle | O(V) | O(V^2) |
+    | Clique | O(V^2) | O(V^2) |
+
+### Breadth-First Search
+
+-   BFS with adjacency list: O(V + E)
+
+```java
+// With an adjacency list
+ void BFS(int s) {
+    // Mark all the vertices as not visited
+    boolean visited[] = new boolean[V];
+
+    // Create a queue for BFS
+    LinkedList<Integer> queue
+        = new LinkedList<Integer>();
+
+    // Mark the current node as visited and enqueue it
+    visited[s] = true;
+    queue.add(s);
+
+    while (queue.size() != 0) {
+
+        // Dequeue a vertex from queue and print it
+        s = queue.poll();
+        System.out.print(s + " ");
+
+        // Get all adjacent vertices of the dequeued
+        // vertex s.
+        // If an adjacent has not been visited,
+        // then mark it visited and enqueue it
+        Iterator<Integer> i = adj[s].listIterator();
+        while (i.hasNext()) {
+            int n = i.next();
+            if (!visited[n]) {
+                visited[n] = true;
+                queue.add(n);
+            }
+        }
+    }
+}
+```
+
+-   BFS with adjacency matrix: O(V^2)
+
+```java
+// With an adjacency matrix
+void BFS(int start) {
+    // A vertex is not visited more than once
+    // Initializing the vector to false at the beginning
+    boolean[] visited = new boolean[v];
+    Arrays.fill(visited, false);
+    List<Integer> q = new ArrayList<>();
+    q.add(start);
+
+    // Set source as visited
+    visited[start] = true;
+
+    int vis;
+    while (!q.isEmpty()) {
+        vis = q.get(0);
+
+        // Print the current node
+        System.out.print(vis + " ");
+        q.remove(q.get(0));
+
+        // For every adjacent vertex to the current vertex
+        for(int i = 0; i < v; i++) {
+            if (adj[vis][i] == 1 && (!visited[i])) {
+
+                // Push the adjacent node to the queue
+                q.add(i);
+                visited[i] = true;
+            }
+        }
+    }
+}
+```
+
+### Depth-First Search
+
+-   DFS with adjacency list: O(V + E)
+
+```java
+// With an adjacency list
+void DFSUtil(int v, boolean visited[]) {
+    // Mark the current node as visited and print it
+    visited[v] = true;
+    System.out.print(v + " ");
+
+    // Recurse for all adjacent vertices
+    Iterator<Integer> i = adj[v].listIterator();
+    while (i.hasNext()) {
+        int n = i.next();
+        if (!visited[n])
+            DFSUtil(n, visited);
+    }
+}
+
+void DFS(int v) {
+    // Mark all the vertices as
+    // not visited(set as
+    // false by default in java)
+    boolean visited[] = new boolean[V];
+
+    // Call the recursive helper
+    // function to print DFS
+    // traversal
+    DFSUtil(v, visited);
+}
+```
+
+-   DFS with adjacency matrix: O(V^2)
+
+```java
+// With an adjacency matrix
+static void dfs(int start, boolean[] visited) {
+
+    // Print the current node
+    System.out.print(start + " ");
+
+    // Set current node as visited
+    visited[start] = true;
+
+    // For every node of the graph
+    for (int i = 0; i < adj[start].length; i++) {
+
+        // If some node is adjacent to the current node
+        // and it has not already been visited
+        if (adj[start][i] == 1 && (!visited[i])) {
+            dfs(i, visited);
+        }
+    }
+}
+```
+
+## Shortest Path
+
+-   Representing a directed graph
+    -   Adjacency list space: O(V + E)
+    -   Adjacency matrix space: O(V^2)
+
+### Bellman-Ford
+
+-   Running time: O(EV)
+-   Stops after one entire iteration with no changes to estimates
+-   Invariant:
+    -   Let T be a shortest path tree of graph G rooted at source S
+    -   After iteration j, if u is j hops from s on tree T, then est[u] = distance(s, u)
+-   Description:
+    -   Maintain an estimate of infinity for every node
+    -   Update estimates with minimum of sum of edges
+-   Special issues:
+    -   If negative weight-cycle: impossible
+    -   Use Bellman-Ford to detect negative weight cycle
+        -   (v + 1)th relaxing still changes an estimate
+    -   If all weights are the same, use BFS
+
+```java
+void BellmanFord(Graph graph, int src) {
+    int V = graph.V; // number of vertices
+    int E = graph.E; // number of edges
+    int dist[] = new int[V];
+
+    // Step 1: Initialize distances from src to all other vertices as INFINITE
+    for (int i = 0; i < V; ++i) {
+        dist[i] = Integer.MAX_VALUE;
+    }
+    dist[src] = 0;
+
+    // Step 2: For every vertex, visit all edges
+    for (int i = 1; i < V; ++i) {
+        for (int j = 0; j < E; ++j) {
+            // Edge goes from u to v
+            int u = graph.edge[j].src;
+            int v = graph.edge[j].dest;
+            int weight = graph.edge[j].weight;
+            if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+            }
+        }
+    }
+
+    // Step 3: check for negative-weight cycles. Guarantees shortest distances if graph
+    // doesn't contain negative weight cycle. If we get a shorter path, then there is a cycle.
+    for (int j = 0; j < E; ++j) {
+        int u = graph.edge[j].src;
+        int v = graph.edge[j].dest;
+        int weight = graph.edge[j].weight;
+        if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+            System.out.println("Graph contains negative weight cycle");
+            return;
+        }
+    }
+    printArr(dist, V);
+}
+```
+
+### Dijkstra's Algorithm
+
+-   No negative weight edges
+-   Description:
+    -   Maintain distance estimate for every node
+    -   Add neighbours and their distances into priority queue
+    -   Remove node with smallest distance, visit its neighbours
+    -   Done when priority queue is empty
+    -   Final node will have its shortest distance
+
+```java
+static class iPair {
+    int first, second;
+
+    iPair(int first, int second) {
+        this.first = first;
+        this.second = second;
+    }
+}
+
+void shortestPath(int src, int[][] graph) {
+    // Sets up priority queue that compares distance of nodes, shorter distance first
+    PriorityQueue<iPair> pq = new PriorityQueue<>(V, Comparator.comparingInt(o -> o.second));
+
+    int[] dist = new int[V];
+    Arrays.fill(dist, Integer.MAX_VALUE);
+
+    pq.add(new iPair(0, src));
+    dist[src] = 0;
+
+    while (!pq.isEmpty()) {
+        // u is the value of the node with minimum distance
+        int u = pq.poll().first;
+
+        // for all neighbour of u
+        for (int[] neighbour : graph[u]) {
+            iPair v = new iPair(neighbour[0], neighbour[1]);
+            int newDistance = dist[u] + v.second;
+            if (dist[v.first] > newDistance) {
+                dist[v.first] = newDistance;
+                pq.add(new iPair(v.first, dist[v.first]));
+            }
+        }
+    }
+
+    for (int i = 0; i < V; i++) {
+        System.out.println(i + dist[i]);
+    }
+}
+```
+
+-   Using AVL Tree priority queue
+    -   Running time: O(E logV)
+    -   insert: O(logn)
+    -   deleteMin: O(logn)
+    -   decreaseKey: O(logn)
+    -   contains(key): O(1)
+-   Performance
+    -   ![dijkstraPerformance](dijkstraPerformance.png)
+
+## Minimum Spanning Trees
+
+-   A spanning tree with minimum weight
+-   Properties:
+    -   No cycles
+    -   If you cut an MST, the two pieces are both MSTs
+    -   For every cycle, the maximum weight edge is not in the MST
+    -   For every partition of the nodes, the minimum weight edge across the cut is in the MST
+-   For every vertex, the minimum outgoing edge is always in the MST (not true for maximum)
+
+### Prim's Algorithm
+
+-   Continually pick the smallest edge of every node visited
+-   Using AVL tree for priority queue:
+    -   Running time: O(E log V)
+
+```java
+
+class Pair implements Comparable<Pair> {
+    int v;
+    int wt;
+    Pair(int v, int wt) {
+        this.v = v;
+        this.wt = wt;
+    }
+    public int compareTo(Pair that) {
+        return this.wt - that.wt;
+    }
+}
+
+static int spanningTree(int V, int E, int edges[][]) {
+    ArrayList<ArrayList<Pair>> adj = new ArrayList<>();
+    for(int i = 0; i < V; i++) {
+        adj.add(new ArrayList<Pair>());
+    }
+
+    for(int i = 0; i < edges.length; i++) {
+        int u = edges[i][0]; // from node u
+        int v = edges[i][1]; // to node v
+        int wt = edges[i][2]; // of weight wt
+
+        // Add all edges into adj
+        adj.get(u).add(new Pair(v,wt));
+        adj.get(v).add(new Pair(u,wt));
+    }
+
+    PriorityQueue<Pair> pq = new PriorityQueue<Pair>();
+
+    pq.add(new Pair(0,0));
+    int[] vis = new int[V];
+    int s = 0;
+
+    while (!pq.isEmpty()) {
+        Pair node = pq.poll();
+        int v = node.v; // curr node's value
+        int wt = node.wt; // curr node's weight
+        if (vis[v] == 1) {
+            continue; // if node is visited, skip
+        }
+        // node was not visited before
+        s += wt;
+        vis[v] = 1;
+        for(Pair it : adj.get(v)) {
+            if(vis[it.v] == 0) {
+                pq.add(new Pair(it.v, it.wt));
+            }
+        }
+    }
+    return s;
+}
+```
+
+### Kruskal's Algorithm
+
+-   Sort all edges by weight, take all the minimum edges as long as there are no cycles
+-   Running time: O(E logV)
+
+```java
+
+static class Subset {
+    int parent, rank;
+    public Subset(int parent, int rank) {
+        this.parent = parent;
+        this.rank = rank;
+    }
+}
+
+static class Edge {
+    int src, dest, weight;
+    public Edge(int src, int dest, int weight) {
+        this.src = src;
+        this.dest = dest;
+        this.weight = weight;
+    }
+}
+
+private static int findRoot(Subset[] subsets, int i) {
+    if (subsets[i].parent == i) {
+        return subsets[i].parent;
+    }
+
+    subsets[i].parent = findRoot(subsets, subsets[i].parent);
+    return subsets[i].parent;
+}
+
+private static void union(Subset[] subsets, int x, int y) {
+    int rootX = findRoot(subsets, x);
+    int rootY = findRoot(subsets, y);
+
+    if (subsets[rootY].rank < subsets[rootX].rank) {
+        subsets[rootY].parent = rootX;
+    } else if (subsets[rootX].rank < subsets[rootY].rank) {
+        subsets[rootX].parent = rootY;
+    } else {
+        subsets[rootY].parent = rootX;
+        subsets[rootX].rank++;
+    }
+}
+
+private static void kruskals(int V, List<Edge> edges) {
+    int j = 0;
+    int noOfEdges = 0;
+
+    Subset subsets[] = new Subset[V];
+    Edge results[] = new Edge[V];
+
+    // Create V subsets with single elements
+    for (int i = 0; i < V; i++) {
+        subsets[i] = new Subset(i, 0);
+    }
+
+    while (noOfEdges < V - 1) {
+        // Edges are sorted in ascending order
+        // Pick the smallest edge
+        Edge nextEdge = edges.get(j);
+        int x = findRoot(subsets, nextEdge.src);
+        int y = findRoot(subsets, nextEdge.dest);
+
+        // If cycle, root is the same
+        if (x != y) {
+            results[noOfEdges] = nextEdge;
+            union(subsets, x, y);
+            noOfEdges++;
+        }
+        j++;
+    }
+
+    int minCost = 0;
+    for (int i = 0; i < noOfEdges; i++) {
+        System.out.println(results[i].src + " -- " + results[i].dest + " == " + results[i].weight);
+        minCost += results[i].weight;
+    }
+    System.out.println("Total cost of MST: " + minCost);
+}
+```
+
+## Dynamic Programming
+
+-   Bottom up
+    1. Solve smallest problems
+    2. Combine smaller problems
+    3. Solve root problem
+-   Top down
+    1. Start at root and recurse
+    2. Recurse
+    3. Solve and memoize
