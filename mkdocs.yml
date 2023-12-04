@@ -2,3 +2,7 @@ site_name: Cheatsheets and Notes
 docs_dir: "notes"
 extra_css:
     - style.css
+
+theme:
+    name: mkdocs
+    navigation_depth: 5
