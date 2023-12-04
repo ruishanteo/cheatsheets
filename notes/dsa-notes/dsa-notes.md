@@ -61,6 +61,7 @@
         -   [Prim's Algorithm](#prims-algorithm)
         -   [Kruskal's Algorithm](#kruskals-algorithm)
     -   [Dynamic Programming](#dynamic-programming)
+        -   [Topological Sort](#topological-sort)
 
 ## Recurrence Relations
 
@@ -1885,3 +1886,102 @@ private static void kruskals(int V, List<Edge> edges) {
     1. Start at root and recurse
     2. Recurse
     3. Solve and memoize
+
+### Topological Sort
+
+-   Using DFS to find cycles and add to stack
+-   Verifies if the graph given is a directed acyclic graph (DAG)
+
+```java
+class Solution {
+    HashMap<Integer, LinkedList<Integer>> adj = new HashMap<>();
+    HashMap<Integer, Boolean> visited = new HashMap<>();
+
+    Stack<Integer> stack = new Stack<>();
+    boolean isImpossible = false;
+
+	public void addEdge(int v, int w) {
+        adj.putIfAbsent(v, new LinkedList<>());
+        adj.putIfAbsent(w, new LinkedList<>());
+        adj.get(v).add(w);
+    }
+
+    private void dfsHelper(Integer v, HashMap<Integer, Boolean> visited1) {
+        visited.put(v, true);
+        visited1.put(v, true);
+
+        // Traverse neighbours
+        for (Integer i: adj.get(v)) {
+            if (visited1.containsKey(i)) {
+                isImpossible = true; // there is a cycle
+                break;
+            }
+            if (!visited.get(i)) {
+                dfsHelper(i, visited1);
+            }
+        }
+
+        visited1.remove(v);
+        stack.push(v);
+    }
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] res = new int[numCourses];
+        Arrays.setAll(res, i -> i);
+
+        if (prerequisites.length == 0) {
+            return res;
+        }
+
+        // Add all edges into graph adj
+        for (int[] prerequisite : prerequisites) {
+            addEdge(prerequisite[1], prerequisite[0]);
+        }
+
+        // Set all keys to visited = false
+        for (Integer key: adj.keySet()) {
+            visited.put(key, false);
+        }
+
+        // Start DFS
+        for (Integer key: adj.keySet()) {
+            HashMap<Integer, Boolean> visited1 = new HashMap<>();
+            if (visited.get(key) == false) {
+                dfsHelper(key, visited1);
+            }
+        }
+
+        if (isImpossible) {
+            return new int[0];
+        }
+
+        HashMap<Integer, Integer> hm = new HashMap<>();
+
+        for (int i = 0; i < numCourses; i++) {
+            hm.put(i, i);
+        }
+
+        // Add sorted courses into array
+        int n = stack.size();
+
+        for (int i = 0; i < n; i++) {
+            int course = stack.pop();
+            res[i] = course;
+            hm.remove(course);
+        }
+
+        // Fill in the rest of the array with the missing courses
+        int[] left = hm.keySet().stream().mapToInt(Integer::intValue).toArray();
+        int i1 = 0;
+        int i2 = n;
+
+        while (i1 < left.length && n < numCourses) {
+            res[i2] = left[i1];
+            i1++;
+            i2++;
+        }
+
+        return res;
+    }
+}
+```
