@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>CS2106 Notes AY23/24 Sem2 - Cheatsheets and Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Cheatsheets and Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cs2103t <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cs2103t/cs2103t-notes/" class="dropdown-item">CS2103/T Notes</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cs2106 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">CS2106 Notes AY23/24 Sem2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dsa notes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dsa-notes/dsa-notes/" class="dropdown-item">Data Structures and Algorithm</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../cs2103t/cs2103t-notes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../dsa-notes/dsa-notes/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#cs2106-notes-ay2324-sem2" class="nav-link">CS2106 Notes AY23/24 Sem2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#operating-systems" class="nav-link">Operating Systems</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#operating-system-structure" class="nav-link">Operating System Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#running-oses" class="nav-link">Running OSes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#process-management" class="nav-link">Process Management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#process-abstraction" class="nav-link">Process Abstraction</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#component-description" class="nav-link">Component Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#basic-instruction-execution" class="nav-link">Basic Instruction Execution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#memory-context" class="nav-link">Memory Context</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#function-call" class="nav-link">Function Call</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#dynamically-allocated-memory" class="nav-link">Dynamically Allocated Memory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#os-context" class="nav-link">OS Context</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#processes" class="nav-link">Processes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#process-scheduling" class="nav-link">Process Scheduling</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#concurrent-execution" class="nav-link">Concurrent Execution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#process-scheduling-algorithms" class="nav-link">Process Scheduling Algorithms</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#first-come-first-serve-fcfs" class="nav-link">First-Come First-Serve: FCFS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#shortest-job-first-sjf" class="nav-link">Shortest Job First: SJF</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#shortest-remaining-time-srt" class="nav-link">Shortest Remaining Time: SRT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#round-robin-rr" class="nav-link">Round Robin: RR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#priority-scheduling" class="nav-link">Priority Scheduling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#multi-level-feedback-queue-mlfq" class="nav-link">Multi-level Feedback Queue (MLFQ)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#lottery-scheduling" class="nav-link">Lottery Scheduling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#scheduling-for-interactive-systems" class="nav-link">Scheduling for Interactive Systems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#process-alternative-threads" class="nav-link">Process Alternative - Threads</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#motivation-for-thread" class="nav-link">Motivation for Thread</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#process-and-thread" class="nav-link">Process and Thread</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#context-switch" class="nav-link">Context Switch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cs2106-notes-ay2324-sem2">CS2106 Notes AY23/24 Sem2</h1>
+<ul>
+<li><a href="#cs2106-notes-ay2324-sem2">CS2106 Notes AY23/24 Sem2</a><ul>
+<li><a href="#operating-systems">Operating Systems</a><ul>
+<li><a href="#operating-system-structure">Operating System Structure</a></li>
+<li><a href="#running-oses">Running OSes</a></li>
+</ul>
+</li>
+<li><a href="#process-management">Process Management</a></li>
+<li><a href="#process-abstraction">Process Abstraction</a><ul>
+<li><a href="#component-description">Component Description</a></li>
+<li><a href="#basic-instruction-execution">Basic Instruction Execution</a></li>
+<li><a href="#memory-context">Memory Context</a><ul>
+<li><a href="#function-call">Function Call</a></li>
+<li><a href="#dynamically-allocated-memory">Dynamically Allocated Memory</a></li>
+</ul>
+</li>
+<li><a href="#os-context">OS Context</a><ul>
+<li><a href="#processes">Processes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#process-scheduling">Process Scheduling</a><ul>
+<li><a href="#concurrent-execution">Concurrent Execution</a></li>
+<li><a href="#process-scheduling-algorithms">Process Scheduling Algorithms</a><ul>
+<li><a href="#first-come-first-serve-fcfs">First-Come First-Serve: FCFS</a></li>
+<li><a href="#shortest-job-first-sjf">Shortest Job First: SJF</a></li>
+<li><a href="#shortest-remaining-time-srt">Shortest Remaining Time: SRT</a></li>
+<li><a href="#round-robin-rr">Round Robin: RR</a></li>
+<li><a href="#priority-scheduling">Priority Scheduling</a></li>
+<li><a href="#multi-level-feedback-queue-mlfq">Multi-level Feedback Queue (MLFQ)</a></li>
+<li><a href="#lottery-scheduling">Lottery Scheduling</a></li>
+</ul>
+</li>
+<li><a href="#scheduling-for-interactive-systems">Scheduling for Interactive Systems</a></li>
+</ul>
+</li>
+<li><a href="#process-alternative---threads">Process Alternative - Threads</a><ul>
+<li><a href="#motivation-for-thread">Motivation for Thread</a></li>
+<li><a href="#process-and-thread">Process and Thread</a><ul>
+<li><a href="#context-switch">Context Switch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="operating-systems">Operating Systems</h2>
+<ul>
+<li>Operating system: A program that acts as an intermediary between a computer user and the computer hardware.</li>
+<li>Motivation for OS<ol>
+<li>Abstraction:<ul>
+<li>Hide the different low level details</li>
+<li>Present the common high level functionality to user</li>
+</ul>
+</li>
+<li>Resource Allocator:<ul>
+<li>Manages all resources: CPU,Memory,Input/Outputdevices</li>
+<li>Arbitrate potentially conflicting requests: for efficient and fair resource use</li>
+</ul>
+</li>
+<li>Control Program:<ul>
+<li>Controls execution of programs: prevent errors and improper use of the computer and provides security and protection</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><img alt="viewOfOs" src="../viewOfOs.png" /></li>
+<li><img alt="osComponents" src="../osComponents.png" /></li>
+</ul>
+<h3 id="operating-system-structure">Operating System Structure</h3>
+<ul>
+<li>A <strong>monolithic</strong> kernel is an operating system architecture where the entire operating system is working in kernel space<ul>
+<li><img alt="monolithicKernel" src="../monolithicKernel.png" /></li>
+</ul>
+</li>
+<li>A <strong>microkernel</strong> architecture is an operating system pattern where only basic functionality is provided in the core of the software system<ul>
+<li>Inter-Process Communication (IPC)</li>
+<li>Address space management</li>
+<li>Thread management</li>
+<li><img alt="microkernelComponents" src="../microkernelComponents.png" /></li>
+</ul>
+</li>
+<li><strong>Layered systems</strong><ul>
+<li>Generalization of monolithic system</li>
+<li>Organize the components into hierarchy of layers<ul>
+<li>Upper layers make use of the lower layers</li>
+<li>Lowest layer is the hardware</li>
+<li>Highest layer is the user interface</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Client-Server Model</strong><ul>
+<li>Variation of microkernel</li>
+<li>Two classes of processes:<ul>
+<li>Client process request service from server process</li>
+<li>Server Process built on top of the microkernel</li>
+<li>Client and Server process can be on separate machine!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="running-oses">Running OSes</h3>
+<ul>
+<li>Motivation<ul>
+<li>Operating system assumes total control of the hardware</li>
+<li>Operating system is hard to debug/ monitor</li>
+</ul>
+</li>
+<li>Definition<ul>
+<li><strong>Virtual machine</strong>: a software emulation of hardware, also known as hypervisor</li>
+<li><img alt="type1Hypervisor" src="../type1Hypervisor.png" /></li>
+<li><img alt="type2Hypervisor" src="../type2Hypervisor.png" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="process-management">Process Management</h2>
+<ul>
+<li>Process Abstraction<ul>
+<li>Information describing an executing program</li>
+<li>Process/ Task/ Job is a dynamic abstracton for execution program</li>
+</ul>
+</li>
+<li>Process Scheduling<ul>
+<li>Deciding which process get to execute</li>
+</ul>
+</li>
+<li>Inter-Process Communication &amp; Synchronization<ul>
+<li>Passing information between processes</li>
+</ul>
+</li>
+<li>Alternative to Process<ul>
+<li>Light-weight process aka Thread</li>
+</ul>
+</li>
+</ul>
+<h2 id="process-abstraction">Process Abstraction</h2>
+<h3 id="component-description">Component Description</h3>
+<ul>
+<li>Memory<ul>
+<li>Storage for instruction and data</li>
+</ul>
+</li>
+<li>Cache<ul>
+<li>Duplicate part of the memory for faster access</li>
+<li>Usually split into instruction cache and data cache</li>
+</ul>
+</li>
+<li>Fetch unit<ul>
+<li>Loads instruction from memory</li>
+<li>Location indicated by a special register: Program Counter (PC)</li>
+</ul>
+</li>
+<li>Functional units<ul>
+<li>Carry out the instruction execution</li>
+<li>Dedicated to different instruction type</li>
+</ul>
+</li>
+<li>Registers<ul>
+<li>Internal storage for the fastest access speed</li>
+<li>General purpose registers: accessible by user program</li>
+<li>Special register: program counter</li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-instruction-execution">Basic Instruction Execution</h3>
+<ul>
+<li>Instruction X is fetched<ul>
+<li>Memory location indicated by Program Counter</li>
+</ul>
+</li>
+<li>Instruction X dispatched to the corresponding Functional Unit<ul>
+<li>Read operands if applicable, usually from memory or GPR</li>
+</ul>
+</li>
+<li>Result computed<ul>
+<li>Write value if applicable n Usually to memory or GPR</li>
+</ul>
+</li>
+<li>Instruction X is completed<ul>
+<li>PC updated for the next instruction</li>
+</ul>
+</li>
+</ul>
+<h3 id="memory-context">Memory Context</h3>
+<h4 id="function-call">Function Call</h4>
+<ul>
+<li>Stack memory<ul>
+<li>The new memory region to store information during function invocation</li>
+<li>Information of function invocation is described by a stack frame</li>
+<li>Stack frame contains:<ul>
+<li>Return address of the caller</li>
+<li>Arguments for the function</li>
+<li>Storage for local variables</li>
+</ul>
+</li>
+<li>Top of stack region (first unused location) is indicated by a stack pointer<ul>
+<li>Stack frame is added on top when a function is invoked</li>
+<li>Stack frame is removed from top when a function call ends</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Function call convention (example scheme)<ul>
+<li><img alt="stackFrameSetup" src="../stackFrameSetup.png" /></li>
+<li><img alt="stackFrameTeardown" src="../stackFrameTeardown.png" /></li>
+</ul>
+</li>
+<li>Frame pointer<ul>
+<li>To facilitate the access of various stack frame items</li>
+<li>Points to a fixed location in a stack frame</li>
+</ul>
+</li>
+<li>Saved register<ul>
+<li>Number of general purpose registers on most processors are limited</li>
+<li>When GPRs are exhausted, use memory to hold the GPR value, then reuse GPR, value held can be restored afterwards (known as register spilling)</li>
+</ul>
+</li>
+</ul>
+<h4 id="dynamically-allocated-memory">Dynamically Allocated Memory</h4>
+<ul>
+<li>Acquire new memory space during execution time - malloc()</li>
+<li>Observations<ul>
+<li>Memory is allocated only at runtime (size is not known during compilation) -&gt; cannot place in data region</li>
+<li>No definite deallocation timing (can be explicitly freed by programmer) -&gt; cannot place in stack region</li>
+</ul>
+</li>
+<li>Solution: set up a separate heap memory region</li>
+<li><img alt="heapMemory" src="../heapMemory.png" /></li>
+<li>Memory context: text, data, stack and heap</li>
+<li>Hardware context: general purpose register, program counter, stack pointer, stack frame pointer</li>
+</ul>
+<h3 id="os-context">OS Context</h3>
+<h4 id="processes">Processes</h4>
+<ul>
+<li>
+<p>Process Identification &amp; Process States</p>
+<ul>
+<li><img alt="processStateModel" src="../processStateModel.png" /></li>
+</ul>
+</li>
+<li>
+<p>New</p>
+<ul>
+<li>New process created</li>
+<li>May still be under initialisation</li>
+</ul>
+</li>
+<li>Ready<ul>
+<li>Process is waiting to run</li>
+</ul>
+</li>
+<li>Running<ul>
+<li>Process being executed on CPU</li>
+</ul>
+</li>
+<li>Blocked<ul>
+<li>Process waiting for event</li>
+<li>Cannot execute until event is available</li>
+</ul>
+</li>
+<li>
+<p>Terminated</p>
+<ul>
+<li>Process has finished execution, may require OS cleanup</li>
+</ul>
+</li>
+<li>
+<p>Process Table &amp; Process Control Block:</p>
+<ul>
+<li>Entire execution context for a process</li>
+<li>Kernel maintains PCB for all processes</li>
+</ul>
+</li>
+<li>
+<p>System calls</p>
+<ul>
+<li>
+<p>Application program interface (API) to OS</p>
+<ul>
+<li>Provides way of calling facilities/ services in kernel</li>
+<li>Not the same as normal function call (have to change from user mode to kernel mode)</li>
+</ul>
+</li>
+<li>
+<p>User program invokes the library call (normal function call)</p>
+</li>
+<li>Library call (usually in assembly code) places the system call number in a designated location E.g. Register</li>
+<li>Library call executes a special instruction to switch from user mode to kernel mode (commonly known as TRAP)</li>
+<li>Now in kernel mode, the appropriate system call handler is determined:<ul>
+<li>Using the system call number as <strong>index</strong></li>
+<li>This step is usually handled by a <strong>dispatcher</strong></li>
+</ul>
+</li>
+<li>System call handler is executed: Carry out the actual request</li>
+<li>System call handler ended:<ul>
+<li>Control return to the library call</li>
+<li>Switch from kernel mode to user mode</li>
+</ul>
+</li>
+<li>
+<p>Library call return to the user program: via normal function return mechanism</p>
+</li>
+<li>
+<p><img alt="systemCallMechanism" src="../systemCallMechanism.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Exception and Interrupt</p>
+<ul>
+<li>Exception is <strong>synchronous</strong>: occur due to program execution<ul>
+<li>Have to execute an exception handler</li>
+<li>Similar to a forced function call</li>
+</ul>
+</li>
+<li>Interrupt is <strong>asynchronous</strong>: events that occur independent of program execution<ul>
+<li>Program execution is suspended</li>
+<li>Have to execute an interrupt handler</li>
+</ul>
+</li>
+<li><img alt="exceptionInterruptHandler" src="../exceptionInterruptHandler.png" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="process-scheduling">Process Scheduling</h2>
+<h3 id="concurrent-execution">Concurrent Execution</h3>
+<ul>
+<li>Concurrent processes<ul>
+<li>Logical concept to cover multitasked processes</li>
+<li><img alt="simplisticConcurrency" src="../simplisticConcurrency.png" /></li>
+<li><img alt="interleavedContextSwitch" src="../interleavedContextSwitch.png" /></li>
+</ul>
+</li>
+<li>Terminology<ul>
+<li>Scheduler: Part of the OS that makes scheduling decision</li>
+<li>Scheduling algorithm: The algorithm used by scheduler</li>
+</ul>
+</li>
+<li>Processing environment<ul>
+<li>Batch processing<ul>
+<li>No user: no interaction required, no need to be responsive</li>
+</ul>
+</li>
+<li>Interactive<ul>
+<li>With active user interacting with system</li>
+<li>Should be responsive, consistent in response time</li>
+</ul>
+</li>
+<li>Real time processing<ul>
+<li>Have deadline to meet</li>
+<li>Usually periodic process</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Criteria for all processing environments<ul>
+<li>Fairness<ul>
+<li>Should get a fair share of CPU time</li>
+<li>No starvation</li>
+</ul>
+</li>
+<li>Balance<ul>
+<li>All parts of computing system should be utilised</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Types of scheduling policies<ul>
+<li>Non-preemptive (cooperative)<ul>
+<li>A process stayed scheduled in running state until it blocks or gives up the CPU voluntarily</li>
+</ul>
+</li>
+<li>Preemptive<ul>
+<li>A process is given a fixed time quota to run (possible to block or give up early)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="process-scheduling-algorithms">Process Scheduling Algorithms</h3>
+<ul>
+<li>Criteria for batch processing<ul>
+<li><strong>Turnaround time</strong>: Total time taken, i.e. finish-arrival time</li>
+<li><strong>Waiting time</strong>: Time spent waiting for CPU</li>
+<li><strong>Throughput</strong>: Number of tasks finished per unit time i.e. Rate of task completion</li>
+<li><strong>CPU utilization</strong>: Percentage of time when CPU is working on a task</li>
+</ul>
+</li>
+</ul>
+<h4 id="first-come-first-serve-fcfs">First-Come First-Serve: FCFS</h4>
+<ul>
+<li>Tasks are stored on a First-In-First-Out (FIFO) queue based on arrival time</li>
+<li>Pick the first task in queue to run until the task is done OR the task is blocked</li>
+<li>Blocked task is removed from the FIFO queue<ul>
+<li>When it is ready again, it is placed at the back of queue</li>
+<li>i.e. just like a newly arrive task</li>
+</ul>
+</li>
+<li>Guaranteed to have no starvation:<ul>
+<li>The number of tasks in front of task X in FIFO is always decreasing -&gt; task X will get its chance eventually</li>
+</ul>
+</li>
+<li>Shortcomings<ul>
+<li><strong>Convoy effect</strong>: FCFS algorithm is non-preemptive in nature, that is, once CPU time has been allocated to a process, other processes can get CPU time only after the current process has finished</li>
+</ul>
+</li>
+</ul>
+<h4 id="shortest-job-first-sjf">Shortest Job First: SJF</h4>
+<ul>
+<li>Select task with the smallest total CPU time</li>
+<li>Need to know total CPU time for a task in advance</li>
+<li>Given a fixed set of tasks, average waiting time is minimised</li>
+<li>Starvation is possible: biased towards short jobs, such that long job may never get a chance</li>
+<li><img alt="predictingCpuTime" src="../predictingCpuTime.png" /></li>
+</ul>
+<h4 id="shortest-remaining-time-srt">Shortest Remaining Time: SRT</h4>
+<ul>
+<li>Select job with shortest remaining (or expected) time</li>
+<li>New job with shorter remaining time can preempt currently running job</li>
+<li>Provide good service for short job even when it arrives late</li>
+</ul>
+<h4 id="round-robin-rr">Round Robin: RR</h4>
+<ul>
+<li>Tasks are stored in a FIFO queue</li>
+<li>Pick the first task from queue front to run until:<ul>
+<li>A fixed time slice (quantum) elapsed</li>
+<li>The task gives up the CPU voluntarily</li>
+</ul>
+</li>
+<li>The task is then placed at the end of queue to wait for another turn<ul>
+<li>Blocked task will be moved to other queue to wait for its request</li>
+</ul>
+</li>
+<li>Basically a preemptive version of FCFS</li>
+<li>Response time guarantee:<ul>
+<li>Given n tasks and quantum q</li>
+<li>Time before a task get CPU is bounded by (n-1)q</li>
+</ul>
+</li>
+<li>Timer interrupt needed:<ul>
+<li>For scheduler to check on quantum expiry</li>
+</ul>
+</li>
+<li>The choice of time quantum duration is important:<ul>
+<li>Big quantum: Better CPU utilization but longer waiting time</li>
+<li>Small quantum: Bigger overhead (worse CPU utilization) but shorter waiting time</li>
+</ul>
+</li>
+</ul>
+<h4 id="priority-scheduling">Priority Scheduling</h4>
+<ul>
+<li>Assign a priority value to all tasks, select task with highest priority value</li>
+<li>Variants<ul>
+<li>Preemptive version: higher priority process can preempt running process with lower priority</li>
+<li>Non-preemptive version: late coming high priority process has to wait for next round of scheduling</li>
+</ul>
+</li>
+<li>Shortcomings<ul>
+<li>Low priority process can starve (worse in preemptive variant)</li>
+</ul>
+</li>
+<li>Possible solutions<ul>
+<li>Decrease the priority of currently running process after every time quantum</li>
+<li>Give the current running process a time quantum</li>
+</ul>
+</li>
+<li><strong>Priority Inversion</strong>: Priority inversion is a situation that can occur when a low-priority task is holding a resource such as a semaphore for which a higher-priority task is waiting</li>
+</ul>
+<h4 id="multi-level-feedback-queue-mlfq">Multi-level Feedback Queue (MLFQ)</h4>
+<ul>
+<li>If Priority(A) &gt; Priority(B) -&gt; A runs</li>
+<li>If Priority(A) == Priority(B) -&gt; A and B runs in RR</li>
+<li>Priority Setting/Changing rules:<ol>
+<li>New job -&gt; Highest priority</li>
+<li>If a job fully utilized its time slice -&gt; priority reduced</li>
+<li>If a job give up / blocks before it finishes the time slice -&gt; priority retained</li>
+</ol>
+</li>
+</ul>
+<h4 id="lottery-scheduling">Lottery Scheduling</h4>
+<ul>
+<li>Give out “lottery tickets” to processes for various system resources</li>
+<li>When a scheduling decision is needed, a lottery ticket is chosen randomly among eligible tickets</li>
+<li>Responsive: a newly created process can participate in the next lottery</li>
+<li>A process can be given Y lottery tickets to distribute to its child process</li>
+<li>An important process can be given more lottery tickets</li>
+<li>Each resource can have its own set of tickets<ul>
+<li>Different proportion of usage per resource per task</li>
+</ul>
+</li>
+</ul>
+<h3 id="scheduling-for-interactive-systems">Scheduling for Interactive Systems</h3>
+<ul>
+<li>
+<p>Criteria for Interactive Environment</p>
+<ul>
+<li><strong>Response time</strong>: Time between request and response by system</li>
+<li><strong>Predictability</strong>: Variation in response time, lesser variation -&gt; more predictable</li>
+<li>Preemptive scheduling algorithms are used to ensure good response time<ul>
+<li>Scheduler needs to run periodically</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Interval of timer interrupt (ITI)</p>
+<ul>
+<li>OS scheduler is triggered every timer interrupt</li>
+</ul>
+</li>
+<li>Time Quantum<ul>
+<li>Execution duration given to a process</li>
+<li>Could be constant or variable among the processes</li>
+<li>Must be multiples of interval of timer interrupt</li>
+<li>Large range of values</li>
+</ul>
+</li>
+</ul>
+<h2 id="process-alternative-threads">Process Alternative - Threads</h2>
+<h3 id="motivation-for-thread">Motivation for Thread</h3>
+<ul>
+<li>Process is expensive:<ul>
+<li>Process creation under the fork() model: duplicate memory space, duplicate most of the process context etc</li>
+<li>Context switch: Requires saving/restoration of process information</li>
+</ul>
+</li>
+<li>It is hard for independent processes to communicate with each other:<ul>
+<li>Independent memory space -&gt; no easy way to pass information</li>
+<li>Requires Inter-Process Communication (IPC)</li>
+</ul>
+</li>
+<li>Thread is invented to overcome the problems with process model<ul>
+<li>Started out as a "quick hack" and eventually matured to be very popular mechanism</li>
+</ul>
+</li>
+<li>Basic Idea:<ul>
+<li>A traditional process has a single thread of control: only one instruction of the whole program is executing at any time</li>
+<li>Add more threads of control to the same process: multiple parts of the programs is executing at the same time conceptually</li>
+</ul>
+</li>
+</ul>
+<h3 id="process-and-thread">Process and Thread</h3>
+<ul>
+<li>A single proces can have multiple threads: multithreaded process</li>
+<li>Threads in the same process shares<ul>
+<li>Memory context: text, data, heap</li>
+<li>OS context: process id, files</li>
+</ul>
+</li>
+<li>Unique information needed for each thread<ul>
+<li>Identification (usually thread id)</li>
+<li>Registers (general purpose and special)</li>
+<li>Stack</li>
+</ul>
+</li>
+<li><img alt="processAndThread" src="../processAndThread.png" /></li>
+</ul>
+<h4 id="context-switch">Context Switch</h4>
+<ul>
+<li>Process context switch involves:<ul>
+<li>OS Context</li>
+<li>Hardware Context</li>
+<li>Memory Context</li>
+</ul>
+</li>
+<li>Thread switch within the same process involves:</li>
+<li>Hardware context: Registers, "Stack" (actually just changing FP and SP registers)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -43,6 +43,15 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cs2106 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../cs2106/cs2106-notes/" class="dropdown-item">CS2106 Notes AY23/24 Sem2</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dsa notes <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -61,7 +70,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../cs2103t/cs2103t-notes/" class="nav-link">
+                                <a rel="prev" href="../../cs2106/cs2106-notes/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -328,6 +337,10 @@
             </li>
             <li class="nav-item" data-level="2"><a href="#dynamic-programming" class="nav-link">Dynamic Programming</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#topological-sort" class="nav-link">Topological Sort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
               </ul>
@@ -431,7 +444,10 @@
 <li><a href="#kruskals-algorithm">Kruskal's Algorithm</a></li>
 </ul>
 </li>
-<li><a href="#dynamic-programming">Dynamic Programming</a></li>
+<li><a href="#dynamic-programming">Dynamic Programming</a><ul>
+<li><a href="#topological-sort">Topological Sort</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2394,7 +2410,104 @@ private static void kruskals(int V, List&lt;Edge&gt; edges) {
 <li>Solve and memoize</li>
 </ol>
 </li>
-</ul></div>
+</ul>
+<h3 id="topological-sort">Topological Sort</h3>
+<ul>
+<li>Using DFS to find cycles and add to stack</li>
+<li>Verifies if the graph given is a directed acyclic graph (DAG)</li>
+</ul>
+<pre><code class="language-java">class Solution {
+    HashMap&lt;Integer, LinkedList&lt;Integer&gt;&gt; adj = new HashMap&lt;&gt;();
+    HashMap&lt;Integer, Boolean&gt; visited = new HashMap&lt;&gt;();
+
+    Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+    boolean isImpossible = false;
+
+    public void addEdge(int v, int w) {
+        adj.putIfAbsent(v, new LinkedList&lt;&gt;());
+        adj.putIfAbsent(w, new LinkedList&lt;&gt;());
+        adj.get(v).add(w);
+    }
+
+    private void dfsHelper(Integer v, HashMap&lt;Integer, Boolean&gt; visited1) {
+        visited.put(v, true);
+        visited1.put(v, true);
+
+        // Traverse neighbours
+        for (Integer i: adj.get(v)) {
+            if (visited1.containsKey(i)) {
+                isImpossible = true; // there is a cycle
+                break;
+            }
+            if (!visited.get(i)) {
+                dfsHelper(i, visited1);
+            }
+        }
+
+        visited1.remove(v);
+        stack.push(v);
+    }
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] res = new int[numCourses];
+        Arrays.setAll(res, i -&gt; i);
+
+        if (prerequisites.length == 0) {
+            return res;
+        }
+
+        // Add all edges into graph adj
+        for (int[] prerequisite : prerequisites) {
+            addEdge(prerequisite[1], prerequisite[0]);
+        }
+
+        // Set all keys to visited = false
+        for (Integer key: adj.keySet()) {
+            visited.put(key, false);
+        }
+
+        // Start DFS
+        for (Integer key: adj.keySet()) {
+            HashMap&lt;Integer, Boolean&gt; visited1 = new HashMap&lt;&gt;();
+            if (visited.get(key) == false) {
+                dfsHelper(key, visited1);
+            }
+        }
+
+        if (isImpossible) {
+            return new int[0];
+        }
+
+        HashMap&lt;Integer, Integer&gt; hm = new HashMap&lt;&gt;();
+
+        for (int i = 0; i &lt; numCourses; i++) {
+            hm.put(i, i);
+        }
+
+        // Add sorted courses into array
+        int n = stack.size();
+
+        for (int i = 0; i &lt; n; i++) {
+            int course = stack.pop();
+            res[i] = course;
+            hm.remove(course);
+        }
+
+        // Fill in the rest of the array with the missing courses
+        int[] left = hm.keySet().stream().mapToInt(Integer::intValue).toArray();
+        int i1 = 0;
+        int i2 = n;
+
+        while (i1 &lt; left.length &amp;&amp; n &lt; numCourses) {
+            res[i2] = left[i1];
+            i1++;
+            i2++;
+        }
+
+        return res;
+    }
+}
+</code></pre></div>
             </div>
         </div>
 
