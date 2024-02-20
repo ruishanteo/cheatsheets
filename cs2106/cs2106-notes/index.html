@@ -199,7 +199,19 @@
             </li>
             <li class="nav-item" data-level="3"><a href="#process-and-thread" class="nav-link">Process and Thread</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="4"><a href="#context-switch" class="nav-link">Context Switch</a>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#thread-models" class="nav-link">Thread Models</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#user-thread" class="nav-link">User Thread</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#kernel-thread" class="nav-link">Kernel Thread</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#hybrid-thread-model" class="nav-link">Hybrid Thread Model</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -254,8 +266,11 @@
 </li>
 <li><a href="#process-alternative---threads">Process Alternative - Threads</a><ul>
 <li><a href="#motivation-for-thread">Motivation for Thread</a></li>
-<li><a href="#process-and-thread">Process and Thread</a><ul>
-<li><a href="#context-switch">Context Switch</a></li>
+<li><a href="#process-and-thread">Process and Thread</a></li>
+<li><a href="#thread-models">Thread Models</a><ul>
+<li><a href="#user-thread">User Thread</a></li>
+<li><a href="#kernel-thread">Kernel Thread</a></li>
+<li><a href="#hybrid-thread-model">Hybrid Thread Model</a></li>
 </ul>
 </li>
 </ul>
@@ -775,9 +790,7 @@
 </ul>
 </li>
 <li><img alt="processAndThread" src="../processAndThread.png" /></li>
-</ul>
-<h4 id="context-switch">Context Switch</h4>
-<ul>
+<li>Context Switch<ul>
 <li>Process context switch involves:<ul>
 <li>OS Context</li>
 <li>Hardware Context</li>
@@ -786,6 +799,102 @@
 </li>
 <li>Thread switch within the same process involves:</li>
 <li>Hardware context: Registers, "Stack" (actually just changing FP and SP registers)</li>
+</ul>
+</li>
+<li>Threads: Benefits<ul>
+<li>Economy<ul>
+<li>Multiple threads in the same process requires much less resources to manage compared to multiple processes</li>
+</ul>
+</li>
+<li>Resource sharing<ul>
+<li>Threads share most of the resources of a process</li>
+<li>No need for additional mechanism for passing information around</li>
+</ul>
+</li>
+<li>Responsiveness<ul>
+<li>Multithreaded programs can appear much more responsive</li>
+</ul>
+</li>
+<li>Scability<ul>
+<li>Multithreaded program can take advantage of multiple CPUs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Threads: Problems<ul>
+<li>System call concurrency<ul>
+<li>Parallel execution of multiple threads -&gt; parallel system call possible</li>
+</ul>
+</li>
+<li>Process behaviour<ul>
+<li>fork() duplicate process, and thread behaviour is OS specific (the other threads may or may not get duplicated)</li>
+<li>If a single thread calls exit() in a multithreaded program, it typically terminates the entire process, not just the thread that called exit()</li>
+<li>When a single thread calls exec(), it replaces the entire process image with a new program. This includes all threads. The new program starts with a single thread, and the previous threads of the calling process are terminated</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="thread-models">Thread Models</h3>
+<h4 id="user-thread">User Thread</h4>
+<ul>
+<li>Thread is implemented as a user library; kernel is not aware of the threads in the process</li>
+<li><img alt="userThread" src="../userThread.png" /></li>
+<li>Advantages:<ul>
+<li>Can have multithreaded program on ANY OS</li>
+<li>Thread operations are just library calls</li>
+<li>Generally more configurable and flexible<ul>
+<li>e.g. Customized thread scheduling policy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>OS is not aware of threads, scheduling is performed at process level</li>
+<li>One thread blocked -&gt; Process blocked -&gt; All threads blocked</li>
+<li>Cannot exploit multiple CPUs!</li>
+</ul>
+</li>
+</ul>
+<h4 id="kernel-thread">Kernel Thread</h4>
+<ul>
+<li>Thread is implemented in the OS<ul>
+<li>Thread operation is handled as system calls</li>
+</ul>
+</li>
+<li>Thread-level scheduling is possible<ul>
+<li>Kernel schedule by threads, instead of by process</li>
+</ul>
+</li>
+<li><img alt="kernelThread" src="../kernelThread.png" /></li>
+<li>Advantages:<ul>
+<li>Kernel can schedule on thread levels:<ul>
+<li>More than 1 thread in the same process can run simultaneously on multiple CPUs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>Thread operations is now a system call!<ul>
+<li>Slower and more resource intensive</li>
+</ul>
+</li>
+<li>Generally less flexible:<ul>
+<li>Used by all multithreaded programs</li>
+<li>If implemented with many features, expensive, overkill for simple program</li>
+<li>If implemented with few features, not flexible enough for some programs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="hybrid-thread-model">Hybrid Thread Model</h4>
+<ul>
+<li>Have both kernel and user threads<ul>
+<li>OS schedule on kernel threads only</li>
+<li>User thread can bind to a kernel thread</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
