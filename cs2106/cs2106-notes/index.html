@@ -147,6 +147,18 @@
             </li>
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#process-abstraction-in-unix" class="nav-link">Process Abstraction in Unix</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#zombie-process" class="nav-link">Zombie Process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#unix-system-calls" class="nav-link">Unix System Calls</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#process-scheduling" class="nav-link">Process Scheduling</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="3"><a href="#concurrent-execution" class="nav-link">Concurrent Execution</a>
@@ -215,6 +227,26 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="4"><a href="#posix-threads-pthread" class="nav-link">POSIX Threads: pthread</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#inter-process-communication-ipc" class="nav-link">Inter-Process Communication (IPC)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#message-passing" class="nav-link">Message Passing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#unix-pipes" class="nav-link">Unix Pipes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#unix-signal" class="nav-link">Unix Signal</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
@@ -249,6 +281,11 @@
 </li>
 </ul>
 </li>
+<li><a href="#process-abstraction-in-unix">Process Abstraction in Unix</a><ul>
+<li><a href="#zombie-process">Zombie Process</a></li>
+<li><a href="#unix-system-calls">Unix System Calls</a></li>
+</ul>
+</li>
 <li><a href="#process-scheduling">Process Scheduling</a><ul>
 <li><a href="#concurrent-execution">Concurrent Execution</a></li>
 <li><a href="#process-scheduling-algorithms">Process Scheduling Algorithms</a><ul>
@@ -271,8 +308,15 @@
 <li><a href="#user-thread">User Thread</a></li>
 <li><a href="#kernel-thread">Kernel Thread</a></li>
 <li><a href="#hybrid-thread-model">Hybrid Thread Model</a></li>
+<li><a href="#posix-threads-pthread">POSIX Threads: <code>pthread</code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#inter-process-communication-ipc">Inter-Process Communication (IPC)</a><ul>
+<li><a href="#message-passing">Message Passing</a></li>
+<li><a href="#unix-pipes">Unix Pipes</a></li>
+<li><a href="#unix-signal">Unix Signal</a></li>
 </ul>
 </li>
 </ul>
@@ -558,6 +602,72 @@
 </ul>
 </li>
 </ul>
+<h2 id="process-abstraction-in-unix">Process Abstraction in Unix</h2>
+<ul>
+<li>Identification<ul>
+<li>PID: process ID</li>
+</ul>
+</li>
+<li>Information<ul>
+<li>Process state: running, sleeping, stopped, zombie</li>
+<li>Parent PID</li>
+<li>Cumulative CPU time</li>
+<li>Command: <code>ps</code> (process status)</li>
+</ul>
+</li>
+<li>Creation:<ul>
+<li><code>fork()</code><ul>
+<li><code># include &lt;unistd.h&gt;</code></li>
+<li><code>int fork();</code></li>
+<li>Returns: PID of newly created process for parent and 0 for child</li>
+<li>Child process is a duplicate of current executable image</li>
+<li>Both parent and child processes continue executing after <code>fork()</code></li>
+</ul>
+</li>
+<li><code>exec()</code><ul>
+<li>Replace current executing process image with a new one</li>
+<li><code># include &lt;unistd.h&gt;</code></li>
+<li><code>int execl( const char *path, const char *arg0 ... NULL)</code></li>
+<li>Path: location of executable</li>
+<li>e.g. <code>execl( "/bin/ls", "ls", "-l", NULL);</code> = <code>ls -l</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Termination<ul>
+<li><code>#include &lt;stdlib.h&gt;</code></li>
+<li><code>void exit( int status );</code></li>
+<li>0 = Normal Termination (successful execution)</li>
+<li>No return</li>
+<li>Most system resources used by processes are released on exit (files)</li>
+<li>Some resources are not releaseable (PID &amp; status, process accounting info)</li>
+</ul>
+</li>
+<li>Parent-Child Synchronisation<ul>
+<li><code>#include &lt;sys/types.h&gt; #include &lt;sys/wait.h&gt;</code></li>
+<li><code>int wait( int *status );</code></li>
+<li>Returns the PID of the terminated child process status (passed by address)</li>
+<li>Parent process blocks until at least one child terminates</li>
+</ul>
+</li>
+<li><img alt="processInteractionInUnix" src="../processInteractionInUnix.png" /></li>
+<li><code>wait()</code> created zombie processes</li>
+</ul>
+<h3 id="zombie-process">Zombie Process</h3>
+<ul>
+<li>Parent process terminates before child process:<ul>
+<li>init process becomes "pseudo" parent of child processes</li>
+<li>Child termination sends signal to init, which utilizes wait() to cleanup</li>
+</ul>
+</li>
+<li>Child process terminates before parent but parent did not call wait:<ul>
+<li>Child process become a zombie process q Can fill up process table</li>
+<li>May need a reboot to clear the table on older Unix implementations</li>
+</ul>
+</li>
+</ul>
+<h3 id="unix-system-calls">Unix System Calls</h3>
+<p><img alt="summaryOfUnixCalls" src="../summaryOfUnixCalls.png" /></p>
 <h2 id="process-scheduling">Process Scheduling</h2>
 <h3 id="concurrent-execution">Concurrent Execution</h3>
 <ul>
@@ -895,7 +1005,257 @@
 <li>User thread can bind to a kernel thread</li>
 </ul>
 </li>
-</ul></div>
+<li>Offer great flexibility<ul>
+<li>Can limit the concurrency of any process/ user</li>
+</ul>
+</li>
+</ul>
+<h4 id="posix-threads-pthread">POSIX Threads: <code>pthread</code></h4>
+<ul>
+<li>Header file: <code># include &lt;pthread.h&gt;</code></li>
+<li>Compilation: <code>gcc XXX.c -lpthread</code></li>
+<li>Datatypes<ul>
+<li><code>pthread_t</code>: Data type to represent a thread id</li>
+<li><code>pthread_attr</code>: Data type to represent attributes of a thread</li>
+</ul>
+</li>
+<li>Creation syntax
+    <code>c
+    int pthread_create(
+        pthread_t* tidCreated,
+        const pthread_attr_t* threadAttributes,
+        void* (*startRoutine) (void*),
+        void* argForStartRoutine );</code><ul>
+<li>Returns (0 = success; !0 = errors)</li>
+<li>Parameters:<ul>
+<li>tidCreated: Thread Id for the created thread</li>
+<li>threadAttributes: Control the behavior of the new thread</li>
+<li>startRoutine: Function pointer to the function to be executed by thread</li>
+<li>argForStartRoutine: Arguments for the startRoutine function</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Termination syntax
+    <code>c
+        int pthread_exit( void* exitValue );</code><ul>
+<li>Parameters:<ul>
+<li>exitValue: Value to be returned to whoever synchronize with
+    this thread (more later)</li>
+</ul>
+</li>
+<li>If pthread_exit()is not used, a pthread will terminate
+    automatically at the end of the startRoutine</li>
+</ul>
+</li>
+<li>Join
+    <code>c
+        int pthread_join( pthread_t threadID, void **status );</code><ul>
+<li>To wait for the termination of another pthread</li>
+<li>Returns (0 = success; !0 = errors)</li>
+<li>Parameters:<ul>
+<li>threadID: TID of the pthread to wait for</li>
+<li>status: Exit value returned by the target pthread</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="inter-process-communication-ipc">Inter-Process Communication (IPC)</h2>
+<ul>
+<li>General Idea:<ul>
+<li>Process P1 creates a shared memory region M</li>
+<li>Process P2 attaches M to its own memory space</li>
+<li>P1 and P2 can now communicate using M</li>
+<li>Any writes to M can be seen by all other parties (behaves similar to normal memory region)</li>
+<li>Same model for multiple processes sharing the same memory region</li>
+</ul>
+</li>
+</ul>
+<pre><code>
+Process P1
+
+1. Create M (implict attach)
+2. Read/Write to M
+
+```
+
+```
+
+Process P2
+
+1. Attach M
+2. Read/Write to M
+
+</code></pre>
+<ul>
+<li>
+<p>Master program</p>
+<p>```c
+int main() {
+    int shmid, i, *shm;</p>
+<pre><code>// Create shared memory region
+shmid = shmget( IPC_PRIVATE, 40, IPC_CREAT | 0600);
+
+if (shmid == -1) {
+    printf("Cannot create shared memory!\n"); exit(1);
+} else
+    printf("Shared Memory Id = %d\n", shmid);
+
+// Attach shared memory region
+shm = (int*) shmat( shmid, NULL, 0 );
+if (shm == (int*) -1) {
+    printf("Cannot attach shared memory!\n");
+    exit(1);
+}
+
+// First element is used as control value
+shm[0] = 0;
+
+while(shm[0] == 0) {
+    sleep(3);
+}
+
+for (i = 0; i &lt; 3; i++){
+    printf("Read %d from shared memory.\n", shm[i+1]);
+}
+
+// Detach and destroy shared memory region
+shmdt( (char*) shm);
+shmctl( shmid, IPC_RMID, 0);
+return 0;
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>Slave program</p>
+<p>```c
+//similar header files
+int main() {
+    int shmid, i, input, *shm;</p>
+<pre><code>printf("Shared memory id for attachment: ");
+scanf("%d", &amp;shmid);
+
+// Attach to shared memory region
+shm = (int*)shmat( shmid, NULL, 0);
+if (shm == (int*)-1) {
+    printf("Error: Cannot attach!\n");
+    exit(1);
+}
+
+// Write 3 values
+for (i = 0; i &lt; 3; i++){
+    scanf("%d", &amp;input);
+    shm[i+1] = input;
+}
+
+// Let master program know we are done!
+shm[0] = 1;
+
+// Detach shared memory region
+shmdt( (char*)shm );
+return 0;
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>Advantages</p>
+<ul>
+<li>Efficient: only create and attach involve OS</li>
+<li>Ease of use: shared memory region behaves the same as normal memory</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Synchronisation: shared resource means there is a need to synchronise access</li>
+</ul>
+</li>
+</ul>
+<h3 id="message-passing">Message Passing</h3>
+<ul>
+<li>Process P1 prepares a message M and send it to Process P2</li>
+<li>Process P2 receives the message M</li>
+<li>
+<p>Message sending and receiving are usually provided as system calls</p>
+</li>
+<li>
+<p>Naming scheme</p>
+<ul>
+<li>Direct communication<ul>
+<li>Sender/ receiver of message explicitly name the other party</li>
+</ul>
+</li>
+<li>Indirect communication<ul>
+<li>Messages are sent to/ received from message storage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Synchronisation behaviours<ul>
+<li>Blocking primitives (synchronous)<ul>
+<li>Sender/ receiver is blocked until message is received/ arrived</li>
+</ul>
+</li>
+<li>Non-blocking primitives (asynchronous)<ul>
+<li>Sender: resume operation immediately</li>
+<li>Receiver: either receive the message or some indication that message is not ready</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Advantages<ul>
+<li>Portable: can be easily implemented</li>
+<li>Easier synchronisation</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Inefficient (requires OS intervention)</li>
+<li>Harder to use, messages are limited in size or format</li>
+</ul>
+</li>
+</ul>
+<h3 id="unix-pipes">Unix Pipes</h3>
+<ul>
+<li><a href="../communicationChannels.png">!communicationChannels</a></li>
+<li>Piping in shell<ul>
+<li>"|" symbol to link the input/output channels of one process to another (known as piping)</li>
+<li>Output of a process goes directly into another as input</li>
+</ul>
+</li>
+<li>Pipe functions as circular bounded byte buffer with implicit synchronization:<ul>
+<li>Writers wait when buffer is full</li>
+<li>Readers wait when buffer is empty</li>
+</ul>
+</li>
+<li>Variants<ul>
+<li>Half-duplex: unidirectional, one write end and one read end</li>
+<li>Full-duplex: bidirectional, read/ write for both ends</li>
+</ul>
+</li>
+<li>System calls<ul>
+<li><code>#include &lt;unistd.h&gt;</code></li>
+<li><code>int pipe( int fd[] )</code></li>
+<li>Returns 0 to indicate success; !0 for errors</li>
+</ul>
+</li>
+</ul>
+<h3 id="unix-signal">Unix Signal</h3>
+<ul>
+<li>A form of inter-process communication<ul>
+<li>An asynchronous notification regarding an event</li>
+<li>Sent to a process/thread</li>
+</ul>
+</li>
+<li>Recipient of the signal must handle the signal by<ul>
+<li>A default set of handlers</li>
+<li>User supplied handler</li>
+</ul>
+</li>
+<li>E.g. kill, stop, continue, memory error, arithmetic error</li>
+</ul>
+<pre><code>
+</code></pre></div>
             </div>
         </div>
 
