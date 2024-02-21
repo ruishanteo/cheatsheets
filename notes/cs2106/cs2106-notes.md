@@ -30,6 +30,8 @@
         -   [Thread Models](#thread-models)
             -   [User Thread](#user-thread)
             -   [Kernel Thread](#kernel-thread)
+            -   [Hybrid Thread Model](#hybrid-thread-model)
+            -   [POSIX Threads: `pthread`](#posix-threads-pthread)
 
 ## Operating Systems
 
@@ -420,12 +422,59 @@
 -   ![kernelThread](kernelThread.png)
 -   Advantages:
     -   Kernel can schedule on thread levels:
-         More than 1 thread in the same process can run simultaneously on multiple CPUs
-         Disadvantages:
-         Thread operations is now a system call!  Slowerandmoreresourceintensive
-         Generally less flexible:
-         Usedbyallmultithreadedprograms
-         Ifimplementedwithmanyfeatures:
-         Expensive, overkill for simple program
-         Ifimplementedwithfewfeatures:
-         Not flexible enough for some programs
+        -   More than 1 thread in the same process can run simultaneously on multiple CPUs
+-   Disadvantages:
+    -   Thread operations is now a system call!
+        -   Slower and more resource intensive
+    -   Generally less flexible:
+        -   Used by all multithreaded programs
+        -   If implemented with many features, expensive, overkill for simple program
+        -   If implemented with few features, not flexible enough for some programs
+
+#### Hybrid Thread Model
+
+-   Have both kernel and user threads
+    -   OS schedule on kernel threads only
+    -   User thread can bind to a kernel thread
+-   Offer great flexibility
+    -   Can limit the concurrency of any process/ user
+
+#### POSIX Threads: `pthread`
+
+-   Header file: `# include <pthread.h>`
+-   Compilation: `gcc XXX.c -lpthread`
+-   Datatypes
+    -   `pthread_t`: Data type to represent a thread id
+    -   `pthread_attr`: Data type to represent attributes of a thread
+-   Creation syntax
+    ```c
+    int pthread_create(
+        pthread_t* tidCreated,
+        const pthread_attr_t* threadAttributes,
+        void* (*startRoutine) (void*),
+        void* argForStartRoutine );
+    ```
+    -   Returns (0 = success; !0 = errors)
+    -   Parameters:
+        -   tidCreated: Thread Id for the created thread
+        -   threadAttributes: Control the behavior of the new thread
+        -   startRoutine: Function pointer to the function to be executed by thread
+        -   argForStartRoutine: Arguments for the startRoutine function
+-   Termination syntax
+    ```c
+        int pthread_exit( void* exitValue );
+    ```
+    -   Parameters:
+        -   exitValue: Value to be returned to whoever synchronize with
+            this thread (more later)
+    -   If pthread_exit()is not used, a pthread will terminate
+        automatically at the end of the startRoutine
+-   Join
+    ```c
+        int pthread_join( pthread_t threadID, void **status );
+    ```
+    -   To wait for the termination of another pthread
+    -   Returns (0 = success; !0 = errors)
+    -   Parameters:
+        -   threadID: TID of the pthread to wait for
+        -   status: Exit value returned by the target pthread
