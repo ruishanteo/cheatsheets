@@ -13,6 +13,9 @@
             -   [Dynamically Allocated Memory](#dynamically-allocated-memory)
         -   [OS Context](#os-context)
             -   [Processes](#processes)
+    -   [Process Abstraction in Unix](#process-abstraction-in-unix)
+        -   [Zombie Process](#zombie-process)
+        -   [Unix System Calls](#unix-system-calls)
     -   [Process Scheduling](#process-scheduling)
         -   [Concurrent Execution](#concurrent-execution)
         -   [Process Scheduling Algorithms](#process-scheduling-algorithms)
@@ -32,6 +35,10 @@
             -   [Kernel Thread](#kernel-thread)
             -   [Hybrid Thread Model](#hybrid-thread-model)
             -   [POSIX Threads: `pthread`](#posix-threads-pthread)
+    -   [Inter-Process Communication (IPC)](#inter-process-communication-ipc)
+        -   [Message Passing](#message-passing)
+        -   [Unix Pipes](#unix-pipes)
+        -   [Unix Signal](#unix-signal)
 
 ## Operating Systems
 
@@ -211,6 +218,56 @@
         -   Program execution is suspended
         -   Have to execute an interrupt handler
     -   ![exceptionInterruptHandler](exceptionInterruptHandler.png)
+
+## Process Abstraction in Unix
+
+-   Identification
+    -   PID: process ID
+-   Information
+    -   Process state: running, sleeping, stopped, zombie
+    -   Parent PID
+    -   Cumulative CPU time
+    -   Command: `ps` (process status)
+-   Creation:
+    -   `fork()`
+        -   `# include <unistd.h>`
+        -   `int fork();`
+        -   Returns: PID of newly created process for parent and 0 for child
+        -   Child process is a duplicate of current executable image
+        -   Both parent and child processes continue executing after `fork()`
+    -   `exec()`
+        -   Replace current executing process image with a new one
+        -   `# include <unistd.h>`
+        -   `int execl( const char *path, const char *arg0 ... NULL)`
+        -   Path: location of executable
+        -   e.g. `execl( "/bin/ls", "ls", "-l", NULL);` = `ls -l`
+-   Termination
+    -   `#include <stdlib.h>`
+    -   `void exit( int status );`
+    -   0 = Normal Termination (successful execution)
+    -   No return
+    -   Most system resources used by processes are released on exit (files)
+    -   Some resources are not releaseable (PID & status, process accounting info)
+-   Parent-Child Synchronisation
+    -   `#include <sys/types.h> #include <sys/wait.h>`
+    -   `int wait( int *status );`
+    -   Returns the PID of the terminated child process status (passed by address)
+    -   Parent process blocks until at least one child terminates
+-   ![processInteractionInUnix](processInteractionInUnix.png)
+-   `wait()` created zombie processes
+
+### Zombie Process
+
+-   Parent process terminates before child process:
+    -   init process becomes "pseudo" parent of child processes
+    -   Child termination sends signal to init, which utilizes wait() to cleanup
+-   Child process terminates before parent but parent did not call wait:
+    -   Child process become a zombie process q Can fill up process table
+    -   May need a reboot to clear the table on older Unix implementations
+
+### Unix System Calls
+
+![summaryOfUnixCalls](summaryOfUnixCalls.png)
 
 ## Process Scheduling
 
@@ -478,3 +535,158 @@
     -   Parameters:
         -   threadID: TID of the pthread to wait for
         -   status: Exit value returned by the target pthread
+
+## Inter-Process Communication (IPC)
+
+-   General Idea:
+    -   Process P1 creates a shared memory region M
+    -   Process P2 attaches M to its own memory space
+    -   P1 and P2 can now communicate using M
+    -   Any writes to M can be seen by all other parties (behaves similar to normal memory region)
+    -   Same model for multiple processes sharing the same memory region
+
+````
+
+Process P1
+
+1. Create M (implict attach)
+2. Read/Write to M
+
+```
+
+```
+
+Process P2
+
+1. Attach M
+2. Read/Write to M
+
+````
+
+-   Master program
+
+    ```c
+    int main() {
+        int shmid, i, *shm;
+
+        // Create shared memory region
+        shmid = shmget( IPC_PRIVATE, 40, IPC_CREAT | 0600);
+
+        if (shmid == -1) {
+            printf("Cannot create shared memory!\n"); exit(1);
+        } else
+            printf("Shared Memory Id = %d\n", shmid);
+
+        // Attach shared memory region
+        shm = (int*) shmat( shmid, NULL, 0 );
+        if (shm == (int*) -1) {
+            printf("Cannot attach shared memory!\n");
+            exit(1);
+        }
+
+        // First element is used as control value
+        shm[0] = 0;
+
+        while(shm[0] == 0) {
+            sleep(3);
+        }
+
+        for (i = 0; i < 3; i++){
+            printf("Read %d from shared memory.\n", shm[i+1]);
+        }
+
+        // Detach and destroy shared memory region
+        shmdt( (char*) shm);
+        shmctl( shmid, IPC_RMID, 0);
+        return 0;
+    }
+    ```
+
+-   Slave program
+
+    ```c
+    //similar header files
+    int main() {
+        int shmid, i, input, *shm;
+
+        printf("Shared memory id for attachment: ");
+        scanf("%d", &shmid);
+
+        // Attach to shared memory region
+        shm = (int*)shmat( shmid, NULL, 0);
+        if (shm == (int*)-1) {
+            printf("Error: Cannot attach!\n");
+            exit(1);
+        }
+
+        // Write 3 values
+        for (i = 0; i < 3; i++){
+            scanf("%d", &input);
+            shm[i+1] = input;
+        }
+
+        // Let master program know we are done!
+        shm[0] = 1;
+
+        // Detach shared memory region
+        shmdt( (char*)shm );
+        return 0;
+    }
+    ```
+
+-   Advantages
+    -   Efficient: only create and attach involve OS
+    -   Ease of use: shared memory region behaves the same as normal memory
+-   Disadvantages
+    -   Synchronisation: shared resource means there is a need to synchronise access
+
+### Message Passing
+
+-   Process P1 prepares a message M and send it to Process P2
+-   Process P2 receives the message M
+-   Message sending and receiving are usually provided as system calls
+
+-   Naming scheme
+    -   Direct communication
+        -   Sender/ receiver of message explicitly name the other party
+    -   Indirect communication
+        -   Messages are sent to/ received from message storage
+-   Synchronisation behaviours
+    -   Blocking primitives (synchronous)
+        -   Sender/ receiver is blocked until message is received/ arrived
+    -   Non-blocking primitives (asynchronous)
+        -   Sender: resume operation immediately
+        -   Receiver: either receive the message or some indication that message is not ready
+-   Advantages
+    -   Portable: can be easily implemented
+    -   Easier synchronisation
+-   Disadvantages
+    -   Inefficient (requires OS intervention)
+    -   Harder to use, messages are limited in size or format
+
+### Unix Pipes
+
+-   [!communicationChannels](communicationChannels.png)
+-   Piping in shell
+    -   "|" symbol to link the input/output channels of one process to another (known as piping)
+    -   Output of a process goes directly into another as input
+-   Pipe functions as circular bounded byte buffer with implicit synchronization:
+    -   Writers wait when buffer is full
+    -   Readers wait when buffer is empty
+-   Variants
+    -   Half-duplex: unidirectional, one write end and one read end
+    -   Full-duplex: bidirectional, read/ write for both ends
+-   System calls
+    -   `#include <unistd.h>`
+    -   `int pipe( int fd[] )`
+    -   Returns 0 to indicate success; !0 for errors
+
+### Unix Signal
+
+-   A form of inter-process communication
+    -   An asynchronous notification regarding an event
+    -   Sent to a process/thread
+-   Recipient of the signal must handle the signal by
+    -   A default set of handlers
+    -   User supplied handler
+-   E.g. kill, stop, continue, memory error, arithmetic error
