@@ -254,7 +254,7 @@
     -   Returns the PID of the terminated child process status (passed by address)
     -   Parent process blocks until at least one child terminates
 -   ![processInteractionInUnix](processInteractionInUnix.png)
--   `wait()` created zombie processes
+-   `wait()` creates zombie processes
 
 ### Zombie Process
 
@@ -262,7 +262,8 @@
     -   init process becomes "pseudo" parent of child processes
     -   Child termination sends signal to init, which utilizes wait() to cleanup
 -   Child process terminates before parent but parent did not call wait:
-    -   Child process become a zombie process q Can fill up process table
+    -   Child process become a zombie process
+    -   Can fill up process table
     -   May need a reboot to clear the table on older Unix implementations
 
 ### Unix System Calls
