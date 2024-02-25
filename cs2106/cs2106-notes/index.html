@@ -651,7 +651,7 @@
 </ul>
 </li>
 <li><img alt="processInteractionInUnix" src="../processInteractionInUnix.png" /></li>
-<li><code>wait()</code> created zombie processes</li>
+<li><code>wait()</code> creates zombie processes</li>
 </ul>
 <h3 id="zombie-process">Zombie Process</h3>
 <ul>
@@ -661,7 +661,8 @@
 </ul>
 </li>
 <li>Child process terminates before parent but parent did not call wait:<ul>
-<li>Child process become a zombie process q Can fill up process table</li>
+<li>Child process become a zombie process</li>
+<li>Can fill up process table</li>
 <li>May need a reboot to clear the table on older Unix implementations</li>
 </ul>
 </li>
@@ -1078,10 +1079,8 @@ Process P1
 1. Create M (implict attach)
 2. Read/Write to M
 
-```
-
-```
-
+</code></pre>
+<pre><code>
 Process P2
 
 1. Attach M
@@ -1253,9 +1252,7 @@ return 0;
 </ul>
 </li>
 <li>E.g. kill, stop, continue, memory error, arithmetic error</li>
-</ul>
-<pre><code>
-</code></pre></div>
+</ul></div>
             </div>
         </div>
 
