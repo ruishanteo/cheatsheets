@@ -1020,13 +1020,7 @@
 <li><code>pthread_attr</code>: Data type to represent attributes of a thread</li>
 </ul>
 </li>
-<li>Creation syntax
-    <code>c
-    int pthread_create(
-        pthread_t* tidCreated,
-        const pthread_attr_t* threadAttributes,
-        void* (*startRoutine) (void*),
-        void* argForStartRoutine );</code><ul>
+<li>Creation syntax<ul>
 <li>Returns (0 = success; !0 = errors)</li>
 <li>Parameters:<ul>
 <li>tidCreated: Thread Id for the created thread</li>
@@ -1037,9 +1031,15 @@
 </li>
 </ul>
 </li>
-<li>Termination syntax
-    <code>c
-        int pthread_exit( void* exitValue );</code><ul>
+</ul>
+<pre><code class="language-c">int pthread_create(
+    pthread_t* tidCreated,
+    const pthread_attr_t* threadAttributes,
+    void* (*startRoutine) (void*),
+    void* argForStartRoutine );
+</code></pre>
+<ul>
+<li>Termination syntax<ul>
 <li>Parameters:<ul>
 <li>exitValue: Value to be returned to whoever synchronize with
     this thread (more later)</li>
@@ -1049,9 +1049,11 @@
     automatically at the end of the startRoutine</li>
 </ul>
 </li>
-<li>Join
-    <code>c
-        int pthread_join( pthread_t threadID, void **status );</code><ul>
+</ul>
+<pre><code class="language-c">    int pthread_exit( void* exitValue );
+</code></pre>
+<ul>
+<li>Join<ul>
 <li>To wait for the termination of another pthread</li>
 <li>Returns (0 = success; !0 = errors)</li>
 <li>Parameters:<ul>
@@ -1062,6 +1064,8 @@
 </ul>
 </li>
 </ul>
+<pre><code class="language-c">    int pthread_join( pthread_t threadID, void **status );
+</code></pre>
 <h2 id="inter-process-communication-ipc">Inter-Process Communication (IPC)</h2>
 <ul>
 <li>General Idea:<ul>
@@ -1088,80 +1092,76 @@ Process P2
 
 </code></pre>
 <ul>
-<li>
-<p>Master program</p>
-<p>```c
-int main() {
-    int shmid, i, *shm;</p>
-<pre><code>// Create shared memory region
-shmid = shmget( IPC_PRIVATE, 40, IPC_CREAT | 0600);
+<li>Master program</li>
+</ul>
+<pre><code class="language-c">int main() {
+    int shmid, i, *shm;
 
-if (shmid == -1) {
-    printf("Cannot create shared memory!\n"); exit(1);
-} else
-    printf("Shared Memory Id = %d\n", shmid);
+    // Create shared memory region
+    shmid = shmget( IPC_PRIVATE, 40, IPC_CREAT | 0600);
 
-// Attach shared memory region
-shm = (int*) shmat( shmid, NULL, 0 );
-if (shm == (int*) -1) {
-    printf("Cannot attach shared memory!\n");
-    exit(1);
+    if (shmid == -1) {
+        printf(&quot;Cannot create shared memory!\n&quot;); exit(1);
+    } else
+        printf(&quot;Shared Memory Id = %d\n&quot;, shmid);
+
+    // Attach shared memory region
+    shm = (int*) shmat( shmid, NULL, 0 );
+    if (shm == (int*) -1) {
+        printf(&quot;Cannot attach shared memory!\n&quot;);
+        exit(1);
+    }
+
+    // First element is used as control value
+    shm[0] = 0;
+
+    while(shm[0] == 0) {
+        sleep(3);
+    }
+
+    for (i = 0; i &lt; 3; i++){
+        printf(&quot;Read %d from shared memory.\n&quot;, shm[i+1]);
+    }
+
+    // Detach and destroy shared memory region
+    shmdt( (char*) shm);
+    shmctl( shmid, IPC_RMID, 0);
+    return 0;
 }
-
-// First element is used as control value
-shm[0] = 0;
-
-while(shm[0] == 0) {
-    sleep(3);
-}
-
-for (i = 0; i &lt; 3; i++){
-    printf("Read %d from shared memory.\n", shm[i+1]);
-}
-
-// Detach and destroy shared memory region
-shmdt( (char*) shm);
-shmctl( shmid, IPC_RMID, 0);
-return 0;
 </code></pre>
-<p>}
-```</p>
-</li>
-<li>
-<p>Slave program</p>
-<p>```c
-//similar header files
-int main() {
-    int shmid, i, input, *shm;</p>
-<pre><code>printf("Shared memory id for attachment: ");
-scanf("%d", &amp;shmid);
-
-// Attach to shared memory region
-shm = (int*)shmat( shmid, NULL, 0);
-if (shm == (int*)-1) {
-    printf("Error: Cannot attach!\n");
-    exit(1);
-}
-
-// Write 3 values
-for (i = 0; i &lt; 3; i++){
-    scanf("%d", &amp;input);
-    shm[i+1] = input;
-}
-
-// Let master program know we are done!
-shm[0] = 1;
-
-// Detach shared memory region
-shmdt( (char*)shm );
-return 0;
-</code></pre>
-<p>}
-```</p>
-</li>
-<li>
-<p>Advantages</p>
 <ul>
+<li>Slave program</li>
+</ul>
+<pre><code class="language-c">//similar header files
+int main() {
+    int shmid, i, input, *shm;
+
+    printf(&quot;Shared memory id for attachment: &quot;);
+    scanf(&quot;%d&quot;, &amp;shmid);
+
+    // Attach to shared memory region
+    shm = (int*)shmat( shmid, NULL, 0);
+    if (shm == (int*)-1) {
+        printf(&quot;Error: Cannot attach!\n&quot;);
+        exit(1);
+    }
+
+    // Write 3 values
+    for (i = 0; i &lt; 3; i++){
+        scanf(&quot;%d&quot;, &amp;input);
+        shm[i+1] = input;
+    }
+
+    // Let master program know we are done!
+    shm[0] = 1;
+
+    // Detach shared memory region
+    shmdt( (char*)shm );
+    return 0;
+}
+</code></pre>
+<ul>
+<li>Advantages<ul>
 <li>Efficient: only create and attach involve OS</li>
 <li>Ease of use: shared memory region behaves the same as normal memory</li>
 </ul>
@@ -1216,7 +1216,7 @@ return 0;
 </ul>
 <h3 id="unix-pipes">Unix Pipes</h3>
 <ul>
-<li><a href="../communicationChannels.png">!communicationChannels</a></li>
+<li><img alt="communicationChannels" src="../communicationChannels.png" /></li>
 <li>Piping in shell<ul>
 <li>"|" symbol to link the input/output channels of one process to another (known as piping)</li>
 <li>Output of a process goes directly into another as input</li>
