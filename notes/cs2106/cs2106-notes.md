@@ -189,6 +189,10 @@
 
     -   Entire execution context for a process
     -   Kernel maintains PCB for all processes
+    -   Hardware context in PCB is updated only when process swap out
+    -   Memory context in PCB is not the actual memory space used in process (points to real memory & contains page table)
+    -   PCBs are part of OS memory space
+    -   OS context of PCB contains information used for scheduling, e.g. priority, time quantum allocated, etc.
 
 -   System calls
 
@@ -271,6 +275,10 @@
 ![summaryOfUnixCalls](summaryOfUnixCalls.png)
 
 ## Process Scheduling
+
+-   Time quantum is always an integer multiple of interval between timer interrupt
+-   Given the same period of time, smaller interval between timer interrupt lengthen task turn-around time
+    -   Shorter ITI -> More Timer Interrupt -> less time spent on actual user process
 
 ### Concurrent Execution
 
@@ -375,6 +383,7 @@
     1. New job -> Highest priority
     2. If a job fully utilized its time slice -> priority reduced
     3. If a job give up / blocks before it finishes the time slice -> priority retained
+-   Favours IO intensive process
 
 #### Lottery Scheduling
 
@@ -467,7 +476,7 @@
     -   Generally more configurable and flexible
         -   e.g. Customized thread scheduling policy
 -   Disadvantages:
-    -   OS is not aware of threads, scheduling is performed at process level
+    -   OS is not aware of threads, scheduling is performed at process level (can never exploit multi-core processors)
     -   One thread blocked -> Process blocked -> All threads blocked
     -   Cannot exploit multiple CPUs!
 
@@ -494,6 +503,7 @@
 -   Have both kernel and user threads
     -   OS schedule on kernel threads only
     -   User thread can bind to a kernel thread
+-   If we use a 1-to-1 binding in a hybrid thread model, the end result is the same as a pure kernel-thread model as each user thread is bounded to a kernel thread that can be scheduled
 -   Offer great flexibility
     -   Can limit the concurrency of any process/ user
 
@@ -511,6 +521,7 @@
         -   threadAttributes: Control the behavior of the new thread
         -   startRoutine: Function pointer to the function to be executed by thread
         -   argForStartRoutine: Arguments for the startRoutine function
+-   Pthread can start on any function as long as the function signature is void* f(void*)
 
 ```c
 int pthread_create(
@@ -696,3 +707,11 @@ int main() {
     -   A default set of handlers
     -   User supplied handler
 -   E.g. kill, stop, continue, memory error, arithmetic error
+-   A process can install user-define handler for multiple different signals.
+    -   [True]
+-   We can install user-define handler for all signals.
+    -   [False: The "kill -9" i.e. SIGKIL is not captureable]
+-   A parent process can force the child processes to execute any part of their code by sending signal to them.
+    -   [False: Only the signal handler can be triggered.]
+-   The "kill" signal (sent by the "kill" command) is different from the "interrupt" signal (sent by pressing "ctrl-c").
+    -   [True]
