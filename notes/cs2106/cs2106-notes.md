@@ -54,6 +54,8 @@
         - Controls execution of programs: prevent errors and improper use of the computer and provides security and protection
 -   ![viewOfOs](viewOfOs.png)
 -   ![osComponents](osComponents.png)
+-   OS can protect a user program from other malicious applications
+-   OS manages hardware resources for user programs
 
 ### Operating System Structure
 
@@ -196,11 +198,12 @@
 
 -   System calls
 
+    -   System calls are dependent on the operating system
     -   Application program interface (API) to OS
         -   Provides way of calling facilities/ services in kernel
         -   Not the same as normal function call (have to change from user mode to kernel mode)
 
-    1. User program invokes the library call (normal function call)
+    1. User program invokes the library call (normal function call, which are programming language dependent)
     2. Library call (usually in assembly code) places the system call number in a designated location E.g. Register
     3. Library call executes a special instruction to switch from user mode to kernel mode (commonly known as TRAP)
     4. Now in kernel mode, the appropriate system call handler is determined:
@@ -213,6 +216,7 @@
     7. Library call return to the user program: via normal function return mechanism
 
     -   ![systemCallMechanism](systemCallMechanism.png)
+    -   System calls are more expensive than library calls due to context switching
 
 -   Exception and Interrupt
     -   Exception is **synchronous**: occur due to program execution
