@@ -388,6 +388,12 @@
     2. If a job fully utilized its time slice -> priority reduced
     3. If a job give up / blocks before it finishes the time slice -> priority retained
 -   Favours IO intensive process
+-   Exploitations:
+    -   Change of heart: A process with a lengthy CPU-intensive phase followed by I/O-intensive phase. The process can sink to the lowest priority during the CPU intensive phase. With the low priority, the process may not receive CPU time in a timely fashion, which degrades the responsiveness.
+        -   Timely boost: All processes in the system will be moved to the highest priority level periodically.
+        -   By periodically boosting the priority of all processes (essentially treat all process as “new” and hence have highest priority), a process with different behavior phases may get a chance to be treated correctly even after it has sunk to the lowest priority.
+    -   Gaming the system: A process repeatedly gives up CPU just before the time quantum lapses.
+        -   Accounting matters: The CPU usage of a process is now accumulated across time quanta. Once the CPU usage exceeds a single time quantum, the priority of the task will be decremented.
 
 #### Lottery Scheduling
 
