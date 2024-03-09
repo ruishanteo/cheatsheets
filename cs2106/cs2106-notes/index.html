@@ -344,6 +344,8 @@
 </li>
 <li><img alt="viewOfOs" src="../viewOfOs.png" /></li>
 <li><img alt="osComponents" src="../osComponents.png" /></li>
+<li>OS can protect a user program from other malicious applications</li>
+<li>OS manages hardware resources for user programs</li>
 </ul>
 <h3 id="operating-system-structure">Operating System Structure</h3>
 <ul>
@@ -549,11 +551,16 @@
 <ul>
 <li>Entire execution context for a process</li>
 <li>Kernel maintains PCB for all processes</li>
+<li>Hardware context in PCB is updated only when process swap out</li>
+<li>Memory context in PCB is not the actual memory space used in process (points to real memory &amp; contains page table)</li>
+<li>PCBs are part of OS memory space</li>
+<li>OS context of PCB contains information used for scheduling, e.g. priority, time quantum allocated, etc.</li>
 </ul>
 </li>
 <li>
 <p>System calls</p>
 <ul>
+<li>System calls are dependent on the operating system</li>
 <li>
 <p>Application program interface (API) to OS</p>
 <ul>
@@ -562,7 +569,7 @@
 </ul>
 </li>
 <li>
-<p>User program invokes the library call (normal function call)</p>
+<p>User program invokes the library call (normal function call, which are programming language dependent)</p>
 </li>
 <li>Library call (usually in assembly code) places the system call number in a designated location E.g. Register</li>
 <li>Library call executes a special instruction to switch from user mode to kernel mode (commonly known as TRAP)</li>
@@ -583,6 +590,7 @@
 <li>
 <p><img alt="systemCallMechanism" src="../systemCallMechanism.png" /></p>
 </li>
+<li>System calls are more expensive than library calls due to context switching</li>
 </ul>
 </li>
 <li>
@@ -670,6 +678,13 @@
 <h3 id="unix-system-calls">Unix System Calls</h3>
 <p><img alt="summaryOfUnixCalls" src="../summaryOfUnixCalls.png" /></p>
 <h2 id="process-scheduling">Process Scheduling</h2>
+<ul>
+<li>Time quantum is always an integer multiple of interval between timer interrupt</li>
+<li>Given the same period of time, smaller interval between timer interrupt lengthen task turn-around time<ul>
+<li>Shorter ITI -&gt; More Timer Interrupt -&gt; less time spent on actual user process</li>
+</ul>
+</li>
+</ul>
 <h3 id="concurrent-execution">Concurrent Execution</h3>
 <ul>
 <li>Concurrent processes<ul>
@@ -823,6 +838,19 @@
 <li>If a job give up / blocks before it finishes the time slice -&gt; priority retained</li>
 </ol>
 </li>
+<li>Favours IO intensive process</li>
+<li>Exploitations:<ul>
+<li>Change of heart: A process with a lengthy CPU-intensive phase followed by I/O-intensive phase. The process can sink to the lowest priority during the CPU intensive phase. With the low priority, the process may not receive CPU time in a timely fashion, which degrades the responsiveness.<ul>
+<li>Timely boost: All processes in the system will be moved to the highest priority level periodically.</li>
+<li>By periodically boosting the priority of all processes (essentially treat all process as “new” and hence have highest priority), a process with different behavior phases may get a chance to be treated correctly even after it has sunk to the lowest priority.</li>
+</ul>
+</li>
+<li>Gaming the system: A process repeatedly gives up CPU just before the time quantum lapses.<ul>
+<li>Accounting matters: The CPU usage of a process is now accumulated across time quanta. Once the CPU usage exceeds a single time quantum, the priority of the task will be decremented.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h4 id="lottery-scheduling">Lottery Scheduling</h4>
 <ul>
@@ -961,7 +989,7 @@
 </ul>
 </li>
 <li>Disadvantages:<ul>
-<li>OS is not aware of threads, scheduling is performed at process level</li>
+<li>OS is not aware of threads, scheduling is performed at process level (can never exploit multi-core processors)</li>
 <li>One thread blocked -&gt; Process blocked -&gt; All threads blocked</li>
 <li>Cannot exploit multiple CPUs!</li>
 </ul>
@@ -1006,6 +1034,7 @@
 <li>User thread can bind to a kernel thread</li>
 </ul>
 </li>
+<li>If we use a 1-to-1 binding in a hybrid thread model, the end result is the same as a pure kernel-thread model as each user thread is bounded to a kernel thread that can be scheduled</li>
 <li>Offer great flexibility<ul>
 <li>Can limit the concurrency of any process/ user</li>
 </ul>
@@ -1031,6 +1060,7 @@
 </li>
 </ul>
 </li>
+<li>Pthread can start on any function as long as the function signature is void<em> f(void</em>)</li>
 </ul>
 <pre><code class="language-c">int pthread_create(
     pthread_t* tidCreated,
@@ -1252,6 +1282,22 @@ int main() {
 </ul>
 </li>
 <li>E.g. kill, stop, continue, memory error, arithmetic error</li>
+<li>A process can install user-define handler for multiple different signals.<ul>
+<li>[True]</li>
+</ul>
+</li>
+<li>We can install user-define handler for all signals.<ul>
+<li>[False: The "kill -9" i.e. SIGKIL is not captureable]</li>
+</ul>
+</li>
+<li>A parent process can force the child processes to execute any part of their code by sending signal to them.<ul>
+<li>[False: Only the signal handler can be triggered.]</li>
+</ul>
+</li>
+<li>The "kill" signal (sent by the "kill" command) is different from the "interrupt" signal (sent by pressing "ctrl-c").<ul>
+<li>[True]</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
