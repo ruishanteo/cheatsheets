@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>CS3213 Notes AY23/24 Sem2 - Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Notes</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#cs3213-notes-ay2324-sem2" class="nav-link">CS3213 Notes AY23/24 Sem2</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#software-engineering" class="nav-link">Software Engineering</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#software-engineering-activities" class="nav-link">Software Engineering Activities</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#software-process-models" class="nav-link">Software Process Models</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#waterfall-model" class="nav-link">Waterfall Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#incremental-development" class="nav-link">Incremental Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#prototyping" class="nav-link">Prototyping</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#integration-and-configuration" class="nav-link">Integration and Configuration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#requirements-engineering" class="nav-link">Requirements Engineering</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#software-requirements-documents" class="nav-link">Software Requirements Documents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#requirements" class="nav-link">Requirements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#elicidation-and-analysis" class="nav-link">Elicidation and Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#requirements-specification" class="nav-link">Requirements Specification</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#natural-language" class="nav-link">Natural Language</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#use-cases-and-user-stories" class="nav-link">Use Cases and User Stories</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#requirements-validation" class="nav-link">Requirements Validation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#basis-for-testing" class="nav-link">Basis for Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#requirements-management-planning" class="nav-link">Requirements Management Planning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#software-architecture" class="nav-link">Software Architecture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#architectural-drivers" class="nav-link">Architectural Drivers</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#advantages-of-architectural-design" class="nav-link">Advantages of Architectural Design</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#architectural-patterns" class="nav-link">Architectural Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#quality-attributes" class="nav-link">Quality Attributes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#availability-tactics" class="nav-link">Availability Tactics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#system-modeling" class="nav-link">System Modeling</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#modeling-languages" class="nav-link">Modeling Languages</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#uml" class="nav-link">UML</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#c4" class="nav-link">C4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#business-process-model-and-notation-bpmn" class="nav-link">Business Process Model and Notation (BPMN)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#agile-software-development" class="nav-link">Agile Software Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cs3213-notes-ay2324-sem2">CS3213 Notes AY23/24 Sem2</h1>
+<ul>
+<li><a href="#cs3213-notes-ay2324-sem2">CS3213 Notes AY23/24 Sem2</a><ul>
+<li><a href="#software-engineering">Software Engineering</a><ul>
+<li><a href="#software-engineering-activities">Software Engineering Activities</a></li>
+<li><a href="#software-process-models">Software Process Models</a><ul>
+<li><a href="#waterfall-model">Waterfall Model</a></li>
+<li><a href="#incremental-development">Incremental Development</a></li>
+<li><a href="#prototyping">Prototyping</a></li>
+<li><a href="#integration-and-configuration">Integration and Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#requirements-engineering">Requirements Engineering</a><ul>
+<li><a href="#software-requirements-documents">Software Requirements Documents</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#elicidation-and-analysis">Elicidation and Analysis</a></li>
+<li><a href="#requirements-specification">Requirements Specification</a><ul>
+<li><a href="#natural-language">Natural Language</a></li>
+</ul>
+</li>
+<li><a href="#use-cases-and-user-stories">Use Cases and User Stories</a></li>
+<li><a href="#requirements-validation">Requirements Validation</a></li>
+<li><a href="#basis-for-testing">Basis for Testing</a></li>
+<li><a href="#requirements-management-planning">Requirements Management Planning</a></li>
+</ul>
+</li>
+<li><a href="#software-architecture">Software Architecture</a><ul>
+<li><a href="#architectural-drivers">Architectural Drivers</a><ul>
+<li><a href="#advantages-of-architectural-design">Advantages of Architectural Design</a></li>
+</ul>
+</li>
+<li><a href="#architectural-patterns">Architectural Patterns</a></li>
+<li><a href="#quality-attributes">Quality Attributes</a><ul>
+<li><a href="#availability-tactics">Availability Tactics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#system-modeling">System Modeling</a><ul>
+<li><a href="#modeling-languages">Modeling Languages</a><ul>
+<li><a href="#uml">UML</a></li>
+<li><a href="#c4">C4</a></li>
+<li><a href="#business-process-model-and-notation-bpmn">Business Process Model and Notation (BPMN)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#agile-software-development">Agile Software Development</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="software-engineering">Software Engineering</h2>
+<ul>
+<li>“Software engineering is an <strong>engineering discipline</strong> that is concerned with all aspects of software production from initial conception to operation and maintenance.” (Sommerville)<ul>
+<li>Engineering is about selectively using theories, methods, and tools where appropriate</li>
+</ul>
+</li>
+<li>No silver bullet (1986)<ul>
+<li>Fred Brooks 1931-2022</li>
+<li>“There is no single development, in either technology or in management technique, that itself promises even <strong>one order-of-magnitude improvement</strong> in productivity, in reliability, in simplicity.”</li>
+<li>“I believe the hard part of building software to be the specification, design, and testing of this conceptual construct, not the labor of representing it and testing the fidelity of the representation. [...] If this is true, <strong>building software will always be hard</strong>. There is inherently no silver bullet.”</li>
+</ul>
+</li>
+</ul>
+<h3 id="software-engineering-activities">Software Engineering Activities</h3>
+<p>Central software engineering activities:</p>
+<ul>
+<li>Software specification<ul>
+<li>The functionality of the software and contraints on its operation must be defined</li>
+</ul>
+</li>
+<li>Software development<ul>
+<li>The software to meet the specification must be produced</li>
+</ul>
+</li>
+<li>Software validation<ul>
+<li>The software must be validated to ensure it does what the customer wants</li>
+</ul>
+</li>
+<li>Software evolution<ul>
+<li>The software must evolve to meet changing customer needs</li>
+</ul>
+</li>
+</ul>
+<p>Two general perspectives:</p>
+<ul>
+<li>Plan-based development<ul>
+<li>Requirements engineering --&gt; requirements specification --&gt; design and implementation --(requirements change requests)--&gt; requirements engineering</li>
+</ul>
+</li>
+<li>Agile development<ul>
+<li>Requirements engineering --&gt; design and implementation --&gt; requirements engineering</li>
+</ul>
+</li>
+</ul>
+<h3 id="software-process-models">Software Process Models</h3>
+<ul>
+<li>Software process model: simplified representation of a software process</li>
+<li>Typically from one perspective (eg activities, but no people and their roles)</li>
+</ul>
+<h4 id="waterfall-model">Waterfall Model</h4>
+<ul>
+<li><img alt="waterfallModel" src="../waterfallModel.png" /></li>
+<li>Plan-driven model: plan and schedule before starting development</li>
+<li>Next phase only starts after previous one completed</li>
+<li>Works well if requirements are clear, large safety-critical software systems</li>
+<li>Drawback:<ul>
+<li>Accomodating change (e.g. changing requirements)</li>
+</ul>
+</li>
+</ul>
+<h4 id="incremental-development">Incremental Development</h4>
+<ul>
+<li><img alt="incrementalDevelopment" src="../incrementalDevelopment.png" /></li>
+<li>Interleaves the activities of specification, development, and validation</li>
+<li>System is developed as a series of versions (increments), with each version adding functionality to the previous version</li>
+<li>Cost of accommodating change and responding to changing customer requirements is lower</li>
+<li>More rapid delivery of software</li>
+<li>Plan-driven (e.g., in combination with prototyping) or agile</li>
+<li>Drawback<ul>
+<li>Process is less measurable; degrading system structure (refactoring required)</li>
+</ul>
+</li>
+</ul>
+<h4 id="prototyping">Prototyping</h4>
+<ul>
+<li>Developing executable model of the system</li>
+<li>Requirements engineering: can help with the elicitation and validation of system requirements</li>
+<li>System design: can be used to explore software solutions and in the development of a user interface for the system</li>
+</ul>
+<h4 id="integration-and-configuration">Integration and Configuration</h4>
+<ul>
+<li><img alt="integrationAndConfiguration" src="../integrationAndConfiguration.png" /></li>
+</ul>
+<h2 id="requirements-engineering">Requirements Engineering</h2>
+<ul>
+<li>Requirements: Descriptions of the services that a system should provide and the constraints on its operation.</li>
+<li>Reflect the needs of customers for a system that serves a certain purpose such as controlling a device, placing an order, or finding information.</li>
+<li>Requirements engineering (RE): Process of finding out, analyzing, documenting and checking these services and constraints</li>
+<li>Stakeholders: Person or organization who influences a system’s requirements or who is impacted by that system.</li>
+<li>Problems:<ul>
+<li>Users' incomplete understanding of needs, computer capabilties and limitations</li>
+<li>Conflicting views from different users</li>
+<li>Requirements evolve over time</li>
+</ul>
+</li>
+<li>Reasons for requirements engineering:<ul>
+<li>Lowest defect cost</li>
+<li>High cost of errors during requirements</li>
+<li>Communication between stakeholders for customer relation and communication</li>
+<li>Basis for structure and behaviour of software design</li>
+<li>Basis for testing and acceptance of final product</li>
+<li>Dictate the quality of the system realisation, risks and overhead in operations</li>
+</ul>
+</li>
+</ul>
+<h3 id="software-requirements-documents">Software Requirements Documents</h3>
+<ul>
+<li>Or Software Requirements Specification (SRS)</li>
+<li>Goal of requirements definition</li>
+<li>May include both the user requirements for a system and a detailed specification of the system requirements</li>
+<li>Requirements change rapidly in agile methods: requirements are written incrementally as user stories</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>User requirements: statements of what services the system is expected to provide to system users and the constraints under which it must operate</li>
+<li>System requirements: more detailed descriptions of the software system’s functions, services, and operational constraints<ul>
+<li>Document (or functional specification) should define exactly what is to be implemented</li>
+<li>May be part of the contract between the system buyer and the software developers</li>
+</ul>
+</li>
+<li>Functional: describe what the system should do<ul>
+<li>Should be complete and consistent</li>
+</ul>
+</li>
+<li>Non-functional: requirements that are not directly concerned with the specific services delivered by the system to its users<ul>
+<li>Often more critical than individual functional requirements</li>
+<li>Whenever possible, they should be written quantitatively so they can be objectively tested</li>
+</ul>
+</li>
+<li>Key activities:<ul>
+<li>Elicitation and analysis: discovering requirements by interacting with the stakeholders</li>
+<li>Specification: converting the requirements into a standard form</li>
+<li>Validation: checking that the requirements actually define the system that the customer wants</li>
+</ul>
+</li>
+<li><img alt="spiralMode" src="../spiralModel.png" /><ul>
+<li>High level business requirements --&gt; detailed system requirements</li>
+</ul>
+</li>
+</ul>
+<h3 id="elicidation-and-analysis">Elicidation and Analysis</h3>
+<ul>
+<li>Challenges:<ul>
+<li>Stakeholders often do not know what they want from a computer system except in the most general terms</li>
+<li>They may make unrealistic demands because they do not know what is and is not feasible.</li>
+<li>Political factors may influence the requirements of a system. Managers may demand specific system requirements because these will allow them to increase their influence in the organization.</li>
+<li>Economic and business environment in which the analysis takes place is dynamic. It inevitably changes during the analysis process.</li>
+</ul>
+</li>
+<li>
+<p>Process Model</p>
+<ul>
+<li>
+<p><img alt="requirementsProcessModel" src="../requirementsProcessModel.png" /></p>
+<ol>
+<li>Process of interacting with stakeholders to discover requirements</li>
+<li>Groups related requirements and organises them into coherent clusters<ul>
+<li>One way of doing so is to consider each group to be a viewpoint and collect all requirements from that group into that viewpoint</li>
+</ul>
+</li>
+<li>Priorising requirements and resolving requirements conflicts</li>
+<li>Requirements are documented and input into the next round of the spiral</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Elicidation Methods:</p>
+<ul>
+<li>Interviewing<ul>
+<li>Closed interview: stakeholder answers a predefined set of questions</li>
+<li>Open interviews: no predefined agenda. The requirements engineering team explores a range of issues with system stakeholders and hence develops a better understanding of their needs</li>
+</ul>
+</li>
+<li>Document analysis (prior research)</li>
+<li>Workshops</li>
+<li>Focus groups</li>
+<li>Prototyping</li>
+<li>Observation (of how people work)</li>
+</ul>
+</li>
+<li>Personas: an archetype of a user group</li>
+</ul>
+<h3 id="requirements-specification">Requirements Specification</h3>
+<ul>
+<li>User Requirements<ul>
+<li>Almost always written in natural language supplemented by appropriate diagrams and tables in the requirements document</li>
+<li>Should describe the functional and nonfunctional requirements so that they are understandable by system users who do not have detailed technical knowledge</li>
+<li>Should specify only the external behavior of the system</li>
+<li>Should not include details of the system architecture or design</li>
+</ul>
+</li>
+<li>System Requirements<ul>
+<li>May also be written in natural language, but other notations based on forms, graphical, or mathematical system models can also be used</li>
+<li>Expanded versions of the user requirements that software engineers use as the starting point for the system design</li>
+<li>Add detail and explain how the system meets user requirements</li>
+<li>May be used as part of the contract for the implementation of the system</li>
+<li>Should be a complete and detailed specification of the whole system</li>
+<li>Should only describe the external behavior of the system and its operational constraints</li>
+<li>Should not be concerned with how the system should be designed or implemented.</li>
+</ul>
+</li>
+</ul>
+<h4 id="natural-language">Natural Language</h4>
+<ul>
+<li>Invent a standard format and ensure that all requirement definitions adhere to that format.</li>
+<li>Use text highlighting (bold, italic, or color) to pick out key parts of the requirement.</li>
+<li>Avoid the use of jargon, abbreviations, and acronyms.</li>
+</ul>
+<h3 id="use-cases-and-user-stories">Use Cases and User Stories</h3>
+<ul>
+<li>User-centric view to elicit and specify requirements both common in the traditional view and for agile methods</li>
+<li>Focus on what users need to accomplish (i.e., the tasks they expect the system to do for them)</li>
+<li>Use case<ul>
+<li>Describes an interaction between an actor and the system</li>
+<li>Documented as a high-level use case diagram</li>
+<li>Set of use cases represents all of the possible interactions that will be described in the system requirements</li>
+</ul>
+</li>
+<li>User story<ul>
+<li>Serve as a placeholder that will be split into smaller stories for implementation; elaborate to acceptance tests called “conditions of satisfaction”</li>
+</ul>
+</li>
+</ul>
+<h3 id="requirements-validation">Requirements Validation</h3>
+<ul>
+<li>Process of checking that requirements define the system that the customer really wants</li>
+<li>Feasibility study<ul>
+<li>A short, focused study that should take place early in the RE process</li>
+</ul>
+</li>
+<li>System prototyping<ul>
+<li>A version of the system or part of the system is developed quickly to check the customer’s requirements and the feasibility of design decisions</li>
+</ul>
+</li>
+<li>Peer review<ul>
+<li>Someone else than the author of the document reviews the requirements</li>
+</ul>
+</li>
+<li>Informal review<ul>
+<li>Collecting unstructured feedback</li>
+</ul>
+</li>
+<li>Formal requirements review<ul>
+<li>Requirements are analyzed systematically by a team of reviewers who check for errors and inconsistencies</li>
+</ul>
+</li>
+<li>Inspection<ul>
+<li>Reviewing one requirement at a time, and noting down defects</li>
+<li>Validity checks: requirements reflect the real needs of system users</li>
+<li>Consistency checks: requirements in the document should not conflict</li>
+<li>Completeness checks: requirements document should include requirements that define all functions and constraints intended</li>
+<li>Realism checks: can be implemented within proposed budget</li>
+<li>Verifiability: reduce the potential for dispute between customer and contractor</li>
+</ul>
+</li>
+</ul>
+<h3 id="basis-for-testing">Basis for Testing</h3>
+<ul>
+<li>Requirements should be testable and used to derive test cases</li>
+<li>Test-driven development</li>
+<li>V-model and testing<ul>
+<li><img alt="vmodelAndTest" src="../vmodelAndTest.png" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="requirements-management-planning">Requirements Management Planning</h3>
+<ul>
+<li>Concerned with establishing how a set of evolving requirements will be managed</li>
+<li>Requirements identification:<ul>
+<li>Each requirement must be uniquely identified</li>
+<li>So it can be cross-referenced with other requirements and used in traceability assessments</li>
+</ul>
+</li>
+<li>A change management process:<ul>
+<li>Set of activities that assess the impact and cost of changes</li>
+</ul>
+</li>
+<li>Traceability policies:<ul>
+<li>Define the relationships between each requirement and between the requirements and the system design that should be recorded</li>
+</ul>
+</li>
+<li>Tool support:<ul>
+<li>Range from specialist requirements management systems to shared spreadsheets and simple database systems</li>
+</ul>
+</li>
+</ul>
+<h2 id="software-architecture">Software Architecture</h2>
+<ul>
+<li>How the system is organized (e.g., components and relations)</li>
+<li>How developers explain the system at a high level (i.e., the overall structure)</li>
+<li>Architectural pattern: established architectural solution that might comprise multiple architectural tactics<ul>
+<li>Design pattern: typically less relevant for architecture (e.g., Factory Pattern or Facade)</li>
+</ul>
+</li>
+<li>Architectural tactic: design decision that influences a quality attribute</li>
+</ul>
+<h3 id="architectural-drivers">Architectural Drivers</h3>
+<ul>
+<li>Architecturally significant requirements (ASRs): requirements that have a measurable impact on the architecture</li>
+<li>Representing as<ul>
+<li>Block diagram: box as component, arrow as data/ control flow</li>
+<li><a href="https://ruishanteo.github.io/cheatsheets/cs2103t/cs2103t-notes/#uml">UML</a></li>
+<li><a href="https://en.wikipedia.org/wiki/C4_model">C4</a><ul>
+<li>Context diagrams (level 1): show the system in scope and its relationship with users and other systems</li>
+<li>Container diagrams (level 2): decompose a system into interrelated containers. A container represents an application or a data store</li>
+<li>Component diagrams (level 3): decompose containers into interrelated components, and relate the components to other containers or other systems</li>
+<li>Code diagrams (level 4): provide additional details about the design of the architectural elements that can be mapped to code. The C4 model relies at this level on existing notations like UML</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Structures<ul>
+<li>Component-and-connector (C&amp;C) structures: focuses on the way components interact with each other at run time</li>
+<li>Module structures: focuses on how to partition systems into implementation units (modules like packages, classes, layers)<ul>
+<li>Decomposition structure: shows how modules are related to each other by the “is-a-submodule-of” relation</li>
+<li>Uses structure: focuses on a “uses” relation, where unit requires another unit for its correct functioning</li>
+<li>Generalization structure: focus on classes and their relationships, “Inherits-from” or “is-an-instance-of” relation</li>
+</ul>
+</li>
+<li>Allocation structures: focuses on how software maps to non-software structures, such as its organizations</li>
+</ul>
+</li>
+</ul>
+<h4 id="advantages-of-architectural-design">Advantages of Architectural Design</h4>
+<ol>
+<li>Quality Attributes<ul>
+<li>Whether or not a system meets its quality attributes (i.e., non-functional requirements) is significantly influenced by its architecture</li>
+</ul>
+</li>
+<li>Modifiability and Reasoning about Change<ul>
+<li>Modifiability is a quality attribute, but one of the most common and
+  important ones</li>
+<li>Three categories of changes<ul>
+<li>Local change: only single component is affected (e.g., adding a new rule to a pricing module)</li>
+<li>Non-local change: multiple elements are affected (e.g., besides the rule, database and UI needs to be changed)</li>
+<li>Architectural change: affects how the elements interact and might require changes over the whole system</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Communication Among Stakeholders<ul>
+<li>Can be used as a basis for mutual understanding, negotiating, forming consensus, and communicating with each other</li>
+</ul>
+</li>
+</ol>
+<h3 id="architectural-patterns">Architectural Patterns</h3>
+<ul>
+<li>Typically comprise multiple architectural tactics</li>
+<li>Big ball of mud<ul>
+<li>An antipattern: lack of architecture</li>
+</ul>
+</li>
+<li>Layered architecture<ul>
+<li>A layer can only use the layer directly beneath it</li>
+<li><img alt="layeredArchitecture" src="../layeredArchitecture.png" /></li>
+<li>Quality attributes:<ul>
+<li>Modifiability: separation allows changes to be localized</li>
+<li>Portability: allows layers to be general or specific to an OS or environment</li>
+<li>Reusability</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Monoliths: Layered and Modular<ul>
+<li>Often used to distinguish the architecture from a distributed architecture (e.g., microservices)</li>
+<li>Typically a single deployable unit</li>
+<li><img alt="monolith" src="../monolith.png" /></li>
+<li>Layered: technical partitioning</li>
+<li>Modular: partitioned by domains or workflows</li>
+</ul>
+</li>
+<li>Pipe-and-filter architecture<ul>
+<li>Pipe: data as input and output</li>
+<li>Filters incrementally read their input, process it, and incrementally write it to their output</li>
+<li>Data flows through the pipes: transformed, filtered, or enriched</li>
+<li>Quality attributes:<ul>
+<li>Modifiability: filters are independent from each other</li>
+<li>Reconfigurability: filters can be combined in different ways</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Model-centered</p>
+<ul>
+<li>Independent components interact with a central model (also known as repository style) rather than with each other</li>
+<li><img alt="modelCentered" src="../modelCentered.png" /></li>
+<li>Quality attributes:<ul>
+<li>Modifiability</li>
+<li>Extensibility</li>
+</ul>
+</li>
+<li>Model View Controller (instantiation of a model-centered architecture)<ul>
+<li>Three components<ul>
+<li>Model: model like in other model-centered architecture</li>
+<li>Controller: for user interaction, updates the model</li>
+<li>View: renders the presentation of the model</li>
+</ul>
+</li>
+<li><img alt="modelViewController" src="../modelViewController.png" /></li>
+<li>Quality attributes:<ul>
+<li>Highly modifiable: Components are independent, can be added; state can be managed and persisted since it is centralized</li>
+<li>Concurrency: Views and controllers can run in their own threads or processes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Microkernel (plug-in architecture)</p>
+<ul>
+<li>Natural fit for many products that are installed as a single, monolithic deployment</li>
+<li>Each subsystem in the platform is itself structured as a set of plug-ins that implement some key function</li>
+<li>Quality attributes:<ul>
+<li>Extensibility</li>
+<li>Maintainability</li>
+<li>Testability</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Client-server<ul>
+<li>Clients request services from the server</li>
+<li><img alt="clientServer" src="../clientServer.png" /></li>
+<li>Quality attributes:<ul>
+<li>Maintainability: organizations can change a business process or rule by changing the implementation of the server (rather than all the individual clients)</li>
+<li>Evolvability</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Service-oriented<ul>
+<li>Focus on independent (domain) services that are separately deployed</li>
+<li>Quality attributes:<ul>
+<li>Deployability: services can be individually managed</li>
+<li>Testability: services can be individually tested</li>
+<li>Reliability: if one service goes down, others might be able to continue</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Microservice<ul>
+<li>Primary goal is decoupling: microservices are expected to be independent<ul>
+<li>Each microservice models a domain or workflow</li>
+</ul>
+</li>
+<li>Quality attributes:<ul>
+<li>Quick time to market and Deployability</li>
+<li>Independence: each team can make its own technology choices</li>
+<li>Scalability: service instances can be dynamically added</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="quality-attributes">Quality Attributes</h3>
+<ol>
+<li>Source<ul>
+<li>Specifies where the fault comes from</li>
+<li>Internal/ external: people, hardware, software</li>
+</ul>
+</li>
+<li>Stimulus<ul>
+<li>Cause of fault</li>
+<li>Omission, crash, incorrect timing</li>
+</ul>
+</li>
+<li>Artifact<ul>
+<li>Which portions of the system are responsible for and affected by the fault</li>
+<li>Processors, communication channels, storage</li>
+</ul>
+</li>
+<li>Environment<ul>
+<li>Running environment and environment that is recovering from a fault</li>
+<li>Normal operation, startup, shutdown, overloaded operation, repair mode</li>
+</ul>
+</li>
+<li>Response<ul>
+<li>Most commonly desired response is to prevent the fault from becoming a failure</li>
+</ul>
+</li>
+<li>Response Measure<ul>
+<li>Focus on a number of measures of availability, depending on the criticality of the service being provided</li>
+<li>Time to detect the fault, time to repair the fault</li>
+</ul>
+</li>
+</ol>
+<h4 id="availability-tactics">Availability Tactics</h4>
+<ul>
+<li>Detect faults<ul>
+<li>Monitor: monitor various components of the system</li>
+<li>Heartbeat: periodic message exchange between a system monitor and a process being monitored</li>
+<li>Sanity checking: checks the validity of specific operations or their output based on the knowledge of their internal structure</li>
+</ul>
+</li>
+<li>Recover (Preparation and repair)<ul>
+<li><strong>Redundant spare</strong>: one or more duplicate components can step in if a component fails</li>
+<li><strong>Rollback</strong>: revert to a previous, known good state</li>
+<li><strong>Software upgrade</strong>: in-service upgrade in a non-service-affecting manner</li>
+</ul>
+</li>
+<li>Recover (Reintroduction)<ul>
+<li><strong>Shadow</strong>: operate a component in a "shadow mode" while being mentored before revering it back to an active mode</li>
+<li><strong>Escalating restart</strong>: automatic restart at different granularities (clear caches/ restart the whole system)</li>
+</ul>
+</li>
+<li>Prevent faults<ul>
+<li><strong>Removal from service</strong></li>
+<li><strong>Transactions</strong>: Provide atomic, consistent, isolated and durable properties</li>
+<li><strong>Increase competence set</strong>: set of states in which the program can "competently" operate</li>
+</ul>
+</li>
+</ul>
+<h2 id="system-modeling">System Modeling</h2>
+<ul>
+<li>Goal: develop abstract models of a system</li>
+<li>Perspectives:<ul>
+<li>External perspective: context or environment of the system</li>
+<li>Interaction perspective: interactions between a system and its environment, or between the components of a system</li>
+<li>Structural perspective: model the organization of a system or the structure of the data that is processed by the system</li>
+<li>Behavioral perspective: model the dynamic behavior of the system and how it responds to events</li>
+</ul>
+</li>
+</ul>
+<h3 id="modeling-languages">Modeling Languages</h3>
+<ul>
+<li><a href="https://ruishanteo.github.io/cheatsheets/cs2103t/cs2103t-notes/#uml">UML</a>, C4, Business Process Model and Notation (BPMN), Systems modeling language (SysML)</li>
+</ul>
+<h4 id="uml">UML</h4>
+<ul>
+<li>Sequence diagrams focus on objects in a system, whereas activity diagrams focus on operations or activities</li>
+<li>State machine diagram<ul>
+<li>Show how the system reacts to internal and external events</li>
+<li>Example of a behavioral model (like activity diagrams)</li>
+<li>Focus on system states and events that cause transitions from one state to another</li>
+</ul>
+</li>
+<li>Use case diagram<ul>
+<li>Shows interactions between actors and system</li>
+</ul>
+</li>
+<li>Class diagrams: show the object classes in the system and the associations between these classes</li>
+<li>Sequence diagrams: show interactions between actors and the system and between system components</li>
+<li>Activity diagrams: show the activities involved in a process or in data processing</li>
+</ul>
+<h4 id="c4">C4</h4>
+<ul>
+<li>Developed for modeling for software architectures</li>
+<li>Hierarchical diagrams and abstractions<ul>
+<li>System context: a System Context diagram provides a starting point, showing how the software system in scope fits into the world around it</li>
+<li>Containers: a Container diagram zooms into the software system in scope, showing the high-level technical building blocks</li>
+<li>Components: a Component diagram zooms into an individual container, showing the components inside it</li>
+<li>Code: A code (e.g. UML class) diagram can be used to zoom into an individual component, showing how that component is implemented</li>
+</ul>
+</li>
+</ul>
+<h4 id="business-process-model-and-notation-bpmn">Business Process Model and Notation (BPMN)</h4>
+<ul>
+<li>For business processes, similar to UML activity diagrams</li>
+<li>Related standard: Decision Model and Notation (DMN)<ul>
+<li>Means deriving a result (output) from given facts (input) on the basis of defined logic (decision logic)</li>
+<li>Most popular way to model decisions: a decision table</li>
+</ul>
+</li>
+</ul>
+<h2 id="agile-software-development">Agile Software Development</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
