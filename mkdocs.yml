@@ -1,7 +1,9 @@
-site_name: Cheatsheets and Notes
+site_name: Notes
 docs_dir: "notes"
 extra_css:
     - style.css
+nav:
+    - "index.md"
 
 theme:
     name: mkdocs
