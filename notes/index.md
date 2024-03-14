@@ -13,3 +13,4 @@ Links:
 -   [CS2103/T notes](https://ruishanteo.github.io/cheatsheets/cs2103t/cs2103t-notes/)
 -   [DSA notes](https://ruishanteo.github.io/cheatsheets/dsa-notes/dsa-notes/)
 -   [CS2106 notes](https://ruishanteo.github.io/cheatsheets/cs2106/cs2106-notes/)
+-   [CS3213 notes](https://ruishanteo.github.io/cheatsheets/cs3213/cs3213-notes/)
