@@ -44,6 +44,15 @@
         - [High Level Language Implementation](#high-level-language-implementation)
         - [High Level Abstraction](#high-level-abstraction)
         - [Classical Synchronization Problems](#classical-synchronization-problems)
+        - [Synchronization Implementations](#synchronization-implementations)
+    - [Memory Abstraction](#memory-abstraction)
+        - [Contiguous Memory Management](#contiguous-memory-management)
+            - [Memory Partitioning](#memory-partitioning)
+    - [Disjoint Memory Schemes](#disjoint-memory-schemes)
+        - [Paging](#paging)
+            - [Protection](#protection)
+            - [Page Sharing](#page-sharing)
+        - [Segmentation Scheme](#segmentation-scheme)
 
 ## Operating Systems
 
@@ -803,4 +812,130 @@ int main() {
 -   Readers writers
     -   Processes share a data structure D
     -   Readers retrieve information from D
-    -   Writer modifies information in D
+        -   If they are the first reader, wait for roomEmpty
+        -   If they are the last reader, signal roomEmpty and release mutex
+    -   Writer modifies information in D (when roomEmpty)
+    -   Writer might face starvation if rate of arrival of readers > rate of departure of readers (so number of readers never reach 0)
+-   Dining philosophers
+    -   Tanenbaum solution
+    -   To eat, a philosopher must acquire both the left and right chopsticks
+    -   If a philosopher cannot acquire both chopsticks, they wait until both are available
+
+### Synchronization Implementations
+
+-   POSIX semaphore
+    -   `#include <semaphore.h>`
+    -   Initialize a semaphore
+    -   Perform wait() or signal() on semaphore
+-   pthread mutex and conditional variables
+    -   Synchronization mechanisms for pthreads
+    -   Mutex (pthread_mutex):
+        -   Binary semaphore (i.e. equivalent Semaphore(1))
+        -   Lock: pthread_mutex_lock()
+        -   Unlock: pthread_mutex_unlock()
+    -   Conditional Variables( pthread_cond ):
+        -   Wait: pthread_cond_wait()
+        -   Signal: pthread_cond_signal()
+        -   Broadcast: pthread_cond_broadcast()
+
+## Memory Abstraction
+
+-   Types of data in a process
+    -   Transient Data:
+        -   Valid only for a limited duration, e.g., during function call
+        -   e.g., parameters, local variables
+    -   Persistent Data:
+        -   Valid for the duration of the program unless explicitly removed (if applicable)
+        -   e.g., global variable, constant variable, dynamically allocated memory
+-   If two processes are using the same physical memory, there might be conflicts in memory access because both processes assume memory starts at 0
+    -   Use logical adddress
+    -   ![logicalAddress](logicalAddress.png)
+
+### Contiguous Memory Management
+
+-   Assumptions
+    -   Each process occupies a contiguous memory region
+    -   Physical memory is large enough to contain one or more processes with complete memory space
+
+#### Memory Partitioning
+
+-   Fixed-Size Partitions
+    -   Physical memory is split into fixed number of partitions of equal size
+    -   A process will occupy one of the partitions
+    -   Causes internal fragmentation (space leftover within partition when process takes less than partition size)
+-   Variable-Size Partitions
+    -   Partition is created based on the actual size of process
+    -   OS keep track of the occupied and free memory regions
+    -   Causes external fragmentation from removing processes
+    -   Can use a linked list (takes more time) to move occupied partitions and create larger holes
+-   Allocation algorithm
+    -   First-fit
+        -   Take the first hole that is large enough
+    -   Next-fit
+        -   Search from the last allocated block and wrap around
+    -   Best-fit
+        -   Find the smallest hole that is large enough
+    -   Worst-fit
+        -   Find the largest hole
+    -   Buddy system
+        -   Free block is split into half repeatedly to meet request size
+        -   The two halves forms a sibling blocks (buddy blocks)
+        -   When buddy blocks are both free, they can be merged to form larger block
+        -   ![buddyBlock](buddyBlock.png)
+
+## Disjoint Memory Schemes
+
+### Paging
+
+-   Physical memory is split into regions of fixed size (known as physical frames)
+-   Logical memory is similarly split into regions of the same size (logical page)
+-   Lookup table to provide translation between logical page to physical page (page table)
+-   Physical address = frame_number x sizeof(physical_frame) + offset
+    -   Offset: displacement from the beginning of the physical frame
+-   Address translation formula
+    -   Page/Frame size of 2^n
+    -   m bits of logical address
+    -   **Frame number** represented by (m - n) bits
+    -   **Offset** represented by n bits
+    -   ![addressTranslation](addressTranslation.png)
+-   To store the page table,
+    -   PCB (only software)
+        -   Requires 2 memory accesses for every memory reference
+    -   Translation Look-Aside Buffer (TLB)
+        -   On-chip component to support paging
+        -   TLB hit: Frame number is retrieved to generate physical address
+        -   TLB miss: memory access to access the page table
+-   When context switch occurs, TLB entries are flushed
+    -   New process will not get incorrect translation
+
+#### Protection
+
+-   Access-Right Bits
+    -   Each page table entry has a writable, readable, executable bit
+    -   Every memory access is checked against the access right bits in hardware
+-   Valid Bit
+    -   Included in each page table entry
+    -   Indicated whether the page is valid to access by the process
+    -   Every memory access is checked against this bit in hardware:
+        -   Out-of-range access will be caught by OS in this manner
+
+#### Page Sharing
+
+-   Several processes to share the same physical memory frame
+    -   Use the same physical frame number in the page table entries
+-   Implementing Copy-On-Write
+    -   Parent and child process can share a page until one tries to change a value in it
+-   ![pageSharing](pageSharing.png)
+
+### Segmentation Scheme
+
+-   Manage memory at the level of memory segments
+-   Each memory segment
+    -   Has a name
+    -   Has a limit
+-   Memory references specified as "segment name + offset"
+-   Logical address translation
+    -   Each segment mapped to a contiguous physical memory region with a base address and a limit/size
+    -   Logical address <SegID, Offset>
+    -   SegID is used to look up <Base, Limit> of the segment in a segment table
+    -   Physical address = base + offset
