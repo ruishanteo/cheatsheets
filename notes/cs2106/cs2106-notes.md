@@ -1,44 +1,49 @@
 # CS2106 Notes AY23/24 Sem2
 
--   [CS2106 Notes AY23/24 Sem2](#cs2106-notes-ay2324-sem2)
-    -   [Operating Systems](#operating-systems)
-        -   [Operating System Structure](#operating-system-structure)
-        -   [Running OSes](#running-oses)
-    -   [Process Management](#process-management)
-    -   [Process Abstraction](#process-abstraction)
-        -   [Component Description](#component-description)
-        -   [Basic Instruction Execution](#basic-instruction-execution)
-        -   [Memory Context](#memory-context)
-            -   [Function Call](#function-call)
-            -   [Dynamically Allocated Memory](#dynamically-allocated-memory)
-        -   [OS Context](#os-context)
-            -   [Processes](#processes)
-    -   [Process Abstraction in Unix](#process-abstraction-in-unix)
-        -   [Zombie Process](#zombie-process)
-        -   [Unix System Calls](#unix-system-calls)
-    -   [Process Scheduling](#process-scheduling)
-        -   [Concurrent Execution](#concurrent-execution)
-        -   [Process Scheduling Algorithms](#process-scheduling-algorithms)
-            -   [First-Come First-Serve: FCFS](#first-come-first-serve-fcfs)
-            -   [Shortest Job First: SJF](#shortest-job-first-sjf)
-            -   [Shortest Remaining Time: SRT](#shortest-remaining-time-srt)
-            -   [Round Robin: RR](#round-robin-rr)
-            -   [Priority Scheduling](#priority-scheduling)
-            -   [Multi-level Feedback Queue (MLFQ)](#multi-level-feedback-queue-mlfq)
-            -   [Lottery Scheduling](#lottery-scheduling)
-        -   [Scheduling for Interactive Systems](#scheduling-for-interactive-systems)
-    -   [Process Alternative - Threads](#process-alternative---threads)
-        -   [Motivation for Thread](#motivation-for-thread)
-        -   [Process and Thread](#process-and-thread)
-        -   [Thread Models](#thread-models)
-            -   [User Thread](#user-thread)
-            -   [Kernel Thread](#kernel-thread)
-            -   [Hybrid Thread Model](#hybrid-thread-model)
-            -   [POSIX Threads: `pthread`](#posix-threads-pthread)
-    -   [Inter-Process Communication (IPC)](#inter-process-communication-ipc)
-        -   [Message Passing](#message-passing)
-        -   [Unix Pipes](#unix-pipes)
-        -   [Unix Signal](#unix-signal)
+- [CS2106 Notes AY23/24 Sem2](#cs2106-notes-ay2324-sem2)
+    - [Operating Systems](#operating-systems)
+        - [Operating System Structure](#operating-system-structure)
+        - [Running OSes](#running-oses)
+    - [Process Management](#process-management)
+    - [Process Abstraction](#process-abstraction)
+        - [Component Description](#component-description)
+        - [Basic Instruction Execution](#basic-instruction-execution)
+        - [Memory Context](#memory-context)
+            - [Function Call](#function-call)
+            - [Dynamically Allocated Memory](#dynamically-allocated-memory)
+        - [OS Context](#os-context)
+            - [Processes](#processes)
+    - [Process Abstraction in Unix](#process-abstraction-in-unix)
+        - [Zombie Process](#zombie-process)
+        - [Unix System Calls](#unix-system-calls)
+    - [Process Scheduling](#process-scheduling)
+        - [Concurrent Execution](#concurrent-execution)
+        - [Process Scheduling Algorithms](#process-scheduling-algorithms)
+            - [First-Come First-Serve: FCFS](#first-come-first-serve-fcfs)
+            - [Shortest Job First: SJF](#shortest-job-first-sjf)
+            - [Shortest Remaining Time: SRT](#shortest-remaining-time-srt)
+            - [Round Robin: RR](#round-robin-rr)
+            - [Priority Scheduling](#priority-scheduling)
+            - [Multi-level Feedback Queue (MLFQ)](#multi-level-feedback-queue-mlfq)
+            - [Lottery Scheduling](#lottery-scheduling)
+        - [Scheduling for Interactive Systems](#scheduling-for-interactive-systems)
+    - [Process Alternative - Threads](#process-alternative---threads)
+        - [Motivation for Thread](#motivation-for-thread)
+        - [Process and Thread](#process-and-thread)
+        - [Thread Models](#thread-models)
+            - [User Thread](#user-thread)
+            - [Kernel Thread](#kernel-thread)
+            - [Hybrid Thread Model](#hybrid-thread-model)
+            - [POSIX Threads: `pthread`](#posix-threads-pthread)
+    - [Inter-Process Communication (IPC)](#inter-process-communication-ipc)
+        - [Message Passing](#message-passing)
+        - [Unix Pipes](#unix-pipes)
+        - [Unix Signal](#unix-signal)
+    - [Synchronization](#synchronization)
+        - [Assembly Level Implementation](#assembly-level-implementation)
+        - [High Level Language Implementation](#high-level-language-implementation)
+        - [High Level Abstraction](#high-level-abstraction)
+        - [Classical Synchronization Problems](#classical-synchronization-problems)
 
 ## Operating Systems
 
@@ -725,3 +730,77 @@ int main() {
     -   [False: Only the signal handler can be triggered.]
 -   The "kill" signal (sent by the "kill" command) is different from the "interrupt" signal (sent by pressing "ctrl-c").
     -   [True]
+
+## Synchronization
+
+-   Designate code segment with race condition as critical section
+-   At any point in time, only one process can execute in the critical section
+-   Properties of correct critical section implementation:
+    -   Mutual exclusion: Only one process can enter critical section
+    -   Progress: If no process is in critical section, one of the waiting processes should be granted access
+    -   Bounded wait: After process pi requests to enter critical section, there exists an upperbound of number of times other processes can enter the critical section before pi
+    -   Independence: Process not executing in critical section should never block other process
+-   Incorrect synchonization:
+    -   Deadlock: All processes blocked
+    -   Livelock: Processes keep changing state to avoid deadlock and make no other progress
+    -   Starvation: Some processes are blocked forever
+-   Implementations overview:
+    -   Assembly level implementations: mechanisms provided by the processor
+    -   High level language implementations: utilizes only normal programming constructs
+    -   High level abstraction: provide abstracted mechanisms that provide additional useful features
+
+### Assembly Level Implementation
+
+-   `TestAndSet Register, MemoryLocation`
+    -   Load the current content at MemoryLocation into Register
+    -   Stores a 1 into MemoryLocation
+    -   Performed as a single machine operation (i.e. atomic)
+-   It employs **busy waiting** (keep checking the condition until it is safe to enter critical section)
+
+### High Level Language Implementation
+
+-   Peterson's Algorithm
+    -   Keep a `turn` variable, so process can only run when it is their turn
+    -   Keep a `Want` array, so process can only run if they want
+    -   ![petersonAlgorithm](petersonAlgorithm.png)
+-   Disadvantages
+    -   Busy waiting
+    -   Low level: more error prone
+
+### High Level Abstraction
+
+-   Semaphore
+    -   A generalized synchronization mechanism
+    -   Only behaviours are specified
+    -   Provides
+        -   A way to block a number of processes, known as sleeping process
+        -   A way to unblock/ wake up one or more sleeping process
+-   Wait(S) (called before a process enters critical section)
+    -   If S <= 0, blocks processes (go to sleep)
+    -   Decrement S
+-   Signal(S) (called after a process exits critical section)
+    -   Increments S
+    -   Wakes up one sleeping process if any
+-   This usage is commonly known as mutex (mutual exclusion)
+-   Properties
+    -   Given S initial >= 0
+    -   Invariant: S current = S initial + number of signals() operations executed - number of wait() operations completed
+
+### Classical Synchronization Problems
+
+-   Producer consumer
+    -   Processes share a bounded buffer of size K
+    -   Producers produce items to insert into buffer
+    -   Consumers remove items from buffer
+    -   Busy waiting
+        -   while !canProduce, producer waits
+        -   while !canConsumer, consumer waits
+    -   Blocking version
+        -   wait(notFull): producers go to sleep
+        -   wait(notEmpty): consumers to go to sleep
+        -   signal(notFull): 1 consumer wakes 1 producer
+        -   signal(notEmpty): 1 producer wakes 1 consumer
+-   Readers writers
+    -   Processes share a data structure D
+    -   Readers retrieve information from D
+    -   Writer modifies information in D
