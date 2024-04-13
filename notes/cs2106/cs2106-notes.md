@@ -55,6 +55,8 @@
         -   [Segmentation Scheme](#segmentation-scheme)
             -   [Segmentation with Paging](#segmentation-with-paging)
     -   [Virtual Memory Management](#virtual-memory-management)
+        -   [Extended Paging Scheme](#extended-paging-scheme)
+        -   [Issues](#issues)
 
 ## Operating Systems
 
@@ -955,3 +957,47 @@ int main() {
 -   Secondary storage capacity >> Physical memory capacity
 -   Some pages are accessed much more often than others
 -   Basic idea: split the logical address space into small chunks (some are in physical memory, others in secondary storage)
+
+### Extended Paging Scheme
+
+-   Use page table for virtual -> physical address translation
+-   Two page types:
+    -   Memory resident (pages in physical memory)
+    -   Non-memory resident (pages in secondary storage)
+    -   Use a resident bit in the page-table entry
+-   CPU can only access memory resident pages
+    -   If attempt to access non-resident, page fault
+
+Hardware
+
+1. Check page table:
+
+    - Is page X a memory resident?
+    - Yes: Access physical memory location. Done.
+    - No: raise an exception!
+
+OS
+
+2. Page Fault: OS takes control
+3. Locate page X in secondary storage
+4. Load page X into a physical memory
+5. Update page table
+6. Go to step 1 to re-execute the same instruction
+    - This time with the page in memory
+
+### Issues
+
+-   Secondary storage access time >> physical memory access time
+-   If memory access results in page fault most of the time
+    -   To load non-resident pages into memory
+    -   Entire system can slow down significantly (known as thrashing)
+-   Locality principles
+    -   Temporal Locality:
+        -   Memory address used now is likely to be used again
+    -   Spatial Locality:
+        -   Memory addresses close to the address that is used now is likely to be used soon
+-   Demand paging
+    -   Process start with no memory resident page
+    -   Only allocate a page when there is a page fault
+    -   Fast startup time for new process
+    -   Might be sluggish at the start due to page faults
