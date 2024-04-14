@@ -57,6 +57,7 @@
     -   [Virtual Memory Management](#virtual-memory-management)
         -   [Extended Paging Scheme](#extended-paging-scheme)
         -   [Issues](#issues)
+        -   [Page Table Structure](#page-table-structure)
 
 ## Operating Systems
 
@@ -1001,3 +1002,23 @@ OS
     -   Only allocate a page when there is a page fault
     -   Fast startup time for new process
     -   Might be sluggish at the start due to page faults
+
+### Page Table Structure
+
+-   Page table information is kept with the process information and takes up physical memory space
+-   Direct paging
+    -   Keep all entries in a single table
+    -   Virtual Address: 32 bits, Page Size = 4KiB
+    -   P=32–12=20; 2^20 pages
+    -   Size of PTE = 2 bytes
+    -   Page Table Size = 2^20 \* 2 bytes = 2MiB
+-   2-level paging
+    -   Process may not use entire virtual memory space
+    -   ![2LevelPaging](2LevelPaging.png)
+    -   If original page tabel has 2^P entries
+        -   With 2^M smaller page tables, M bits is needed to uniquely identify one page table
+        -   Each smaller page table contains 2^(P-M) entries
+    -   ![2LevelPagingAdvantages](2LevelPagingAdvantages.png)
+    -   Problem: two serialized memory accesses just to get frame number
+        -   TLB misses experience longer page-table walks
+        -   Page-table walk: the traversal of page-tables in hardware
