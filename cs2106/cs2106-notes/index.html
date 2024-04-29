@@ -204,6 +204,82 @@
             </li>
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#synchronization" class="nav-link">Synchronization</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#assembly-level-implementation" class="nav-link">Assembly Level Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#high-level-language-implementation" class="nav-link">High Level Language Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#high-level-abstraction" class="nav-link">High Level Abstraction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#classical-synchronization-problems" class="nav-link">Classical Synchronization Problems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#synchronization-implementations" class="nav-link">Synchronization Implementations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#memory-abstraction" class="nav-link">Memory Abstraction</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#contiguous-memory-management" class="nav-link">Contiguous Memory Management</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#memory-partitioning" class="nav-link">Memory Partitioning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#disjoint-memory-schemes" class="nav-link">Disjoint Memory Schemes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#paging" class="nav-link">Paging</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#protection" class="nav-link">Protection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#page-sharing" class="nav-link">Page Sharing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#segmentation-scheme" class="nav-link">Segmentation Scheme</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#segmentation-with-paging" class="nav-link">Segmentation with Paging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#virtual-memory-management" class="nav-link">Virtual Memory Management</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#extended-paging-scheme" class="nav-link">Extended Paging Scheme</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#issues" class="nav-link">Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#page-table-structure" class="nav-link">Page Table Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -270,6 +346,39 @@
 <li><a href="#message-passing">Message Passing</a></li>
 <li><a href="#unix-pipes">Unix Pipes</a></li>
 <li><a href="#unix-signal">Unix Signal</a></li>
+</ul>
+</li>
+<li><a href="#synchronization">Synchronization</a><ul>
+<li><a href="#assembly-level-implementation">Assembly Level Implementation</a></li>
+<li><a href="#high-level-language-implementation">High Level Language Implementation</a></li>
+<li><a href="#high-level-abstraction">High Level Abstraction</a></li>
+<li><a href="#classical-synchronization-problems">Classical Synchronization Problems</a></li>
+<li><a href="#synchronization-implementations">Synchronization Implementations</a></li>
+</ul>
+</li>
+<li><a href="#memory-abstraction">Memory Abstraction</a><ul>
+<li><a href="#contiguous-memory-management">Contiguous Memory Management</a><ul>
+<li><a href="#memory-partitioning">Memory Partitioning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#disjoint-memory-schemes">Disjoint Memory Schemes</a><ul>
+<li><a href="#paging">Paging</a><ul>
+<li><a href="#protection">Protection</a></li>
+<li><a href="#page-sharing">Page Sharing</a></li>
+</ul>
+</li>
+<li><a href="#segmentation-scheme">Segmentation Scheme</a><ul>
+<li><a href="#segmentation-with-paging">Segmentation with Paging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#virtual-memory-management">Virtual Memory Management</a><ul>
+<li><a href="#extended-paging-scheme">Extended Paging Scheme</a></li>
+<li><a href="#issues">Issues</a></li>
+<li><a href="#page-table-structure">Page Table Structure</a></li>
 </ul>
 </li>
 </ul>
@@ -1249,6 +1358,404 @@ int main() {
 </li>
 <li>The "kill" signal (sent by the "kill" command) is different from the "interrupt" signal (sent by pressing "ctrl-c").<ul>
 <li>[True]</li>
+</ul>
+</li>
+</ul>
+<h2 id="synchronization">Synchronization</h2>
+<ul>
+<li>Designate code segment with race condition as critical section</li>
+<li>At any point in time, only one process can execute in the critical section</li>
+<li>Properties of correct critical section implementation:<ul>
+<li>Mutual exclusion: Only one process can enter critical section</li>
+<li>Progress: If no process is in critical section, one of the waiting processes should be granted access</li>
+<li>Bounded wait: After process pi requests to enter critical section, there exists an upperbound of number of times other processes can enter the critical section before pi</li>
+<li>Independence: Process not executing in critical section should never block other process</li>
+</ul>
+</li>
+<li>Incorrect synchonization:<ul>
+<li>Deadlock: All processes blocked</li>
+<li>Livelock: Processes keep changing state to avoid deadlock and make no other progress</li>
+<li>Starvation: Some processes are blocked forever</li>
+</ul>
+</li>
+<li>Implementations overview:<ul>
+<li>Assembly level implementations: mechanisms provided by the processor</li>
+<li>High level language implementations: utilizes only normal programming constructs</li>
+<li>High level abstraction: provide abstracted mechanisms that provide additional useful features</li>
+</ul>
+</li>
+</ul>
+<h3 id="assembly-level-implementation">Assembly Level Implementation</h3>
+<ul>
+<li><code>TestAndSet Register, MemoryLocation</code><ul>
+<li>Load the current content at MemoryLocation into Register</li>
+<li>Stores a 1 into MemoryLocation</li>
+<li>Performed as a single machine operation (i.e. atomic)</li>
+</ul>
+</li>
+<li>It employs <strong>busy waiting</strong> (keep checking the condition until it is safe to enter critical section)</li>
+</ul>
+<h3 id="high-level-language-implementation">High Level Language Implementation</h3>
+<ul>
+<li>Peterson's Algorithm<ul>
+<li>Keep a <code>turn</code> variable, so process can only run when it is their turn</li>
+<li>Keep a <code>Want</code> array, so process can only run if they want</li>
+<li><img alt="petersonAlgorithm" src="../petersonAlgorithm.png" /></li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Busy waiting</li>
+<li>Low level: more error prone</li>
+</ul>
+</li>
+</ul>
+<h3 id="high-level-abstraction">High Level Abstraction</h3>
+<ul>
+<li>Semaphore<ul>
+<li>A generalized synchronization mechanism</li>
+<li>Only behaviours are specified</li>
+<li>Provides<ul>
+<li>A way to block a number of processes, known as sleeping process</li>
+<li>A way to unblock/ wake up one or more sleeping process</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Wait(S) (called before a process enters critical section)<ul>
+<li>If S &lt;= 0, blocks processes (go to sleep)</li>
+<li>Decrement S</li>
+</ul>
+</li>
+<li>Signal(S) (called after a process exits critical section)<ul>
+<li>Increments S</li>
+<li>Wakes up one sleeping process if any</li>
+</ul>
+</li>
+<li>This usage is commonly known as mutex (mutual exclusion)</li>
+<li>Properties<ul>
+<li>Given S initial &gt;= 0</li>
+<li>Invariant: S current = S initial + number of signals() operations executed - number of wait() operations completed</li>
+</ul>
+</li>
+</ul>
+<h3 id="classical-synchronization-problems">Classical Synchronization Problems</h3>
+<ul>
+<li>Producer consumer<ul>
+<li>Processes share a bounded buffer of size K</li>
+<li>Producers produce items to insert into buffer</li>
+<li>Consumers remove items from buffer</li>
+<li>Busy waiting<ul>
+<li>while !canProduce, producer waits</li>
+<li>while !canConsumer, consumer waits</li>
+</ul>
+</li>
+<li>Blocking version<ul>
+<li>wait(notFull): producers go to sleep</li>
+<li>wait(notEmpty): consumers to go to sleep</li>
+<li>signal(notFull): 1 consumer wakes 1 producer</li>
+<li>signal(notEmpty): 1 producer wakes 1 consumer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Readers writers<ul>
+<li>Processes share a data structure D</li>
+<li>Readers retrieve information from D<ul>
+<li>If they are the first reader, wait for roomEmpty</li>
+<li>If they are the last reader, signal roomEmpty and release mutex</li>
+</ul>
+</li>
+<li>Writer modifies information in D (when roomEmpty)</li>
+<li>Writer might face starvation if rate of arrival of readers &gt; rate of departure of readers (so number of readers never reach 0)</li>
+</ul>
+</li>
+<li>Dining philosophers<ul>
+<li>Tanenbaum solution</li>
+<li>To eat, a philosopher must acquire both the left and right chopsticks</li>
+<li>If a philosopher cannot acquire both chopsticks, they wait until both are available</li>
+</ul>
+</li>
+</ul>
+<h3 id="synchronization-implementations">Synchronization Implementations</h3>
+<ul>
+<li>POSIX semaphore<ul>
+<li><code>#include &lt;semaphore.h&gt;</code></li>
+<li>Initialize a semaphore</li>
+<li>Perform wait() or signal() on semaphore</li>
+</ul>
+</li>
+<li>pthread mutex and conditional variables<ul>
+<li>Synchronization mechanisms for pthreads</li>
+<li>Mutex (pthread_mutex):<ul>
+<li>Binary semaphore (i.e. equivalent Semaphore(1))</li>
+<li>Lock: pthread_mutex_lock()</li>
+<li>Unlock: pthread_mutex_unlock()</li>
+</ul>
+</li>
+<li>Conditional Variables( pthread_cond ):<ul>
+<li>Wait: pthread_cond_wait()</li>
+<li>Signal: pthread_cond_signal()</li>
+<li>Broadcast: pthread_cond_broadcast()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="memory-abstraction">Memory Abstraction</h2>
+<ul>
+<li>Types of data in a process<ul>
+<li>Transient Data:<ul>
+<li>Valid only for a limited duration, e.g., during function call</li>
+<li>e.g., parameters, local variables</li>
+</ul>
+</li>
+<li>Persistent Data:<ul>
+<li>Valid for the duration of the program unless explicitly removed (if applicable)</li>
+<li>e.g., global variable, constant variable, dynamically allocated memory</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If two processes are using the same physical memory, there might be conflicts in memory access because both processes assume memory starts at 0<ul>
+<li>Use logical adddress</li>
+<li><img alt="logicalAddress" src="../logicalAddress.png" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="contiguous-memory-management">Contiguous Memory Management</h3>
+<ul>
+<li>Assumptions<ul>
+<li>Each process occupies a contiguous memory region</li>
+<li>Physical memory is large enough to contain one or more processes with complete memory space</li>
+</ul>
+</li>
+</ul>
+<h4 id="memory-partitioning">Memory Partitioning</h4>
+<ul>
+<li>Fixed-Size Partitions<ul>
+<li>Physical memory is split into fixed number of partitions of equal size</li>
+<li>A process will occupy one of the partitions</li>
+<li>Causes internal fragmentation (space leftover within partition when process takes less than partition size)</li>
+</ul>
+</li>
+<li>Variable-Size Partitions<ul>
+<li>Partition is created based on the actual size of process</li>
+<li>OS keep track of the occupied and free memory regions</li>
+<li>Causes external fragmentation from removing processes</li>
+<li>Can use a linked list (takes more time) to move occupied partitions and create larger holes</li>
+</ul>
+</li>
+<li>Allocation algorithm<ul>
+<li>First-fit<ul>
+<li>Take the first hole that is large enough</li>
+</ul>
+</li>
+<li>Next-fit<ul>
+<li>Search from the last allocated block and wrap around</li>
+</ul>
+</li>
+<li>Best-fit<ul>
+<li>Find the smallest hole that is large enough</li>
+</ul>
+</li>
+<li>Worst-fit<ul>
+<li>Find the largest hole</li>
+</ul>
+</li>
+<li>Buddy system<ul>
+<li>Free block is split into half repeatedly to meet request size</li>
+<li>The two halves forms a sibling blocks (buddy blocks)</li>
+<li>When buddy blocks are both free, they can be merged to form larger block</li>
+<li><img alt="buddyBlock" src="../buddyBlock.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="disjoint-memory-schemes">Disjoint Memory Schemes</h2>
+<h3 id="paging">Paging</h3>
+<ul>
+<li>Physical memory is split into regions of fixed size (known as physical frames)</li>
+<li>Logical memory is similarly split into regions of the same size (logical page)</li>
+<li>Lookup table to provide translation between logical page to physical page (page table)</li>
+<li>Physical address = frame_number x sizeof(physical_frame) + offset<ul>
+<li>Offset: displacement from the beginning of the physical frame</li>
+</ul>
+</li>
+<li>Address translation formula<ul>
+<li>Page/Frame size of 2^n</li>
+<li>m bits of logical address</li>
+<li><strong>Frame number</strong> represented by (m - n) bits</li>
+<li><strong>Offset</strong> represented by n bits</li>
+<li><img alt="addressTranslation" src="../addressTranslation.png" /></li>
+</ul>
+</li>
+<li>To store the page table,<ul>
+<li>PCB (only software)<ul>
+<li>Requires 2 memory accesses for every memory reference</li>
+</ul>
+</li>
+<li>Translation Look-Aside Buffer (TLB)<ul>
+<li>On-chip component to support paging</li>
+<li>TLB hit: Frame number is retrieved to generate physical address</li>
+<li>TLB miss: memory access to access the page table</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When context switch occurs, TLB entries are flushed<ul>
+<li>New process will not get incorrect translation</li>
+</ul>
+</li>
+</ul>
+<h4 id="protection">Protection</h4>
+<ul>
+<li>Access-Right Bits<ul>
+<li>Each page table entry has a writable, readable, executable bit</li>
+<li>Every memory access is checked against the access right bits in hardware</li>
+</ul>
+</li>
+<li>Valid Bit<ul>
+<li>Included in each page table entry</li>
+<li>Indicated whether the page is valid to access by the process</li>
+<li>Every memory access is checked against this bit in hardware:<ul>
+<li>Out-of-range access will be caught by OS in this manner</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="page-sharing">Page Sharing</h4>
+<ul>
+<li>Several processes to share the same physical memory frame<ul>
+<li>Use the same physical frame number in the page table entries</li>
+</ul>
+</li>
+<li>Implementing Copy-On-Write<ul>
+<li>Parent and child process can share a page until one tries to change a value in it</li>
+</ul>
+</li>
+<li><img alt="pageSharing" src="../pageSharing.png" /></li>
+</ul>
+<h3 id="segmentation-scheme">Segmentation Scheme</h3>
+<ul>
+<li>Manage memory at the level of memory segments</li>
+<li>Each memory segment<ul>
+<li>Has a name</li>
+<li>Has a limit</li>
+</ul>
+</li>
+<li>Memory references specified as "segment name + offset"</li>
+<li>Logical address translation<ul>
+<li>Each segment mapped to a contiguous physical memory region with a base address and a limit/size</li>
+<li>Logical address <code>&lt;SegID, Offset&gt;</code></li>
+<li>SegID is used to look up <Base, Limit> of the segment in a segment table</li>
+<li>Physical address = base + offset</li>
+<li>Offset &lt; limit for valid access</li>
+</ul>
+</li>
+<li>Each segment is an independent contiguous memory space</li>
+<li>Segmentation requires variable-size contiguous memory regions (can cause external fragmentation)</li>
+</ul>
+<h4 id="segmentation-with-paging">Segmentation with Paging</h4>
+<ul>
+<li>Each segment is composed of several pages instead of a contiguous memory region</li>
+<li><img alt="segmentationWithPaging" src="../segmentationWithPaging.png" /></li>
+</ul>
+<h2 id="virtual-memory-management">Virtual Memory Management</h2>
+<ul>
+<li>Secondary storage capacity &gt;&gt; Physical memory capacity</li>
+<li>Some pages are accessed much more often than others</li>
+<li>Basic idea: split the logical address space into small chunks (some are in physical memory, others in secondary storage)</li>
+</ul>
+<h3 id="extended-paging-scheme">Extended Paging Scheme</h3>
+<ul>
+<li>Use page table for virtual -&gt; physical address translation</li>
+<li>Two page types:<ul>
+<li>Memory resident (pages in physical memory)</li>
+<li>Non-memory resident (pages in secondary storage)</li>
+<li>Use a resident bit in the page-table entry</li>
+</ul>
+</li>
+<li>CPU can only access memory resident pages<ul>
+<li>If attempt to access non-resident, page fault</li>
+</ul>
+</li>
+</ul>
+<p>Hardware</p>
+<ol>
+<li>
+<p>Check page table:</p>
+<ul>
+<li>Is page X a memory resident?</li>
+<li>Yes: Access physical memory location. Done.</li>
+<li>No: raise an exception!</li>
+</ul>
+</li>
+</ol>
+<p>OS</p>
+<ol>
+<li>Page Fault: OS takes control</li>
+<li>Locate page X in secondary storage</li>
+<li>Load page X into a physical memory</li>
+<li>Update page table</li>
+<li>Go to step 1 to re-execute the same instruction<ul>
+<li>This time with the page in memory</li>
+</ul>
+</li>
+</ol>
+<h3 id="issues">Issues</h3>
+<ul>
+<li>Secondary storage access time &gt;&gt; physical memory access time</li>
+<li>If memory access results in page fault most of the time<ul>
+<li>To load non-resident pages into memory</li>
+<li>Entire system can slow down significantly (known as thrashing)</li>
+</ul>
+</li>
+<li>Locality principles<ul>
+<li>Temporal Locality:<ul>
+<li>Memory address used now is likely to be used again</li>
+</ul>
+</li>
+<li>Spatial Locality:<ul>
+<li>Memory addresses close to the address that is used now is likely to be used soon</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Demand paging<ul>
+<li>Process start with no memory resident page</li>
+<li>Only allocate a page when there is a page fault</li>
+<li>Fast startup time for new process</li>
+<li>Might be sluggish at the start due to page faults</li>
+</ul>
+</li>
+</ul>
+<h3 id="page-table-structure">Page Table Structure</h3>
+<ul>
+<li>Page table information is kept with the process information and takes up physical memory space</li>
+<li>Direct paging<ul>
+<li>Keep all entries in a single table</li>
+<li>Virtual Address: 32 bits, Page Size = 4KiB</li>
+<li>P=32–12=20; 2^20 pages</li>
+<li>Size of PTE = 2 bytes</li>
+<li>Page Table Size = 2^20 * 2 bytes = 2MiB</li>
+</ul>
+</li>
+<li>2-level paging<ul>
+<li>Process may not use entire virtual memory space</li>
+<li><img alt="2LevelPaging" src="../2LevelPaging.png" /></li>
+<li>If original page tabel has 2^P entries<ul>
+<li>With 2^M smaller page tables, M bits is needed to uniquely identify one page table</li>
+<li>Each smaller page table contains 2^(P-M) entries</li>
+</ul>
+</li>
+<li><img alt="2LevelPagingAdvantages" src="../2LevelPagingAdvantages.png" /></li>
+<li>Problem: two serialized memory accesses just to get frame number<ul>
+<li>TLB misses experience longer page-table walks</li>
+<li>Page-table walk: the traversal of page-tables in hardware</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul></div>
