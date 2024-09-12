@@ -30,6 +30,17 @@
             -   [C4](#c4)
             -   [Business Process Model and Notation (BPMN)](#business-process-model-and-notation-bpmn)
     -   [Agile Software Development](#agile-software-development)
+        -   [Agile Manifesto](#agile-manifesto)
+        -   [Agile Reasons](#agile-reasons)
+        -   [Scrum](#scrum)
+        -   [Kanban](#kanban)
+        -   [Extreme Programming](#extreme-programming)
+    -   [Quality Assurance: Software Testing](#quality-assurance-software-testing)
+        -   [Testing Levels](#testing-levels)
+        -   [Test Flakiness](#test-flakiness)
+        -   [Testing and Processes](#testing-and-processes)
+        -   [Automated Testing Approaches](#automated-testing-approaches)
+    -   [Software Evolution](#software-evolution)
 
 ## Software Engineering
 
@@ -115,7 +126,7 @@ Two general perspectives:
 
 ### Software Requirements Documents
 
--   Or Software Requirements Specification (SRS)
+-   Software Requirements Specification (SRS)
 -   Goal of requirements definition
 -   May include both the user requirements for a system and a detailed specification of the system requirements
 -   Requirements change rapidly in agile methods: requirements are written incrementally as user stories
@@ -431,3 +442,250 @@ Two general perspectives:
     -   Most popular way to model decisions: a decision table
 
 ## Agile Software Development
+
+### Agile Manifesto
+
+-   Individuals and interactions over processes and tools
+-   Working software over comprehensive documentation
+-   Customer collaboration over contract negotiation
+-   Responding to change over following a plan
+-   Satisfy the customer through early and continuous delivery of valuable software
+-   Welcome changing requirements, even late in development
+-   Delivery working software frequently
+
+### Agile Reasons
+
+-   Organisations' SE priorities:
+    -   End-customer satisfaction
+    -   Time to delivery
+    -   Competitive advantage
+-   Used for ongoing release cycles, featuring small incremental changes
+
+### Scrum
+
+-   General, lightweight framework
+    -   Does not specify how to do requirements engineering, architecture, etc
+-   Prescriptive: proposes specific rules that need to be followed
+-   Often seen as a synonym to agile practices
+-   Focus: delivering value
+    -   Achieves this via increments in sprints
+-   Founded on empiricism and lean thinking
+
+    -   Empiricism: knowledge comes from experience and decision making based on observations
+    -   Lean thinking: reduce waste and focus on the essentials
+
+-   **Scrum pillars**
+
+    -   Transparency: process and work is visible for those doing the work and receiving its output
+    -   Inspection: artifact and process is inspected frequently to detect problems
+    -   Adaption: adjustments if the resulting product is unacceptable
+
+-   **Sprints**
+    -   Goal: create a useful increment
+    -   Includes planning, daily scrums, sprint review, sprint retrospective and product backlog
+    -   Artifacts: product backlog (ordered list of what is needed to improve the product), sprint backlog (sprint goal, product backlog items selected for sprint, an actionable plan for delivering the increment), increment (concrete stepping point towards product goal)
+-   User stories: describe some functionality and represent customer requirements
+    -   Card: a written description of the story used for planinng
+    -   Conversation: verbal exchange with the customer to flesh out the details of the story
+    -   Confirmation: acceptance tests specified by the customer can be used to determine when a story is complete
+
+### Kanban
+
+-   Optimizes flow using a visual, pull-based system
+-   Definition of Workflow (DoW): explicit shared understanding of flow, which requires a definition of various concepts
+    -   A definition of how WIP will be controlled from started to finished
+    -   A service level expectation (SLE), which is a forecast of how long it should take a work item to flow from started to finished
+
+### Extreme Programming
+
+-   ![extremeProgramming](extremeProgramming.png)
+-   Extreme Programming (XP) takes an “extreme” approach to iterative development and best practices
+
+    -   New versions may be built several times per day
+    -   Increments are delivered to customers every 2 weeks
+    -   All tests must be run for every build and the build is only accepted if tests run successfully
+
+-   **Pair programming**
+    -   All code is produced by two developers working together
+    -   One developer is programming, while the other is reviewing and focusing on the big picture
+-   **Test-driven development**
+    -   XP proposed test-driven development
+    -   Unit tests are written before the code is written
+    -   Acceptance tests are derived from the user requirements
+-   **Continuous integration**
+    -   Development team should always work on the latest version of the software
+    -   Code should be integrated into the main branch of the project frequently
+-   On-site customer: A representative of the end-user of the system (the customer) should be available full time for the use of the XP team. In an extreme programming process, the customer is a member of the development team and is responsible for bringing system requirements to the team for implementation.
+-   Sustainable pace: Large amounts of overtime are not considered acceptable as the net effect is often to reduce code quality and medium term productivity
+
+## Quality Assurance: Software Testing
+
+-   **Defect testing**: “program testing can be used very effectively to show the presence of bugs but never to show their absence” - Dijkstra
+-   **Validation testing**: demonstrate that the system corresponds to the requirements
+-   Verification: "are we building the product right"
+    -   Programming errors
+-   Validation: "are we building the right product"
+    -   Whether this is what user requires
+-   **Test Case**
+    -   **Test Oracle**: is a mechanism for determining whether a test has passed or failed (e.g. `assertEquals`)
+    -   Test input
+-   Automated testing: testing tool automatically generates a test input and applies a test oracle
+-   Manual test: manually testing for defects
+-   Pesticide paradox: Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual
+    -   Not all bugs can be identified from one method of testing
+
+### Testing Levels
+
+-   Unit test: testing individual components
+    -   Typically fast, and allow testing of large portions of a system in limited time
+    -   Easy to control, as they typically check expected result values when passed a certain input value
+    -   Easy to write, as they require no additional set up
+    -   Lack reality, as they do not represent the real execution of a system
+-   Integration test: testing multiple components in combination
+    -   Typically focuses on "our" component and an external component (database system or web services)
+-   System test (end-to-end test): evaluating the whole system
+    -   Run the system in its entirety instead of testing small parts in isolation
+    -   Realistic tests but are often slow and harder to write
+
+### Test Flakiness
+
+-   Flaky test: a test that might non-deterministically pass or fail
+-   Lowers confidence in the tests, difficult to debug, might lower overall developer productivity
+-   Causes:
+    -   Concurrency, when task is shared by multiple threads
+    -   Async wait: whether the test case succeeds depends on how quickly server responds
+-   Test pyramid: write tests with different granularity (fewer high-level tests, many small and fast unit tests)
+
+### Testing and Processes
+
+-   Waterfall model
+    -   ![waterfallModel](waterfallModel.png)
+-   V-model
+    -   Testing happens after requirements engineering, architecture, design phases
+    -   Testing is planned together with other phases
+    -   ![vModel](vModel.png)
+-   Acceptance testing
+    -   User Acceptance Testing (UAT): focuses on validation, that is, checking whether the system meets the users’ requirements
+-   Test driven development (TDD)
+    -   Focus on requirements and quick feedback
+    -   Used when faced with complex problem or solution not yet clear
+    -   Classicist/ detroit school: inside-out TDD, start with different units that will compose the overall feature
+    -   London school: outside-in TDD, start from the outside and use of mocking
+    -   Steps
+        -   Write test
+        -   Check that the newly-written test fails
+        -   Write the simplest code that passes the new test
+        -   All tests should now pass
+        -   Refactor as needed
+-   Black-box: no internal information
+    -   Specification-based testing, derives tests based on the requirements or documentation
+-   White-box: internal information (based on a function's implementation)
+    -   Use the source code to guide testing, known as structural testing
+    -   Main means through coverage criteria
+        -   Line: lines_covered / total lines x 100%
+        -   Branch (each branching instruction): branches_covered / total branches x 100%
+        -   Condition (multiple conditions like && || in one line) + branch: (branches_covered + conditions_covered) / (total_branches + total_conditions) x 100%
+        -   Path: paths_covered / total_paths x 100%
+        -   Modified condition/ decision coverage: number_of_conditions_evaluated_to_all_possible_outcomes_affecting_the_outcome_of_the_decision / total_number_of_conditions_within_the_decisions x 100%
+        -   Test important combinations of conditions and thus reduce the cost as compared to full Path Coverage
+        -   Each condition in a decision is shown to independently affect the outcome of the decision
+        -   ![mCDcCoverage](mCDcCoverage.png)
+-   Exploratory testing
+    -   Explore what the program does to increase your understanding and build a mental model
+-   Devising test cases: boundary value analysis, identifying partitions
+-   Mutation testing
+    -   Evaluate the quality of exisiting tests and derive new tests
+    -   Mutate code in the program (introduce a bug), assuming that a test case "kills" the mutant
+    -   Effective way of discovering undertested parts
+
+### Automated Testing Approaches
+
+-   Automated testing tackles test input generation and/or test oracle problem
+
+-   **Property-based testing**
+    -   Specify properties for the component we can test and let the test framework find a test input that might cause the property to break
+    -   Property-based testing framework: jqwik for Java
+    -   Useful for complex functionality and if there is uncertainty whether example-based tests are sufficient
+-   **Differential testing**
+    -   Send a common input to multiple systems and see whether their result or other properties agree
+    -   Compare between:
+        -   Different versions of a software
+        -   Different configurations
+        -   Against a simple reference engine
+        -   Different implementations of the same functionality
+    -   Potentially small overlap in functionality and intended differences makes this technique produce false alarms that need to be analyzed
+-   **Metamorphic testing**
+    -   Use a source test-case (and its result) to generate a follow-up test case for which the result can be inferred
+    -   Black-box approach
+    -   Equivalence Modulo Inputs (EMI) is one of the most successful metamorphic testing approaches
+        -   Rather than creating equivalent programs, create programs that are equivalent only for a given input, which is easier
+-   Constraint Solvers
+    -   Constraint solvers accept a formula and check if it is satisfiable (SAT) or unsatisfiable (UNSAT)
+    -   Boolean Satisfiability (SAT Solvers)
+        -   Input: propositional formula
+        -   Output: model that satisfies the formula
+    -   Satisfiability Modulo Theories (SMT Solvers)
+        -   Solve a formula based on a given theory
+-   **Symbolic Execution**
+    -   Testing involves executing the program on one, concrete input
+    -   Uses an SMT solver to determine whether a patch condition is feasible or not
+    -   Systematically generate inputs (but there might be path explosion)
+-   **Fuzzing**
+    -   Black-box fuzzing: send random input to the program and hope it crashes
+    -   Mutation-based fuzzing: Rather than passing random input to the program, mutate existing inputs
+    -   White-box fuzzing: Leverages detailed knowledge of the program for fuzzing
+    -   Grey-box fuzzing: For each mutated input, check whether it resulted in a gain of code coverage (or code coverage pattern)
+-   Test-case Reduction: many automated input generation techniques generate large inputs
+    -   Remove redundant test cases that do not trigger the bug
+    -   Delta debugging\*: systematically removes elements from the bug-inducing input; Behaves like binary search but tries different combinations of smaller blocks where binary search fails
+-   Small scope hypothesis: A high proportion of errors can be found by testing a program for all test inputs within some small scope
+-   Static analysis tools are tools that reason about code without executing it
+    -   Linters and style checkers
+    -   Data-flow analysis
+    -   Control-flow analysis
+-   Completeness: If analysis says X is true, it is really true
+-   Soundness: If X is true, the analysis will indicate that X is true
+
+**\*Delta Debugging**
+![deltaDebugging](deltaDebugging.png)
+(with granularity n = 2)
+
+1. Try to reduce to subset (use only either input 1 or input 2)
+2. Try to reduce to complement (swap input 1 and 2)
+3. If both result in no bug, increase granularity to n = 4 (have input 1, 2, 3, 4)
+4. If input that fails the test is found, reduce granularity to n = 3
+5. If still fails, reduce granularity again
+6. If passes, increase granularity (find the local minimum)
+
+## Software Evolution
+
+-   **Versioning**
+    -   Software versioning is the process of assigning either unique version names or unique version numbers to unique states of computer software
+    -   Commit hash: automatically generated, but near random and may include irrelevant versions in-between
+    -   Calendar versioning (YY.MM.DD.HH.mm)
+    -   Semantic versioning (major version. minor version. patch version)
+-   **Bug finding**
+    -   Infrastructure software such as databases, compilers are depended on to build stable software
+    -   Fuzz testing: tries to break infrastructure software by randomizing input
+-   **Feature triage**
+    -   Requirements elicitation changes after release
+    -   Determine the usage and performance of software via analytics and telemetry
+-   **Deprecation**
+    -   Don't deprecate
+        -   Backwards compatibility is a feature
+        -   Early mistakes cannot be easily reversed
+    -   Translation interface
+        -   Adapt the old interface to call the new one, migration is blind to user
+        -   Need to maintain old promises
+        -   Hyrum's law: With a sufficient number of users of an API, it does not matter what you promise in the contract; all observable behaviors of your system will be depended on by somebody.
+        -   With enough users, any change to a piece of software will break somebody's workflow
+    -   Migration tooling
+        -   Create a tool for stakeholders to automatically upgrade to the next version
+        -   Tool needs to be created and tested
+    -   End-of-support period
+        -   Guarantee some support of old versions to give stakeholders time to migrate
+        -   Someone needs to maintain the old version
+    -   Advisory Deprecation
+        -   Deprecations that have no deadline and are not a high priority for the organization
+    -   Compulsory Deprecation
+        -   Deprecations that have a deadline, after which the deprecated interface is no longer guaranteed to work
