@@ -278,6 +278,74 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="3"><a href="#inverted-page-table" class="nav-link">Inverted Page Table</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#page-replacement-algorithms" class="nav-link">Page Replacement Algorithms</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#optimal-page-replacement-opt" class="nav-link">Optimal Page Replacement (OPT)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#fifo-page-replacement-algorithm" class="nav-link">FIFO Page Replacement Algorithm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#least-recently-used-lru" class="nav-link">Least Recently Used (LRU)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#second-chance-page-replacement-aka-clock" class="nav-link">Second-Chance Page Replacement (aka CLOCK)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#frame-allocation" class="nav-link">Frame Allocation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#file-management" class="nav-link">File Management</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#file-protection" class="nav-link">File Protection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#file-data" class="nav-link">File Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#file-information" class="nav-link">File Information</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#processes-and-files" class="nav-link">Processes and Files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#directory" class="nav-link">Directory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#file-system-implementations" class="nav-link">File System Implementations</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="4"><a href="#file-block-allocation" class="nav-link">File Block Allocation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#free-space-management" class="nav-link">Free Space Management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="4"><a href="#implementing-directory" class="nav-link">Implementing Directory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
               </ul>
             </li>
               </ul>
@@ -289,7 +357,7 @@
 
 <h1 id="cs2106-notes-ay2324-sem2">CS2106 Notes AY23/24 Sem2</h1>
 <ul>
-<li><a href="#cs2106-notes-ay2324-sem2">CS2106 Notes AY23/24 Sem2</a><ul>
+<li><a href="#cs2106-notes-ay2324-sem2">CS2106 Notes AY23/24 Sem2</a></li>
 <li><a href="#operating-systems">Operating Systems</a><ul>
 <li><a href="#operating-system-structure">Operating System Structure</a></li>
 <li><a href="#running-oses">Running OSes</a></li>
@@ -299,15 +367,11 @@
 <li><a href="#process-abstraction">Process Abstraction</a><ul>
 <li><a href="#component-description">Component Description</a></li>
 <li><a href="#basic-instruction-execution">Basic Instruction Execution</a></li>
-<li><a href="#memory-context">Memory Context</a><ul>
+<li><a href="#memory-context">Memory Context</a></li>
 <li><a href="#function-call">Function Call</a></li>
 <li><a href="#dynamically-allocated-memory">Dynamically Allocated Memory</a></li>
-</ul>
-</li>
-<li><a href="#os-context">OS Context</a><ul>
+<li><a href="#os-context">OS Context</a></li>
 <li><a href="#processes">Processes</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#process-abstraction-in-unix">Process Abstraction in Unix</a><ul>
@@ -317,7 +381,7 @@
 </li>
 <li><a href="#process-scheduling">Process Scheduling</a><ul>
 <li><a href="#concurrent-execution">Concurrent Execution</a></li>
-<li><a href="#process-scheduling-algorithms">Process Scheduling Algorithms</a><ul>
+<li><a href="#process-scheduling-algorithms">Process Scheduling Algorithms</a></li>
 <li><a href="#first-come-first-serve-fcfs">First-Come First-Serve: FCFS</a></li>
 <li><a href="#shortest-job-first-sjf">Shortest Job First: SJF</a></li>
 <li><a href="#shortest-remaining-time-srt">Shortest Remaining Time: SRT</a></li>
@@ -325,21 +389,17 @@
 <li><a href="#priority-scheduling">Priority Scheduling</a></li>
 <li><a href="#multi-level-feedback-queue-mlfq">Multi-level Feedback Queue (MLFQ)</a></li>
 <li><a href="#lottery-scheduling">Lottery Scheduling</a></li>
-</ul>
-</li>
 <li><a href="#scheduling-for-interactive-systems">Scheduling for Interactive Systems</a></li>
 </ul>
 </li>
 <li><a href="#process-alternative---threads">Process Alternative - Threads</a><ul>
 <li><a href="#motivation-for-thread">Motivation for Thread</a></li>
 <li><a href="#process-and-thread">Process and Thread</a></li>
-<li><a href="#thread-models">Thread Models</a><ul>
+<li><a href="#thread-models">Thread Models</a></li>
 <li><a href="#user-thread">User Thread</a></li>
 <li><a href="#kernel-thread">Kernel Thread</a></li>
 <li><a href="#hybrid-thread-model">Hybrid Thread Model</a></li>
 <li><a href="#posix-threads-pthread">POSIX Threads: <code>pthread</code></a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#inter-process-communication-ipc">Inter-Process Communication (IPC)</a><ul>
@@ -357,37 +417,48 @@
 </ul>
 </li>
 <li><a href="#memory-abstraction">Memory Abstraction</a><ul>
-<li><a href="#contiguous-memory-management">Contiguous Memory Management</a><ul>
+<li><a href="#contiguous-memory-management">Contiguous Memory Management</a></li>
 <li><a href="#memory-partitioning">Memory Partitioning</a></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><a href="#disjoint-memory-schemes">Disjoint Memory Schemes</a><ul>
-<li><a href="#paging">Paging</a><ul>
+<li><a href="#paging">Paging</a></li>
 <li><a href="#protection">Protection</a></li>
 <li><a href="#page-sharing">Page Sharing</a></li>
-</ul>
-</li>
-<li><a href="#segmentation-scheme">Segmentation Scheme</a><ul>
+<li><a href="#segmentation-scheme">Segmentation Scheme</a></li>
 <li><a href="#segmentation-with-paging">Segmentation with Paging</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#virtual-memory-management">Virtual Memory Management</a><ul>
 <li><a href="#extended-paging-scheme">Extended Paging Scheme</a></li>
 <li><a href="#issues">Issues</a></li>
 <li><a href="#page-table-structure">Page Table Structure</a></li>
+<li><a href="#inverted-page-table">Inverted Page Table</a></li>
+<li><a href="#page-replacement-algorithms">Page Replacement Algorithms</a></li>
+<li><a href="#optimal-page-replacement-opt">Optimal Page Replacement (OPT)</a></li>
+<li><a href="#fifo-page-replacement-algorithm">FIFO Page Replacement Algorithm</a></li>
+<li><a href="#least-recently-used-lru">Least Recently Used (LRU)</a></li>
+<li><a href="#second-chance-page-replacement-aka-clock">Second-Chance Page Replacement (aka CLOCK)</a></li>
+<li><a href="#frame-allocation">Frame Allocation</a></li>
 </ul>
 </li>
+<li><a href="#file-management">File Management</a><ul>
+<li><a href="#file-protection">File Protection</a></li>
+<li><a href="#file-data">File Data</a></li>
+<li><a href="#file-information">File Information</a></li>
+<li><a href="#processes-and-files">Processes and Files</a></li>
+<li><a href="#directory">Directory</a></li>
+<li><a href="#file-system-implementations">File System Implementations</a></li>
+<li><a href="#file-block-allocation">File Block Allocation</a></li>
+<li><a href="#free-space-management">Free Space Management</a></li>
+<li><a href="#implementing-directory">Implementing Directory</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="operating-systems">Operating Systems</h2>
 <ul>
 <li>Operating system: A program that acts as an intermediary between a computer user and the computer hardware.</li>
-<li>Motivation for OS<ol>
+<li>Motivation for OS</li>
 <li>Abstraction:<ul>
 <li>Hide the different low level details</li>
 <li>Present the common high level functionality to user</li>
@@ -402,8 +473,6 @@
 <li>Controls execution of programs: prevent errors and improper use of the computer and provides security and protection</li>
 </ul>
 </li>
-</ol>
-</li>
 <li><img alt="viewOfOs" src="../viewOfOs.png" /></li>
 <li><img alt="osComponents" src="../osComponents.png" /></li>
 <li>OS can protect a user program from other malicious applications</li>
@@ -411,18 +480,14 @@
 </ul>
 <h3 id="operating-system-structure">Operating System Structure</h3>
 <ul>
-<li>A <strong>monolithic</strong> kernel is an operating system architecture where the entire operating system is working in kernel space<ul>
+<li>A <strong>monolithic</strong> kernel is an operating system architecture where the entire operating system is working in kernel space</li>
 <li><img alt="monolithicKernel" src="../monolithicKernel.png" /></li>
-</ul>
-</li>
-<li>A <strong>microkernel</strong> architecture is an operating system pattern where only basic functionality is provided in the core of the software system<ul>
+<li>A <strong>microkernel</strong> architecture is an operating system pattern where only basic functionality is provided in the core of the software system</li>
 <li>Inter-Process Communication (IPC)</li>
 <li>Address space management</li>
 <li>Thread management</li>
 <li><img alt="microkernelComponents" src="../microkernelComponents.png" /></li>
-</ul>
-</li>
-<li><strong>Layered systems</strong><ul>
+<li><strong>Layered systems</strong></li>
 <li>Generalization of monolithic system</li>
 <li>Organize the components into hierarchy of layers<ul>
 <li>Upper layers make use of the lower layers</li>
@@ -430,9 +495,7 @@
 <li>Highest layer is the user interface</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><strong>Client-Server Model</strong><ul>
+<li><strong>Client-Server Model</strong></li>
 <li>Variation of microkernel</li>
 <li>Two classes of processes:<ul>
 <li>Client process request service from server process</li>
@@ -441,94 +504,62 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h3 id="running-oses">Running OSes</h3>
 <ul>
-<li>Motivation<ul>
+<li>Motivation</li>
 <li>Operating system assumes total control of the hardware</li>
 <li>Operating system is hard to debug/ monitor</li>
-</ul>
-</li>
-<li>Definition<ul>
+<li>Definition</li>
 <li><strong>Virtual machine</strong>: a software emulation of hardware, also known as hypervisor</li>
 <li><img alt="type1Hypervisor" src="../type1Hypervisor.png" /></li>
 <li><img alt="type2Hypervisor" src="../type2Hypervisor.png" /></li>
 </ul>
-</li>
-</ul>
 <h2 id="process-management">Process Management</h2>
 <ul>
-<li>Process Abstraction<ul>
+<li>Process Abstraction</li>
 <li>Information describing an executing program</li>
 <li>Process/ Task/ Job is a dynamic abstracton for execution program</li>
-</ul>
-</li>
-<li>Process Scheduling<ul>
+<li>Process Scheduling</li>
 <li>Deciding which process get to execute</li>
-</ul>
-</li>
-<li>Inter-Process Communication &amp; Synchronization<ul>
+<li>Inter-Process Communication &amp; Synchronization</li>
 <li>Passing information between processes</li>
-</ul>
-</li>
-<li>Alternative to Process<ul>
+<li>Alternative to Process</li>
 <li>Light-weight process aka Thread</li>
-</ul>
-</li>
 </ul>
 <h2 id="process-abstraction">Process Abstraction</h2>
 <h3 id="component-description">Component Description</h3>
 <ul>
-<li>Memory<ul>
+<li>Memory</li>
 <li>Storage for instruction and data</li>
-</ul>
-</li>
-<li>Cache<ul>
+<li>Cache</li>
 <li>Duplicate part of the memory for faster access</li>
 <li>Usually split into instruction cache and data cache</li>
-</ul>
-</li>
-<li>Fetch unit<ul>
+<li>Fetch unit</li>
 <li>Loads instruction from memory</li>
 <li>Location indicated by a special register: Program Counter (PC)</li>
-</ul>
-</li>
-<li>Functional units<ul>
+<li>Functional units</li>
 <li>Carry out the instruction execution</li>
 <li>Dedicated to different instruction type</li>
-</ul>
-</li>
-<li>Registers<ul>
+<li>Registers</li>
 <li>Internal storage for the fastest access speed</li>
 <li>General purpose registers: accessible by user program</li>
 <li>Special register: program counter</li>
 </ul>
-</li>
-</ul>
 <h3 id="basic-instruction-execution">Basic Instruction Execution</h3>
 <ul>
-<li>Instruction X is fetched<ul>
+<li>Instruction X is fetched</li>
 <li>Memory location indicated by Program Counter</li>
-</ul>
-</li>
-<li>Instruction X dispatched to the corresponding Functional Unit<ul>
+<li>Instruction X dispatched to the corresponding Functional Unit</li>
 <li>Read operands if applicable, usually from memory or GPR</li>
-</ul>
-</li>
-<li>Result computed<ul>
+<li>Result computed</li>
 <li>Write value if applicable n Usually to memory or GPR</li>
-</ul>
-</li>
-<li>Instruction X is completed<ul>
+<li>Instruction X is completed</li>
 <li>PC updated for the next instruction</li>
-</ul>
-</li>
 </ul>
 <h3 id="memory-context">Memory Context</h3>
 <h4 id="function-call">Function Call</h4>
 <ul>
-<li>Stack memory<ul>
+<li>Stack memory</li>
 <li>The new memory region to store information during function invocation</li>
 <li>Information of function invocation is described by a stack frame</li>
 <li>Stack frame contains:<ul>
@@ -542,32 +573,22 @@
 <li>Stack frame is removed from top when a function call ends</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Function call convention (example scheme)<ul>
+<li>Function call convention (example scheme)</li>
 <li><img alt="stackFrameSetup" src="../stackFrameSetup.png" /></li>
 <li><img alt="stackFrameTeardown" src="../stackFrameTeardown.png" /></li>
-</ul>
-</li>
-<li>Frame pointer<ul>
+<li>Frame pointer</li>
 <li>To facilitate the access of various stack frame items</li>
 <li>Points to a fixed location in a stack frame</li>
-</ul>
-</li>
-<li>Saved register<ul>
+<li>Saved register</li>
 <li>Number of general purpose registers on most processors are limited</li>
 <li>When GPRs are exhausted, use memory to hold the GPR value, then reuse GPR, value held can be restored afterwards (known as register spilling)</li>
-</ul>
-</li>
 </ul>
 <h4 id="dynamically-allocated-memory">Dynamically Allocated Memory</h4>
 <ul>
 <li>Acquire new memory space during execution time - malloc()</li>
-<li>Observations<ul>
+<li>Observations</li>
 <li>Memory is allocated only at runtime (size is not known during compilation) -&gt; cannot place in data region</li>
 <li>No definite deallocation timing (can be explicitly freed by programmer) -&gt; cannot place in stack region</li>
-</ul>
-</li>
 <li>Solution: set up a separate heap memory region</li>
 <li><img alt="heapMemory" src="../heapMemory.png" /></li>
 <li>Memory context: text, data, stack and heap</li>
@@ -576,53 +597,45 @@
 <h3 id="os-context">OS Context</h3>
 <h4 id="processes">Processes</h4>
 <ul>
+<li>Process Identification &amp; Process States</li>
 <li>
-<p>Process Identification &amp; Process States</p>
-<ul>
-<li><img alt="processStateModel" src="../processStateModel.png" /></li>
-</ul>
+<p><img alt="processStateModel" src="../processStateModel.png" /></p>
 </li>
 <li>
 <p>New</p>
-<ul>
+</li>
 <li>New process created</li>
 <li>May still be under initialisation</li>
-</ul>
-</li>
-<li>Ready<ul>
+<li>Ready</li>
 <li>Process is waiting to run</li>
-</ul>
-</li>
-<li>Running<ul>
+<li>Running</li>
 <li>Process being executed on CPU</li>
-</ul>
-</li>
-<li>Blocked<ul>
+<li>Blocked</li>
 <li>Process waiting for event</li>
 <li>Cannot execute until event is available</li>
-</ul>
-</li>
+<li>Terminated</li>
 <li>
-<p>Terminated</p>
-<ul>
-<li>Process has finished execution, may require OS cleanup</li>
-</ul>
+<p>Process has finished execution, may require OS cleanup</p>
 </li>
 <li>
 <p>Process Table &amp; Process Control Block:</p>
-<ul>
-<li>Entire execution context for a process</li>
+</li>
+<li>
+<p>Entire execution context for a process</p>
+</li>
 <li>Kernel maintains PCB for all processes</li>
 <li>Hardware context in PCB is updated only when process swap out</li>
 <li>Memory context in PCB is not the actual memory space used in process (points to real memory &amp; contains page table)</li>
 <li>PCBs are part of OS memory space</li>
-<li>OS context of PCB contains information used for scheduling, e.g. priority, time quantum allocated, etc.</li>
-</ul>
+<li>
+<p>OS context of PCB contains information used for scheduling, e.g. priority, time quantum allocated, etc.</p>
 </li>
 <li>
 <p>System calls</p>
-<ul>
-<li>System calls are dependent on the operating system</li>
+</li>
+<li>
+<p>System calls are dependent on the operating system</p>
+</li>
 <li>
 <p>Application program interface (API) to OS</p>
 <ul>
@@ -652,12 +665,12 @@
 <li>
 <p><img alt="systemCallMechanism" src="../systemCallMechanism.png" /></p>
 </li>
-<li>System calls are more expensive than library calls due to context switching</li>
-</ul>
+<li>
+<p>System calls are more expensive than library calls due to context switching</p>
 </li>
 <li>
 <p>Exception and Interrupt</p>
-<ul>
+</li>
 <li>Exception is <strong>synchronous</strong>: occur due to program execution<ul>
 <li>Have to execute an exception handler</li>
 <li>Similar to a forced function call</li>
@@ -670,22 +683,16 @@
 </li>
 <li><img alt="exceptionInterruptHandler" src="../exceptionInterruptHandler.png" /></li>
 </ul>
-</li>
-</ul>
 <h2 id="process-abstraction-in-unix">Process Abstraction in Unix</h2>
 <ul>
-<li>Identification<ul>
+<li>Identification</li>
 <li>PID: process ID</li>
-</ul>
-</li>
-<li>Information<ul>
+<li>Information</li>
 <li>Process state: running, sleeping, stopped, zombie</li>
 <li>Parent PID</li>
 <li>Cumulative CPU time</li>
 <li>Command: <code>ps</code> (process status)</li>
-</ul>
-</li>
-<li>Creation:<ul>
+<li>Creation:</li>
 <li><code>fork()</code><ul>
 <li><code># include &lt;unistd.h&gt;</code></li>
 <li><code>int fork();</code></li>
@@ -702,65 +709,49 @@
 <li>e.g. <code>execl( "/bin/ls", "ls", "-l", NULL);</code> = <code>ls -l</code></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Termination<ul>
+<li>Termination</li>
 <li><code>#include &lt;stdlib.h&gt;</code></li>
 <li><code>void exit( int status );</code></li>
 <li>0 = Normal Termination (successful execution)</li>
 <li>No return</li>
 <li>Most system resources used by processes are released on exit (files)</li>
 <li>Some resources are not releaseable (PID &amp; status, process accounting info)</li>
-</ul>
-</li>
-<li>Parent-Child Synchronisation<ul>
+<li>Parent-Child Synchronisation</li>
 <li><code>#include &lt;sys/types.h&gt; #include &lt;sys/wait.h&gt;</code></li>
 <li><code>int wait( int *status );</code></li>
 <li>Returns the PID of the terminated child process status (passed by address)</li>
 <li>Parent process blocks until at least one child terminates</li>
-</ul>
-</li>
 <li><img alt="processInteractionInUnix" src="../processInteractionInUnix.png" /></li>
 <li><code>wait()</code> creates zombie processes</li>
 </ul>
 <h3 id="zombie-process">Zombie Process</h3>
 <ul>
-<li>Parent process terminates before child process:<ul>
+<li>Parent process terminates before child process:</li>
 <li>init process becomes "pseudo" parent of child processes</li>
 <li>Child termination sends signal to init, which utilizes wait() to cleanup</li>
-</ul>
-</li>
-<li>Child process terminates before parent but parent did not call wait:<ul>
+<li>Child process terminates before parent but parent did not call wait:</li>
 <li>Child process become a zombie process</li>
 <li>Can fill up process table</li>
 <li>May need a reboot to clear the table on older Unix implementations</li>
-</ul>
-</li>
 </ul>
 <h3 id="unix-system-calls">Unix System Calls</h3>
 <p><img alt="summaryOfUnixCalls" src="../summaryOfUnixCalls.png" /></p>
 <h2 id="process-scheduling">Process Scheduling</h2>
 <ul>
 <li>Time quantum is always an integer multiple of interval between timer interrupt</li>
-<li>Given the same period of time, smaller interval between timer interrupt lengthen task turn-around time<ul>
+<li>Given the same period of time, smaller interval between timer interrupt lengthen task turn-around time</li>
 <li>Shorter ITI -&gt; More Timer Interrupt -&gt; less time spent on actual user process</li>
-</ul>
-</li>
 </ul>
 <h3 id="concurrent-execution">Concurrent Execution</h3>
 <ul>
-<li>Concurrent processes<ul>
+<li>Concurrent processes</li>
 <li>Logical concept to cover multitasked processes</li>
 <li><img alt="simplisticConcurrency" src="../simplisticConcurrency.png" /></li>
 <li><img alt="interleavedContextSwitch" src="../interleavedContextSwitch.png" /></li>
-</ul>
-</li>
-<li>Terminology<ul>
+<li>Terminology</li>
 <li>Scheduler: Part of the OS that makes scheduling decision</li>
 <li>Scheduling algorithm: The algorithm used by scheduler</li>
-</ul>
-</li>
-<li>Processing environment<ul>
+<li>Processing environment</li>
 <li>Batch processing<ul>
 <li>No user: no interaction required, no need to be responsive</li>
 </ul>
@@ -775,9 +766,7 @@
 <li>Usually periodic process</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Criteria for all processing environments<ul>
+<li>Criteria for all processing environments</li>
 <li>Fairness<ul>
 <li>Should get a fair share of CPU time</li>
 <li>No starvation</li>
@@ -787,9 +776,7 @@
 <li>All parts of computing system should be utilised</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Types of scheduling policies<ul>
+<li>Types of scheduling policies</li>
 <li>Non-preemptive (cooperative)<ul>
 <li>A process stayed scheduled in running state until it blocks or gives up the CPU voluntarily</li>
 </ul>
@@ -799,35 +786,25 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h3 id="process-scheduling-algorithms">Process Scheduling Algorithms</h3>
 <ul>
-<li>Criteria for batch processing<ul>
+<li>Criteria for batch processing</li>
 <li><strong>Turnaround time</strong>: Total time taken, i.e. finish-arrival time</li>
 <li><strong>Waiting time</strong>: Time spent waiting for CPU</li>
 <li><strong>Throughput</strong>: Number of tasks finished per unit time i.e. Rate of task completion</li>
 <li><strong>CPU utilization</strong>: Percentage of time when CPU is working on a task</li>
 </ul>
-</li>
-</ul>
 <h4 id="first-come-first-serve-fcfs">First-Come First-Serve: FCFS</h4>
 <ul>
 <li>Tasks are stored on a First-In-First-Out (FIFO) queue based on arrival time</li>
 <li>Pick the first task in queue to run until the task is done OR the task is blocked</li>
-<li>Blocked task is removed from the FIFO queue<ul>
+<li>Blocked task is removed from the FIFO queue</li>
 <li>When it is ready again, it is placed at the back of queue</li>
 <li>i.e. just like a newly arrive task</li>
-</ul>
-</li>
-<li>Guaranteed to have no starvation:<ul>
+<li>Guaranteed to have no starvation:</li>
 <li>The number of tasks in front of task X in FIFO is always decreasing -&gt; task X will get its chance eventually</li>
-</ul>
-</li>
-<li>Shortcomings<ul>
+<li>Shortcomings</li>
 <li><strong>Convoy effect</strong>: FCFS algorithm is non-preemptive in nature, that is, once CPU time has been allocated to a process, other processes can get CPU time only after the current process has finished</li>
-</ul>
-</li>
 </ul>
 <h4 id="shortest-job-first-sjf">Shortest Job First: SJF</h4>
 <ul>
@@ -846,62 +823,44 @@
 <h4 id="round-robin-rr">Round Robin: RR</h4>
 <ul>
 <li>Tasks are stored in a FIFO queue</li>
-<li>Pick the first task from queue front to run until:<ul>
+<li>Pick the first task from queue front to run until:</li>
 <li>A fixed time slice (quantum) elapsed</li>
 <li>The task gives up the CPU voluntarily</li>
-</ul>
-</li>
-<li>The task is then placed at the end of queue to wait for another turn<ul>
+<li>The task is then placed at the end of queue to wait for another turn</li>
 <li>Blocked task will be moved to other queue to wait for its request</li>
-</ul>
-</li>
 <li>Basically a preemptive version of FCFS</li>
-<li>Response time guarantee:<ul>
+<li>Response time guarantee:</li>
 <li>Given n tasks and quantum q</li>
 <li>Time before a task get CPU is bounded by (n-1)q</li>
-</ul>
-</li>
-<li>Timer interrupt needed:<ul>
+<li>Timer interrupt needed:</li>
 <li>For scheduler to check on quantum expiry</li>
-</ul>
-</li>
-<li>The choice of time quantum duration is important:<ul>
+<li>The choice of time quantum duration is important:</li>
 <li>Big quantum: Better CPU utilization but longer waiting time</li>
 <li>Small quantum: Bigger overhead (worse CPU utilization) but shorter waiting time</li>
-</ul>
-</li>
 </ul>
 <h4 id="priority-scheduling">Priority Scheduling</h4>
 <ul>
 <li>Assign a priority value to all tasks, select task with highest priority value</li>
-<li>Variants<ul>
+<li>Variants</li>
 <li>Preemptive version: higher priority process can preempt running process with lower priority</li>
 <li>Non-preemptive version: late coming high priority process has to wait for next round of scheduling</li>
-</ul>
-</li>
-<li>Shortcomings<ul>
+<li>Shortcomings</li>
 <li>Low priority process can starve (worse in preemptive variant)</li>
-</ul>
-</li>
-<li>Possible solutions<ul>
+<li>Possible solutions</li>
 <li>Decrease the priority of currently running process after every time quantum</li>
 <li>Give the current running process a time quantum</li>
-</ul>
-</li>
 <li><strong>Priority Inversion</strong>: Priority inversion is a situation that can occur when a low-priority task is holding a resource such as a semaphore for which a higher-priority task is waiting</li>
 </ul>
 <h4 id="multi-level-feedback-queue-mlfq">Multi-level Feedback Queue (MLFQ)</h4>
 <ul>
 <li>If Priority(A) &gt; Priority(B) -&gt; A runs</li>
 <li>If Priority(A) == Priority(B) -&gt; A and B runs in RR</li>
-<li>Priority Setting/Changing rules:<ol>
+<li>Priority Setting/Changing rules:</li>
 <li>New job -&gt; Highest priority</li>
 <li>If a job fully utilized its time slice -&gt; priority reduced</li>
 <li>If a job give up / blocks before it finishes the time slice -&gt; priority retained</li>
-</ol>
-</li>
 <li>Favours IO intensive process</li>
-<li>Exploitations:<ul>
+<li>Exploitations:</li>
 <li>Change of heart: A process with a lengthy CPU-intensive phase followed by I/O-intensive phase. The process can sink to the lowest priority during the CPU intensive phase. With the low priority, the process may not receive CPU time in a timely fashion, which degrades the responsiveness.<ul>
 <li>Timely boost: All processes in the system will be moved to the highest priority level periodically.</li>
 <li>By periodically boosting the priority of all processes (essentially treat all process as “new” and hence have highest priority), a process with different behavior phases may get a chance to be treated correctly even after it has sunk to the lowest priority.</li>
@@ -912,8 +871,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h4 id="lottery-scheduling">Lottery Scheduling</h4>
 <ul>
 <li>Give out “lottery tickets” to processes for various system resources</li>
@@ -921,77 +878,61 @@
 <li>Responsive: a newly created process can participate in the next lottery</li>
 <li>A process can be given Y lottery tickets to distribute to its child process</li>
 <li>An important process can be given more lottery tickets</li>
-<li>Each resource can have its own set of tickets<ul>
+<li>Each resource can have its own set of tickets</li>
 <li>Different proportion of usage per resource per task</li>
-</ul>
-</li>
 </ul>
 <h3 id="scheduling-for-interactive-systems">Scheduling for Interactive Systems</h3>
 <ul>
 <li>
 <p>Criteria for Interactive Environment</p>
-<ul>
-<li><strong>Response time</strong>: Time between request and response by system</li>
-<li><strong>Predictability</strong>: Variation in response time, lesser variation -&gt; more predictable</li>
-<li>Preemptive scheduling algorithms are used to ensure good response time<ul>
-<li>Scheduler needs to run periodically</li>
-</ul>
 </li>
+<li>
+<p><strong>Response time</strong>: Time between request and response by system</p>
+</li>
+<li><strong>Predictability</strong>: Variation in response time, lesser variation -&gt; more predictable</li>
+<li>
+<p>Preemptive scheduling algorithms are used to ensure good response time</p>
+<ul>
+<li>Scheduler needs to run periodically</li>
 </ul>
 </li>
 <li>
 <p>Interval of timer interrupt (ITI)</p>
-<ul>
-<li>OS scheduler is triggered every timer interrupt</li>
-</ul>
 </li>
-<li>Time Quantum<ul>
+<li>OS scheduler is triggered every timer interrupt</li>
+<li>Time Quantum</li>
 <li>Execution duration given to a process</li>
 <li>Could be constant or variable among the processes</li>
 <li>Must be multiples of interval of timer interrupt</li>
 <li>Large range of values</li>
 </ul>
-</li>
-</ul>
 <h2 id="process-alternative-threads">Process Alternative - Threads</h2>
 <h3 id="motivation-for-thread">Motivation for Thread</h3>
 <ul>
-<li>Process is expensive:<ul>
+<li>Process is expensive:</li>
 <li>Process creation under the fork() model: duplicate memory space, duplicate most of the process context etc</li>
 <li>Context switch: Requires saving/restoration of process information</li>
-</ul>
-</li>
-<li>It is hard for independent processes to communicate with each other:<ul>
+<li>It is hard for independent processes to communicate with each other:</li>
 <li>Independent memory space -&gt; no easy way to pass information</li>
 <li>Requires Inter-Process Communication (IPC)</li>
-</ul>
-</li>
-<li>Thread is invented to overcome the problems with process model<ul>
+<li>Thread is invented to overcome the problems with process model</li>
 <li>Started out as a "quick hack" and eventually matured to be very popular mechanism</li>
-</ul>
-</li>
-<li>Basic Idea:<ul>
+<li>Basic Idea:</li>
 <li>A traditional process has a single thread of control: only one instruction of the whole program is executing at any time</li>
 <li>Add more threads of control to the same process: multiple parts of the programs is executing at the same time conceptually</li>
-</ul>
-</li>
 </ul>
 <h3 id="process-and-thread">Process and Thread</h3>
 <ul>
 <li>A single proces can have multiple threads: multithreaded process</li>
-<li>Threads in the same process shares<ul>
+<li>Threads in the same process shares</li>
 <li>Memory context: text, data, heap</li>
 <li>OS context: process id, files</li>
-</ul>
-</li>
-<li>Unique information needed for each thread<ul>
+<li>Unique information needed for each thread</li>
 <li>Identification (usually thread id)</li>
 <li>Registers (general purpose and special)</li>
 <li>Stack</li>
-</ul>
-</li>
 <li><img alt="processAndThread" src="../processAndThread.png" /></li>
-<li>Context Switch<ul>
+<li>Context Switch</li>
 <li>Process context switch involves:<ul>
 <li>OS Context</li>
 <li>Hardware Context</li>
@@ -1000,9 +941,7 @@
 </li>
 <li>Thread switch within the same process involves:</li>
 <li>Hardware context: Registers, "Stack" (actually just changing FP and SP registers)</li>
-</ul>
-</li>
-<li>Threads: Benefits<ul>
+<li>Threads: Benefits</li>
 <li>Economy<ul>
 <li>Multiple threads in the same process requires much less resources to manage compared to multiple processes</li>
 </ul>
@@ -1020,9 +959,7 @@
 <li>Multithreaded program can take advantage of multiple CPUs</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Threads: Problems<ul>
+<li>Threads: Problems</li>
 <li>System call concurrency<ul>
 <li>Parallel execution of multiple threads -&gt; parallel system call possible</li>
 </ul>
@@ -1034,48 +971,36 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h3 id="thread-models">Thread Models</h3>
 <h4 id="user-thread">User Thread</h4>
 <ul>
 <li>Thread is implemented as a user library; kernel is not aware of the threads in the process</li>
 <li><img alt="userThread" src="../userThread.png" /></li>
-<li>Advantages:<ul>
+<li>Advantages:</li>
 <li>Can have multithreaded program on ANY OS</li>
 <li>Thread operations are just library calls</li>
 <li>Generally more configurable and flexible<ul>
 <li>e.g. Customized thread scheduling policy</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Disadvantages:<ul>
+<li>Disadvantages:</li>
 <li>OS is not aware of threads, scheduling is performed at process level (can never exploit multi-core processors)</li>
 <li>One thread blocked -&gt; Process blocked -&gt; All threads blocked</li>
 <li>Cannot exploit multiple CPUs!</li>
 </ul>
-</li>
-</ul>
 <h4 id="kernel-thread">Kernel Thread</h4>
 <ul>
-<li>Thread is implemented in the OS<ul>
+<li>Thread is implemented in the OS</li>
 <li>Thread operation is handled as system calls</li>
-</ul>
-</li>
-<li>Thread-level scheduling is possible<ul>
+<li>Thread-level scheduling is possible</li>
 <li>Kernel schedule by threads, instead of by process</li>
-</ul>
-</li>
 <li><img alt="kernelThread" src="../kernelThread.png" /></li>
-<li>Advantages:<ul>
+<li>Advantages:</li>
 <li>Kernel can schedule on thread levels:<ul>
 <li>More than 1 thread in the same process can run simultaneously on multiple CPUs</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Disadvantages:<ul>
+<li>Disadvantages:</li>
 <li>Thread operations is now a system call!<ul>
 <li>Slower and more resource intensive</li>
 </ul>
@@ -1087,39 +1012,29 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h4 id="hybrid-thread-model">Hybrid Thread Model</h4>
 <ul>
-<li>Have both kernel and user threads<ul>
+<li>Have both kernel and user threads</li>
 <li>OS schedule on kernel threads only</li>
 <li>User thread can bind to a kernel thread</li>
-</ul>
-</li>
 <li>If we use a 1-to-1 binding in a hybrid thread model, the end result is the same as a pure kernel-thread model as each user thread is bounded to a kernel thread that can be scheduled</li>
-<li>Offer great flexibility<ul>
+<li>Offer great flexibility</li>
 <li>Can limit the concurrency of any process/ user</li>
-</ul>
-</li>
 </ul>
 <h4 id="posix-threads-pthread">POSIX Threads: <code>pthread</code></h4>
 <ul>
 <li>Header file: <code># include &lt;pthread.h&gt;</code></li>
 <li>Compilation: <code>gcc XXX.c -lpthread</code></li>
-<li>Datatypes<ul>
+<li>Datatypes</li>
 <li><code>pthread_t</code>: Data type to represent a thread id</li>
 <li><code>pthread_attr</code>: Data type to represent attributes of a thread</li>
-</ul>
-</li>
-<li>Creation syntax<ul>
+<li>Creation syntax</li>
 <li>Returns (0 = success; !0 = errors)</li>
 <li>Parameters:<ul>
 <li>tidCreated: Thread Id for the created thread</li>
 <li>threadAttributes: Control the behavior of the new thread</li>
 <li>startRoutine: Function pointer to the function to be executed by thread</li>
 <li>argForStartRoutine: Arguments for the startRoutine function</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>Pthread can start on any function as long as the function signature is void<em> f(void</em>)</li>
@@ -1131,21 +1046,19 @@
     void* argForStartRoutine );
 </code></pre>
 <ul>
-<li>Termination syntax<ul>
+<li>Termination syntax</li>
 <li>Parameters:<ul>
 <li>exitValue: Value to be returned to whoever synchronize with
-    this thread (more later)</li>
+  this thread (more later)</li>
 </ul>
 </li>
 <li>If pthread_exit()is not used, a pthread will terminate
     automatically at the end of the startRoutine</li>
 </ul>
-</li>
-</ul>
 <pre><code class="language-c">    int pthread_exit( void* exitValue );
 </code></pre>
 <ul>
-<li>Join<ul>
+<li>Join</li>
 <li>To wait for the termination of another pthread</li>
 <li>Returns (0 = success; !0 = errors)</li>
 <li>Parameters:<ul>
@@ -1154,20 +1067,16 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <pre><code class="language-c">    int pthread_join( pthread_t threadID, void **status );
 </code></pre>
 <h2 id="inter-process-communication-ipc">Inter-Process Communication (IPC)</h2>
 <ul>
-<li>General Idea:<ul>
+<li>General Idea:</li>
 <li>Process P1 creates a shared memory region M</li>
 <li>Process P2 attaches M to its own memory space</li>
 <li>P1 and P2 can now communicate using M</li>
 <li>Any writes to M can be seen by all other parties (behaves similar to normal memory region)</li>
 <li>Same model for multiple processes sharing the same memory region</li>
-</ul>
-</li>
 </ul>
 <pre><code>
 Process P1
@@ -1253,15 +1162,11 @@ int main() {
 }
 </code></pre>
 <ul>
-<li>Advantages<ul>
+<li>Advantages</li>
 <li>Efficient: only create and attach involve OS</li>
 <li>Ease of use: shared memory region behaves the same as normal memory</li>
-</ul>
-</li>
-<li>Disadvantages<ul>
+<li>Disadvantages</li>
 <li>Synchronisation: shared resource means there is a need to synchronise access</li>
-</ul>
-</li>
 </ul>
 <h3 id="message-passing">Message Passing</h3>
 <ul>
@@ -1272,7 +1177,7 @@ int main() {
 </li>
 <li>
 <p>Naming scheme</p>
-<ul>
+</li>
 <li>Direct communication<ul>
 <li>Sender/ receiver of message explicitly name the other party</li>
 </ul>
@@ -1281,9 +1186,7 @@ int main() {
 <li>Messages are sent to/ received from message storage</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Synchronisation behaviours<ul>
+<li>Synchronisation behaviours</li>
 <li>Blocking primitives (synchronous)<ul>
 <li>Sender/ receiver is blocked until message is received/ arrived</li>
 </ul>
@@ -1293,125 +1196,87 @@ int main() {
 <li>Receiver: either receive the message or some indication that message is not ready</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Advantages<ul>
+<li>Advantages</li>
 <li>Portable: can be easily implemented</li>
 <li>Easier synchronisation</li>
-</ul>
-</li>
-<li>Disadvantages<ul>
+<li>Disadvantages</li>
 <li>Inefficient (requires OS intervention)</li>
 <li>Harder to use, messages are limited in size or format</li>
-</ul>
-</li>
 </ul>
 <h3 id="unix-pipes">Unix Pipes</h3>
 <ul>
 <li><img alt="communicationChannels" src="../communicationChannels.png" /></li>
-<li>Piping in shell<ul>
+<li>Piping in shell</li>
 <li>"|" symbol to link the input/output channels of one process to another (known as piping)</li>
 <li>Output of a process goes directly into another as input</li>
-</ul>
-</li>
-<li>Pipe functions as circular bounded byte buffer with implicit synchronization:<ul>
+<li>Pipe functions as circular bounded byte buffer with implicit synchronization:</li>
 <li>Writers wait when buffer is full</li>
 <li>Readers wait when buffer is empty</li>
-</ul>
-</li>
-<li>Variants<ul>
+<li>Variants</li>
 <li>Half-duplex: unidirectional, one write end and one read end</li>
 <li>Full-duplex: bidirectional, read/ write for both ends</li>
-</ul>
-</li>
-<li>System calls<ul>
+<li>System calls</li>
 <li><code>#include &lt;unistd.h&gt;</code></li>
 <li><code>int pipe( int fd[] )</code></li>
 <li>Returns 0 to indicate success; !0 for errors</li>
 </ul>
-</li>
-</ul>
 <h3 id="unix-signal">Unix Signal</h3>
 <ul>
-<li>A form of inter-process communication<ul>
+<li>A form of inter-process communication</li>
 <li>An asynchronous notification regarding an event</li>
 <li>Sent to a process/thread</li>
-</ul>
-</li>
-<li>Recipient of the signal must handle the signal by<ul>
+<li>Recipient of the signal must handle the signal by</li>
 <li>A default set of handlers</li>
 <li>User supplied handler</li>
-</ul>
-</li>
 <li>E.g. kill, stop, continue, memory error, arithmetic error</li>
-<li>A process can install user-define handler for multiple different signals.<ul>
+<li>A process can install user-define handler for multiple different signals.</li>
 <li>[True]</li>
-</ul>
-</li>
-<li>We can install user-define handler for all signals.<ul>
+<li>We can install user-define handler for all signals.</li>
 <li>[False: The "kill -9" i.e. SIGKIL is not captureable]</li>
-</ul>
-</li>
-<li>A parent process can force the child processes to execute any part of their code by sending signal to them.<ul>
+<li>A parent process can force the child processes to execute any part of their code by sending signal to them.</li>
 <li>[False: Only the signal handler can be triggered.]</li>
-</ul>
-</li>
-<li>The "kill" signal (sent by the "kill" command) is different from the "interrupt" signal (sent by pressing "ctrl-c").<ul>
+<li>The "kill" signal (sent by the "kill" command) is different from the "interrupt" signal (sent by pressing "ctrl-c").</li>
 <li>[True]</li>
-</ul>
-</li>
 </ul>
 <h2 id="synchronization">Synchronization</h2>
 <ul>
 <li>Designate code segment with race condition as critical section</li>
 <li>At any point in time, only one process can execute in the critical section</li>
-<li>Properties of correct critical section implementation:<ul>
+<li>Properties of correct critical section implementation:</li>
 <li>Mutual exclusion: Only one process can enter critical section</li>
 <li>Progress: If no process is in critical section, one of the waiting processes should be granted access</li>
 <li>Bounded wait: After process pi requests to enter critical section, there exists an upperbound of number of times other processes can enter the critical section before pi</li>
 <li>Independence: Process not executing in critical section should never block other process</li>
-</ul>
-</li>
-<li>Incorrect synchonization:<ul>
+<li>Incorrect synchonization:</li>
 <li>Deadlock: All processes blocked</li>
 <li>Livelock: Processes keep changing state to avoid deadlock and make no other progress</li>
 <li>Starvation: Some processes are blocked forever</li>
-</ul>
-</li>
-<li>Implementations overview:<ul>
+<li>Implementations overview:</li>
 <li>Assembly level implementations: mechanisms provided by the processor</li>
 <li>High level language implementations: utilizes only normal programming constructs</li>
 <li>High level abstraction: provide abstracted mechanisms that provide additional useful features</li>
 </ul>
-</li>
-</ul>
 <h3 id="assembly-level-implementation">Assembly Level Implementation</h3>
 <ul>
-<li><code>TestAndSet Register, MemoryLocation</code><ul>
+<li><code>TestAndSet Register, MemoryLocation</code></li>
 <li>Load the current content at MemoryLocation into Register</li>
 <li>Stores a 1 into MemoryLocation</li>
 <li>Performed as a single machine operation (i.e. atomic)</li>
-</ul>
-</li>
 <li>It employs <strong>busy waiting</strong> (keep checking the condition until it is safe to enter critical section)</li>
 </ul>
 <h3 id="high-level-language-implementation">High Level Language Implementation</h3>
 <ul>
-<li>Peterson's Algorithm<ul>
+<li>Peterson's Algorithm</li>
 <li>Keep a <code>turn</code> variable, so process can only run when it is their turn</li>
 <li>Keep a <code>Want</code> array, so process can only run if they want</li>
 <li><img alt="petersonAlgorithm" src="../petersonAlgorithm.png" /></li>
-</ul>
-</li>
-<li>Disadvantages<ul>
+<li>Disadvantages</li>
 <li>Busy waiting</li>
 <li>Low level: more error prone</li>
 </ul>
-</li>
-</ul>
 <h3 id="high-level-abstraction">High Level Abstraction</h3>
 <ul>
-<li>Semaphore<ul>
+<li>Semaphore</li>
 <li>A generalized synchronization mechanism</li>
 <li>Only behaviours are specified</li>
 <li>Provides<ul>
@@ -1419,28 +1284,20 @@ int main() {
 <li>A way to unblock/ wake up one or more sleeping process</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Wait(S) (called before a process enters critical section)<ul>
+<li>Wait(S) (called before a process enters critical section)</li>
 <li>If S &lt;= 0, blocks processes (go to sleep)</li>
 <li>Decrement S</li>
-</ul>
-</li>
-<li>Signal(S) (called after a process exits critical section)<ul>
+<li>Signal(S) (called after a process exits critical section)</li>
 <li>Increments S</li>
 <li>Wakes up one sleeping process if any</li>
-</ul>
-</li>
 <li>This usage is commonly known as mutex (mutual exclusion)</li>
-<li>Properties<ul>
+<li>Properties</li>
 <li>Given S initial &gt;= 0</li>
 <li>Invariant: S current = S initial + number of signals() operations executed - number of wait() operations completed</li>
 </ul>
-</li>
-</ul>
 <h3 id="classical-synchronization-problems">Classical Synchronization Problems</h3>
 <ul>
-<li>Producer consumer<ul>
+<li>Producer consumer</li>
 <li>Processes share a bounded buffer of size K</li>
 <li>Producers produce items to insert into buffer</li>
 <li>Consumers remove items from buffer</li>
@@ -1456,9 +1313,7 @@ int main() {
 <li>signal(notEmpty): 1 producer wakes 1 consumer</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Readers writers<ul>
+<li>Readers writers</li>
 <li>Processes share a data structure D</li>
 <li>Readers retrieve information from D<ul>
 <li>If they are the first reader, wait for roomEmpty</li>
@@ -1467,24 +1322,18 @@ int main() {
 </li>
 <li>Writer modifies information in D (when roomEmpty)</li>
 <li>Writer might face starvation if rate of arrival of readers &gt; rate of departure of readers (so number of readers never reach 0)</li>
-</ul>
-</li>
-<li>Dining philosophers<ul>
+<li>Dining philosophers</li>
 <li>Tanenbaum solution</li>
 <li>To eat, a philosopher must acquire both the left and right chopsticks</li>
 <li>If a philosopher cannot acquire both chopsticks, they wait until both are available</li>
 </ul>
-</li>
-</ul>
 <h3 id="synchronization-implementations">Synchronization Implementations</h3>
 <ul>
-<li>POSIX semaphore<ul>
+<li>POSIX semaphore</li>
 <li><code>#include &lt;semaphore.h&gt;</code></li>
 <li>Initialize a semaphore</li>
 <li>Perform wait() or signal() on semaphore</li>
-</ul>
-</li>
-<li>pthread mutex and conditional variables<ul>
+<li>pthread mutex and conditional variables</li>
 <li>Synchronization mechanisms for pthreads</li>
 <li>Mutex (pthread_mutex):<ul>
 <li>Binary semaphore (i.e. equivalent Semaphore(1))</li>
@@ -1499,11 +1348,9 @@ int main() {
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="memory-abstraction">Memory Abstraction</h2>
 <ul>
-<li>Types of data in a process<ul>
+<li>Types of data in a process</li>
 <li>Transient Data:<ul>
 <li>Valid only for a limited duration, e.g., during function call</li>
 <li>e.g., parameters, local variables</li>
@@ -1514,38 +1361,28 @@ int main() {
 <li>e.g., global variable, constant variable, dynamically allocated memory</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>If two processes are using the same physical memory, there might be conflicts in memory access because both processes assume memory starts at 0<ul>
+<li>If two processes are using the same physical memory, there might be conflicts in memory access because both processes assume memory starts at 0</li>
 <li>Use logical adddress</li>
 <li><img alt="logicalAddress" src="../logicalAddress.png" /></li>
 </ul>
-</li>
-</ul>
 <h3 id="contiguous-memory-management">Contiguous Memory Management</h3>
 <ul>
-<li>Assumptions<ul>
+<li>Assumptions</li>
 <li>Each process occupies a contiguous memory region</li>
 <li>Physical memory is large enough to contain one or more processes with complete memory space</li>
 </ul>
-</li>
-</ul>
 <h4 id="memory-partitioning">Memory Partitioning</h4>
 <ul>
-<li>Fixed-Size Partitions<ul>
+<li>Fixed-Size Partitions</li>
 <li>Physical memory is split into fixed number of partitions of equal size</li>
 <li>A process will occupy one of the partitions</li>
 <li>Causes internal fragmentation (space leftover within partition when process takes less than partition size)</li>
-</ul>
-</li>
-<li>Variable-Size Partitions<ul>
+<li>Variable-Size Partitions</li>
 <li>Partition is created based on the actual size of process</li>
 <li>OS keep track of the occupied and free memory regions</li>
 <li>Causes external fragmentation from removing processes</li>
 <li>Can use a linked list (takes more time) to move occupied partitions and create larger holes</li>
-</ul>
-</li>
-<li>Allocation algorithm<ul>
+<li>Allocation algorithm</li>
 <li>First-fit<ul>
 <li>Take the first hole that is large enough</li>
 </ul>
@@ -1570,27 +1407,21 @@ int main() {
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="disjoint-memory-schemes">Disjoint Memory Schemes</h2>
 <h3 id="paging">Paging</h3>
 <ul>
 <li>Physical memory is split into regions of fixed size (known as physical frames)</li>
 <li>Logical memory is similarly split into regions of the same size (logical page)</li>
 <li>Lookup table to provide translation between logical page to physical page (page table)</li>
-<li>Physical address = frame_number x sizeof(physical_frame) + offset<ul>
+<li>Physical address = frame_number x sizeof(physical_frame) + offset</li>
 <li>Offset: displacement from the beginning of the physical frame</li>
-</ul>
-</li>
-<li>Address translation formula<ul>
+<li>Address translation formula</li>
 <li>Page/Frame size of 2^n</li>
 <li>m bits of logical address</li>
 <li><strong>Frame number</strong> represented by (m - n) bits</li>
 <li><strong>Offset</strong> represented by n bits</li>
 <li><img alt="addressTranslation" src="../addressTranslation.png" /></li>
-</ul>
-</li>
-<li>To store the page table,<ul>
+<li>To store the page table,</li>
 <li>PCB (only software)<ul>
 <li>Requires 2 memory accesses for every memory reference</li>
 </ul>
@@ -1601,21 +1432,15 @@ int main() {
 <li>TLB miss: memory access to access the page table</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>When context switch occurs, TLB entries are flushed<ul>
+<li>When context switch occurs, TLB entries are flushed</li>
 <li>New process will not get incorrect translation</li>
-</ul>
-</li>
 </ul>
 <h4 id="protection">Protection</h4>
 <ul>
-<li>Access-Right Bits<ul>
+<li>Access-Right Bits</li>
 <li>Each page table entry has a writable, readable, executable bit</li>
 <li>Every memory access is checked against the access right bits in hardware</li>
-</ul>
-</li>
-<li>Valid Bit<ul>
+<li>Valid Bit</li>
 <li>Included in each page table entry</li>
 <li>Indicated whether the page is valid to access by the process</li>
 <li>Every memory access is checked against this bit in hardware:<ul>
@@ -1623,37 +1448,27 @@ int main() {
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h4 id="page-sharing">Page Sharing</h4>
 <ul>
-<li>Several processes to share the same physical memory frame<ul>
+<li>Several processes to share the same physical memory frame</li>
 <li>Use the same physical frame number in the page table entries</li>
-</ul>
-</li>
-<li>Implementing Copy-On-Write<ul>
+<li>Implementing Copy-On-Write</li>
 <li>Parent and child process can share a page until one tries to change a value in it</li>
-</ul>
-</li>
 <li><img alt="pageSharing" src="../pageSharing.png" /></li>
 </ul>
 <h3 id="segmentation-scheme">Segmentation Scheme</h3>
 <ul>
 <li>Manage memory at the level of memory segments</li>
-<li>Each memory segment<ul>
+<li>Each memory segment</li>
 <li>Has a name</li>
 <li>Has a limit</li>
-</ul>
-</li>
 <li>Memory references specified as "segment name + offset"</li>
-<li>Logical address translation<ul>
+<li>Logical address translation</li>
 <li>Each segment mapped to a contiguous physical memory region with a base address and a limit/size</li>
 <li>Logical address <code>&lt;SegID, Offset&gt;</code></li>
 <li>SegID is used to look up <Base, Limit> of the segment in a segment table</li>
 <li>Physical address = base + offset</li>
 <li>Offset &lt; limit for valid access</li>
-</ul>
-</li>
 <li>Each segment is an independent contiguous memory space</li>
 <li>Segmentation requires variable-size contiguous memory regions (can cause external fragmentation)</li>
 </ul>
@@ -1671,27 +1486,23 @@ int main() {
 <h3 id="extended-paging-scheme">Extended Paging Scheme</h3>
 <ul>
 <li>Use page table for virtual -&gt; physical address translation</li>
-<li>Two page types:<ul>
+<li>Two page types:</li>
 <li>Memory resident (pages in physical memory)</li>
 <li>Non-memory resident (pages in secondary storage)</li>
 <li>Use a resident bit in the page-table entry</li>
-</ul>
-</li>
-<li>CPU can only access memory resident pages<ul>
+<li>CPU can only access memory resident pages</li>
 <li>If attempt to access non-resident, page fault</li>
-</ul>
-</li>
 </ul>
 <p>Hardware</p>
 <ol>
 <li>
 <p>Check page table:</p>
-<ul>
-<li>Is page X a memory resident?</li>
+</li>
+<li>
+<p>Is page X a memory resident?</p>
+</li>
 <li>Yes: Access physical memory location. Done.</li>
 <li>No: raise an exception!</li>
-</ul>
-</li>
 </ol>
 <p>OS</p>
 <ol>
@@ -1699,20 +1510,16 @@ int main() {
 <li>Locate page X in secondary storage</li>
 <li>Load page X into a physical memory</li>
 <li>Update page table</li>
-<li>Go to step 1 to re-execute the same instruction<ul>
+<li>Go to step 1 to re-execute the same instruction</li>
 <li>This time with the page in memory</li>
-</ul>
-</li>
 </ol>
 <h3 id="issues">Issues</h3>
 <ul>
 <li>Secondary storage access time &gt;&gt; physical memory access time</li>
-<li>If memory access results in page fault most of the time<ul>
+<li>If memory access results in page fault most of the time</li>
 <li>To load non-resident pages into memory</li>
 <li>Entire system can slow down significantly (known as thrashing)</li>
-</ul>
-</li>
-<li>Locality principles<ul>
+<li>Locality principles</li>
 <li>Temporal Locality:<ul>
 <li>Memory address used now is likely to be used again</li>
 </ul>
@@ -1721,28 +1528,22 @@ int main() {
 <li>Memory addresses close to the address that is used now is likely to be used soon</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Demand paging<ul>
+<li>Demand paging</li>
 <li>Process start with no memory resident page</li>
 <li>Only allocate a page when there is a page fault</li>
 <li>Fast startup time for new process</li>
 <li>Might be sluggish at the start due to page faults</li>
 </ul>
-</li>
-</ul>
 <h3 id="page-table-structure">Page Table Structure</h3>
 <ul>
 <li>Page table information is kept with the process information and takes up physical memory space</li>
-<li>Direct paging<ul>
+<li>Direct paging</li>
 <li>Keep all entries in a single table</li>
 <li>Virtual Address: 32 bits, Page Size = 4KiB</li>
 <li>P=32–12=20; 2^20 pages</li>
 <li>Size of PTE = 2 bytes</li>
 <li>Page Table Size = 2^20 * 2 bytes = 2MiB</li>
-</ul>
-</li>
-<li>2-level paging<ul>
+<li>2-level paging</li>
 <li>Process may not use entire virtual memory space</li>
 <li><img alt="2LevelPaging" src="../2LevelPaging.png" /></li>
 <li>If original page tabel has 2^P entries<ul>
@@ -1757,7 +1558,272 @@ int main() {
 </ul>
 </li>
 </ul>
+<h3 id="inverted-page-table">Inverted Page Table</h3>
+<ul>
+<li>Page table is a per-process information</li>
+<li>With M processes in memory, there are M independent page tables</li>
+<li>Observation:</li>
+<li>Only N physical memory frames can be occupied</li>
+<li>Out of the M page tables, only N entries are valid!</li>
+<li>Huge waste: N &lt;&lt; Overhead of M page tables</li>
+<li>Idea:</li>
+<li>Keep a single mapping of physical frame to <code>&lt;pid, page#&gt;</code></li>
+<li>pid = process id , page# = logical page number in the corresponding the process</li>
+<li>page# is not unique among processes</li>
+<li>pid + page# can uniquely identify a memory page</li>
+<li><img alt="invertedPageTable" src="../invertedPageTable.png" /></li>
+<li>Entries are ordered by frame number instead of page number</li>
+</ul>
+<h3 id="page-replacement-algorithms">Page Replacement Algorithms</h3>
+<ul>
+<li>No free physical memory frame during a page fault</li>
+<li>Memory access time: T access = (1 - p) _ T mem + P _ T page fault</li>
+<li>p = probability of page fault</li>
+<li>T mem = access time for memory resident page</li>
+<li>T page fault = access time if page fault occurs</li>
+</ul>
+<h4 id="optimal-page-replacement-opt">Optimal Page Replacement (OPT)</h4>
+<ul>
+<li>Replace the page that will not be needed again for the longest period of time</li>
+<li>Guarantees minimum number of page fault</li>
+<li>But future knowledge of memory references is needed</li>
+</ul>
+<h4 id="fifo-page-replacement-algorithm">FIFO Page Replacement Algorithm</h4>
+<ul>
+<li>Memory pages are evicted based on their loading time</li>
+<li>Evict the oldest memory page</li>
+<li>OS maintains a queue of resident page numbers</li>
+<li>But FIFO does not exploit temporal locality</li>
+</ul>
+<h4 id="least-recently-used-lru">Least Recently Used (LRU)</h4>
+<ul>
+<li>Make used of temporal locality</li>
+<li>Replace the page that has not been used in the longest time</li>
+<li>But implementation is difficult</li>
+<li>Using a "time" counter: need to search through all pages to find the smallest</li>
+<li>Using a "stack": hard to implement in hardware because it is not a pure stack</li>
+</ul>
+<h4 id="second-chance-page-replacement-aka-clock">Second-Chance Page Replacement (aka CLOCK)</h4>
+<ul>
+<li>Modified FIFO to give a second chance to pages that are accessed</li>
+<li>Each page table entry has a reference bit</li>
+<li>Degenerate into FIFO algorithm</li>
+</ul>
+<p>Algorithm:</p>
+<ol>
+<li>The oldest FIFO page is selected (victim page)</li>
+<li>If reference bit == 0, page is replaced</li>
+<li>If reference bit == 1, page is skipped and reference is cleared to 0</li>
+</ol>
+<h3 id="frame-allocation">Frame Allocation</h3>
+<ul>
+<li>Best way to distribute N physical memory frames to M processes competing for frames</li>
+<li>Equal allocation</li>
+<li>Each process gets N/M frames</li>
+<li>Proportional allocation</li>
+<li>Each process gets size_of_process / total_size * N frames</li>
+<li>Victim page selected among pages of the process that causes page fault: local replacement</li>
+<li>Number of frames allocated to a process remain constant</li>
+<li>If frames allocated not enough, it may hinder the progress of process</li>
+<li>Victim page selected among all physical frames: global replacement</li>
+<li>Allow self-adjustment between processes</li>
+<li>Badly behaved processes can steal frames from other processes</li>
+<li>Thrashing</li>
+<li>Insufficient physical frame</li>
+<li>In global replacement: A thrashing process "steals" page from other process cause other process to thrash (Cascading Thrashing)</li>
+<li>In local replacement: thrashing can be limited to one process, but that process can use up the I/O bandwidth and degrade performance of others\</li>
+<li>Right number of frames: working set</li>
+<li>Transient region: working set changing in size</li>
+<li>Stable region: working set about the same for a long time</li>
+</ul>
+<h2 id="file-management">File Management</h2>
+<ul>
+<li><img alt="fileMetadata" src="../fileMetadata.png" /></li>
+<li>Common file types:</li>
+<li>regular files: contains user information</li>
+<li>Directories: system files for file system structure</li>
+<li>Special files: character/ block oriented</li>
+<li>File types:</li>
+<li>Use file extension as indication</li>
+<li>Use embedded information in the file (magic number stored at beginning of file)</li>
+</ul>
+<h3 id="file-protection">File Protection</h3>
+<ul>
+<li>Controlled access to the information stored in a file</li>
+<li>Access: read, write, execute, append, delete, list</li>
+<li>Users classified into three classes:</li>
+<li>Owner</li>
+<li>Group</li>
+<li>Universe</li>
+<li>Define permission of three access types: r w x r w x r w x</li>
+<li>Access control list can be</li>
+<li>Minimal (same as ppermission bits)</li>
+<li>Extended (added named users/ groups)</li>
+</ul>
+<h3 id="file-data">File Data</h3>
+<ul>
+<li>Structure</li>
+<li>Array of byes<ul>
+<li>Each byte has a unique offset from file start</li>
+</ul>
 </li>
+<li>Fixed length records<ul>
+<li>Array of records that can grow and shrink</li>
+</ul>
+</li>
+<li>Variable length records<ul>
+<li>Flexible but harder to locate</li>
+</ul>
+</li>
+<li>Access methods</li>
+<li>Sequential access<ul>
+<li>Data read in order, starting from beginning</li>
+<li>e.g. cassette tapes</li>
+</ul>
+</li>
+<li>Random access<ul>
+<li>Data can be read in any order</li>
+<li>Read (offset): every read operation explicitly states the position to be accessed</li>
+<li>Seek (offset): special operation to move to a new location in file</li>
+</ul>
+</li>
+<li>Direct access<ul>
+<li>Used for file that contains fixed-length records</li>
+<li>Allow random access to any record directly</li>
+</ul>
+</li>
+<li><img alt="fileDataGenericOperations" src="../fileDataGenericOperations.png" /></li>
+<li>OS provides file operations as system calls</li>
+<li>Provide proection, concurrent and efficient access</li>
+<li><img alt="fileOperationsSystemCalls" src="../fileOperationsSystemCalls.png" /></li>
+</ul>
+<h3 id="file-information">File Information</h3>
+<ul>
+<li>Information kept for an opened file</li>
+<li>File pointer: keep track of the current position within a file</li>
+<li>File descriptor: unique identifier of the file</li>
+<li>Disk location: actual file location on disk</li>
+<li>Open count/ reference count: number of proccesses that have the file opened</li>
+<li><img alt="fileOperations" src="../fileOperations.png" /></li>
+<li>Per-process open-file table:</li>
+<li>To keep track of the open files for a process</li>
+<li>Each entry points to the system-wide open-file table entries</li>
+<li>System-wide open-file table:</li>
+<li>To keep track of all the open files in the system</li>
+<li>Each entry points to a V-node entry</li>
+<li>System-wide V-node (virtual node) table</li>
+<li>To link with the file on physical drive</li>
+<li>Contains the information about the physical location of the file</li>
+</ul>
+<h4 id="processes-and-files">Processes and Files</h4>
+<ul>
+<li>Process A tries to open a file that is currently being written by Process B.</li>
+<li>OS uses the Open File Table to check for existing opened file.</li>
+<li>Since the file is already opened for reading, it can reject the file open system call from process A.</li>
+<li>Process A tries to use a bogus file descriptor in a file-related system call.</li>
+<li>Since Process A passed the file descriptor (fd for short) to OS as parameter, OS can check whether that particular entry is valid (or even exists) in the PCB of A.</li>
+<li>If the fd is out of range, non-existent etc, OS can reject the file-related system calls made by Process A.</li>
+<li>Process A can never "accidentally" access files opened by Process B.</li>
+<li>Since the fd index is in process specific PCB, there is no way Process A can access Process B's file descriptor table.</li>
+<li>Process A and Process B reads from the same file. However, their reading should not affect each other.</li>
+<li>Process A and Process B can have their own fds, which refers to two distinct locations in the open file table.</li>
+<li>Each entry of the open file table keep track of the current location separately. This enables Process A and Process B to read from the same file independently.</li>
+<li>Redirect Process A's standard input / output, e.g. "a.out &lt; test.in &gt; test.out".</li>
+<li>So, for all file redirections, it is a simple question of:<ul>
+<li>Opening and possibly creating the file.</li>
+<li>Replace the corresponding file descriptor to point to the entry from (1) in the open file table.</li>
+</ul>
+</li>
+</ul>
+<h3 id="directory">Directory</h3>
+<ul>
+<li>Used to</li>
+<li>Provide a logical grouping of files</li>
+<li>Keep track of files</li>
+<li>Single-Level</li>
+<li>All files are in root directory</li>
+<li>Tree-Structured</li>
+<li>Directories can be recursively embedded in other directories</li>
+<li>Direct Acyclic Graph</li>
+<li>If a file can be shared, only one copy of actual content</li>
+<li>"Appears" in multiple directories with different file names</li>
+<li>Alias is for files only, not directories</li>
+<li>Unix hard link (<code>ln</code>)<ul>
+<li>Directory A and B have separate pointers to the actual file F in disk</li>
+</ul>
+</li>
+<li>Can only be deleted when all links are deleted</li>
+<li>General Graph</li>
+<li>Users have the capability to create a cycle of directory within a directory</li>
+<li>Hard to traverse, and need to prevent infinite looping</li>
+<li>Unix symbolic link/ soft link (<code>ln -s</code>)<ul>
+<li>Symbolic link is a special link file that contains the path name of the file F</li>
+<li>When link file is accessed, it finds where the F is and accesses F</li>
+<li>Simple deletion: link is deleted, not file; file is deleted, dangling link</li>
+</ul>
+</li>
+</ul>
+<h3 id="file-system-implementations">File System Implementations</h3>
+<ul>
+<li><img alt="genericDiskOrganization" src="../genericDiskOrganization.png" /></li>
+<li>Master Boot Record (MBR) at sector 0 with partition table</li>
+<li>Followed by one or more partitions</li>
+<li>Each partition can contain an independent file system</li>
+</ul>
+<h4 id="file-block-allocation">File Block Allocation</h4>
+<ul>
+<li>Contiguous</li>
+<li>Allocate consecutive disk blocks to a file</li>
+<li>External fragmentation</li>
+<li>Linked list</li>
+<li>Keep a linked list of disk blocks that each stores next disk block number and actual file data</li>
+<li>Random access in a file is slow</li>
+<li>File allocation table (FAT)</li>
+<li><img alt="FatAllocation" src="../FatAllocation.png" /></li>
+<li>FAT entry contains either:<ul>
+<li>FREE code (block is unused)</li>
+<li>Block number of next block</li>
+<li>EOF code (i.e., NULL pointer)</li>
+<li>BAD block (block is unusable, i.e., disk error)</li>
+</ul>
+</li>
+<li>Faster random access</li>
+<li>FAT keeps track of all disk blocks in a partition, which will be expensive when disk is large</li>
+<li>Indexed allocation</li>
+<li>Maintain blocks for each file; IndexBlock[N] == Nth block address</li>
+<li>Lesser memory overhead</li>
+<li>Limited maximum file size (max number of blocks == number of index block entries)</li>
+<li>I-Node Data</li>
+<li>Every file/ directory has an I-node associated</li>
+<li>Allows fast access to small file</li>
+<li>Flexibility in handling huge files</li>
+<li><img alt="iNodeDataBlock" src="../iNodeDataBlock.png" /></li>
+</ul>
+<h4 id="free-space-management">Free Space Management</h4>
+<ul>
+<li>Maintain free space information</li>
+<li>Bitmap</li>
+<li>Each disk block represented by 1 bit</li>
+<li>Linked list</li>
+<li>Each disk block contains number of free disk block numbers or pointer to next free space</li>
+<li>Easy to locate free block</li>
+<li>High overhead</li>
+</ul>
+<h4 id="implementing-directory">Implementing Directory</h4>
+<ul>
+<li>Keep track of files in directory</li>
+<li>Map the file name to file information</li>
+<li>Linear list</li>
+<li>Each directory consists of a linear list where each entry represents a file</li>
+<li>Locating a file requires linear search</li>
+<li>Hash table</li>
+<li>Each directory consists of a hash table of size N</li>
+<li>Fast lookup</li>
+<li>Hash table has limited size</li>
+<li>File information</li>
+<li>Each directory consists of file information (name and disk block information)</li>
+<li>Stored in directory entry directly OR</li>
+<li>Store only name and point to some data structure for other info</li>
 </ul></div>
             </div>
         </div>
