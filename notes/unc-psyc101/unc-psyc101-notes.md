@@ -26,6 +26,37 @@
     - [Gustatory System](#gustatory-system)
     - [Olfactory System](#olfactory-system)
     - [Somatosensory System](#somatosensory-system)
+- [5. Variations in Consciousness](#5-variations-in-consciousness)
+    - [Behavioral/ Psychological Description of sleep](#behavioral-psychological-description-of-sleep)
+    - [Sleep](#sleep)
+    - [Factors Correlated with Sleeping Pattern](#factors-correlated-with-sleeping-pattern)
+    - [Effects of Sleep Deprivation](#effects-of-sleep-deprivation)
+    - [Effects of Sleep](#effects-of-sleep)
+    - [Sleep Disorders](#sleep-disorders)
+    - [Hypnosis](#hypnosis)
+    - [Meditation](#meditation)
+    - [Drugs](#drugs)
+- [6. Learning](#6-learning)
+    - [Classical Conditioning (Pavlovian Conditioning)](#classical-conditioning-pavlovian-conditioning)
+        - [History](#history)
+        - [Terms](#terms-1)
+        - [Acquisition](#acquisition)
+        - [Extinction](#extinction)
+        - [Stimulus Generalization and Discrimination](#stimulus-generalization-and-discrimination)
+        - [Higher-order Conditioning](#higher-order-conditioning)
+        - [Biological Influence on Conditioning](#biological-influence-on-conditioning)
+    - [Operant Conditioning (Instrumental Learning)](#operant-conditioning-instrumental-learning)
+        - [History](#history-1)
+        - [Terms](#terms-2)
+        - [Acquisition](#acquisition-1)
+        - [Extinction](#extinction-1)
+        - [Stimulus Generalization and Discrimination](#stimulus-generalization-and-discrimination-1)
+        - [Reinforcements](#reinforcements)
+        - [Biological Influence on Conditioning](#biological-influence-on-conditioning-1)
+        - [Cognition in Classical \& Operant Conditioning](#cognition-in-classical--operant-conditioning)
+    - [Observational Learning (modeling)](#observational-learning-modeling)
+        - [History](#history-2)
+        - [Terms](#terms-3)
 
 ## 1: Evolution of Psychology
 
@@ -379,3 +410,327 @@
     -   Gate control theory by Melzack and Wall (theory of how we modulate pain)
         -   Triggers: central nervous system (brain can send stimulation to close pain gates)
         -   Peripheral nervous system (rubbing area around an injury works, because other sematosensory nerves are stimulated in that area, synapses - pain & rubbing - compete to get to the spinal cord, stopping pain)
+
+## 5. Variations in Consciousness
+
+### Behavioral/ Psychological Description of sleep
+
+-   Alert/ Awake
+    -   Beta waves
+    -   13 - 24 cycles per second
+-   Relaxed, drowsy
+    -   Alpha waves
+    -   8 - 12 cycles per second
+-   Stage 1
+    -   Theta waves
+    -   4 - 7 cycles per second
+-   Stage 2
+    -   Theta waves
+    -   4 - 7 cycles per second
+-   Stage 3: slow wave sleep (SWS)
+    -   0 - 49% delta waves
+    -   <4 cycles per second
+-   Stage 4: slow wave sleep (SWS)
+    -   Above 50% delta waves
+    -   <4 cycles per second
+-   REM
+    -   High frequency, low amplitude waves
+    -   Beta waves, some alpha waves
+
+### Sleep
+
+-   What drives sleepiness
+    -   Metabolic processes (mostly active brain)
+    -   Circadian rhythm
+-   Circadian rhythm
+    -   Regulated by suprachiasmatic nuclues (hypothalamus)
+    -   SCN -> pineal gland -> melatonin -> increase sleepiness
+    -   Can be entrained by light
+
+### Factors Correlated with Sleeping Pattern
+
+-   Age
+    -   Infants: greater total sleep and amount of REM (50%, compared to 20% in adults)
+    -   More than 70: 50% decrease in SWS, slight decrease in REM
+-   Genetics/ biology
+-   Cultural variations
+
+### Effects of Sleep Deprivation
+
+-   Complete deprivation: weariness, irritability, paranois, lapses in attention, memory deficits, hallucinations
+-   Partial/ restricted deprivation: inconsistent effects, increased sleepiness, impairments of attention, reaction time, motor coordination, decision making, endocrine and immune system function
+-   Correlated with increased accidents and higher rates of physical issues
+-   Rebound effects of selective REM and SWS deprivation (brain will increasingly insist on sleep stage when deprived)
+-   Mortality rate and sleep amounts correlated (greatest mortality when sleep is less than 7h and more than 9h)
+
+### Effects of Sleep
+
+-   Cognitive: brain development
+    -   IQ
+    -   Memory consolidation
+    -   Insights during REM
+-   Energy conservation
+    -   Marine mammals have the ability to sleep halfway
+    -   Restore bodily resources
+-   Dreams
+    -   Adults: focused on self
+        -   Sex, aggression, misfortune
+        -   Content of waking life spill into dreams (Frued's "day residue")
+    -   Children: more static than storyline
+    -   Theories of purposes:
+        -   Frued: wish fulfillment
+        -   R. Cartwright: problem-solving/ mood-regulation view
+        -   Hobson: activation-synthesis model
+
+### Sleep Disorders
+
+-   Hypersomnia: excessive sleepiness for at least 1 month
+    -   TX: stimulants
+-   Insomnia: difficulty initiating or maintain sleep for at least 1 month
+    -   More common in women, increase with age, variety of negative health conditions correlated
+    -   TX: teach good sleep hygiene, relaxation training, benzodiazepines, non-benzodiazepines (e.g. Ambien, Sonata, Lunesta), melatonin
+-   Narcolepsy: irresistable attacks of refreshing sleep that occur daily over at least 3 months
+    -   Presence of one or more of:
+        -   Cataplexy: brief loss of voluntary muscle tone triggered by strong emotions
+        -   Hypnogogic: Occur when you're falling asleep
+        -   Hypnopompic hallucinations: Occur when you're waking up
+        -   Sleep paralysis
+    -   TX: stimulants, SSRIs
+-   Sleep apnea: breathing stops randomly ~10sec/ 10-15 min per hour of sleep
+    -   Associated to obesity and age
+    -   TX: CPAP, lifestyle modifications, upper airway and craniofacial surgery
+-   Somnambulism: sleep walking
+-   REM sleep behavior disorder:
+    -   Being chased or attacked in dreams
+    -   Deterioration of brain stem
+    -   May precede Parkinson's up to 10 years
+
+### Hypnosis
+
+-   Systematic procedure that typically produces a heightened state of suggestibility
+-   Associative features
+    -   Anesthesia
+    -   Sensory distortions/ hallucinations
+    -   Disinhibition
+    -   Post hypnotic suggestions and amnesia may occur
+    -   Hilgard's dissociative theory: hypnotic induction is said to split the functioning of the executive control system (ECS) into different streams
+    -   Highway hypnosis: altered mental state in which an automobile driver can drive lengthy distances and respond adequately to external events with no recollection of consciously having done so
+
+### Meditation
+
+-   Practices that train attention to heighten awareness and bring mental processes under greater voluntary control
+-   Associative features
+    -   EEG: increase in alpha and theta waves
+    -   Transcendant experience is not equal to relaxation
+    -   Correlated with: decrease stress, anxiety, BP; increase immune function, mood, self-esteem, overall health and well-being
+    -   Decreased parietal lobe activity (where somatosensory system resides)
+    -   Increased left prefrontal lobe activity
+
+### Drugs
+
+-   Narcotics
+    -   E.g. morphine, heroin, oxycodone, codeine, methadone
+    -   Effects:
+    -   anxiety reduction, pain relief, drowsiness
+    -   impaired mental & motor functioning
+    -   constipation
+    -   withdrawal: severe diarrhea, etc.
+    -   increase in infectious diseases
+    -   used for: analgesic, cough, diarrhea
+    -   Sedatives: CNS depressants
+        -   E.g. barbiturates, benzodiazepines
+        -   Effects:
+            -   relaxation, anxiety, increased drowsiness
+            -   quick tolerance/medication backfires
+            -   impaired mental & physical functioning
+            -   increased risk of accidents
+            -   synergistic effect with alcohol
+            -   withdrawal can be potentially dangerous
+            -   used for anxiety, sleeping issues
+    -   Stimulants: increase CNS activity
+        -   E.g. caffeine, nicotine, cocaine/crack, amphetamines/crank/crystal meth, MDMA (low doses; in high doses, MDMA can have hallucinogenic effects)
+        -   Effects:
+            -   euphoria
+            -   increased energy, alertness, CV arousal and/or CV problems, panic, insomnia, sweating/urination
+            -   psychosis: when people lose some contact with reality (e.g., cocaine, amphetamines)
+            -   decreased appetite
+            -   (cocaine, for example): damaged nasal membranes, increased CV and respiratory problems
+            -   used for narcolepsy, ADHD (methylphenidate), local anesthetic (cocaine)
+    -   Hallucinogens: small amount alters sensory/perception
+        -   E.g. LSD, mescaline (peyote), psilocybin (mushroom), MDMA too (“ecstasy”), though in larger dose
+        -   Effects:
+            -   euphoria, distortions in sensory & perceptual experiences (e.g., mystical experiences)
+            -   anxiety, paranoia (“bad trip”)
+            -   kills 5-HT neurons
+            -   impaired judgment → ↑ risk of accidents
+    -   Cannabis
+        -   E.g. marijuana, hashish, THC (Tetrahydrocannabinol, a cannabinoid found in cannabis)
+        -   Effects:
+            -   mild euphoria, relaxation, sensory/perceptual distortions (e.g., “slowing of time,” vivid perceptions), increased hunger, esp. for sweets
+            -   short-term memory impairments, metabolizes slowly
+            -   decreased IQ in young users
+            -   persistent memory issues in middle aged users (even after stopping use)
+            -   increased accident risk
+            -   used for: TX of nausea & pain, e.g., cancer, glaucoma
+    -   (ethyl) Alcohol
+        -   Effects:
+            -   mild euphoria, relaxation, mood swings, quarrelsomeness
+            -   90% student rapes, 95% on violent crimes on campus
+            -   impairments of cognitive & motor function
+            -   21% unplanned sex, 50% fatal vehicle accidents (according to some sources) , ~40% fatal bicycle accidents
+            -   liver damage (cirrhosis, which is scarring), hypertension, stroke, other heart diseases, neurological issues (e.g., Korsakoff’s syndrome), Korsakoff symptoms include severe memory problems, apathy, walking problems, etc., cancers
+            -   increased risk of death in general - males: 2x increased mortality, females: 4x increased mortality
+        -   withdrawal could be fatal
+            -   delirium tremens—can be fatal in some cases
+            -   is characterized by “the shakes” as well as by symptoms of delirium, which include cognitive deficits, changes in CNS arousal, and psychotic features like hallucinations & delusions
+        -   a standard drink has 0.6 oz. of alcohol
+
+## 6. Learning
+
+-   Learning refers to the change in a person's behavior to a given situation brought about by repeated experiences in that situation, provided the behavior change cannot be explained on the basis of native response tendencies, maturation, or temporary states of the subject
+
+### Classical Conditioning (Pavlovian Conditioning)
+
+#### History
+
+-   Pavlov & psychic reflexes demonstration
+
+#### Terms
+
+-   Unconditioned stimulus (US or UCS)
+    -   naturally elicits a response
+-   Unconditioned response (UR)
+    -   natural response to US
+-   Conditioned stimulus (CS)
+    -   a previously neutral stimulus which, after pairings with a US, attains the ability to elicit the same response
+-   Conditioned response (CR)
+    -   the response to the CS (which looks like the UR, at least on the surface, and not in all cases)
+
+#### Acquisition
+
+-   stimulus contiguity
+    -   simultaneous presentation (of UCS & CS)
+        -   tone & meat are presented and ended at same time
+    -   short-delayed presentation
+        -   tone begins shortly before meat
+        -   tone & meat end at same time
+    -   trace presentation
+        -   tone is presented & ended right before the meat is presented then ended
+-   saliency of stimulus
+    -   stimulus which is most noticeable is more likely a good potential CS
+
+#### Extinction
+
+-   Weaking asociation by presenting CS without UCS
+-   Spontaneous recovery (after a period of non-exposure to CS)
+-   Renewal effect (after re-exposure to environment where learning ocurred)
+
+#### Stimulus Generalization and Discrimination
+
+-   Stimulus generalization: when a person generalizes what they have learned from a specific CS to other stimuli which are similar to the original CS
+    -   e.g., if you have been classically conditioned to be scared of Bozo and then are later scared of all clowns
+-   Stimulus discrimination: when a person does NOT generalize what they have learned from a specific CS to other stimuli which are similar to the original CS
+    -   e.g., if you have been classically conditioned to be scared of Bozo but are not scared of other clowns (so you are discriminating between Bozo and the other clowns)
+
+#### Higher-order Conditioning
+
+-   When a CS functions as a UCS
+-   Example: A makes you happy, B provides A so B makes you happy (1st order), C provides B provides A so C makes you happy (2nd order)
+
+#### Biological Influence on Conditioning
+
+-   Conditioned taste aversion
+    -   one trial
+    -   extended delay between CS & US presentation
+    -   food stimuli-nausea associations are likely
+-   Evolutionarily adaptative
+-   CS: ecologically relevant vs. arbitrary, neutral stimulus
+
+### Operant Conditioning (Instrumental Learning)
+
+#### History
+
+-   B.F. Skinner (1904 – 1990): demonstrated that organisms repeat those responses that are followed by favorable consequences and organisms tend not to repeat those responses that are followed by negative and/or neutral consequence
+-   Skinner box
+    -   Reinforcement contingencies
+    -   Cumulative recorder
+
+#### Terms
+
+-   reinforcement: consequence that increases tendency to repeat preceding behavior
+    -   positive reinforcement: adding something into the situation that increases the tendency to repeat the preceding behavior
+    -   negative reinforcement: taking something away from the situation that increases the tendency to repeat the preceding behavior
+-   punishment: consequence that ↓ tendency to repeat preceding behavior
+    -   (positive) punishment: adding something into the situation that decreases the tendency to repeat the preceding behavior
+    -   (negative) punishment: taking something out of the situation that decreases the tendency to repeat the preceding behavior
+
+#### Acquisition
+
+-   When the connection between the behavior and a consequence is "aquired"
+-   Shaping: reinforcements fo closer and closer approximations of a desired response
+
+#### Extinction
+
+-   Process where the usual consequence does not follow the emitted behavior
+-   Resistance to extinction
+-   Renewal effect
+
+#### Stimulus Generalization and Discrimination
+
+-   stimulus generalization: hold onto the association between the stimulus (and alike) and consequence
+-   stimulus discrimination: only associate the stimulus (specifically only that stimulus) and consequence
+
+#### Reinforcements
+
+-   Primary reinforcers are those which directly satisfy our biological needs
+-   Secondary reinforcers are those which are associated with primary reinforcements (e.g. money)
+-   Schedules of Reinforcements
+    -   continuous reinforcement
+        -   reinforcement after every single target behavior
+    -   intermittent reinforcement
+        -   fixed-ratio schedule
+            -   reinforcement is given based on a fixed number of responses (e.g., every third response)
+        -   variable-ratio schedule
+            -   reinforcement is given based on an average number of responses (e.g., reinforcement is given, on average, 4 responses)
+        -   fixed-interval schedule
+            -   reinforcement is given based on the first response given after a fixed amount of time has passed (e.g., reinforcement is given if a rat pulls a lever after 4 seconds have passed)
+        -   variable-interval schedule
+            -   reinforcement is given based on the first response given after an average amount of time has passed (e.g., reinforcement is given if a rat pulls a level, on average, after 3 seconds have passed)
+-   Special issue concerning positive punishment
+    -   e.g., corporeal punishment
+    -   poor-quality parent-child relationship, e.g. increased aggression, delinquency, behavior problems. Long term effects: associated with slowed cognitive development, increased criminal behavior, range of mental health issues (cited in Weiten)
+    -   correlational data; however, strong evidence for a causal relationship
+
+#### Biological Influence on Conditioning
+
+-   Instinctive drift
+    -   Operant conditioning is not always successful
+    -   Operant conditioning which tries to go against natural instinct usually fails
+-   Preparedness and Phobias
+-   Classical conditioning and operant conditioning are often used together, e.g. phobias
+    -   classical conditioning establishes the phobia
+    -   operant conditioning maintains the phobia
+-   behavior of avoiding = decreased anxiety = reinforcing = increased likelihood that person will avoid the object of anxiety
+
+#### Cognition in Classical & Operant Conditioning
+
+-   Latent Learning & Cognitive Maps (Edward Tolman, 1930s & 1940s)
+    -   1st group: reinforcement was given after every trial (through a maze) -> steadily improved
+    -   2nd group: no reinforcements were given -> little improvement
+    -   3rd group: reinforcements were given after the 10th trial onward -> sharply improved behavior
+    -   => learning can take place without reinforcement
+    -   mental representation of a map is possible
+-   Signal Relations - predictive value of conditioned stimulus (Robert Rescorla, 1970s & 1980s)
+    -   1st group: a tone signaled a shock every single time -> strong response
+    -   2nd group: a tone signaled a shock only half of the time -> weaker response
+    -   somewhere in the organism’s mind, the predictive value of the environmental cue is being calculated
+
+### Observational Learning (modeling)
+
+#### History
+
+-   Albert Bandura (1970s, 1980s): suggest that many different cognitive processes could be involved with learning including internal processes which allow one to learn vicariously (so vicarious classical and operant conditioning)
+
+#### Terms
+
+-   cognitive processes which may be involved with this type of learning (attention, retention, reproduction, motivation)
