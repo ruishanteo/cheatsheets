@@ -59,6 +59,12 @@
         -   [Terms](#terms-3)
 -   [7. Memory](#7-memory)
     -   [Encoding](#encoding)
+    -   [Storage](#storage)
+        -   [Amnesias](#amnesias)
+        -   [Knowledge \& Memory](#knowledge--memory)
+    -   [Retrieval](#retrieval)
+    -   [Forgetting](#forgetting)
+    -   [Memory Trace: Physiology of Memory](#memory-trace-physiology-of-memory)
 
 ## 1: Evolution of Psychology
 
@@ -743,3 +749,104 @@
 
 -   Attention
     -   Focusing awareness onto something
+    -   Divided attention = decreased memory encoding
+    -   Multi-tasking is really shifting attention between tasks
+        -   high on impulsivity
+        -   high on sensation-seeking
+-   Levels of processing ("digesting" information)
+    -   Structural encoding (how it looks)
+    -   Phonemic encoding (how it sounds)
+    -   Semantic encoding (what it means)
+-   Enriching encoding
+    -   Elaboration
+        -   Linking stimulus to other information
+        -   Examples given with a main indolamine
+    -   Imagery (Paivio's dual-coding theory)
+        -   Linking verbal and visual cues
+        -   Retrieval cues
+    -   Motivation to remember
+        -   Pay more attention to things that we believe are relevant to us
+-   "Learning styles" do not exist; "right/ left brained" do not exist
+
+### Storage
+
+-   Sensory memory
+    -   Duration: ~1/4 second
+    -   Capacity: large
+-   Short-term/ working memory
+    -   Duration: 10 - 20 seconds/ unlimited with uninterrupted rehearsal
+    -   Capacity: 7 ± 2 items/ 4 ± 1 items
+        -   Chunking - creates more room in working memory
+        -   Capacity may be somewhat flexible (e.g. depending on familiarity/ complexity)
+    -   Phonological loop (is the speech and sound related component of working memory and holds verbal and auditory information)
+    -   Episodic buffer ("workbench")
+    -   Working memory capacity (WMC): stable trait, heriditary influence, correlated with IQ
+-   Long-term memory
+    -   Duration: indefinite but not necessarily permanent
+    -   Capacity: unlimited
+    -   Recall is critical
+        -   Retrieval practice
+        -   Distributed studying
+        -   Illusions of Competence (e.g. recency effect - items that came last are remembered more easily)
+    -   Type of long term memory
+        -   Explicit (things you can talk about)
+        -   Implicit (procedural memory system: actions, skills, operations)
+-   \*Moving things from short-term to long-term memory
+    -   Neurons need time for synaptogenesis (and to build connections)
+
+#### Amnesias
+
+-   Henry Gustav Molaison (H.M.): epileptic patient
+    -   Could not remember new information (explicit) but could improve on mirror-drawing task (implicit)
+-   Semantic dementia (cannot remember the meaning of things)
+    -   Neocortex of lateral temporal area
+-   Types of amnesias
+    -   Retrograde (forget things before)
+    -   Anterograde (forget things after)
+
+#### Knowledge & Memory
+
+-   Categories and conceptual hierarchies
+-   Schemas
+    -   Stereotypes are a type of schema
+-   Semantic network
+
+### Retrieval
+
+-   Usually automatic, without much effort/ take conscious effort (e.g. systematic search)
+-   Encoding specificity principle
+    -   Better retrieval cue matches memory -> more likely successful retrieval
+    -   Reinstate the context: increase chances of retrieval cue to retrieve the memory needed
+    -   Tip-of-the-tongue phenomena: what comes to mind may be a clue as to the word you are searching for
+-   Memory is a reconstruction
+    -   Loftus: misinformation effect (post-event infromation leads to an alteration of memory)
+    -   Source monitoring error (make incorrect guess about where the information came from)
+
+### Forgetting
+
+-   Measuring forgetting = measuring retention
+    -   Recall: results in a more steep curve
+        -   Ebbinghaus' Forgetting Curve is particularly steep (b/c they are nonsense words)
+    -   Recognition: more shallow curve
+        -   E.g. MCQ questions that serve as a cue for remembering
+    -   Relearning: even more shallow curve
+        -   E.g. the less time it takes person to relearn words, the more it indicates the person remembers
+-   Reasons for forgetting
+    -   Ineffective encoding (pseudoforgetting)
+        -   Never really learnt it
+    -   Decay
+        -   Memory traces fade with time
+    -   Interference
+        -   Additional information get in the way of remembering other information
+        -   Amount, complexity and type of information learned affect retention (difficult content = more interference)
+        -   Proactive: when previously learned information interferes with you learning new information
+        -   Retroactive: : when newly-learned information interferes with you remembering previous information
+    -   Retrieval failure
+        -   Motivated forgetting: Freud - “repressed memories” (where your mind—unconsciously—represses negative events in your unconscious)
+        -   Motivated forgetting is a controversial idea
+
+### Memory Trace: Physiology of Memory
+
+-   Neural circuitry of memory
+    -   Physical changes leading to functional synaptic changes: presynaptic/ postsynaptic
+    -   Neurogenesis (in the dentate gyrus of the hippocampus)
