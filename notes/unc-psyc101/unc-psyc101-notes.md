@@ -527,6 +527,8 @@
 ### Meditation
 
 -   Practices that train attention to heighten awareness and bring mental processes under greater voluntary control
+-   Transcendental meditation: focused attention
+-   Mindfulness meditation: open monitoring
 -   Associative features
     -   EEG: increase in alpha and theta waves
     -   Transcendant experience is not equal to relaxation
@@ -539,11 +541,10 @@
 -   Narcotics
     -   E.g. morphine, heroin, oxycodone, codeine, methadone
     -   Effects:
-    -   anxiety reduction, pain relief, drowsiness
-    -   impaired mental & motor functioning
-    -   constipation
-    -   withdrawal: severe diarrhea, etc.
-    -   increase in infectious diseases
+        -   anxiety reduction, pain relief, drowsiness
+        -   impaired mental & motor functioning
+        -   constipation
+    -   withdrawal: severe diarrhea, increase in infectious diseases
     -   used for: analgesic, cough, diarrhea
     -   Sedatives: CNS depressants
         -   E.g. barbiturates, benzodiazepines
