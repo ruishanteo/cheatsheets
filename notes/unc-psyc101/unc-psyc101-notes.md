@@ -65,6 +65,26 @@
     -   [Retrieval](#retrieval)
     -   [Forgetting](#forgetting)
     -   [Memory Trace: Physiology of Memory](#memory-trace-physiology-of-memory)
+-   [10. Human Development](#10-human-development)
+    -   [Physical](#physical)
+        -   [Conception](#conception)
+            -   [Stages of prenatal development](#stages-of-prenatal-development)
+            -   [Teratogens (environmental agents which can cause developmental malformations)](#teratogens-environmental-agents-which-can-cause-developmental-malformations)
+            -   [Postnatal development](#postnatal-development)
+    -   [Emotional](#emotional)
+    -   [Language](#language)
+    -   [Personality](#personality)
+    -   [Cognitive](#cognitive)
+    -   [Moral](#moral)
+    -   [Major events](#major-events)
+    -   [Death](#death)
+-   [11. Personality](#11-personality)
+    -   [Psychodynamic perspective](#psychodynamic-perspective)
+    -   [Neopsychodynamic views of personality development](#neopsychodynamic-views-of-personality-development)
+    -   [Behavioral perspective](#behavioral-perspective)
+    -   [Humanistic perspective](#humanistic-perspective)
+    -   [Biological perspective](#biological-perspective)
+-   [12. Soc](#12-soc)
 
 ## 1: Evolution of Psychology
 
@@ -527,6 +547,8 @@
 ### Meditation
 
 -   Practices that train attention to heighten awareness and bring mental processes under greater voluntary control
+-   Transcendental meditation: focused attention
+-   Mindfulness meditation: open monitoring
 -   Associative features
     -   EEG: increase in alpha and theta waves
     -   Transcendant experience is not equal to relaxation
@@ -539,11 +561,10 @@
 -   Narcotics
     -   E.g. morphine, heroin, oxycodone, codeine, methadone
     -   Effects:
-    -   anxiety reduction, pain relief, drowsiness
-    -   impaired mental & motor functioning
-    -   constipation
-    -   withdrawal: severe diarrhea, etc.
-    -   increase in infectious diseases
+        -   anxiety reduction, pain relief, drowsiness
+        -   impaired mental & motor functioning
+        -   constipation
+    -   withdrawal: severe diarrhea, increase in infectious diseases
     -   used for: analgesic, cough, diarrhea
     -   Sedatives: CNS depressants
         -   E.g. barbiturates, benzodiazepines
@@ -850,3 +871,299 @@
 -   Neural circuitry of memory
     -   Physical changes leading to functional synaptic changes: presynaptic/ postsynaptic
     -   Neurogenesis (in the dentate gyrus of the hippocampus)
+
+## 10. Human Development
+
+### Physical
+
+#### Conception
+
+-   Egg (23 chromosomes) + sperm (23 chromosomes)
+-   Ovulation occurs 2 weeks before menstrual period
+-   Ovum lives for 12-24 h
+-   Sperm lives for 5-7 days
+-   Pregnancy tests
+    -   Home pregnancy test (urine)
+        -   Detects human chorionic gonadotropic hormone (HCG)
+    -   In-clinic pregnancy test (blood)
+        -   Detects HCG
+
+##### Stages of prenatal development
+
+-   Germinal stage: 0-2 weeks (Zygote)
+    -   Within 36 hours → proliferation (refers to the rapid cell division and multiplication)
+    -   1 week → implantation
+-   Embryonic stage: 2-8 weeks (Embryo)
+    -   Recognizably human/ humanoid
+    -   Cephalocaudal (dev from head to toe) & proximodistal (dev from middle to extremities)
+    -   Sensitive period of development
+        -   vital organs are developing
+        -   most miscarriages happen around this time
+        -   when errors occur during this time, it can be deadly or very serious
+    -   70-80% have "morning sickness"
+-   Fetal stage: 8-38 weeks (Fetus)
+    -   12 weeks: basic structures are completed (though they will continue maturing)
+        -   Fetus' first movements (called "quickening")
+        -   Placenta has basic parts in place
+    -   23-25 weeks: threshold of viability; 24%-72% chance of survival
+        -   20-24 weeks birth = 43% neurodevelopmental impairments + 19% sensory deficits at 18-22 months
+    -   Rest of the weeks: fat deposits/ growth
+
+##### Teratogens (environmental agents which can cause developmental malformations)
+
+-   Maternal malnutrition
+    -   Increased risk of birth complications & neurological deficits
+-   Material stress and emotional
+    -   Lead to negative hormones which may impact development
+    -   Increased stillbirth to various disorders
+-   Drug exposure
+    -   e.g. recreational drugs, prescribed drugs, OTC drugs, smoking, alcohol
+-   Maternal illness
+    -   First half of pregnancy: 1-2% risk of birth defects, including scarring of skin, limb defects, eye problems, etc.
+    -   Second half of pregnancy: probably okay
+    -   5 to 21 days before birth: fetus may develop the illness
+-   Environmental toxins
+    -   e.g. radiation exposure, air pollution, flame-retardant materials
+-   Fetal origins of adult diseases
+    -   Prenatal malnutrition & schizophrenia; low birth weight & height disease; bipolar disorder
+    -   Mental and physical conditions
+
+##### Postnatal development
+
+-   Physical growth is uneven
+-   Motor Development
+    -   3 mos.: lifts head, chest up with arm support
+    -   2.75 mos.: rolls over
+    -   5.5 mos.: sits without support
+    -   5.75 mos.: stands holding on to something
+    -   7.5 mos.: pulls self to stand
+    -   9 mos.: cruises (walks holding on to something)
+    -   12 mos: walks alone
+-   Adolescent growth spurt: next rapid growth
+-   | **Females**                                                                                    | **Males**                                                                              |
+    | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+    | Sometime before growth spurt: secondary sex characteristics                                    | Sometime before growth spurt: secondary sex characteristics                            |
+    | 9-10 yrs. old: growth spurt                                                                    | 10-12 yrs. old: growth spurt (more intense and longer-lasting than for females)        |
+    | 12-13 yrs. old: puberty (menarche: 1st menstruation) and primary sex characteristics (puberty) | 13-14 yrs. old: spermarche (1st ejaculation) and primary sex characteristics (puberty) |
+    | 14-15 yrs. old: full height                                                                    | 15-16 yrs. old: full height                                                            |
+    | 16 yrs. old: sexual maturation                                                                 | 18 yrs. old: sexual maturation                                                         |
+-   Adulthood:
+    -   graying hair, thinning/balding
+    -   decline in sensory/perceptual acuity (e.g. increased farsightedness, loss of hearing)
+    -   menopause (~51 yrs. old)
+    -   proportion of fat increases
+    -   psychological and behavioral factors may be involved with “aging well,” not just good genetics (e.g. intelligence, optimism, conscientious, high self-esteem, positive emotions, nutritious diet, exercise, avoiding smoking and substance abuse, regular medical checkups, SLEEP)
+
+### Emotional
+
+-   Smiling & laughter (~4-6 weeks)
+    -   One of the first expressions of pleasure
+-   Fear
+    -   ~3 months: wariness, sober stares
+    -   ~6 months: distress; whimpering; looking away
+    -   ~7 months: true fear, crying
+    -   ~14-18 months: separation anxiety peaks
+-   Early attachment styles
+    -   attachment styles in the US
+        -   secure attachment (60-65%)
+        -   anxious/ambivalent aka resistant attachment (10-15%)
+        -   avoidant attachment (20%)
+        -   disorganized/disorientated attachment (5-10%)
+        -   Ainsworth Strange Situation: psychological experiment that measures the attachment between an infant and their primary caregiver
+    -   culture
+        -   separation anxiety
+        -   proportion of those who fall into the different types of attachment may vary; economic circumstances may be contributing factor
+    -   parental style
+        -   sensitive care → secure
+        -   insensitive care (e.g. feeding baby when baby is not hungry) → avoidant
+        -   inconsistent care → anxious/ambivalent aka resistant
+        -   severe neglect and/or abuse → disorganized/disoriented
+
+### Language
+
+-   1-5 mos.: reflexive communication; cooing
+-   6-18 mos.: babbling
+-   10-13 mos.: first words
+-   12-18 mos.: one word sentences
+    -   receptive vs. productive vocabulary (understanding more than you can say)
+    -   overextension (using the same word for different situations)
+    -   underextension
+-   18-24 mos.: vocabulary spurt & fast mapping
+-   towards end of 2 yrs: telegraphic speech (not universal)
+-   towards end of 3 yrs.: overregularizations
+-   5 yrs.+: well-developed and complex grammar
+
+### Personality
+
+-   Biological: genetics & traits/predispositions
+-   Psychoanalytic: personality arises as we resolve psychosexual conflicts
+-   Neopsychoanalytic (proposed by those who followed Freud, then rejected some of his ideas, and developed their own): personality arises as we resolve psychosocial conflicts
+-   Learning/behavioral: personality is a collection of behavioral tendencies/habits
+-   Humanistic: people have innate drive to become who they were meant to be
+
+### Cognitive
+
+-   Jean Piaget: cognitive development
+    -   inferred that certain cognitive skills were not present until a certain age
+    -   ![piagetCognitiveTheory.png](piagetCognitiveTheory.png)
+-   Vygotsky’s sociocultural theory
+    -   social interaction is very important for cognitive development
+        -   whereas Piaget felt cognitive development was due to maturation
+    -   language acquisition is vital for cognitive development
+        -   private speech
+        -   Piaget felt that language acquisition was just a part of cognitive development, not necessarily crucial for it (Williams Syndrome)
+-   Teenage brain
+    -   increased myelination + increased synaptic pruning
+    -   later maturation of prefrontal cortex
+    -   early development of subcortical DA/reward system
+    -   leads to impulsive behavior with decreased inhibition
+-   Adults
+    -   loss of neurons (mostly normal!) + shrinkage of active neurons (mostly after 60)
+    -   later adulthood: senility/dementia is not normal
+        -   85 yrs. + = 33% with dementia
+        -   70% = Alzheimer’s disease (memory problems > executive function problems > death in approximately 8-10 yrs.)
+        -   Genetics may account for 70% of variance? Chronic inflammation associated with increased risk.
+        -   exercise + cognitive activities, active social activities, decreased cardiovascular disease (CVD) risk, no history of smoking or diabetes, diet low in meats, sweets and high-fat dairy are correlated with ↓ risk of dementia
+        -   Nun study suggests high prevalence of positive emotions too
+    -   memory: fairly stable memory and/or cognition but research is mixed
+        -   ↓ episodic memory, in particular
+        -   problem-solving seems okay if adequate time is given (for the slower brain)
+        -   speed of processing slows down
+        -   people who have mentally demanding jobs and/or continue to engage in intellectually challenging activities seem to buffer against cognitive decline
+        -   programs to increase mental activity have met with mixed results
+
+### Moral
+
+-   Kohlberg’s moral development theory
+-   ![kohlbergMoralDevelopment.png](kohlbergMoralDevelopment.png)
+
+### Major events
+
+-   Search for identity (adolescence)
+    -   lifetime – research shows that the search for identity doesn’t just occur during adolescence but occurs throughout a lifetime, from time to time and this is healthy
+    -   Marcia’s theory of identity statuses:
+    -   ![marciaTheoryofIdentity.png](marciaTheoryofIdentity.png)
+-   Jeffrey Arnett’s emerging adulthood (18 – 29 yrs.)
+    -   not adolescent/not adult, possibilities/optimism, self-focused time, continued identity search
+-   Marriage:
+    -   delaying marriage (later 20’s, 30s) (careers, educational requirements, autonomy)
+    -   90% still marry
+    -   8-14% distressed when transitioning (balancing responsibilities, e.g. work and financial concerns)
+    -   cohabitation (66% now)
+    -   more common now, correlated with better outcomes now (unlike the past)
+    -   expectation of roles
+        -   men doing more housework/childcare but (44%) women still doing majority, even among highly-paid executive women
+        -   more equitable housework distribution corre. with greater sex and greater sexual satisfaction.
+    -   50% end in divorce
+-   Parenthood
+    -   Delaying parenthood (later 20’s, 30s)
+    -   Majority still have children
+    -   Marital satisfaction can suffer after having children (esp. as number of children increase)
+    -   However, factors such as chore distribution and relationship trust, responsiveness and gratitude can influence
+    -   Adolescents spend less time in family activities and may have increased conflicts, but the conflicts tend to be about everyday matters.
+-   Empty Nest
+    -   Empty nest syndrome: parents get distressed when children leave the house: myth
+-   Aging
+    -   subjective well-being matters!
+    -   rates of chronic illness increase
+    -   protective psychological factors:
+        -   higher intelligence (greater health, longevity)
+        -   personality traits like optimism, conscientiousness, high self-esteem, positive emotions
+        -   behavioral habits (e.g. diet and exercise, smoking & drinking, medical checkups)
+        -   2/3 of cancers due to poor diet and/or lack of exercise
+
+### Death
+
+-   Kübler –Ross
+    -   Denial
+    -   Anger
+    -   Bargaining
+    -   Depression
+    -   Acceptance
+-   Recent research = no “stages” and these emotions may not be experienced by all
+-   Bereavement
+    -   cultural differences
+    -   patterns: absent grief/resilient pattern (50%, most common – but results challenged by other studies), chronic grief, common grief, depressed-improved pattern, chronic depression
+
+## 11. Personality
+
+-   Unique collection of traits (distinctiveness)
+    -   Relatively stable across situations and time
+-   Traits: internal dispositions or behavioral tendencies
+
+### Psychodynamic perspective
+
+-   Freud's psychoanalytic theory
+    -   Structure of personality
+        -   Id (primary)
+            -   Reservoir of psychic energy
+            -   Pleasure principle
+        -   Ego (secondary)
+            -   Decision-making
+            -   Reality principle
+        -   Superego
+            -   Moral component, takes awhile to develop
+    -   Levels of awareness can vary for each of the different components of personality
+        -   Conscious
+        -   Preconscious
+        -   Unconscious
+    -   Parapraxes (aka Freudian slips): minor errors in speech, memory, or action that are thought to be caused by unconscious wishes, attitudes, or impulses
+    -   Internal conflict influences behavior
+    -   Freud's theory of personality development
+
+| Stage             | Age Range       | Focus of Libido | Key Developmental Task                                                                         | Fixation Characteristics                                      |
+| ----------------- | --------------- | --------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Oral Stage**    | Birth to 1 year | Mouth           | Sucking, biting, chewing. Primary conflict: weaning.                                           | Dependency, smoking, overeating, nail-biting                  |
+| **Anal Stage**    | 1 to 3 years    | Anus            | Toilet training. Primary conflict: control over bodily functions.                              | Orderliness, stubbornness, messiness, expulsive behaviors     |
+| **Phallic Stage** | 3 to 6 years    | Genitals        | Oedipus/Electra complex (desire for opposite-sex parent). Identification with same-sex parent. | Vanity, recklessness, difficulty with authority               |
+| **Latent Stage**  | 6 to puberty    | None (dormant)  | Development of communication and intellectual skills, peer relationships.                      | No major fixations, focus on social and cognitive development |
+| **Genital Stage** | Puberty onward  | Genitals        | Development of mature sexual relationships. Focus on reproduction and emotional intimacy.      | Healthy relationships, balanced personality                   |
+
+### Neopsychodynamic views of personality development
+
+-   Jung's analytical psychology
+    -   personal unconscious vs collective unconscious
+-   Alfrd Adler's individual psychology
+    -   primary motivation = striving for superiority
+-   Erik Erikson's stages of psychosocial development
+    -   ![erikEriksonPsychosocial.png](erikEriksonPsychosocial.png)
+
+### Behavioral perspective
+
+-   Skinner's behavioral/ determinism ideas
+    -   Focus on environmental factors & observable behavior
+    -   Personality is therefore a collection of unique response tendencies
+-   Bandura's contribution of "cognition" to this behavioral perspective
+-   Mischel and Person-Situation Controversy
+    -   Personality traits have much less consistency across situations than people think
+
+### Humanistic perspective
+
+-   Focus on healthy human quality
+    -   Freedom
+    -   Innate drive for personal growth
+    -   Not determined by primitive biological urges
+    -   Not dominated by unconscious, irrational urges/conflicts
+-   Carl Roger’s Person-Centered Theory
+    -   Self (aka self-concept)
+    -   If there is incongruence between self-concept & reality → distress/anxiety
+    -   Conditional love = ↑ risk of incongruence
+    -   Distress/anxiety may lead people to deny/twist reality to protect their self-concept
+-   Maslow’s Theory of Self-actualization
+    -   Unlike Freud, studied people who were thought to be psychological healthy
+        ![maslowSelfActualization.png](maslowSelfActualization.png)
+
+### Biological perspective
+
+-   Hans Eysenck’s PEN theory
+    -   Genes + learning = personality
+        -   Heavy emphasis on genetics
+        -   Variations in conditionability (is one example)
+    -   Three higher-order traits:
+        -   Psychoticism
+        -   Extraversion-introversion (Big Five: sociable, lively, active, assertive, sensation-seeking)
+        -   Neuroticism
+-   Research support for heritability of personality traits
+    -   Identical twins reared together > identical twins reared apart > fraternal twins reared together
+
+## 12. Soc
